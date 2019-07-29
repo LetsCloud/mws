@@ -1,29 +1,29 @@
 {
-  "name": "HostWare Admin",
-  "short_name": "ADMIN",
+  "name": "MyWindSpot Admin",
+  "short_name": "ADM",
   "icons": [
     {
-      "src": "ADMIN_launcher-icons/launcher1x.png",
+      "src": "launcher1x.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "ADMIN_launcher-icons/launcher2x.png",
+      "src": "launcher2x.png",
       "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "ADMIN_launcher-icons/launcher4x.png",
+      "src": "launcher4x.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "ADMIN_launcher-icons/launcher5x.png",
+      "src": "launcher5x.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "admin.html",
+  "start_url": "adm.html",
   "display": "fullscreen",
   "background_color": "#F44336",
   "theme_color": "#C62828",

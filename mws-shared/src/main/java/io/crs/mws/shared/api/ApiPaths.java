@@ -82,19 +82,6 @@ public class ApiPaths {
 		public static final String ACTUAL = "/actual";
 	}
 
-	public class ApiV1 {
-		public static final String API = "/api/v1";
-		public static final String HOTEL = "/hotel";
-		public static final String ROOMTYPE = "/roomtype";
-		public static final String ROOM = "/room";
-		public static final String FORECAST_DATACUBE = "/forecastDataCube";
-		public static final String DATACUBE_ACTUAL = "/dataCubeActual";
-
-		public static final String DATACUBE = "/dataCube";
-		public static final String M1_QUERY = "/m1Query";
-		public static final String PICKUP = "/pickup";
-	}
-
 	public class User {
 		public static final String ROOT = "/user";
 		public static final String LOGIN = "/login";
