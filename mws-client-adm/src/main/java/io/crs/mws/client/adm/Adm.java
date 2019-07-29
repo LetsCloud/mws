@@ -12,12 +12,10 @@ import org.fusesource.restygwt.client.Defaults;
 
 import com.google.common.base.Strings;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.Timer;
 import com.gwtplatform.mvp.client.Bootstrapper;
 import com.gwtplatform.mvp.client.PreBootstrapper;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 
-import gwt.material.design.client.pwa.PwaManager;
 import io.crs.mws.client.core.app.AppServiceWorkerManager;
 import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.UserManager;
