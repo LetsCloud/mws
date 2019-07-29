@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/public}">
+
+<head>
+<style>
+.signup-form {
+	overflow: hidden;
+	padding: 15px 25px 0 25px;
+}
+</style>
+</head>
+
+<body class="grey">
+	<div layout:fragment="content" class="row">
+		<div class="col m6 offset-m3 l4 offset-l4">
+			<div class="signup-form">
+				<div class="row">
+					<div class="input-field col s12 center">
+						<h4 class="center">Redirect</h4>
+					</div>
+				</div>
+
+				<div class="row margin">
+					<div class="input-field col s12">
+						<i class="material-icons prefix">perm_identity</i> <input
+							id="nickname" name="nickname" th:text="${token}" type="text"
+							class="validate" /> <label for="nickname" class="center-align">Token</label>
+					</div>
+				</div>
+
+				<div class="row margin">
+					<div class="input-field col s12">
+						<i class="material-icons prefix">mail_outline</i> <input
+							id="email" name="email" th:text="${error}" type="text"
+							class="validate" /> <label for="email" class="center-align">Error</label>
+					</div>
+				</div>
+				<!--row-->
+			</div>
+			<!--card-->
+		</div>
+		<!--row-->
+	</div>
+	<!--content-->
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+	"name": "HostWareFRO",
+	"version": "0.0.1",
+	"description": "Service worker generator",
+	"main": "bin/sw-builder.js",
+	"dependencies": {
+		"handlebars": "^4.0.11"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"generate": "node bin/sw-builder.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/LetsCloud/hw-gae.git"
+	},
+	"author": "LetsCloud",
+	"license": "Apache 2.0",
+	"bugs": {
+		"url": "https://github.com/LetsCloud/hw-gae/issues"
+	},
+	"homepage": "https://github.com/LetsCloud/hw-gae#readme"
+}

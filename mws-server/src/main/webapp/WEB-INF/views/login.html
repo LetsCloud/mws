@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="en"
+	layout:decorate="~{layouts/public}">
+<head>
+<style>
+.login-form {
+	overflow: hidden;
+	padding: 15px 25px 0 25px;
+}
+
+.ml5 {
+	margin-left: 5px !important;
+}
+
+.mr5 {
+	margin-right: 5px !important;
+}
+</style>
+
+</head>
+
+<body class="grey">
+	<div layout:fragment="content" class="row">
+		<div class="col m6 offset-m3 l4 offset-l4">
+			<div class="login-form">
+				<form name="login" th:action="@{/login}" method="post"
+					class="card-panel z-depth-4">
+
+					<div class="row">
+						<div class="col s12 center">
+							<h4 class="center">Login</h4>
+							<p>HostWare Cloud
+							<p>
+						</div>
+
+						<div th:if="${param.error}" class="col s12 center card red">
+							<div class="card-content white-text">
+								<p>Hibás felhasználói név és/vagy jelszó</p>
+							</div>
+						</div>
+
+
+						<div th:if="${param.logout}" class="col s12 center">Sikeresen
+							kijelentkeztél</div>
+
+						<div th:if="${param.targetUrl}">
+							<input id="targetUrl" name="targetUrl" type="hidden"
+								th:value="${param.targetUrl[0]}">
+						</div>
+					</div>
+
+					<div class="row margin">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">mail_outline</i> <input
+								class="validate" id="username" name="username" type="email">
+							<label for="username">Email</label>
+						</div>
+					</div>
+
+					<div class="row margin">
+						<div class="input-field col s12 m12">
+							<i class="material-icons prefix">lock_outline</i> <input
+								id="password" name="password" type="password"> <label
+								for="password">Password</label>
+						</div>
+					</div>
+
+					<div class="row ml5">
+						<div class="col s12 m12 l12 ml-2 mt-3">
+							<p>
+								<label> <input type="checkbox" /> <span>Remember
+										me</span>
+								</label>
+							</p>
+						</div>
+					</div>
+
+					<div class="row ml5 mr5">
+						<div class="input-field col s12">
+							<button
+								class="btn waves-effect waves-light col s12 pink accent-2"
+								type="submit">Login</button>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s12">
+							<div class="input-field col s6 m6 l6">
+								<p class="margin medium-small">
+									<a href="/signup">Sign Up Now!</a>
+								</p>
+							</div>
+							<div class="input-field col s6 m6 l6">
+								<p class="margin right-align medium-small">
+									<a href="#">Forgot password?</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="row ml5 mr5">
+				<form name="GoogleSocialloginForm" th:action="@{../signin/google}"
+					method="POST">
+					<img src="../images/gmail2.png" alt="">
+					<button type="submit">
+						<i>Sign In with Google</i>
+					</button>
+					<input type="hidden" name="scope"
+						value="https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo#email https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/tasks https://www-opensocial.googleusercontent.com/api/people https://www.googleapis.com/auth/plus.login" />
+					<div class="clear"></div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

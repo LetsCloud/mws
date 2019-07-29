@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MultiProperties xmlns="hu.skzs.multiproperties">
+    <Version>1.2</Version>
+    <Name>ErrorCodeConstants</Name>
+    <Description></Description>
+    <Handler>Java Properties Handler</Handler>
+    <Columns>
+        <Key>
+            <Width>197</Width>
+        </Key>
+        <Column>
+            <Name>default</Name>
+            <Description></Description>
+            <Width>143</Width>
+            <HandlerConfiguration>/crs-hsys-client-core/src/main/resources/io/crs/hsys/client/core/i18n/CoreConstants.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>en</Name>
+            <Description></Description>
+            <Width>160</Width>
+            <HandlerConfiguration>/crs-hsys-client-core/src/main/resources/io/crs/hsys/client/core/i18n/CoreConstants_en.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>uk</Name>
+            <Description></Description>
+            <Width>201</Width>
+            <HandlerConfiguration>/crs-hsys-client-core/src/main/resources/io/crs/hsys/client/core/i18n/CoreConstants_uk.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>hu</Name>
+            <Description></Description>
+            <Width>991</Width>
+            <HandlerConfiguration>/crs-hsys-client-core/src/main/resources/io/crs/hsys/client/core/i18n/CoreConstants_hu.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+    </Columns>
+    <Records>
+        <Comment>
+            <Value>LANGUGAES</Value>
+        </Comment>
+        <Property>
+            <Name>languageMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">LNG_EN,LNG_HU,LNG_UK</Value>
+            <Value disabled="false">LNG_EN,LNG_HU,LNG_UK</Value>
+            <Value disabled="false">LNG_EN,LNG_HU,LNG_UK</Value>
+            <Value disabled="false">LNG_EN,LNG_HU,LNG_UK</Value>
+        </Property>
+        <Property>
+            <Name>LNG_EN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">English</Value>
+            <Value disabled="false">English</Value>
+            <Value disabled="false">Англійська</Value>
+            <Value disabled="false">Angol</Value>
+        </Property>
+        <Property>
+            <Name>LNG_HU</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Hungarian</Value>
+            <Value disabled="false">Hungarian</Value>
+            <Value disabled="false">Угорська</Value>
+            <Value disabled="false">Magyar</Value>
+        </Property>
+        <Property>
+            <Name>LNG_UK</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Ukrainian</Value>
+            <Value disabled="false">Ukrainian</Value>
+            <Value disabled="false">Українська</Value>
+            <Value disabled="false">Ukrán</Value>
+        </Property>
+        <Comment>
+            <Value>ERROR CODES</Value>
+        </Comment>
+        <Property>
+            <Name>erroCodeMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">LOGIN_UNKNOWN_PROBLEM,LOGIN_BAD_CREDENTIALS,LOGIN_DISABLED_USER</Value>
+            <Value disabled="false">LOGIN_UNKNOWN_PROBLEM,LOGIN_BAD_CREDENTIALS,LOGIN_DISABLED_USER</Value>
+            <Value disabled="false">LOGIN_UNKNOWN_PROBLEM,LOGIN_BAD_CREDENTIALS,LOGIN_DISABLED_USER</Value>
+            <Value disabled="false">LOGIN_UNKNOWN_PROBLEM,LOGIN_BAD_CREDENTIALS,LOGIN_DISABLED_USER</Value>
+        </Property>
+        <Property>
+            <Name>LOGIN_UNKNOWN_PROBLEM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Unknown login problem!</Value>
+            <Value disabled="false">Unknown login problem!</Value>
+            <Value disabled="false">Unknown login problem!</Value>
+            <Value disabled="false">Ismeretlen bejelentkezési probléma!</Value>
+        </Property>
+        <Property>
+            <Name>LOGIN_BAD_CREDENTIALS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Bad credentials!</Value>
+            <Value disabled="false">Bad credentials!</Value>
+            <Value disabled="false">Bad credentials!</Value>
+            <Value disabled="false">Téves bejelentkezési adatok!</Value>
+        </Property>
+        <Property>
+            <Name>LOGIN_DISABLED_USER</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">User not enabled!</Value>
+            <Value disabled="false">User not enabled!</Value>
+            <Value disabled="false">User not enabled!</Value>
+            <Value disabled="false">Nem engedélyezett felhasználó!</Value>
+        </Property>
+        <Property>
+            <Name>LOGIN_LOCKED_AUTHENTICATION</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">To many login attempts! Please try again in 15 minutes.</Value>
+            <Value disabled="false">To many login attempts! Please try again in 15 minutes.</Value>
+            <Value disabled="false">To many login attempts! Please try again in 15 minutes.</Value>
+            <Value disabled="false">Túl sok bejelentkezési próbálkozás! Kérem próbálpzzon 15 perc múlva</Value>
+        </Property>
+        <Comment>
+            <Value>USER PERMISSIONS</Value>
+        </Comment>
+        <Property>
+            <Name>userPermMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">UP_HKSUPERVISOR,UP_HOUSEKEEPER,UP_MAINTMANAGER,UP_TECHNICIAN,UP_RECEPTIONIST,UP_ADMIN</Value>
+            <Value disabled="false">UP_HKSUPERVISOR,UP_HOUSEKEEPER,UP_MAINTMANAGER,UP_TECHNICIAN,UP_RECEPTIONIST,UP_ADMIN</Value>
+            <Value disabled="false">UP_HKSUPERVISOR,UP_HOUSEKEEPER,UP_MAINTMANAGER,UP_TECHNICIAN,UP_RECEPTIONIST,UP_ADMIN</Value>
+            <Value disabled="false">UP_HKSUPERVISOR,UP_HOUSEKEEPER,UP_MAINTMANAGER,UP_TECHNICIAN,UP_RECEPTIONIST,UP_ADMIN</Value>
+        </Property>
+        <Property>
+            <Name>UP_HKSUPERVISOR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Housekeeping Supervisor</Value>
+            <Value disabled="false">Housekeeping Supervisor</Value>
+            <Value disabled="false">Housekeeping Supervisor</Value>
+            <Value disabled="false">Gondnoknő</Value>
+        </Property>
+        <Property>
+            <Name>UP_HOUSEKEEPER</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Housekeeper</Value>
+            <Value disabled="false">Housekeeper</Value>
+            <Value disabled="false">Housekeeper</Value>
+            <Value disabled="false">Szobalány</Value>
+        </Property>
+        <Property>
+            <Name>UP_MAINTMANAGER</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Maintenance Manager</Value>
+            <Value disabled="false">Maintenance Manager</Value>
+            <Value disabled="false">Maintenance Manager</Value>
+            <Value disabled="false">Karbantartás vezető</Value>
+        </Property>
+        <Property>
+            <Name>UP_TECHNICIAN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Technician</Value>
+            <Value disabled="false">Technician</Value>
+            <Value disabled="false">Technician</Value>
+            <Value disabled="false">Karbantartó</Value>
+        </Property>
+        <Property>
+            <Name>UP_RECEPTIONIST</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Receptionist</Value>
+            <Value disabled="false">Receptionist</Value>
+            <Value disabled="false">Receptionist</Value>
+            <Value disabled="false">Recepciós</Value>
+        </Property>
+        <Property>
+            <Name>UP_ADMIN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Admin</Value>
+            <Value disabled="false">Admin</Value>
+            <Value disabled="false">Admin</Value>
+            <Value disabled="false">Adminisztrátor</Value>
+        </Property>
+        <Comment>
+            <Value>TASK KINDS</Value>
+        </Comment>
+        <Property>
+            <Name>taskKindMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">TK_ALL, TK_COMMON, TK_CLEANING, TK_MAINTENANCE, TK_REQUEST</Value>
+            <Value disabled="false">TK_ALL, TK_COMMON, TK_CLEANING, TK_MAINTENANCE, TK_REQUEST</Value>
+            <Value disabled="false">TK_ALL, TK_COMMON, TK_CLEANING, TK_MAINTENANCE, TK_REQUEST</Value>
+            <Value disabled="false">TK_ALL, TK_COMMON, TK_CLEANING, TK_MAINTENANCE, TK_REQUEST</Value>
+        </Property>
+        <Property>
+            <Name>TK_ALL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">All</Value>
+            <Value disabled="false">All</Value>
+            <Value disabled="false">All</Value>
+            <Value disabled="false">Mind</Value>
+        </Property>
+        <Property>
+            <Name>TK_COMMON</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Common</Value>
+            <Value disabled="false">Common</Value>
+            <Value disabled="false">Common</Value>
+            <Value disabled="false">Általános</Value>
+        </Property>
+        <Property>
+            <Name>TK_CLEANING</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Housekeeping</Value>
+            <Value disabled="false">Housekeeping</Value>
+            <Value disabled="false">Housekeeping</Value>
+            <Value disabled="false">Housekeeping</Value>
+        </Property>
+        <Property>
+            <Name>TK_MAINTENANCE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Maintenance</Value>
+            <Value disabled="false">Maintenance</Value>
+            <Value disabled="false">Maintenance</Value>
+            <Value disabled="false">Karbantartás</Value>
+        </Property>
+        <Property>
+            <Name>TK_REQUEST</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Request</Value>
+            <Value disabled="false">Request</Value>
+            <Value disabled="false">Request</Value>
+            <Value disabled="false">Bekészítés</Value>
+        </Property>
+        <Comment>
+            <Value>PROFILE TYPES</Value>
+        </Comment>
+        <Property>
+            <Name>profileTypeMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">PT_COMPANY,PT_CONTACT,PT_GUEST</Value>
+            <Value disabled="false">PT_COMPANY,PT_CONTACT,PT_GUEST</Value>
+            <Value disabled="false">PT_COMPANY,PT_CONTACT,PT_GUEST</Value>
+            <Value disabled="false">PT_COMPANY,PT_CONTACT,PT_GUEST</Value>
+        </Property>
+        <Property>
+            <Name>PT_COMPANY</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Company</Value>
+            <Value disabled="false">Company</Value>
+            <Value disabled="false">Company</Value>
+            <Value disabled="false">Cég</Value>
+        </Property>
+        <Property>
+            <Name>PT_CONTACT</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Contact</Value>
+            <Value disabled="false">Contact</Value>
+            <Value disabled="false">Contact</Value>
+            <Value disabled="false">Kapcsolat</Value>
+        </Property>
+        <Property>
+            <Name>PT_GUEST</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Guest</Value>
+            <Value disabled="false">Guest</Value>
+            <Value disabled="false">Guest</Value>
+            <Value disabled="false">Vendég</Value>
+        </Property>
+        <Comment>
+            <Value>COMMUNICATION MODE</Value>
+        </Comment>
+        <Property>
+            <Name>communicationModeMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">MOBILE,WORK_PHONE,WORK_FAX,HOME_PHONE,HOME_FAX,OTHER_PHONE,WORK_EMAIL,HOME_EMAIL,OTHER_EMAIL, SKYPE</Value>
+            <Value disabled="false">MOBILE,WORK_PHONE,WORK_FAX,HOME_PHONE,HOME_FAX,OTHER_PHONE,WORK_EMAIL,HOME_EMAIL,OTHER_EMAIL, SKYPE</Value>
+            <Value disabled="false">MOBILE,WORK_PHONE,WORK_FAX,HOME_PHONE,HOME_FAX,OTHER_PHONE,WORK_EMAIL,HOME_EMAIL,OTHER_EMAIL, SKYPE</Value>
+            <Value disabled="false">MOBILE,WORK_PHONE,WORK_FAX,HOME_PHONE,HOME_FAX,OTHER_PHONE,WORK_EMAIL,HOME_EMAIL,OTHER_EMAIL, SKYPE</Value>
+        </Property>
+        <Property>
+            <Name>MOBILE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Mobile</Value>
+            <Value disabled="false">Mobile</Value>
+            <Value disabled="false">Mobile</Value>
+            <Value disabled="false">Mobil</Value>
+        </Property>
+        <Property>
+            <Name>WORK_PHONE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Work Phone</Value>
+            <Value disabled="false">Work Phone</Value>
+            <Value disabled="false">Work Phone</Value>
+            <Value disabled="false">Munkahelyi telefon</Value>
+        </Property>
+        <Property>
+            <Name>WORK_FAX</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Work Fax</Value>
+            <Value disabled="false">Work Fax</Value>
+            <Value disabled="false">Work Fax</Value>
+            <Value disabled="false">Munkahelyi fax</Value>
+        </Property>
+        <Property>
+            <Name>HOME_PHONE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Home Phone</Value>
+            <Value disabled="false">Home Phone</Value>
+            <Value disabled="false">Home Phone</Value>
+            <Value disabled="false">Otthoni telefon</Value>
+        </Property>
+        <Property>
+            <Name>HOME_FAX</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Home Fax</Value>
+            <Value disabled="false">Home Fax</Value>
+            <Value disabled="false">Home Fax</Value>
+            <Value disabled="false">Otthoni fax</Value>
+        </Property>
+        <Property>
+            <Name>OTHER_PHONE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Other Phone</Value>
+            <Value disabled="false">Other Phone</Value>
+            <Value disabled="false">Other Phone</Value>
+            <Value disabled="false">Egyéb telefon</Value>
+        </Property>
+        <Property>
+            <Name>WORK_EMAIL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Work Email</Value>
+            <Value disabled="false">Work Email</Value>
+            <Value disabled="false">Work Email</Value>
+            <Value disabled="false">Munkahelyi email</Value>
+        </Property>
+        <Property>
+            <Name>HOME_EMAIL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Home Email</Value>
+            <Value disabled="false">Home Email</Value>
+            <Value disabled="false">Home Email</Value>
+            <Value disabled="false">Otthoni email</Value>
+        </Property>
+        <Property>
+            <Name>OTHER_EMAIL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Other Email</Value>
+            <Value disabled="false">Other Email</Value>
+            <Value disabled="false">Other Email</Value>
+            <Value disabled="false">Egyéb email</Value>
+        </Property>
+        <Property>
+            <Name>SKYPE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Skype</Value>
+            <Value disabled="false">Skype</Value>
+            <Value disabled="false">Skype</Value>
+            <Value disabled="false">Skype</Value>
+        </Property>
+        <Comment>
+            <Value>ADDRESS TYPES</Value>
+        </Comment>
+        <Property>
+            <Name>addressTypeMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">HEADQUARTER,SERVICE,WORK,HOME,BILLING,MAILING,SHIPPING,OTHER</Value>
+            <Value disabled="false">HEADQUARTER,SERVICE,WORK,HOME,BILLING,MAILING,SHIPPING,OTHER</Value>
+            <Value disabled="false">HEADQUARTER,SERVICE,WORK,HOME,BILLING,MAILING,SHIPPING,OTHER</Value>
+            <Value disabled="false">HEADQUARTER,SERVICE,WORK,HOME,BILLING,MAILING,SHIPPING,OTHER</Value>
+        </Property>
+        <Property>
+            <Name>HEADQUARTER</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Headquarter</Value>
+            <Value disabled="false">Headquarter</Value>
+            <Value disabled="false">Headquarter</Value>
+            <Value disabled="false">Székhely</Value>
+        </Property>
+        <Property>
+            <Name>SERVICE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Service</Value>
+            <Value disabled="false">Service</Value>
+            <Value disabled="false">Service</Value>
+            <Value disabled="false">Telephely</Value>
+        </Property>
+        <Property>
+            <Name>WORK</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Work</Value>
+            <Value disabled="false">Work</Value>
+            <Value disabled="false">Work</Value>
+            <Value disabled="false">Munkahely</Value>
+        </Property>
+        <Property>
+            <Name>HOME</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Home</Value>
+            <Value disabled="false">Home</Value>
+            <Value disabled="false">Home</Value>
+            <Value disabled="false">Otthon</Value>
+        </Property>
+        <Property>
+            <Name>BILLING</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Billing</Value>
+            <Value disabled="false">Billing</Value>
+            <Value disabled="false">Billing</Value>
+            <Value disabled="false">Számlázási</Value>
+        </Property>
+        <Property>
+            <Name>MAILING</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Mailing</Value>
+            <Value disabled="false">Mailing</Value>
+            <Value disabled="false">Mailing</Value>
+            <Value disabled="false">Levelezés</Value>
+        </Property>
+        <Property>
+            <Name>SHIPPING</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Shipping</Value>
+            <Value disabled="false">Shipping</Value>
+            <Value disabled="false">Shipping</Value>
+            <Value disabled="false">Szállítási</Value>
+        </Property>
+        <Property>
+            <Name>OTHER</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Other</Value>
+            <Value disabled="false">Other</Value>
+            <Value disabled="false">Other</Value>
+            <Value disabled="false">Egyéb</Value>
+        </Property>
+        <Comment>
+            <Value>WEBPRESENCE TYPES</Value>
+        </Comment>
+        <Property>
+            <Name>webPresenceTypeMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">WEB_URL,BLOG,FACEBOOK,FLICKR,INSTAGRAM,LINKEDIN,PINTEREST,REDDIT,TRIPADVISOR,TWITTER,YOUTUBE</Value>
+            <Value disabled="false">WEB_URL,BLOG,FACEBOOK,FLICKR,INSTAGRAM,LINKEDIN,PINTEREST,REDDIT,TRIPADVISOR,TWITTER,YOUTUBE</Value>
+            <Value disabled="false">WEB_URL,BLOG,FACEBOOK,FLICKR,INSTAGRAM,LINKEDIN,PINTEREST,REDDIT,TRIPADVISOR,TWITTER,YOUTUBE</Value>
+            <Value disabled="false">WEB_URL,BLOG,FACEBOOK,FLICKR,INSTAGRAM,LINKEDIN,PINTEREST,REDDIT,TRIPADVISOR,TWITTER,YOUTUBE</Value>
+        </Property>
+        <Property>
+            <Name>WEB_URL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Website</Value>
+            <Value disabled="false">Website</Value>
+            <Value disabled="false">Website</Value>
+            <Value disabled="false">Honlap</Value>
+        </Property>
+        <Property>
+            <Name>BLOG</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Blog</Value>
+            <Value disabled="false">Blog</Value>
+            <Value disabled="false">Blog</Value>
+            <Value disabled="false">Blog</Value>
+        </Property>
+        <Property>
+            <Name>FACEBOOK</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Facebook</Value>
+            <Value disabled="false">Facebook</Value>
+            <Value disabled="false">Facebook</Value>
+            <Value disabled="false">Facebook</Value>
+        </Property>
+        <Property>
+            <Name>FLICKR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Flickr</Value>
+            <Value disabled="false">Flickr</Value>
+            <Value disabled="false">Flickr</Value>
+            <Value disabled="false">Flickr</Value>
+        </Property>
+        <Property>
+            <Name>INSTAGRAM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Instagram</Value>
+            <Value disabled="false">Instagram</Value>
+            <Value disabled="false">Instagram</Value>
+            <Value disabled="false">Instagram</Value>
+        </Property>
+        <Property>
+            <Name>LINKEDIN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Linkedin</Value>
+            <Value disabled="false">Linkedin</Value>
+            <Value disabled="false">Linkedin</Value>
+            <Value disabled="false">Linkedin</Value>
+        </Property>
+        <Property>
+            <Name>PINTEREST</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Pinterest</Value>
+            <Value disabled="false">Pinterest</Value>
+            <Value disabled="false">Pinterest</Value>
+            <Value disabled="false">Pinterest</Value>
+        </Property>
+        <Property>
+            <Name>REDDIT</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Reddit</Value>
+            <Value disabled="false">Reddit</Value>
+            <Value disabled="false">Reddit</Value>
+            <Value disabled="false">Reddit</Value>
+        </Property>
+        <Property>
+            <Name>TRIPADVISOR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Tripadvisor</Value>
+            <Value disabled="false">Tripadvisor</Value>
+            <Value disabled="false">Tripadvisor</Value>
+            <Value disabled="false">Tripadvisor</Value>
+        </Property>
+        <Property>
+            <Name>TWITTER</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Twitter</Value>
+            <Value disabled="false">Twitter</Value>
+            <Value disabled="false">Twitter</Value>
+            <Value disabled="false">Twitter</Value>
+        </Property>
+        <Property>
+            <Name>YOUTUBE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Youtube</Value>
+            <Value disabled="false">Youtube</Value>
+            <Value disabled="false">Youtube</Value>
+            <Value disabled="false">Youtube</Value>
+        </Property>
+        <Comment>
+            <Value>ROOM STATUSIES</Value>
+        </Comment>
+        <Property>
+            <Name>roomStatusMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">RS_DIRTY,RS_CLEAN,RS_INSPECTED,RS_OOO,RS_OOS,RS_SHOW</Value>
+            <Value disabled="false">RS_DIRTY,RS_CLEAN,RS_INSPECTED,RS_OOO,RS_OOS,RS_SHOW</Value>
+            <Value disabled="false">RS_DIRTY,RS_CLEAN,RS_INSPECTED,RS_OOO,RS_OOS,RS_SHOW</Value>
+            <Value disabled="false">RS_DIRTY,RS_CLEAN,RS_INSPECTED,RS_OOO,RS_OOS,RS_SHOW</Value>
+        </Property>
+        <Property>
+            <Name>RS_DIRTY</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Dirty</Value>
+            <Value disabled="false">Dirty</Value>
+            <Value disabled="false">Dirty</Value>
+            <Value disabled="false">Piszkos</Value>
+        </Property>
+        <Property>
+            <Name>RS_CLEAN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Clean</Value>
+            <Value disabled="false">Clean</Value>
+            <Value disabled="false">Clean</Value>
+            <Value disabled="false">Tiszta</Value>
+        </Property>
+        <Property>
+            <Name>RS_INSPECTED</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Inspected</Value>
+            <Value disabled="false">Inspected</Value>
+            <Value disabled="false">Inspected</Value>
+            <Value disabled="false">Rendben</Value>
+        </Property>
+        <Property>
+            <Name>RS_OOO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">OOO</Value>
+            <Value disabled="false">OOO</Value>
+            <Value disabled="false">OOO</Value>
+            <Value disabled="false">OOO</Value>
+        </Property>
+        <Property>
+            <Name>RS_OOS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">OOS</Value>
+            <Value disabled="false">OOS</Value>
+            <Value disabled="false">OOS</Value>
+            <Value disabled="false">OOS</Value>
+        </Property>
+        <Property>
+            <Name>RS_SHOW</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Show Room</Value>
+            <Value disabled="false">Show Room</Value>
+            <Value disabled="false">Show Room</Value>
+            <Value disabled="false">Show Room</Value>
+        </Property>
+        <Comment>
+            <Value>INVENTORY TYPES</Value>
+        </Comment>
+        <Property>
+            <Name>inventoryTypeMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">PHYS,GENE,COMP</Value>
+            <Value disabled="false">PHYS,GENE,COMP</Value>
+            <Value disabled="false">PHYS,GENE,COMP</Value>
+            <Value disabled="false">PHYS,GENE,COMP</Value>
+        </Property>
+        <Property>
+            <Name>PHYS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Phyisical</Value>
+            <Value disabled="false">Phyisical</Value>
+            <Value disabled="false">Phyisical</Value>
+            <Value disabled="false">Fizikai</Value>
+        </Property>
+        <Property>
+            <Name>GENE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Generic</Value>
+            <Value disabled="false">Generic</Value>
+            <Value disabled="false">Generic</Value>
+            <Value disabled="false">Generikus</Value>
+        </Property>
+        <Property>
+            <Name>COMP</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Component</Value>
+            <Value disabled="false">Component</Value>
+            <Value disabled="false">Component</Value>
+            <Value disabled="false">Komponens</Value>
+        </Property>
+        <Comment>
+            <Value>TASK NOTE TYPE</Value>
+        </Comment>
+        <Property>
+            <Name>taskNoteTypeMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">TNT_CREATED,TNT_MOD_ASSIGNEE,TNT_MOD_DESCRIPTION,TNT_MOD_DUEDATE,TNT_MOD_ROOM,TNT_MOD_STATUS,TNT_MOD_TYPE</Value>
+            <Value disabled="false">TNT_CREATED,TNT_MOD_ASSIGNEE,TNT_MOD_DESCRIPTION,TNT_MOD_DUEDATE,TNT_MOD_ROOM,TNT_MOD_STATUS,TNT_MOD_TYPE</Value>
+            <Value disabled="false">TNT_CREATED,TNT_MOD_ASSIGNEE,TNT_MOD_DESCRIPTION,TNT_MOD_DUEDATE,TNT_MOD_ROOM,TNT_MOD_STATUS,TNT_MOD_TYPE</Value>
+            <Value disabled="false">TNT_CREATED,TNT_MOD_ASSIGNEE,TNT_MOD_DESCRIPTION,TNT_MOD_DUEDATE,TNT_MOD_ROOM,TNT_MOD_STATUS,TNT_MOD_TYPE</Value>
+        </Property>
+        <Property>
+            <Name>TNT_CREATED</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Created</Value>
+            <Value disabled="false">Created</Value>
+            <Value disabled="false">Створено</Value>
+            <Value disabled="false">Létrehozva</Value>
+        </Property>
+        <Property>
+            <Name>TNT_MOD_ASSIGNEE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Modify Assignee</Value>
+            <Value disabled="false">Modify Assignee</Value>
+            <Value disabled="false">Змінити правонаступника</Value>
+            <Value disabled="false">Felelős módosítás</Value>
+        </Property>
+        <Property>
+            <Name>TNT_MOD_DESCRIPTION</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Modify Description</Value>
+            <Value disabled="false">Modify Description</Value>
+            <Value disabled="false">Змінити опис</Value>
+            <Value disabled="false">Leírás módosítás</Value>
+        </Property>
+        <Property>
+            <Name>TNT_MOD_DUEDATE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Modify Due Date</Value>
+            <Value disabled="false">Modify Due Date</Value>
+            <Value disabled="false">Змінити дату завершення</Value>
+            <Value disabled="false">Határidő módosítás</Value>
+        </Property>
+        <Property>
+            <Name>TNT_MOD_ROOM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Modify Room</Value>
+            <Value disabled="false">Modify Room</Value>
+            <Value disabled="false">Змінити номер</Value>
+            <Value disabled="false">Szoba módosítás</Value>
+        </Property>
+        <Property>
+            <Name>TNT_MOD_STATUS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Modify Status</Value>
+            <Value disabled="false">Modify Status</Value>
+            <Value disabled="false">Змінити статус</Value>
+            <Value disabled="false">Státusz módosítás</Value>
+        </Property>
+        <Property>
+            <Name>TNT_MOD_TYPE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Modify Task Type</Value>
+            <Value disabled="false">Modify Task Type</Value>
+            <Value disabled="false">Змінити тип завдання</Value>
+            <Value disabled="false">Feladat típus modisítás</Value>
+        </Property>
+        <Property>
+            <Name>TNT_COMMENT</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Comment</Value>
+            <Value disabled="false">Comment</Value>
+            <Value disabled="false">Коментар</Value>
+            <Value disabled="false">Észrevétel</Value>
+        </Property>
+        <Comment>
+            <Value>TASK STATUS</Value>
+        </Comment>
+        <Property>
+            <Name>taskStatusMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">TS_NOT_STARTED,TS_IN_PROGRESS,TS_DEFFERED,TS_COMPLETED,TS_DELETED</Value>
+            <Value disabled="false">TS_NOT_STARTED,TS_IN_PROGRESS,TS_DEFFERED,TS_COMPLETED,TS_DELETED</Value>
+            <Value disabled="false">TS_NOT_STARTED,TS_IN_PROGRESS,TS_DEFFERED,TS_COMPLETED,TS_DELETED</Value>
+            <Value disabled="false">TS_NOT_STARTED,TS_IN_PROGRESS,TS_DEFFERED,TS_COMPLETED,TS_DELETED</Value>
+        </Property>
+        <Property>
+            <Name>TS_NOT_STARTED</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Not started</Value>
+            <Value disabled="false">Not started</Value>
+            <Value disabled="false">Не розпочато</Value>
+            <Value disabled="false">Rögzített</Value>
+        </Property>
+        <Property>
+            <Name>TS_IN_PROGRESS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">In Progrees</Value>
+            <Value disabled="false">In Progrees</Value>
+            <Value disabled="false">В процесі</Value>
+            <Value disabled="false">Folyamatban</Value>
+        </Property>
+        <Property>
+            <Name>TS_DEFFERED</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Deffered</Value>
+            <Value disabled="false">Deffered</Value>
+            <Value disabled="false">Відкладено</Value>
+            <Value disabled="false">Szünetel</Value>
+        </Property>
+        <Property>
+            <Name>TS_COMPLETED</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Completed</Value>
+            <Value disabled="false">Completed</Value>
+            <Value disabled="false">Завершено</Value>
+            <Value disabled="false">Elvégezve</Value>
+        </Property>
+        <Property>
+            <Name>TS_DELETED</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Deleted</Value>
+            <Value disabled="false">Deleted</Value>
+            <Value disabled="false">Видалено</Value>
+            <Value disabled="false">Törölve</Value>
+        </Property>
+        <Comment>
+            <Value>dialogButtonMap</Value>
+        </Comment>
+        <Property>
+            <Name>dialogButtonMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">DB_CLOSE,DB_YES,DB_NO</Value>
+            <Value disabled="false">DB_CLOSE,DB_YES,DB_NO</Value>
+            <Value disabled="false">DB_CLOSE,DB_YES,DB_NO</Value>
+            <Value disabled="false">DB_CLOSE,DB_YES,DB_NO</Value>
+        </Property>
+        <Property>
+            <Name>DB_CLOSE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Close</Value>
+            <Value disabled="false">Close</Value>
+            <Value disabled="false">Close</Value>
+            <Value disabled="false">Bezár</Value>
+        </Property>
+        <Property>
+            <Name>DB_YES</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Yes</Value>
+            <Value disabled="false">Yes</Value>
+            <Value disabled="false">Yes</Value>
+            <Value disabled="false">Igen</Value>
+        </Property>
+        <Property>
+            <Name>DB_NO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">No</Value>
+            <Value disabled="false">No</Value>
+            <Value disabled="false">No</Value>
+            <Value disabled="false">Nem</Value>
+        </Property>
+        <Comment>
+            <Value>oooReturnWhenMap</Value>
+        </Comment>
+        <Property>
+            <Name>oooReturnWhenMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">ORW_MORNING,ORW_EVENING</Value>
+            <Value disabled="false">ORW_MORNING,ORW_EVENING</Value>
+            <Value disabled="false">ORW_MORNING,ORW_EVENING</Value>
+            <Value disabled="false">ORW_MORNING,ORW_EVENING</Value>
+        </Property>
+        <Property>
+            <Name>ORW_MORNING</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">At Morning</Value>
+            <Value disabled="false">At Morning</Value>
+            <Value disabled="false">At Morning</Value>
+            <Value disabled="false">Reggel</Value>
+        </Property>
+        <Property>
+            <Name>ORW_EVENING</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">At Evening</Value>
+            <Value disabled="false">At Evening</Value>
+            <Value disabled="false">At Evening</Value>
+            <Value disabled="false">Este</Value>
+        </Property>
+    </Records>
+</MultiProperties>

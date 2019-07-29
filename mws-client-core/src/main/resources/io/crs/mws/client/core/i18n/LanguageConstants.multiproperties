@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MultiProperties xmlns="hu.skzs.multiproperties">
+    <Version>1.2</Version>
+    <Name>LanguageConstants</Name>
+    <Description></Description>
+    <Handler>Java Properties Handler</Handler>
+    <Columns>
+        <Key>
+            <Width>200</Width>
+        </Key>
+        <Column>
+            <Name>default</Name>
+            <Description></Description>
+            <Width>150</Width>
+            <HandlerConfiguration>/crs-hsys-client-core/src/main/resources/io/crs/hsys/client/core/i18n/LanguageConstants.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>en</Name>
+            <Description></Description>
+            <Width>150</Width>
+            <HandlerConfiguration>/crs-hsys-client-core/src/main/resources/io/crs/hsys/client/core/i18n/LanguageConstants_en.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>hu</Name>
+            <Description></Description>
+            <Width>150</Width>
+            <HandlerConfiguration>/crs-hsys-client-core/src/main/resources/io/crs/hsys/client/core/i18n/LanguageConstants_hu.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>uk</Name>
+            <Description></Description>
+            <Width>150</Width>
+            <HandlerConfiguration>/crs-hsys-client-core/src/main/resources/io/crs/hsys/client/core/i18n/LanguageConstants_uk|false|false|false|false</HandlerConfiguration>
+        </Column>
+    </Columns>
+    <Records>
+        <Property>
+            <Name>en</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">English</Value>
+            <Value disabled="false">English</Value>
+            <Value disabled="false">Angol</Value>
+            <Value disabled="false">Aнглійська</Value>
+        </Property>
+        <Property>
+            <Name>hu</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Hungarian</Value>
+            <Value disabled="false">Hungarian</Value>
+            <Value disabled="false">Magyar</Value>
+            <Value disabled="false">Yгорський</Value>
+        </Property>
+        <Property>
+            <Name>uk</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Ukrainian</Value>
+            <Value disabled="false">Ukrainian</Value>
+            <Value disabled="false">Ukrán</Value>
+            <Value disabled="false">Yкраїнський</Value>
+        </Property>
+        <Property>
+            <Name>languageMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">en,hu,uk</Value>
+            <Value disabled="false">en,hu,uk</Value>
+            <Value disabled="false">en,hu,uk</Value>
+            <Value disabled="false">en,hu,uk</Value>
+        </Property>
+    </Records>
+</MultiProperties>

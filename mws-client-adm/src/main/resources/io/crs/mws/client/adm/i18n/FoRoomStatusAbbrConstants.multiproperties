@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MultiProperties xmlns="hu.skzs.multiproperties">
+    <Version>1.2</Version>
+    <Name>FoRoomStatusAbbrConstants</Name>
+    <Description></Description>
+    <Handler>Java Properties Handler</Handler>
+    <Columns>
+        <Key>
+            <Width>200</Width>
+        </Key>
+        <Column>
+            <Name>default</Name>
+            <Description></Description>
+            <Width>150</Width>
+            <HandlerConfiguration>/s4h-cpms-module/src/main/resources/cloud/s4h/cpms/client/resources/i18n/FoRoomStatusAbbrConstants.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>hu_HU</Name>
+            <Description></Description>
+            <Width>150</Width>
+            <HandlerConfiguration>/s4h-cpms-module/src/main/resources/cloud/s4h/cpms/client/resources/i18n/FoRoomStatusAbbrConstants_hu_HU.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+    </Columns>
+    <Records>
+        <Property>
+            <Name>ARRIVALS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">ARR</Value>
+            <Value disabled="false">ÉRK</Value>
+        </Property>
+        <Property>
+            <Name>ARRIVED</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">CDIN</Value>
+            <Value disabled="false">CDIN</Value>
+        </Property>
+        <Property>
+            <Name>STAYOVER</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">STO</Value>
+            <Value disabled="false">LAK</Value>
+        </Property>
+        <Property>
+            <Name>DAY_USE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">DU</Value>
+            <Value disabled="false">DU</Value>
+        </Property>
+        <Property>
+            <Name>DUE_OUT</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">DueOut</Value>
+            <Value disabled="false">Utazó</Value>
+        </Property>
+        <Property>
+            <Name>DEPARTED</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">CdO</Value>
+            <Value disabled="false">CdO</Value>
+        </Property>
+        <Property>
+            <Name>NOT_RESERVED</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">NR</Value>
+            <Value disabled="false">NF</Value>
+        </Property>
+    </Records>
+</MultiProperties>

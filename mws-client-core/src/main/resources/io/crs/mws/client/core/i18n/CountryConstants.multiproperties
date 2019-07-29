@@ -1,0 +1,1762 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MultiProperties xmlns="hu.skzs.multiproperties">
+    <Version>1.2</Version>
+    <Name>CountryConstants</Name>
+    <Description></Description>
+    <Handler>Java Properties Handler</Handler>
+    <Columns>
+        <Key>
+            <Width>200</Width>
+        </Key>
+        <Column>
+            <Name>default</Name>
+            <Description></Description>
+            <Width>217</Width>
+            <HandlerConfiguration>/crs-hsys-client-core/src/main/resources/io/crs/hsys/client/core/i18n/CountryConstants.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>hu</Name>
+            <Description></Description>
+            <Width>302</Width>
+            <HandlerConfiguration>/crs-hsys-client-core/src/main/resources/io/crs/hsys/client/core/i18n/CountryConstants_hu.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+    </Columns>
+    <Records>
+        <Property>
+            <Name>AD</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Andorra</Value>
+            <Value disabled="false">Andorra</Value>
+        </Property>
+        <Property>
+            <Name>AE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">United Arab Emirates</Value>
+            <Value disabled="false">Egyesült Arab Emírségek</Value>
+        </Property>
+        <Property>
+            <Name>AF</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Afghanistan</Value>
+            <Value disabled="false">Afganisztán</Value>
+        </Property>
+        <Property>
+            <Name>AG</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Antigua and Barbuda</Value>
+            <Value disabled="false">Antigua and Barbuda</Value>
+        </Property>
+        <Property>
+            <Name>AI</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Anguilla</Value>
+            <Value disabled="false">Anguilla</Value>
+        </Property>
+        <Property>
+            <Name>AL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Albania</Value>
+            <Value disabled="false">Albánia</Value>
+        </Property>
+        <Property>
+            <Name>AM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Armenia</Value>
+            <Value disabled="false">Örményország</Value>
+        </Property>
+        <Property>
+            <Name>AO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Angola</Value>
+            <Value disabled="false">Angola</Value>
+        </Property>
+        <Property>
+            <Name>AQ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Antarctica</Value>
+            <Value disabled="false">Antarktisz</Value>
+        </Property>
+        <Property>
+            <Name>HU</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Hungary</Value>
+            <Value disabled="false">Magyarország</Value>
+        </Property>
+        <Property>
+            <Name>AX</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Aland Islands</Value>
+            <Value disabled="false">Aland Islands</Value>
+        </Property>
+        <Property>
+            <Name>DZ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Algeria</Value>
+            <Value disabled="false">Algéria</Value>
+        </Property>
+        <Property>
+            <Name>AS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">American Samoa</Value>
+            <Value disabled="false">Amerikai Szamoa</Value>
+        </Property>
+        <Property>
+            <Name>AR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Argentina</Value>
+            <Value disabled="false">Argentina</Value>
+        </Property>
+        <Property>
+            <Name>AW</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Aruba</Value>
+            <Value disabled="false">Aruba</Value>
+        </Property>
+        <Property>
+            <Name>AU</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Australia</Value>
+            <Value disabled="false">Ausztrália</Value>
+        </Property>
+        <Property>
+            <Name>AT</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Austria</Value>
+            <Value disabled="false">Ausztria</Value>
+        </Property>
+        <Property>
+            <Name>AZ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Azerbaijan</Value>
+            <Value disabled="false">Azerbajdzsán</Value>
+        </Property>
+        <Property>
+            <Name>BS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Bahamas</Value>
+            <Value disabled="false">Bahama-szigetek</Value>
+        </Property>
+        <Property>
+            <Name>BH</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Bahrain</Value>
+            <Value disabled="false">Bahrein</Value>
+        </Property>
+        <Property>
+            <Name>BD</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Bangladesh</Value>
+            <Value disabled="false">Banglades</Value>
+        </Property>
+        <Property>
+            <Name>BB</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Barbados</Value>
+            <Value disabled="false">Barbados</Value>
+        </Property>
+        <Property>
+            <Name>BY</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Belarus</Value>
+            <Value disabled="false">Fehéroroszország</Value>
+        </Property>
+        <Property>
+            <Name>BE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Belgium</Value>
+            <Value disabled="false">Belgium</Value>
+        </Property>
+        <Property>
+            <Name>BZ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Belize</Value>
+            <Value disabled="false">Belize</Value>
+        </Property>
+        <Property>
+            <Name>BJ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Benin</Value>
+            <Value disabled="false">Benin</Value>
+        </Property>
+        <Property>
+            <Name>BM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Bermuda</Value>
+            <Value disabled="false">Bermuda</Value>
+        </Property>
+        <Property>
+            <Name>BT</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Bhutan</Value>
+            <Value disabled="false">Bhután</Value>
+        </Property>
+        <Property>
+            <Name>BO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Bolivia</Value>
+            <Value disabled="false">Bolívia</Value>
+        </Property>
+        <Property>
+            <Name>BA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Bosnia and Herzegovina</Value>
+            <Value disabled="false">Bosznia-Hercegovina</Value>
+        </Property>
+        <Property>
+            <Name>BW</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Botswana</Value>
+            <Value disabled="false">Botswana</Value>
+        </Property>
+        <Property>
+            <Name>BV</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Bouvet Island</Value>
+            <Value disabled="false">Bouvet-sziget</Value>
+        </Property>
+        <Property>
+            <Name>BR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Brazil</Value>
+            <Value disabled="false">Brazilia</Value>
+        </Property>
+        <Property>
+            <Name>VG</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">British Virgin Islands</Value>
+            <Value disabled="false">Brit Virgin-szigetek</Value>
+        </Property>
+        <Property>
+            <Name>IO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">British Indian Ocean Territory</Value>
+            <Value disabled="false">Brit Indiai-óceáni Terület</Value>
+        </Property>
+        <Property>
+            <Name>BN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Brunei Darussalam</Value>
+            <Value disabled="false">Brunei</Value>
+        </Property>
+        <Property>
+            <Name>BG</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Bulgaria</Value>
+            <Value disabled="false">Bulgária</Value>
+        </Property>
+        <Property>
+            <Name>BF</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Burkina Faso</Value>
+            <Value disabled="false">Burkina Faso</Value>
+        </Property>
+        <Property>
+            <Name>BI</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Burundi</Value>
+            <Value disabled="false">Burundi</Value>
+        </Property>
+        <Property>
+            <Name>KH</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Cambodia</Value>
+            <Value disabled="false">Kambodzsa</Value>
+        </Property>
+        <Property>
+            <Name>CM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Cameroon</Value>
+            <Value disabled="false">Kamerun</Value>
+        </Property>
+        <Property>
+            <Name>CA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Canada</Value>
+            <Value disabled="false">Kanada</Value>
+        </Property>
+        <Property>
+            <Name>CV</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Cape Verde</Value>
+            <Value disabled="false">Zöld-foki Köztársaság</Value>
+        </Property>
+        <Property>
+            <Name>KY</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Cayman Islands</Value>
+            <Value disabled="false">Kajmán-szigetek</Value>
+        </Property>
+        <Property>
+            <Name>CF</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Central African Republic</Value>
+            <Value disabled="false">Közép-Afrika</Value>
+        </Property>
+        <Property>
+            <Name>TD</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Chad</Value>
+            <Value disabled="false">Csád</Value>
+        </Property>
+        <Property>
+            <Name>CL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Chile</Value>
+            <Value disabled="false">Chile</Value>
+        </Property>
+        <Property>
+            <Name>CN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">China</Value>
+            <Value disabled="false">Kína</Value>
+        </Property>
+        <Property>
+            <Name>HK</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Hong Kong, Special Administrative Region of China</Value>
+            <Value disabled="false">Hong Kong, Special Administrative Region of China</Value>
+        </Property>
+        <Property>
+            <Name>MO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Macao, Special Administrative Region of China</Value>
+            <Value disabled="false">Macao, Special Administrative Region of China</Value>
+        </Property>
+        <Property>
+            <Name>CX</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Christmas Island</Value>
+            <Value disabled="false">Karácsony-sziget</Value>
+        </Property>
+        <Property>
+            <Name>CC</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Cocos (Keeling) Islands</Value>
+            <Value disabled="false">Cocos (Keeling) Islands</Value>
+        </Property>
+        <Property>
+            <Name>CO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Colombia</Value>
+            <Value disabled="false">Kolumbia</Value>
+        </Property>
+        <Property>
+            <Name>KM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Comoros</Value>
+            <Value disabled="false">Comoros</Value>
+        </Property>
+        <Property>
+            <Name>CG</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Congo (Brazzaville)</Value>
+            <Value disabled="false">Congo (Brazzaville)</Value>
+        </Property>
+        <Property>
+            <Name>CD</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Congo, Democratic Republic of the</Value>
+            <Value disabled="false">Congo, Democratic Republic of the</Value>
+        </Property>
+        <Property>
+            <Name>CK</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Cook Islands</Value>
+            <Value disabled="false">Cook Islands</Value>
+        </Property>
+        <Property>
+            <Name>CR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Costa Rica</Value>
+            <Value disabled="false">Costa Rica</Value>
+        </Property>
+        <Property>
+            <Name>CI</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Côte d'Ivoire</Value>
+            <Value disabled="false">Côte d'Ivoire</Value>
+        </Property>
+        <Property>
+            <Name>HR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Croatia</Value>
+            <Value disabled="false">Croatia</Value>
+        </Property>
+        <Property>
+            <Name>CU</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Cuba</Value>
+            <Value disabled="false">Cuba</Value>
+        </Property>
+        <Property>
+            <Name>CY</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Cyprus</Value>
+            <Value disabled="false">Cyprus</Value>
+        </Property>
+        <Property>
+            <Name>CZ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Czech Republic</Value>
+            <Value disabled="false">Czech Republic</Value>
+        </Property>
+        <Property>
+            <Name>DK</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Denmark</Value>
+            <Value disabled="false">Denmark</Value>
+        </Property>
+        <Property>
+            <Name>DJ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Djibouti</Value>
+            <Value disabled="false">Djibouti</Value>
+        </Property>
+        <Property>
+            <Name>DM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Dominica</Value>
+            <Value disabled="false">Dominica</Value>
+        </Property>
+        <Property>
+            <Name>DO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Dominican Republic</Value>
+            <Value disabled="false">Dominican Republic</Value>
+        </Property>
+        <Property>
+            <Name>EC</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Ecuador</Value>
+            <Value disabled="false">Ecuador</Value>
+        </Property>
+        <Property>
+            <Name>EG</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Egypt</Value>
+            <Value disabled="false">Egypt</Value>
+        </Property>
+        <Property>
+            <Name>SV</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">El Salvador</Value>
+            <Value disabled="false">El Salvador</Value>
+        </Property>
+        <Property>
+            <Name>GQ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Equatorial Guinea</Value>
+            <Value disabled="false">Equatorial Guinea</Value>
+        </Property>
+        <Property>
+            <Name>ER</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Eritrea</Value>
+            <Value disabled="false">Eritrea</Value>
+        </Property>
+        <Property>
+            <Name>EE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Estonia</Value>
+            <Value disabled="false">Estonia</Value>
+        </Property>
+        <Property>
+            <Name>ET</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Ethiopia</Value>
+            <Value disabled="false">Ethiopia</Value>
+        </Property>
+        <Property>
+            <Name>FK</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Falkland Islands (Malvinas)</Value>
+            <Value disabled="false">Falkland Islands (Malvinas)</Value>
+        </Property>
+        <Property>
+            <Name>FO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Faroe Islands</Value>
+            <Value disabled="false">Faroe Islands</Value>
+        </Property>
+        <Property>
+            <Name>FJ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Fiji</Value>
+            <Value disabled="false">Fiji</Value>
+        </Property>
+        <Property>
+            <Name>FI</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Finland</Value>
+            <Value disabled="false">Finland</Value>
+        </Property>
+        <Property>
+            <Name>FR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">France</Value>
+            <Value disabled="false">France</Value>
+        </Property>
+        <Property>
+            <Name>GF</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">French Guiana</Value>
+            <Value disabled="false">French Guiana</Value>
+        </Property>
+        <Property>
+            <Name>PF</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">French Polynesia</Value>
+            <Value disabled="false">French Polynesia</Value>
+        </Property>
+        <Property>
+            <Name>TF</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">French Southern Territories</Value>
+            <Value disabled="false">French Southern Territories</Value>
+        </Property>
+        <Property>
+            <Name>GA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Gabon</Value>
+            <Value disabled="false">Gabon</Value>
+        </Property>
+        <Property>
+            <Name>GM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Gambia</Value>
+            <Value disabled="false">Gambia</Value>
+        </Property>
+        <Property>
+            <Name>GE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Georgia</Value>
+            <Value disabled="false">Georgia</Value>
+        </Property>
+        <Property>
+            <Name>DE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Germany</Value>
+            <Value disabled="false">Németország</Value>
+        </Property>
+        <Property>
+            <Name>GH</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Ghana</Value>
+            <Value disabled="false">Ghana</Value>
+        </Property>
+        <Property>
+            <Name>GI</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Gibraltar</Value>
+            <Value disabled="false">Gibraltár</Value>
+        </Property>
+        <Property>
+            <Name>GR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Greece</Value>
+            <Value disabled="false">Görögország</Value>
+        </Property>
+        <Property>
+            <Name>GL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Greenland</Value>
+            <Value disabled="false">Greenland</Value>
+        </Property>
+        <Property>
+            <Name>GD</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Grenada</Value>
+            <Value disabled="false">Grenada</Value>
+        </Property>
+        <Property>
+            <Name>GP</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Guadeloupe</Value>
+            <Value disabled="false">Guadeloupe</Value>
+        </Property>
+        <Property>
+            <Name>GU</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Guam</Value>
+            <Value disabled="false">Guam</Value>
+        </Property>
+        <Property>
+            <Name>GT</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Guatemala</Value>
+            <Value disabled="false">Guatemala</Value>
+        </Property>
+        <Property>
+            <Name>GG</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Guernsey</Value>
+            <Value disabled="false">Guernsey</Value>
+        </Property>
+        <Property>
+            <Name>GN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Guinea</Value>
+            <Value disabled="false">Guinea</Value>
+        </Property>
+        <Property>
+            <Name>GW</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Guinea-Bissau</Value>
+            <Value disabled="false">Guinea-Bissau</Value>
+        </Property>
+        <Property>
+            <Name>GY</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Guyana</Value>
+            <Value disabled="false">Guyana</Value>
+        </Property>
+        <Property>
+            <Name>HT</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Haiti</Value>
+            <Value disabled="false">Haiti</Value>
+        </Property>
+        <Property>
+            <Name>HM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Heard Island and Mcdonald Islands</Value>
+            <Value disabled="false">Heard Island and Mcdonald Islands</Value>
+        </Property>
+        <Property>
+            <Name>VA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Holy See (Vatican City State)</Value>
+            <Value disabled="false">Holy See (Vatican City State)</Value>
+        </Property>
+        <Property>
+            <Name>HN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Honduras</Value>
+            <Value disabled="false">Honduras</Value>
+        </Property>
+        <Property>
+            <Name>IS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Iceland</Value>
+            <Value disabled="false">Iceland</Value>
+        </Property>
+        <Property>
+            <Name>IN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">India</Value>
+            <Value disabled="false">India</Value>
+        </Property>
+        <Property>
+            <Name>ID</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Indonesia</Value>
+            <Value disabled="false">Indonesia</Value>
+        </Property>
+        <Property>
+            <Name>IR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Iran, Islamic Republic of</Value>
+            <Value disabled="false">Iran, Islamic Republic of</Value>
+        </Property>
+        <Property>
+            <Name>IQ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Iraq</Value>
+            <Value disabled="false">Iraq</Value>
+        </Property>
+        <Property>
+            <Name>IE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Ireland</Value>
+            <Value disabled="false">Ireland</Value>
+        </Property>
+        <Property>
+            <Name>IM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Isle of Man</Value>
+            <Value disabled="false">Isle of Man</Value>
+        </Property>
+        <Property>
+            <Name>IL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Israel</Value>
+            <Value disabled="false">Israel</Value>
+        </Property>
+        <Property>
+            <Name>IT</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Italy</Value>
+            <Value disabled="false">Olaszország</Value>
+        </Property>
+        <Property>
+            <Name>JM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Jamaica</Value>
+            <Value disabled="false">Jamaica</Value>
+        </Property>
+        <Property>
+            <Name>JP</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Japan</Value>
+            <Value disabled="false">Japán</Value>
+        </Property>
+        <Property>
+            <Name>JE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Jersey</Value>
+            <Value disabled="false">Jersey</Value>
+        </Property>
+        <Property>
+            <Name>JO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Jordan</Value>
+            <Value disabled="false">Jordánia</Value>
+        </Property>
+        <Property>
+            <Name>KZ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Kazakhstan</Value>
+            <Value disabled="false">Kazakhstan</Value>
+        </Property>
+        <Property>
+            <Name>KE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Kenya</Value>
+            <Value disabled="false">Kenya</Value>
+        </Property>
+        <Property>
+            <Name>KI</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Kiribati</Value>
+            <Value disabled="false">Kiribati</Value>
+        </Property>
+        <Property>
+            <Name>KP</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Korea, Democratic People's Republic of</Value>
+            <Value disabled="false">Korea, Democratic People's Republic of</Value>
+        </Property>
+        <Property>
+            <Name>KR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Korea, Republic of</Value>
+            <Value disabled="false">Korea, Republic of</Value>
+        </Property>
+        <Property>
+            <Name>KW</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Kuwait</Value>
+            <Value disabled="false">Kuwait</Value>
+        </Property>
+        <Property>
+            <Name>KG</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Kyrgyzstan</Value>
+            <Value disabled="false">Kyrgyzstan</Value>
+        </Property>
+        <Property>
+            <Name>LA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Lao PDR</Value>
+            <Value disabled="false">Lao PDR</Value>
+        </Property>
+        <Property>
+            <Name>LV</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Latvia</Value>
+            <Value disabled="false">Latvia</Value>
+        </Property>
+        <Property>
+            <Name>LB</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Lebanon</Value>
+            <Value disabled="false">Lebanon</Value>
+        </Property>
+        <Property>
+            <Name>LS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Lesotho</Value>
+            <Value disabled="false">Lesotho</Value>
+        </Property>
+        <Property>
+            <Name>LR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Liberia</Value>
+            <Value disabled="false">Liberia</Value>
+        </Property>
+        <Property>
+            <Name>LY</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Libya</Value>
+            <Value disabled="false">Libya</Value>
+        </Property>
+        <Property>
+            <Name>LI</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Liechtenstein</Value>
+            <Value disabled="false">Liechtenstein</Value>
+        </Property>
+        <Property>
+            <Name>LT</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Lithuania</Value>
+            <Value disabled="false">Lithuania</Value>
+        </Property>
+        <Property>
+            <Name>LU</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Luxembourg</Value>
+            <Value disabled="false">Luxembourg</Value>
+        </Property>
+        <Property>
+            <Name>MK</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Macedonia, Republic of</Value>
+            <Value disabled="false">Macedonia, Republic of</Value>
+        </Property>
+        <Property>
+            <Name>MG</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Madagascar</Value>
+            <Value disabled="false">Madagascar</Value>
+        </Property>
+        <Property>
+            <Name>MW</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Malawi</Value>
+            <Value disabled="false">Malawi</Value>
+        </Property>
+        <Property>
+            <Name>MY</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Malaysia</Value>
+            <Value disabled="false">Malaysia</Value>
+        </Property>
+        <Property>
+            <Name>MV</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Maldives</Value>
+            <Value disabled="false">Maldives</Value>
+        </Property>
+        <Property>
+            <Name>ML</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Mali</Value>
+            <Value disabled="false">Mali</Value>
+        </Property>
+        <Property>
+            <Name>MT</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Malta</Value>
+            <Value disabled="false">Malta</Value>
+        </Property>
+        <Property>
+            <Name>MH</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Marshall Islands</Value>
+            <Value disabled="false">Marshall Islands</Value>
+        </Property>
+        <Property>
+            <Name>MQ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Martinique</Value>
+            <Value disabled="false">Martinique</Value>
+        </Property>
+        <Property>
+            <Name>MR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Mauritania</Value>
+            <Value disabled="false">Mauritania</Value>
+        </Property>
+        <Property>
+            <Name>MU</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Mauritius</Value>
+            <Value disabled="false">Mauritius</Value>
+        </Property>
+        <Property>
+            <Name>YT</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Mayotte</Value>
+            <Value disabled="false">Mayotte</Value>
+        </Property>
+        <Property>
+            <Name>MX</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Mexico</Value>
+            <Value disabled="false">Mexico</Value>
+        </Property>
+        <Property>
+            <Name>FM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Micronesia, Federated States of</Value>
+            <Value disabled="false">Micronesia, Federated States of</Value>
+        </Property>
+        <Property>
+            <Name>MD</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Moldova</Value>
+            <Value disabled="false">Moldova</Value>
+        </Property>
+        <Property>
+            <Name>MC</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Monaco</Value>
+            <Value disabled="false">Monaco</Value>
+        </Property>
+        <Property>
+            <Name>MN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Mongolia</Value>
+            <Value disabled="false">Mongolia</Value>
+        </Property>
+        <Property>
+            <Name>ME</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Montenegro</Value>
+            <Value disabled="false">Montenegro</Value>
+        </Property>
+        <Property>
+            <Name>MS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Montserrat</Value>
+            <Value disabled="false">Montserrat</Value>
+        </Property>
+        <Property>
+            <Name>MA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Morocco</Value>
+            <Value disabled="false">Morocco</Value>
+        </Property>
+        <Property>
+            <Name>MZ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Mozambique</Value>
+            <Value disabled="false">Mozambique</Value>
+        </Property>
+        <Property>
+            <Name>MM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Myanmar</Value>
+            <Value disabled="false">Myanmar</Value>
+        </Property>
+        <Property>
+            <Name>NA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Namibia</Value>
+            <Value disabled="false">Namibia</Value>
+        </Property>
+        <Property>
+            <Name>NR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Nauru</Value>
+            <Value disabled="false">Nauru</Value>
+        </Property>
+        <Property>
+            <Name>NP</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Nepal</Value>
+            <Value disabled="false">Nepal</Value>
+        </Property>
+        <Property>
+            <Name>NL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Netherlands</Value>
+            <Value disabled="false">Netherlands</Value>
+        </Property>
+        <Property>
+            <Name>AN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Netherlands Antilles</Value>
+            <Value disabled="false">Netherlands Antilles</Value>
+        </Property>
+        <Property>
+            <Name>NC</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">New Caledonia</Value>
+            <Value disabled="false">New Caledonia</Value>
+        </Property>
+        <Property>
+            <Name>NZ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">New Zealand</Value>
+            <Value disabled="false">New Zealand</Value>
+        </Property>
+        <Property>
+            <Name>NI</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Nicaragua</Value>
+            <Value disabled="false">Nicaragua</Value>
+        </Property>
+        <Property>
+            <Name>NE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Niger</Value>
+            <Value disabled="false">Niger</Value>
+        </Property>
+        <Property>
+            <Name>NG</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Nigeria</Value>
+            <Value disabled="false">Nigeria</Value>
+        </Property>
+        <Property>
+            <Name>NU</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Niue</Value>
+            <Value disabled="false">Niue</Value>
+        </Property>
+        <Property>
+            <Name>NF</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Norfolk Island</Value>
+            <Value disabled="false">Norfolk Island</Value>
+        </Property>
+        <Property>
+            <Name>MP</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Northern Mariana Islands</Value>
+            <Value disabled="false">Northern Mariana Islands</Value>
+        </Property>
+        <Property>
+            <Name>NO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Norway</Value>
+            <Value disabled="false">Norway</Value>
+        </Property>
+        <Property>
+            <Name>OM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Oman</Value>
+            <Value disabled="false">Oman</Value>
+        </Property>
+        <Property>
+            <Name>PK</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Pakistan</Value>
+            <Value disabled="false">Pakistan</Value>
+        </Property>
+        <Property>
+            <Name>PW</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Palau</Value>
+            <Value disabled="false">Palau</Value>
+        </Property>
+        <Property>
+            <Name>PS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Palestinian Territory, Occupied</Value>
+            <Value disabled="false">Palestinian Territory, Occupied</Value>
+        </Property>
+        <Property>
+            <Name>PA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Panama</Value>
+            <Value disabled="false">Panama</Value>
+        </Property>
+        <Property>
+            <Name>PG</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Papua New Guinea</Value>
+            <Value disabled="false">Papua New Guinea</Value>
+        </Property>
+        <Property>
+            <Name>PY</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Paraguay</Value>
+            <Value disabled="false">Paraguay</Value>
+        </Property>
+        <Property>
+            <Name>PE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Peru</Value>
+            <Value disabled="false">Peru</Value>
+        </Property>
+        <Property>
+            <Name>PH</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Philippines</Value>
+            <Value disabled="false">Philippines</Value>
+        </Property>
+        <Property>
+            <Name>PN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Pitcairn</Value>
+            <Value disabled="false">Pitcairn</Value>
+        </Property>
+        <Property>
+            <Name>PL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Poland</Value>
+            <Value disabled="false">Poland</Value>
+        </Property>
+        <Property>
+            <Name>PT</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Portugal</Value>
+            <Value disabled="false">Portugal</Value>
+        </Property>
+        <Property>
+            <Name>PR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Puerto Rico</Value>
+            <Value disabled="false">Puerto Rico</Value>
+        </Property>
+        <Property>
+            <Name>QA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Qatar</Value>
+            <Value disabled="false">Qatar</Value>
+        </Property>
+        <Property>
+            <Name>RE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Réunion</Value>
+            <Value disabled="false">Réunion</Value>
+        </Property>
+        <Property>
+            <Name>RO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Romania</Value>
+            <Value disabled="false">Romania</Value>
+        </Property>
+        <Property>
+            <Name>RU</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Russian Federation</Value>
+            <Value disabled="false">Russian Federation</Value>
+        </Property>
+        <Property>
+            <Name>RW</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Rwanda</Value>
+            <Value disabled="false">Rwanda</Value>
+        </Property>
+        <Property>
+            <Name>BL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Saint-Barthélemy</Value>
+            <Value disabled="false">Saint-Barthélemy</Value>
+        </Property>
+        <Property>
+            <Name>SH</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Saint Helena</Value>
+            <Value disabled="false">Saint Helena</Value>
+        </Property>
+        <Property>
+            <Name>KN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Saint Kitts and Nevis</Value>
+            <Value disabled="false">Saint Kitts and Nevis</Value>
+        </Property>
+        <Property>
+            <Name>LC</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Saint Lucia</Value>
+            <Value disabled="false">Saint Lucia</Value>
+        </Property>
+        <Property>
+            <Name>MF</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Saint-Martin (French part)</Value>
+            <Value disabled="false">Saint-Martin (French part)</Value>
+        </Property>
+        <Property>
+            <Name>PM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Saint Pierre and Miquelon</Value>
+            <Value disabled="false">Saint Pierre and Miquelon</Value>
+        </Property>
+        <Property>
+            <Name>VC</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Saint Vincent and Grenadines</Value>
+            <Value disabled="false">Saint Vincent and Grenadines</Value>
+        </Property>
+        <Property>
+            <Name>WS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Samoa</Value>
+            <Value disabled="false">Samoa</Value>
+        </Property>
+        <Property>
+            <Name>SM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">San Marino</Value>
+            <Value disabled="false">San Marino</Value>
+        </Property>
+        <Property>
+            <Name>ST</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Sao Tome and Principe</Value>
+            <Value disabled="false">Sao Tome and Principe</Value>
+        </Property>
+        <Property>
+            <Name>SA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Saudi Arabia</Value>
+            <Value disabled="false">Saudi Arabia</Value>
+        </Property>
+        <Property>
+            <Name>SN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Senegal</Value>
+            <Value disabled="false">Senegal</Value>
+        </Property>
+        <Property>
+            <Name>RS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Serbia</Value>
+            <Value disabled="false">Serbia</Value>
+        </Property>
+        <Property>
+            <Name>SC</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Seychelles</Value>
+            <Value disabled="false">Seychelles</Value>
+        </Property>
+        <Property>
+            <Name>SL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Sierra Leone</Value>
+            <Value disabled="false">Sierra Leone</Value>
+        </Property>
+        <Property>
+            <Name>SG</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Singapore</Value>
+            <Value disabled="false">Singapore</Value>
+        </Property>
+        <Property>
+            <Name>SK</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Slovakia</Value>
+            <Value disabled="false">Slovakia</Value>
+        </Property>
+        <Property>
+            <Name>SI</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Slovenia</Value>
+            <Value disabled="false">Slovenia</Value>
+        </Property>
+        <Property>
+            <Name>SB</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Solomon Islands</Value>
+            <Value disabled="false">Solomon Islands</Value>
+        </Property>
+        <Property>
+            <Name>SO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Somalia</Value>
+            <Value disabled="false">Somalia</Value>
+        </Property>
+        <Property>
+            <Name>ZA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">South Africa</Value>
+            <Value disabled="false">South Africa</Value>
+        </Property>
+        <Property>
+            <Name>GS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">South Georgia and the South Sandwich Islands</Value>
+            <Value disabled="false">South Georgia and the South Sandwich Islands</Value>
+        </Property>
+        <Property>
+            <Name>SS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">South Sudan</Value>
+            <Value disabled="false">South Sudan</Value>
+        </Property>
+        <Property>
+            <Name>ES</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Spain</Value>
+            <Value disabled="false">Spain</Value>
+        </Property>
+        <Property>
+            <Name>LK</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Sri Lanka</Value>
+            <Value disabled="false">Sri Lanka</Value>
+        </Property>
+        <Property>
+            <Name>SD</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Sudan</Value>
+            <Value disabled="false">Sudan</Value>
+        </Property>
+        <Property>
+            <Name>SR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Suriname</Value>
+            <Value disabled="false">Suriname</Value>
+        </Property>
+        <Property>
+            <Name>SJ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Svalbard and Jan Mayen Islands</Value>
+            <Value disabled="false">Svalbard and Jan Mayen Islands</Value>
+        </Property>
+        <Property>
+            <Name>SZ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Swaziland</Value>
+            <Value disabled="false">Swaziland</Value>
+        </Property>
+        <Property>
+            <Name>SE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Sweden</Value>
+            <Value disabled="false">Sweden</Value>
+        </Property>
+        <Property>
+            <Name>CH</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Switzerland</Value>
+            <Value disabled="false">Switzerland</Value>
+        </Property>
+        <Property>
+            <Name>SY</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Syrian Arab Republic (Syria)</Value>
+            <Value disabled="false">Syrian Arab Republic (Syria)</Value>
+        </Property>
+        <Property>
+            <Name>TW</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Taiwan, Republic of China</Value>
+            <Value disabled="false">Taiwan, Republic of China</Value>
+        </Property>
+        <Property>
+            <Name>TJ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Tajikistan</Value>
+            <Value disabled="false">Tajikistan</Value>
+        </Property>
+        <Property>
+            <Name>TZ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Tanzania, United Republic of</Value>
+            <Value disabled="false">Tanzania, United Republic of</Value>
+        </Property>
+        <Property>
+            <Name>TH</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Thailand</Value>
+            <Value disabled="false">Thailand</Value>
+        </Property>
+        <Property>
+            <Name>TL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Timor-Leste</Value>
+            <Value disabled="false">Timor-Leste</Value>
+        </Property>
+        <Property>
+            <Name>TG</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Togo</Value>
+            <Value disabled="false">Togo</Value>
+        </Property>
+        <Property>
+            <Name>TK</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Tokelau</Value>
+            <Value disabled="false">Tokelau</Value>
+        </Property>
+        <Property>
+            <Name>TO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Tonga</Value>
+            <Value disabled="false">Tonga</Value>
+        </Property>
+        <Property>
+            <Name>TT</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Trinidad and Tobago</Value>
+            <Value disabled="false">Trinidad and Tobago</Value>
+        </Property>
+        <Property>
+            <Name>TN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Tunisia</Value>
+            <Value disabled="false">Tunisia</Value>
+        </Property>
+        <Property>
+            <Name>TR</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Turkey</Value>
+            <Value disabled="false">Turkey</Value>
+        </Property>
+        <Property>
+            <Name>TM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Turkmenistan</Value>
+            <Value disabled="false">Turkmenistan</Value>
+        </Property>
+        <Property>
+            <Name>TC</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Turks and Caicos Islands</Value>
+            <Value disabled="false">Turks and Caicos Islands</Value>
+        </Property>
+        <Property>
+            <Name>TV</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Tuvalu</Value>
+            <Value disabled="false">Tuvalu</Value>
+        </Property>
+        <Property>
+            <Name>UG</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Uganda</Value>
+            <Value disabled="false">Uganda</Value>
+        </Property>
+        <Property>
+            <Name>UA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Ukraine</Value>
+            <Value disabled="false">Ukraine</Value>
+        </Property>
+        <Property>
+            <Name>GB</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">United Kingdom</Value>
+            <Value disabled="false">United Kingdom</Value>
+        </Property>
+        <Property>
+            <Name>US</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">United States of America</Value>
+            <Value disabled="false">United States of America</Value>
+        </Property>
+        <Property>
+            <Name>UM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">United States Minor Outlying Islands</Value>
+            <Value disabled="false">United States Minor Outlying Islands</Value>
+        </Property>
+        <Property>
+            <Name>UY</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Uruguay</Value>
+            <Value disabled="false">Uruguay</Value>
+        </Property>
+        <Property>
+            <Name>UZ</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Uzbekistan</Value>
+            <Value disabled="false">Uzbekistan</Value>
+        </Property>
+        <Property>
+            <Name>VU</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Vanuatu</Value>
+            <Value disabled="false">Vanuatu</Value>
+        </Property>
+        <Property>
+            <Name>VE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Venezuela (Bolivarian Republic of)</Value>
+            <Value disabled="false">Venezuela (Bolivarian Republic of)</Value>
+        </Property>
+        <Property>
+            <Name>VN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Viet Nam</Value>
+            <Value disabled="false">Viet Nam</Value>
+        </Property>
+        <Property>
+            <Name>VI</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Virgin Islands, US</Value>
+            <Value disabled="false">Virgin Islands, US</Value>
+        </Property>
+        <Property>
+            <Name>WF</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Wallis and Futuna Islands</Value>
+            <Value disabled="false">Wallis and Futuna Islands</Value>
+        </Property>
+        <Property>
+            <Name>EH</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Western Sahara</Value>
+            <Value disabled="false">Western Sahara</Value>
+        </Property>
+        <Property>
+            <Name>YE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Yemen</Value>
+            <Value disabled="false">Yemen</Value>
+        </Property>
+        <Property>
+            <Name>ZM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Zambia</Value>
+            <Value disabled="false">Zambia</Value>
+        </Property>
+        <Property>
+            <Name>ZW</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Zimbabwe</Value>
+            <Value disabled="false">Zimbabwe</Value>
+        </Property>
+        <Property>
+            <Name>countryMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">AF,AX,AL,DZ,AS,AD,AO,AI,AQ,AG,AR,AM,AW,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BM,BT,BO,BA,BW,BV,BR,VG,IO,BN,BG,BF,BI,KH,CM,CA,CV,KY,CF,TD,CL,CN,HK,MO,CX,CC,CO,KM,CG,CD,CK,CR,CI,HR,CU,CY,CZ,DK,DJ,DM,DO,EC,EG,SV,GQ,ER,EE,ET,FK,FO,FJ,FI,FR,GF,PF,TF,GA,GM,GE,DE,GH,GI,GR,GL,GD,GP,GU,GT,GG,GN,GW,GY,HT,HM,VA,HN,HU,IS,IN,ID,IR,IQ,IE,IM,IL,IT,JM,JP,JE,JO,KZ,KE,KI,KP,KR,KW,KG,LA,LV,LB,LS,LR,LY,LI,LT,LU,MK,MG,MW,MY,MV,ML,MT,MH,MQ,MR,MU,YT,MX,FM,MD,MC,MN,ME,MS,MA,MZ,MM,NA,NR,NP,NL,AN,NC,NZ,NI,NE,NG,NU,NF,MP,NO,OM,PK,PW,PS,PA,PG,PY,PE,PH,PN,PL,PT,PR,QA,RE,RO,RU,RW,BL,SH,KN,LC,MF,PM,VC,WS,SM,ST,SA,SN,RS,SC,SL,SG,SK,SI,,SB,SO,ZA,GS,SS,ES,LK,SD,SR,SJ,SZ,SE,CH,SY,TW,TJ,TZ,TH,TL,TG,TK,TO,TT,TN,TR,TM,TC,TV,UG,UA,AE,GB,US,UM,UY,UZ,VU,VE,VN,VI,WF,EH,YE,ZM,ZW</Value>
+            <Value disabled="false">AF,AX,AL,DZ,AS,AD,AO,AI,AQ,AG,AR,AM,AW,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BM,BT,BO,BA,BW,BV,BR,VG,IO,BN,BG,BF,BI,KH,CM,CA,CV,KY,CF,TD,CL,CN,HK,MO,CX,CC,CO,KM,CG,CD,CK,CR,CI,HR,CU,CY,CZ,DK,DJ,DM,DO,EC,EG,SV,GQ,ER,EE,ET,FK,FO,FJ,FI,FR,GF,PF,TF,GA,GM,GE,DE,GH,GI,GR,GL,GD,GP,GU,GT,GG,GN,GW,GY,HT,HM,VA,HN,HU,IS,IN,ID,IR,IQ,IE,IM,IL,IT,JM,JP,JE,JO,KZ,KE,KI,KP,KR,KW,KG,LA,LV,LB,LS,LR,LY,LI,LT,LU,MK,MG,MW,MY,MV,ML,MT,MH,MQ,MR,MU,YT,MX,FM,MD,MC,MN,ME,MS,MA,MZ,MM,NA,NR,NP,NL,AN,NC,NZ,NI,NE,NG,NU,NF,MP,NO,OM,PK,PW,PS,PA,PG,PY,PE,PH,PN,PL,PT,PR,QA,RE,RO,RU,RW,BL,SH,KN,LC,MF,PM,VC,WS,SM,ST,SA,SN,RS,SC,SL,SG,SK,SI,,SB,SO,ZA,GS,SS,ES,LK,SD,SR,SJ,SZ,SE,CH,SY,TW,TJ,TZ,TH,TL,TG,TK,TO,TT,TN,TR,TM,TC,TV,UG,UA,AE,GB,US,UM,UY,UZ,VU,VE,VN,VI,WF,EH,YE,ZM,ZW</Value>
+        </Property>
+    </Records>
+</MultiProperties>

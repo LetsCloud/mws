@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/public}">
+
+<head>
+<style>
+.signup-form {
+	overflow: hidden;
+	padding: 15px 25px 0 25px;
+}
+</style>
+</head>
+
+<body class="grey">
+	<div layout:fragment="content" class="row">
+		<div class="col m6 offset-m3 l4 offset-l4">
+			<div class="signup-form">
+				<form th:action="@{/registration}" th:object="${registration}"
+					method="post" class="card-panel z-depth-4">
+
+					<div class="row">
+						<div class="input-field col s12 center">
+							<h4 class="center">Sign Up</h4>
+							<p>Join to...
+							<p>
+						</div>
+					</div>
+
+					<div class="row margin">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">perm_identity</i> <input
+								id="nickname" name="nickname" th:field="*{nickname}"
+								type="text" class="validate" /> <label for="nickname"
+								class="center-align">Nick Name</label>
+						</div>
+					</div>
+
+					<div class="row margin">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">mail_outline</i> <input
+								id="email" name="email" th:field="*{email}" type="email"
+								class="validate" /> <label for="email" class="center-align">Email</label>
+						</div>
+					</div>
+
+					<div class="row margin">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">lock_open</i> <input
+								id="password" name="password" th:field="*{password}"
+								type="password" class="validate" /> <label for="password">Password</label>
+						</div>
+					</div>
+
+					<div class="row margin">
+						<div class="input-field col s12 m12">
+							<i class="material-icons prefix">lock_outline</i> <input
+								id="confPassw" name="confPassw" th:field="*{confPassw}"
+								type="password" /> <label for="confPassw">Re-type
+								password</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s12">
+							<input type="hidden" id="socialProvider" name="socialProvider"
+								value="NONE" />
+							<button class="btn waves-effect waves-light col s12"
+								type="submit">Sign Up</button>
+						</div>
+						<div class="input-field col s12"></div>
+						<p class="margin center medium-small sign-up">
+							Already have an account? <a href="page-login.html">Login</a>
+						</p>
+					</div>
+				</form>
+				<!--row-->
+			</div>
+			<!--card-->
+		</div>
+		<!--row-->
+	</div>
+	<!--content-->
+</body>
+</html>

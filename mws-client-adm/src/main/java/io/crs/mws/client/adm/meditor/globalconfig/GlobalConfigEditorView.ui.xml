@@ -1,0 +1,31 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.client.ui">
+
+	<ui:with field="i18n"
+		type="io.crs.mws.client.adm.i18n.AdminMessages" />
+
+	<ui:with field="i18nCore"
+		type="io.crs.mws.client.core.i18n.CoreMessages" />
+
+	<m:MaterialDialog ui:field="modal" type="DEFAULT"
+		inDuration="500" outDuration="500">
+		<m:MaterialDialogContent>
+			<m:MaterialTitle ui:field="title" />
+
+			<m:MaterialTextBox ui:field="code" type="TEXT"
+				label="{i18n.globalConfigEditorFieldCode}" enabled="false"/>
+
+			<m:MaterialTextBox ui:field="value" type="TEXT"
+				label="{i18n.globalConfigEditorFieldValue}" />
+		</m:MaterialDialogContent>
+
+		<m:MaterialDialogFooter>
+			<m:MaterialButton ui:field="saveButton"
+				text="{i18nCore.comSave}" iconType="SAVE" iconPosition="LEFT" />
+			<m:MaterialButton ui:field="cancelButton"
+				text="{i18nCore.comCancel}" type="FLAT" />
+		</m:MaterialDialogFooter>
+	</m:MaterialDialog>
+</ui:UiBinder>

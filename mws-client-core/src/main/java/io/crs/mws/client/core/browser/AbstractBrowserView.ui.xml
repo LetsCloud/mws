@@ -1,0 +1,25 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.client.ui"
+	xmlns:m.table="urn:import:gwt.material.design.client.ui.table"
+	xmlns:message="urn:import:io.crs.mws.client.core.message.dialog">
+
+	<g:HTMLPanel>
+		<g:SimplePanel ui:field="filterPanel" />
+
+		<m.table:MaterialDataTable ui:field="table"
+			shadow="1" height="calc(100vh - 445px)" useLoadOverlay="false"
+			useStickyHeader="false" useCategories="false" selectionType="SINGLE" />
+
+		<m:MaterialFAB>
+			<m:MaterialButton ui:field="addButton"
+				type="FLOATING" backgroundColor="BLUE" iconType="ADD" size="LARGE" />
+		</m:MaterialFAB>
+
+		<message:MessageDialogWidget ui:field="messageDialog"/>
+		
+		<g:SimplePanel ui:field="editorPanel" />
+
+	</g:HTMLPanel>
+</ui:UiBinder> 

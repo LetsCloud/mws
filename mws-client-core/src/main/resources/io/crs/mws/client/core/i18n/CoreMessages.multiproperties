@@ -1,0 +1,2574 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MultiProperties xmlns="hu.skzs.multiproperties">
+    <Version>1.2</Version>
+    <Name>AppMessages</Name>
+    <Description></Description>
+    <Handler>Java Properties Handler</Handler>
+    <Columns>
+        <Key>
+            <Width>292</Width>
+        </Key>
+        <Column>
+            <Name>default</Name>
+            <Description></Description>
+            <Width>212</Width>
+            <HandlerConfiguration>/crs-hsys-client-core/src/main/resources/io/crs/hsys/client/core/i18n/CoreMessages.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>en</Name>
+            <Description></Description>
+            <Width>190</Width>
+            <HandlerConfiguration>/crs-hsys-client-core/src/main/resources/io/crs/hsys/client/core/i18n/CoreMessages_en.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>hu</Name>
+            <Description></Description>
+            <Width>223</Width>
+            <HandlerConfiguration>/crs-hsys-client-core/src/main/resources/io/crs/hsys/client/core/i18n/CoreMessages_hu.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>uk</Name>
+            <Description></Description>
+            <Width>541</Width>
+            <HandlerConfiguration>/crs-hsys-client-core/src/main/resources/io/crs/hsys/client/core/i18n/CoreMessages_uk.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+    </Columns>
+    <Records>
+        <Comment>
+            <Value>COMMON</Value>
+        </Comment>
+        <Property>
+            <Name>comYes</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Yes</Value>
+            <Value disabled="false">Yes</Value>
+            <Value disabled="false">Igen</Value>
+            <Value disabled="false">да</Value>
+        </Property>
+        <Property>
+            <Name>comNo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">No</Value>
+            <Value disabled="false">No</Value>
+            <Value disabled="false">Nem</Value>
+            <Value disabled="false">Ні</Value>
+        </Property>
+        <Property>
+            <Name>comOk</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">OK</Value>
+            <Value disabled="false">OK</Value>
+            <Value disabled="false">Rendben</Value>
+            <Value disabled="false">Гаразд</Value>
+        </Property>
+        <Property>
+            <Name>comClose</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Close</Value>
+            <Value disabled="false">Close</Value>
+            <Value disabled="false">Bezár</Value>
+            <Value disabled="false">Закрити</Value>
+        </Property>
+        <Property>
+            <Name>comCreate</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Create</Value>
+            <Value disabled="false">Create</Value>
+            <Value disabled="false">Létrehoz</Value>
+            <Value disabled="false">Створити</Value>
+        </Property>
+        <Property>
+            <Name>comEdit</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Modify</Value>
+            <Value disabled="false">Modify</Value>
+            <Value disabled="false">Módosít</Value>
+            <Value disabled="false">Змінити</Value>
+        </Property>
+        <Property>
+            <Name>comSave</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Save</Value>
+            <Value disabled="false">Save</Value>
+            <Value disabled="false">Mentés</Value>
+            <Value disabled="false">Зберегти</Value>
+        </Property>
+        <Property>
+            <Name>comCancel</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Cancel</Value>
+            <Value disabled="false">Cancel</Value>
+            <Value disabled="false">Mégsem</Value>
+            <Value disabled="false">Скасувати</Value>
+        </Property>
+        <Property>
+            <Name>comDelete</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Delete</Value>
+            <Value disabled="false">Delete</Value>
+            <Value disabled="false">Töröl</Value>
+            <Value disabled="false">Видалити</Value>
+        </Property>
+        <Property>
+            <Name>comBrowse</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Browse</Value>
+            <Value disabled="false">Browse</Value>
+            <Value disabled="false">Böngészés</Value>
+            <Value disabled="false">Огляд</Value>
+        </Property>
+        <Property>
+            <Name>comActive</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Active</Value>
+            <Value disabled="false">Active</Value>
+            <Value disabled="false">Aktív</Value>
+            <Value disabled="false">Активний</Value>
+        </Property>
+        <Property>
+            <Name>comInactive</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Inactive</Value>
+            <Value disabled="false">Inactive</Value>
+            <Value disabled="false">Inaktív</Value>
+            <Value disabled="false">Неактивний</Value>
+        </Property>
+        <Property>
+            <Name>comRequiredField</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">The field is requried!</Value>
+            <Value disabled="false">The field is requried!</Value>
+            <Value disabled="false">A mező kitöltése kötelező!</Value>
+            <Value disabled="false">The field is requried!</Value>
+        </Property>
+        <Property>
+            <Name>com1SecondAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} second ago</Value>
+            <Value disabled="false">{0} second ago</Value>
+            <Value disabled="false">{0} másodperce</Value>
+            <Value disabled="false">{0} секунду</Value>
+        </Property>
+        <Property>
+            <Name>com2SecondsAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} seconds ago</Value>
+            <Value disabled="false">{0} seconds ago</Value>
+            <Value disabled="false">{0} másodperce</Value>
+            <Value disabled="false">{0} секунди</Value>
+        </Property>
+        <Property>
+            <Name>com5SecondsAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} seconds ago</Value>
+            <Value disabled="false">{0} seconds ago</Value>
+            <Value disabled="false">{0} másodperce</Value>
+            <Value disabled="false">{0} секунд</Value>
+        </Property>
+        <Property>
+            <Name>com1MinuteAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} minute ago</Value>
+            <Value disabled="false">{0} minute ago</Value>
+            <Value disabled="false">{0} perce</Value>
+            <Value disabled="false">{0} хвилину</Value>
+        </Property>
+        <Property>
+            <Name>com2MinutesAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} minutes ago</Value>
+            <Value disabled="false">{0} minutes ago</Value>
+            <Value disabled="false">{0} perce</Value>
+            <Value disabled="false">{0} хвилини</Value>
+        </Property>
+        <Property>
+            <Name>com5MinutesAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} minutes ago</Value>
+            <Value disabled="false">{0} minutes ago</Value>
+            <Value disabled="false">{0} perce</Value>
+            <Value disabled="false">{0} хвилин</Value>
+        </Property>
+        <Property>
+            <Name>com1HourAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} hour ago</Value>
+            <Value disabled="false">{0} hour ago</Value>
+            <Value disabled="false">{0} órája</Value>
+            <Value disabled="false">{0} годину</Value>
+        </Property>
+        <Property>
+            <Name>com2HoursAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} hours ago</Value>
+            <Value disabled="false">{0} hours ago</Value>
+            <Value disabled="false">{0} órája</Value>
+            <Value disabled="false">{0} години</Value>
+        </Property>
+        <Property>
+            <Name>com5HoursAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} hours ago</Value>
+            <Value disabled="false">{0} hours ago</Value>
+            <Value disabled="false">{0} órája</Value>
+            <Value disabled="false">{0} годин</Value>
+        </Property>
+        <Property>
+            <Name>com1DayAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} day ago</Value>
+            <Value disabled="false">{0} day ago</Value>
+            <Value disabled="false">{0} napja</Value>
+            <Value disabled="false">{0} день тому</Value>
+        </Property>
+        <Property>
+            <Name>com2DaysAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} days ago</Value>
+            <Value disabled="false">{0} days ago</Value>
+            <Value disabled="false">{0} napja</Value>
+            <Value disabled="false">{0} дні тому</Value>
+        </Property>
+        <Property>
+            <Name>com5DaysAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} days ago</Value>
+            <Value disabled="false">{0} days ago</Value>
+            <Value disabled="false">{0} napja</Value>
+            <Value disabled="false">{0} днів тому</Value>
+        </Property>
+        <Property>
+            <Name>com1WeekAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} week ago</Value>
+            <Value disabled="false">{0} week ago</Value>
+            <Value disabled="false">{0} hete</Value>
+            <Value disabled="false">{0} тиждень тому</Value>
+        </Property>
+        <Property>
+            <Name>com2WeeksAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} weeks</Value>
+            <Value disabled="false">{0} weeks</Value>
+            <Value disabled="false">{0} hete</Value>
+            <Value disabled="false">{0} тижні тому</Value>
+        </Property>
+        <Property>
+            <Name>com5WeeksAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} weeks ago</Value>
+            <Value disabled="false">{0} weeks ago</Value>
+            <Value disabled="false">{0} hete</Value>
+            <Value disabled="false">{0} тижнів тому</Value>
+        </Property>
+        <Property>
+            <Name>com1MonthAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} month ago</Value>
+            <Value disabled="false">{0} month ago</Value>
+            <Value disabled="false">{0} hónapja</Value>
+            <Value disabled="false">{0} місяць тому</Value>
+        </Property>
+        <Property>
+            <Name>com2MonthsAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} months ago</Value>
+            <Value disabled="false">{0} months ago</Value>
+            <Value disabled="false">{0} hónapja</Value>
+            <Value disabled="false">{0} місяці тому</Value>
+        </Property>
+        <Property>
+            <Name>com5MonthsAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} months ago</Value>
+            <Value disabled="false">{0} months ago</Value>
+            <Value disabled="false">{0} hónapja</Value>
+            <Value disabled="false">{0} місяців тому</Value>
+        </Property>
+        <Property>
+            <Name>com1YearAgo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">{0} year ago</Value>
+            <Value disabled="false">{0} year ago</Value>
+            <Value disabled="false">{0} éve</Value>
+            <Value disabled="false">{0} рік</Value>
+        </Property>
+        <Comment>
+            <Value>CRUD MESSAGES</Value>
+        </Comment>
+        <Property>
+            <Name>CRUD_CANNOT_BE_SAVED</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Data cannot be saved</Value>
+            <Value disabled="false">Data cannot be saved</Value>
+            <Value disabled="false">A mentés meghiúsult</Value>
+            <Value disabled="false">Дані неможливо зберегти</Value>
+        </Property>
+        <Property>
+            <Name>CRUD_CANNOT_BE_DELETED</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Data cannot be deleted</Value>
+            <Value disabled="false">Data cannot be deleted</Value>
+            <Value disabled="false">Az adat nem törölhető</Value>
+            <Value disabled="false">Дані не можна видалити</Value>
+        </Property>
+        <Property>
+            <Name>TASKGROUP_CODE_ALREADY_EXISTS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">The task group code ({0}) already exists.</Value>
+            <Value disabled="false">The task group code ({0}) already exists.</Value>
+            <Value disabled="false">Feladat csoport kód ({0}) már létezik.</Value>
+            <Value disabled="false">Код групи завдань ({0}) вже існує</Value>
+        </Property>
+        <Property>
+            <Name>TASKGROUP_ID_USED_BY_TASKTODO</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">The task group is used by Task Todo.</Value>
+            <Value disabled="false">The task group is used by Task Todo.</Value>
+            <Value disabled="false">A feladat csoport használatban van a feladat tennivalóknál.</Value>
+            <Value disabled="false">Цільова група використовується завданням Todo.</Value>
+        </Property>
+        <Property>
+            <Name>TASKGROUP_ID_USED_BY_TASKTYPE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">The task group is used by Task Type.</Value>
+            <Value disabled="false">The task group is used by Task Type.</Value>
+            <Value disabled="false">A feledat csoport használatban van a feladat típusoknál.</Value>
+            <Value disabled="false">Групу завдань використовує тип завдання.</Value>
+        </Property>
+        <Property>
+            <Name>OOO_ROOM_OVERLAP</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Overlaping OOO period withh room {0} ({1} - {2}).</Value>
+            <Value disabled="false">Overlaping OOO period withh room {0} ({1} - {2}).</Value>
+            <Value disabled="false">A megadott időszakban a {0} számú szobához már tartozik  OOO bejegyzés ({1} - {2}).</Value>
+            <Value disabled="false">Overlaping OOO period withh room {0} ({1} - {2}).</Value>
+        </Property>
+        <Comment>
+            <Value>LOGIN</Value>
+        </Comment>
+        <Property>
+            <Name>loginAccount</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Account Id</Value>
+            <Value disabled="false">Account Id</Value>
+            <Value disabled="false">Előfizetői azonosító</Value>
+            <Value disabled="false">Account Id</Value>
+        </Property>
+        <Property>
+            <Name>loginUsername</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Username</Value>
+            <Value disabled="false">Username</Value>
+            <Value disabled="false">Bejelenkezői név</Value>
+            <Value disabled="false">Username</Value>
+        </Property>
+        <Property>
+            <Name>loginPassword</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Password</Value>
+            <Value disabled="false">Password</Value>
+            <Value disabled="false">Jelszó</Value>
+            <Value disabled="false">Password</Value>
+        </Property>
+        <Property>
+            <Name>loginSubmit</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">LOG IN</Value>
+            <Value disabled="false">LOG IN</Value>
+            <Value disabled="false">BEJELENTKEZEK</Value>
+            <Value disabled="false">LOG IN</Value>
+        </Property>
+        <Property>
+            <Name>loginKeepMe</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Keep me logged in</Value>
+            <Value disabled="false">Keep me logged in</Value>
+            <Value disabled="false">Jegyezz meg</Value>
+            <Value disabled="false">Keep me logged in</Value>
+        </Property>
+        <Property>
+            <Name>loginCreate</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Create an Account</Value>
+            <Value disabled="false">Create an Account</Value>
+            <Value disabled="false">Előfizetői fiók létrehozása</Value>
+            <Value disabled="false">Create an Account</Value>
+        </Property>
+        <Comment>
+            <Value>REGISTRATION</Value>
+        </Comment>
+        <Property>
+            <Name>regCaption</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Registeration</Value>
+            <Value disabled="false">Registeration</Value>
+            <Value disabled="false">Regisztráció</Value>
+            <Value disabled="false">Registeration</Value>
+        </Property>
+        <Property>
+            <Name>regAccountName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Account name</Value>
+            <Value disabled="false">Account name</Value>
+            <Value disabled="false">Előfizetői név</Value>
+            <Value disabled="false">Account name</Value>
+        </Property>
+        <Property>
+            <Name>regStreet</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Street and number</Value>
+            <Value disabled="false">Street and number</Value>
+            <Value disabled="false">Utca, házszám</Value>
+            <Value disabled="false">Street and number</Value>
+        </Property>
+        <Property>
+            <Name>regCity</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">City</Value>
+            <Value disabled="false">City</Value>
+            <Value disabled="false">Város</Value>
+            <Value disabled="false">City</Value>
+        </Property>
+        <Property>
+            <Name>regPostcode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Postcode</Value>
+            <Value disabled="false">Postcode</Value>
+            <Value disabled="false">Irányítószám</Value>
+            <Value disabled="false">Postcode</Value>
+        </Property>
+        <Property>
+            <Name>regCountry</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Country</Value>
+            <Value disabled="false">Country</Value>
+            <Value disabled="false">Ország</Value>
+            <Value disabled="false">Country</Value>
+        </Property>
+        <Property>
+            <Name>regUsername</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Username</Value>
+            <Value disabled="false">Username</Value>
+            <Value disabled="false">Felhasználói név</Value>
+            <Value disabled="false">Username</Value>
+        </Property>
+        <Property>
+            <Name>regEmail</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Your email address</Value>
+            <Value disabled="false">Your email address</Value>
+            <Value disabled="false">Az Ön email címe</Value>
+            <Value disabled="false">Your email address</Value>
+        </Property>
+        <Property>
+            <Name>regEmail2</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Repeat email</Value>
+            <Value disabled="false">Repeat email</Value>
+            <Value disabled="false">Email megismétlése</Value>
+            <Value disabled="false">Repeat email</Value>
+        </Property>
+        <Property>
+            <Name>regPassword</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Password</Value>
+            <Value disabled="false">Password</Value>
+            <Value disabled="false">Jelszó</Value>
+            <Value disabled="false">Password</Value>
+        </Property>
+        <Property>
+            <Name>regPassword2</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Repeat password</Value>
+            <Value disabled="false">Repeat password</Value>
+            <Value disabled="false">Jelszó megismétlése</Value>
+            <Value disabled="false">Repeat password</Value>
+        </Property>
+        <Property>
+            <Name>regSubmit</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Submit</Value>
+            <Value disabled="false">Submit</Value>
+            <Value disabled="false">Regisztrálok</Value>
+            <Value disabled="false">Submit</Value>
+        </Property>
+        <Comment>
+            <Value>SUCCESS</Value>
+        </Comment>
+        <Property>
+            <Name>sucCaption</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Registration Success - Congratulations!</Value>
+            <Value disabled="false">Registration Success - Congratulations!</Value>
+            <Value disabled="false">Sikeres regisztráció - Gratulálunk!</Value>
+            <Value disabled="false">Registration Success - Congratulations!</Value>
+        </Property>
+        <Property>
+            <Name>sucLine1</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">You have successfully complited your registration.</Value>
+            <Value disabled="false">You have successfully complited your registration.</Value>
+            <Value disabled="false">Ön sikeresen regisztrált.</Value>
+            <Value disabled="false">You have successfully complited your registration.</Value>
+        </Property>
+        <Property>
+            <Name>sucLine2</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Your account id: {0}</Value>
+            <Value disabled="false">Your account id: {0}</Value>
+            <Value disabled="false">Az Ön előfizetői azonosítója: {0}</Value>
+            <Value disabled="false">Your account id: {0}</Value>
+        </Property>
+        <Property>
+            <Name>sucLine3</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Please check your email as we have sent you all your registration details and activate your account!</Value>
+            <Value disabled="false">Please check your email as we have sent you all your registration details and activate your account!</Value>
+            <Value disabled="false">Kérem tekintse meg a sikeres regisztrációrol küldött emailt és aktiválja előfizetését?</Value>
+            <Value disabled="false">Please check your email as we have sent you all your registration details and activate your account!</Value>
+        </Property>
+        <Comment>
+            <Value>ACTIVATE</Value>
+        </Comment>
+        <Property>
+            <Name>actCaption</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Account activation</Value>
+            <Value disabled="false">Account activation</Value>
+            <Value disabled="false">Elfizetői aktiválás</Value>
+            <Value disabled="false">Account activation</Value>
+        </Property>
+        <Property>
+            <Name>actLine1</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Your account is now active!</Value>
+            <Value disabled="false">Your account is now active!</Value>
+            <Value disabled="false">Az Ön előfizetése aktív!</Value>
+            <Value disabled="false">Your account is now active!</Value>
+        </Property>
+        <Property>
+            <Name>actLine2</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Clicking on the link below you can login and start your work:</Value>
+            <Value disabled="false">Clicking on the link below you can login and start your work:</Value>
+            <Value disabled="false">Az alábbi linkre kattintva bejelentkzehet és megkezdheti az app használatát:</Value>
+            <Value disabled="false">Clicking on the link below you can login and start your work:</Value>
+        </Property>
+        <Comment>
+            <Value>SIDE NAV</Value>
+        </Comment>
+        <Property>
+            <Name>mainMenuGroupConfig</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Configuration</Value>
+            <Value disabled="false">Configuration</Value>
+            <Value disabled="false">Beállítások</Value>
+            <Value disabled="false">Configuration</Value>
+        </Property>
+        <Comment>
+            <Value>SIDE PROFILE</Value>
+        </Comment>
+        <Property>
+            <Name>accountMenuItemSetup</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Account setup</Value>
+            <Value disabled="false">Account setup</Value>
+            <Value disabled="false">Előfizetői beállítások</Value>
+            <Value disabled="false">Account setup</Value>
+        </Property>
+        <Property>
+            <Name>accountMenuItemSystem</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">System setup</Value>
+            <Value disabled="false">System setup</Value>
+            <Value disabled="false">Rendszer beállítások</Value>
+            <Value disabled="false">System setup</Value>
+        </Property>
+        <Property>
+            <Name>userMenuItemProfile</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">User profile</Value>
+            <Value disabled="false">User profile</Value>
+            <Value disabled="false">Felhasználói profil</Value>
+            <Value disabled="false">User profile</Value>
+        </Property>
+        <Property>
+            <Name>userMenuItemSwitch</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Switch user</Value>
+            <Value disabled="false">Switch user</Value>
+            <Value disabled="false">Felhasználó váltás</Value>
+            <Value disabled="false">Switch user</Value>
+        </Property>
+        <Property>
+            <Name>userMenuItemLogout</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Log Out</Value>
+            <Value disabled="false">Log Out</Value>
+            <Value disabled="false">Kijelentkezés</Value>
+            <Value disabled="false">Log Out</Value>
+        </Property>
+        <Comment>
+            <Value>BREADCRUMBS</Value>
+        </Comment>
+        <Property>
+            <Name>breadcrumbsHome</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Home</Value>
+            <Value disabled="false">Home</Value>
+            <Value disabled="false">Kezdő oldal</Value>
+            <Value disabled="false">Home</Value>
+        </Property>
+        <Property>
+            <Name>breadcrumbsUsersTable</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Users</Value>
+            <Value disabled="false">Users</Value>
+            <Value disabled="false">Felhasználók</Value>
+            <Value disabled="false">Users</Value>
+        </Property>
+        <Property>
+            <Name>breadcrumbsUserEditor</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Editor</Value>
+            <Value disabled="false">Editor</Value>
+            <Value disabled="false">Szerkesztő</Value>
+            <Value disabled="false">Editor</Value>
+        </Property>
+        <Comment>
+            <Value>DASHBOARD</Value>
+        </Comment>
+        <Property>
+            <Name>pageDashboardTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Dashboard</Value>
+            <Value disabled="false">Dashboard</Value>
+            <Value disabled="false">Infopult</Value>
+            <Value disabled="false">Dashboard</Value>
+        </Property>
+        <Comment>
+            <Value>SYSTEM CONFIG</Value>
+        </Comment>
+        <Property>
+            <Name>systemConfigTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <DefaultValue></DefaultValue>
+            <Value disabled="false">System configuration</Value>
+            <Value disabled="false">System configuration</Value>
+            <Value disabled="false">Rendszer beállítások</Value>
+            <Value disabled="false">System configuration</Value>
+        </Property>
+        <Property>
+            <Name>systemConfigDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Basic settings that determine the operation of the system</Value>
+            <Value disabled="false">Basic settings that determine the operation of the system</Value>
+            <Value disabled="false">A rendszer működését meghatározó alapvető beállítások</Value>
+            <Value disabled="false">Basic settings that determine the operation of the system</Value>
+        </Property>
+        <Comment>
+            <Value>USER GROUP BROWSER</Value>
+        </Comment>
+        <Property>
+            <Name>userGroupBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">User Groups</Value>
+            <Value disabled="false">User Groups</Value>
+            <Value disabled="false">Felhasználó csoportok</Value>
+            <Value disabled="false">User Groups</Value>
+        </Property>
+        <Property>
+            <Name>userGroupBrowserName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Megnevezés</Value>
+            <Value disabled="false">Description</Value>
+        </Property>
+        <Comment>
+            <Value>USER GROUP EDITOR</Value>
+        </Comment>
+        <Property>
+            <Name>userGroupEditorCreateTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Create User Group</Value>
+            <Value disabled="false">Create User Group</Value>
+            <Value disabled="false">Felhasználó csoport létrehozása</Value>
+            <Value disabled="false">Create User Group</Value>
+        </Property>
+        <Property>
+            <Name>userGroupEditorModifyTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Edit User Group</Value>
+            <Value disabled="false">Edit User Group</Value>
+            <Value disabled="false">Felhasználó csoport módosítás</Value>
+            <Value disabled="false">Edit User Group</Value>
+        </Property>
+        <Property>
+            <Name>userGroupEditorName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Megnevezés</Value>
+            <Value disabled="false">Description</Value>
+        </Property>
+        <Comment>
+            <Value>USER BROWSER</Value>
+        </Comment>
+        <Property>
+            <Name>userBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Users</Value>
+            <Value disabled="false">Users</Value>
+            <Value disabled="false">Felhasználók</Value>
+            <Value disabled="false">Users</Value>
+        </Property>
+        <Property>
+            <Name>userEditorCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Code</Value>
+        </Property>
+        <Comment>
+            <Value>APPUSER EDITOR</Value>
+        </Comment>
+        <Property>
+            <Name>userEditorCreateTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Create User Profile</Value>
+            <Value disabled="false">Create User Profile</Value>
+            <Value disabled="false">Felhasználói profil létrehozás</Value>
+            <Value disabled="false">Create User Profile</Value>
+        </Property>
+        <Property>
+            <Name>userEditorModifyTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Edit User Profile</Value>
+            <Value disabled="false">Edit User Profile</Value>
+            <Value disabled="false">Felhasználói profil szerkesztése</Value>
+            <Value disabled="false">Edit User Profile</Value>
+        </Property>
+        <Property>
+            <Name>userEditorName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Name</Value>
+            <Value disabled="false">Name</Value>
+            <Value disabled="false">Név</Value>
+            <Value disabled="false">Name</Value>
+        </Property>
+        <Property>
+            <Name>userEditorTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Title</Value>
+            <Value disabled="false">Title</Value>
+            <Value disabled="false">Beosztás</Value>
+            <Value disabled="false">Title</Value>
+        </Property>
+        <Property>
+            <Name>userEditorEmail</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Email</Value>
+            <Value disabled="false">Email</Value>
+            <Value disabled="false">Email</Value>
+            <Value disabled="false">Email</Value>
+        </Property>
+        <Property>
+            <Name>userEditorCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="true"></Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>userEditorUsername</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Username</Value>
+            <Value disabled="false">Username</Value>
+            <Value disabled="false">Felhasználónév</Value>
+            <Value disabled="false">Username</Value>
+        </Property>
+        <Property>
+            <Name>userEditorEnabled</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Enabled user</Value>
+            <Value disabled="false">Enabled user</Value>
+            <Value disabled="false">Engedélyezett felhasználó</Value>
+            <Value disabled="false">Enabled user</Value>
+        </Property>
+        <Property>
+            <Name>userEditorIsAdmin</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Administrator</Value>
+            <Value disabled="false">Administrator</Value>
+            <Value disabled="false">Rendszergazda</Value>
+            <Value disabled="false">Administrator</Value>
+        </Property>
+        <Property>
+            <Name>userEditorAvailableHotels</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Permitted hotels</Value>
+            <Value disabled="false">Permitted hotels</Value>
+            <Value disabled="false">Engedélyezett hotelek</Value>
+            <Value disabled="false">Permitted hotels</Value>
+        </Property>
+        <Property>
+            <Name>userEditorChooseHotel</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Choose a hotel</Value>
+            <Value disabled="false">Choose a hotel</Value>
+            <Value disabled="false">Válassz hotelt</Value>
+            <Value disabled="false">Choose a hotel</Value>
+        </Property>
+        <Property>
+            <Name>userEditorDefaultHotel</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Default hotel</Value>
+            <Value disabled="false">Default hotel</Value>
+            <Value disabled="false">Alabértelmezett hotel</Value>
+            <Value disabled="false">Default hotel</Value>
+        </Property>
+        <Property>
+            <Name>userEditorChatGroups</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Chat groups</Value>
+            <Value disabled="false">Chat groups</Value>
+            <Value disabled="false">Chat csoportok</Value>
+            <Value disabled="false">Chat groups</Value>
+        </Property>
+        <Property>
+            <Name>userEditorChooseGroup</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Choose a group</Value>
+            <Value disabled="false">Choose a group</Value>
+            <Value disabled="false">Válassz csoportot</Value>
+            <Value disabled="false">Choose a group</Value>
+        </Property>
+        <Comment>
+            <Value>TRANSLATE EDITOR</Value>
+        </Comment>
+        <Property>
+            <Name>translateEditorLanguage</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Language</Value>
+            <Value disabled="false">Language</Value>
+            <Value disabled="false">Nyelv</Value>
+            <Value disabled="false">Мова</Value>
+        </Property>
+        <Property>
+            <Name>translateEditorLanguagePlaceholder</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Choose a language</Value>
+            <Value disabled="false">Choose a language</Value>
+            <Value disabled="false">Válassz nyelvet</Value>
+            <Value disabled="false">Виберіть мову</Value>
+        </Property>
+        <Property>
+            <Name>translateEditorText</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Text</Value>
+            <Value disabled="false">Text</Value>
+            <Value disabled="false">Szöveg</Value>
+            <Value disabled="false">Tекст</Value>
+        </Property>
+        <Comment>
+            <Value>TASK GROUP BROWSER</Value>
+        </Comment>
+        <Property>
+            <Name>taskGroupBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Task Groups</Value>
+            <Value disabled="false">Task Groups</Value>
+            <Value disabled="false">Feladat csoportok</Value>
+            <Value disabled="false">Task Groups</Value>
+        </Property>
+        <Property>
+            <Name>taskGroupBrowserKindColumn</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Kind</Value>
+            <Value disabled="false">Kind</Value>
+            <Value disabled="false">Jelleg</Value>
+            <Value disabled="false">Kind</Value>
+        </Property>
+        <Property>
+            <Name>taskGroupBrowserCodeColumn</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Code</Value>
+        </Property>
+        <Property>
+            <Name>taskGroupBrowserDescriptionColumn</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Megnevezés</Value>
+            <Value disabled="false">Description</Value>
+        </Property>
+        <Comment>
+            <Value>TASK GROUP FILTER</Value>
+        </Comment>
+        <Property>
+            <Name>taskGroupFilterTaskKindLabel</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Task Kind</Value>
+            <Value disabled="false">Task Kind</Value>
+            <Value disabled="false">Feladat jelleg</Value>
+            <Value disabled="false">Task Kind</Value>
+        </Property>
+        <Property>
+            <Name>taskGroupFilterTaskKindPlaceholder</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Choose a Task Kind</Value>
+            <Value disabled="false">Choose a Task Kind</Value>
+            <Value disabled="false">Válassz feladat jelleget</Value>
+            <Value disabled="false">Choose a Task Kind</Value>
+        </Property>
+        <Comment>
+            <Value>TASK GROUP EDITOR</Value>
+        </Comment>
+        <Property>
+            <Name>taskGroupEditorCreateTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Create Task Group</Value>
+            <Value disabled="false">Create Task Group</Value>
+            <Value disabled="false">Feladat csoport létrehozása</Value>
+            <Value disabled="false">Create Task Group</Value>
+        </Property>
+        <Property>
+            <Name>taskGroupEditorModifyTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Edit Task Group</Value>
+            <Value disabled="false">Edit Task Group</Value>
+            <Value disabled="false">Feladat csoport módosítása</Value>
+            <Value disabled="false">Edit Task Group</Value>
+        </Property>
+        <Property>
+            <Name>taskGroupEditorKind</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Task Kind</Value>
+            <Value disabled="false">Task Kind</Value>
+            <Value disabled="false">Feladat fajta</Value>
+            <Value disabled="false">Task Kind</Value>
+        </Property>
+        <Property>
+            <Name>taskGroupEditorCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Code</Value>
+        </Property>
+        <Property>
+            <Name>taskGroupEditorDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Megnevezés</Value>
+            <Value disabled="false">Description</Value>
+        </Property>
+        <Comment>
+            <Value>TASK TODO BROWSER</Value>
+        </Comment>
+        <Property>
+            <Name>taskTodoBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Task Todos</Value>
+            <Value disabled="false">Task Todos</Value>
+            <Value disabled="false">Tennivalók</Value>
+            <Value disabled="false">Task Todos</Value>
+        </Property>
+        <Property>
+            <Name>taskTodoBrowserKindColumn</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Kind</Value>
+            <Value disabled="false">Kind</Value>
+            <Value disabled="false">Jelleg</Value>
+            <Value disabled="false">Kind</Value>
+        </Property>
+        <Property>
+            <Name>taskTodoBrowserDescriptionColumn</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Megnevezés</Value>
+            <Value disabled="false">Description</Value>
+        </Property>
+        <Property>
+            <Name>taskTodoBrowserTimeReqColumn</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Time(s)</Value>
+            <Value disabled="false">Time(s)</Value>
+            <Value disabled="false">Időigény(p)</Value>
+            <Value disabled="false">Time(s)</Value>
+        </Property>
+        <Comment>
+            <Value>TASK TODO FILTER</Value>
+        </Comment>
+        <Property>
+            <Name>taskTodoFilterTaskGroupLabel</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Task Group</Value>
+            <Value disabled="false">Task Group</Value>
+            <Value disabled="false">Feladat csoport</Value>
+            <Value disabled="false">Task Group</Value>
+        </Property>
+        <Property>
+            <Name>taskTodoFilterTaskGroupPlaceholder</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Choose a Task Group</Value>
+            <Value disabled="false">Choose a Task Group</Value>
+            <Value disabled="false">Válassz feladat csoportot</Value>
+            <Value disabled="false">Choose a Task Group</Value>
+        </Property>
+        <Comment>
+            <Value>TASK TODO EDITOR</Value>
+        </Comment>
+        <Property>
+            <Name>taskTodoEditorCreateTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Create Task Todo</Value>
+            <Value disabled="false">Create Task Todo</Value>
+            <Value disabled="false">Feladat tennivaló létrehozása</Value>
+            <Value disabled="false">Create Task Todo</Value>
+        </Property>
+        <Property>
+            <Name>taskTodoEditorModifyTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Modify Task Todo</Value>
+            <Value disabled="false">Modify Task Todo</Value>
+            <Value disabled="false">Feladat tennivaló módosítása</Value>
+            <Value disabled="false">Modify Task Todo</Value>
+        </Property>
+        <Property>
+            <Name>taskTodoEditorKind</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Task Kind</Value>
+            <Value disabled="false">Task Kind</Value>
+            <Value disabled="false">Feleadat jelleg</Value>
+            <Value disabled="false">Task Kind</Value>
+        </Property>
+        <Property>
+            <Name>taskTodoEditorKindPlaceholder</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Chhose a Task Kind</Value>
+            <Value disabled="false">Chhose a Task Kind</Value>
+            <Value disabled="false">Válassz feladat jelleget</Value>
+            <Value disabled="false">Chhose a Task Kind</Value>
+        </Property>
+        <Property>
+            <Name>taskTodoEditorType</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Task Type</Value>
+            <Value disabled="false">Task Type</Value>
+            <Value disabled="false">Feladat csoport</Value>
+            <Value disabled="false">Task Type</Value>
+        </Property>
+        <Property>
+            <Name>taskTodoEditorTypePlaceholder</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Choose a Task Type</Value>
+            <Value disabled="false">Choose a Task Type</Value>
+            <Value disabled="false">Válassz feladat típust</Value>
+            <Value disabled="false">Choose a Task Type</Value>
+        </Property>
+        <Property>
+            <Name>taskTodoEditorDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Megnevezés</Value>
+            <Value disabled="false">Description</Value>
+        </Property>
+        <Property>
+            <Name>taskTodoEditorTimeRequired</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Time Required (min)</Value>
+            <Value disabled="false">Time Required (min)</Value>
+            <Value disabled="false">Időigény (perc)</Value>
+            <Value disabled="false">Time Required (min)</Value>
+        </Property>
+        <Comment>
+            <Value>TASK TYPE BROWSER</Value>
+        </Comment>
+        <Property>
+            <Name>taskTypeBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Task Types</Value>
+            <Value disabled="false">Task Types</Value>
+            <Value disabled="false">Feladat típusok</Value>
+            <Value disabled="false">Task Types</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeBrowserKindColumn</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Kind</Value>
+            <Value disabled="false">Kind</Value>
+            <Value disabled="false">Jelleg</Value>
+            <Value disabled="false">Kind</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeBrowserGroupColumn</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Group</Value>
+            <Value disabled="false">Group</Value>
+            <Value disabled="false">Csoport</Value>
+            <Value disabled="false">Group</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeBrowserCodeColumn</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Code</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeBrowserDescriptionColumn</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Megnevezés</Value>
+            <Value disabled="false">Description</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeBrowserTimeReqColumn</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Time(min)</Value>
+            <Value disabled="false">Time(min)</Value>
+            <Value disabled="false">Időigény(p)</Value>
+            <Value disabled="false">Time(min)</Value>
+        </Property>
+        <Comment>
+            <Value>TASK TYPE EDITOR</Value>
+        </Comment>
+        <Property>
+            <Name>taskTypeEditorCreateTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Create Task Type</Value>
+            <Value disabled="false">Create Task Type</Value>
+            <Value disabled="false">Feladat típus létrehozása</Value>
+            <Value disabled="false">Create Task Type</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeEditorModifyTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Modify Task Type</Value>
+            <Value disabled="false">Modify Task Type</Value>
+            <Value disabled="false">Feladat típus módosítása</Value>
+            <Value disabled="false">Modify Task Type</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeEditorGroup</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Task Group</Value>
+            <Value disabled="false">Task Group</Value>
+            <Value disabled="false">Feladat csoport</Value>
+            <Value disabled="false">Task Group</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeEditorGroupPlaceholder</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Choose a Task Group</Value>
+            <Value disabled="false">Choose a Task Group</Value>
+            <Value disabled="false">Válassz feladat csoportot</Value>
+            <Value disabled="false">Choose a Task Group</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeEditorCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Code</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeEditorDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Megnevezés</Value>
+            <Value disabled="false">Description</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeEditorTranslations</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Language versions</Value>
+            <Value disabled="false">Language versions</Value>
+            <Value disabled="false">Nyelvi változatok</Value>
+            <Value disabled="false">Мовні версії</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeEditorTimeRequired</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Time (m)</Value>
+            <Value disabled="false">Time (m)</Value>
+            <Value disabled="false">Időigény (perc)</Value>
+            <Value disabled="false">Time (m)</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeEditorTodos</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Checklist</Value>
+            <Value disabled="false">Checklist</Value>
+            <Value disabled="false">Ellenőrző lista</Value>
+            <Value disabled="false">Checklist</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeEditorAddTodo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Add Todo</Value>
+            <Value disabled="false">Add Todo</Value>
+            <Value disabled="false">Hozzáad</Value>
+            <Value disabled="false">Add Todo</Value>
+        </Property>
+        <Property>
+            <Name>taskTypeEditorDeleteTodo</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Delete Todo</Value>
+            <Value disabled="false">Delete Todo</Value>
+            <Value disabled="false">Töröl</Value>
+            <Value disabled="false">Delete Todo</Value>
+        </Property>
+        <Comment>
+            <Value>PROFILE CONFIG</Value>
+        </Comment>
+        <Property>
+            <Name>profileConfigTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Profile configurations</Value>
+            <Value disabled="false">Profile configurations</Value>
+            <Value disabled="false">Profil beállítások</Value>
+            <Value disabled="false">Profile configurations</Value>
+        </Property>
+        <Property>
+            <Name>profileConfigDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Manage your organizations profile or contact information</Value>
+            <Value disabled="false">Manage your organizations profile or contact information</Value>
+            <Value disabled="false">Hatékony ügyfélkezelés</Value>
+            <Value disabled="false">Manage your organizations profile or contact information</Value>
+        </Property>
+        <Comment>
+            <Value>RELATIONSHIP BROWSER</Value>
+        </Comment>
+        <Property>
+            <Name>relationshipBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Relationships</Value>
+            <Value disabled="false">Relationships</Value>
+            <Value disabled="false">Kapcsolat típusok</Value>
+            <Value disabled="false">Relationships</Value>
+        </Property>
+        <Property>
+            <Name>relationshipBrowserColForward</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Forward</Value>
+            <Value disabled="false">Forward</Value>
+            <Value disabled="false">Kapcsolat típus</Value>
+            <Value disabled="false">Forward</Value>
+        </Property>
+        <Property>
+            <Name>relationshipBrowserColReverse</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Reverse</Value>
+            <Value disabled="false">Reverse</Value>
+            <Value disabled="false">Fordított</Value>
+            <Value disabled="false">Reverse</Value>
+        </Property>
+        <Property>
+            <Name>relationshipBrowserColActive</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Active</Value>
+            <Value disabled="false">Active</Value>
+            <Value disabled="false">Aktív</Value>
+            <Value disabled="false">Active</Value>
+        </Property>
+        <Comment>
+            <Value>RELATIONSHIP EDITOR</Value>
+        </Comment>
+        <Property>
+            <Name>relationshipCreateTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Create Relationshop</Value>
+            <Value disabled="false">Create Relationshop</Value>
+            <Value disabled="false">Kapcsolat típus létrehozása</Value>
+            <Value disabled="false">Create Relationshop</Value>
+        </Property>
+        <Property>
+            <Name>relationshipEditTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Edit Relationship</Value>
+            <Value disabled="false">Edit Relationship</Value>
+            <Value disabled="false">Kapcsolat típus szerkesztése</Value>
+            <Value disabled="false">Edit Relationship</Value>
+        </Property>
+        <Property>
+            <Name>relationshipFldForward</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Forward</Value>
+            <Value disabled="false">Forward</Value>
+            <Value disabled="false">Kapcsolat típus</Value>
+            <Value disabled="false">Forward</Value>
+        </Property>
+        <Property>
+            <Name>relationshipFldReverse</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Reverse</Value>
+            <Value disabled="false">Reverse</Value>
+            <Value disabled="false">Fordítva</Value>
+            <Value disabled="false">Reverse</Value>
+        </Property>
+        <Comment>
+            <Value>PROFILE GROUP BROWSER</Value>
+        </Comment>
+        <Property>
+            <Name>profileGroupBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Profile Groups</Value>
+            <Value disabled="false">Profile Groups</Value>
+            <Value disabled="false">Profil csoportok</Value>
+            <Value disabled="false">Profile Groups</Value>
+        </Property>
+        <Property>
+            <Name>profileGroupBrowserCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Code</Value>
+        </Property>
+        <Property>
+            <Name>profileGroupBrowserDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Megnevezés</Value>
+            <Value disabled="false">Description</Value>
+        </Property>
+        <Property>
+            <Name>profileGroupBrowserActive</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Active</Value>
+            <Value disabled="false">Active</Value>
+            <Value disabled="false">Aktív</Value>
+            <Value disabled="false">Active</Value>
+        </Property>
+        <Comment>
+            <Value>DOCUMENT CONFIG</Value>
+        </Comment>
+        <Property>
+            <Name>documentConfigTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Document Config</Value>
+            <Value disabled="false">Document Config</Value>
+            <Value disabled="false">Dokumentum beállítások</Value>
+            <Value disabled="false">Параметри документа</Value>
+        </Property>
+        <Property>
+            <Name>documentConfigDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Manage document properties</Value>
+            <Value disabled="false">Manage document properties</Value>
+            <Value disabled="false">Dokumentum tulajdonságok kezelése</Value>
+            <Value disabled="false">Керувати властивостями документа</Value>
+        </Property>
+        <Comment>
+            <Value>QUOTATION STATUS BROWSER</Value>
+        </Comment>
+        <Property>
+            <Name>quotationStatusBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Quotation Statuses</Value>
+            <Value disabled="false">Quotation Statuses</Value>
+            <Value disabled="false">Árajánlat státuszok</Value>
+            <Value disabled="false">Статуси пропозиції</Value>
+        </Property>
+        <Property>
+            <Name>quotationStatusBrowserCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Код</Value>
+        </Property>
+        <Property>
+            <Name>quotationStatusBrowserDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Megnevezés</Value>
+            <Value disabled="false">Опис</Value>
+        </Property>
+        <Property>
+            <Name>quotationStatusBrowserActive</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Active</Value>
+            <Value disabled="false">Active</Value>
+            <Value disabled="false">Aktív</Value>
+            <Value disabled="false">Активний</Value>
+        </Property>
+        <Comment>
+            <Value>QUOTATION STATUS EDITOR</Value>
+        </Comment>
+        <Property>
+            <Name>quotationStatusCreateTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Create Quotation Status</Value>
+            <Value disabled="false">Create Quotation Status</Value>
+            <Value disabled="false">Árajánlat státusz létrehozás</Value>
+            <Value disabled="false">Створити статус пропозиції</Value>
+        </Property>
+        <Property>
+            <Name>quotationStatusEditTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Modify Quotation Status</Value>
+            <Value disabled="false">Modify Quotation Status</Value>
+            <Value disabled="false">Árajánlat státusz módosítás</Value>
+            <Value disabled="false">Змінити статус пропозиції</Value>
+        </Property>
+        <Property>
+            <Name>quotationStatusCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Код</Value>
+        </Property>
+        <Property>
+            <Name>quotationStatusDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Megnevezés</Value>
+            <Value disabled="false">Опис</Value>
+        </Property>
+        <Comment>
+            <Value>PROFILE FILTER</Value>
+        </Comment>
+        <Property>
+            <Name>profileFilterCodeLabel</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code filter</Value>
+            <Value disabled="false">Code filter</Value>
+            <Value disabled="false">Kód szűrő</Value>
+            <Value disabled="false">Code filter</Value>
+        </Property>
+        <Property>
+            <Name>profileFilterCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code~</Value>
+            <Value disabled="false">Code~</Value>
+            <Value disabled="false">Kód~</Value>
+            <Value disabled="false">Code~</Value>
+        </Property>
+        <Property>
+            <Name>profileFilterNameLabel</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Name filter</Value>
+            <Value disabled="false">Name filter</Value>
+            <Value disabled="false">Név szűrő</Value>
+            <Value disabled="false">Name filter</Value>
+        </Property>
+        <Property>
+            <Name>profileFilterName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Name~</Value>
+            <Value disabled="false">Name~</Value>
+            <Value disabled="false">Név~</Value>
+            <Value disabled="false">Name~</Value>
+        </Property>
+        <Property>
+            <Name>profileFilterProfileGroupLabel</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">ProfileGroup filter</Value>
+            <Value disabled="false">ProfileGroup filter</Value>
+            <Value disabled="false">Profil csoport szűrő</Value>
+            <Value disabled="false">ProfileGroup filter</Value>
+        </Property>
+        <Comment>
+            <Value>ORGANIZATION BROWSER </Value>
+        </Comment>
+        <Property>
+            <Name>organizationBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Organizations</Value>
+            <Value disabled="false">Organizations</Value>
+            <Value disabled="false">Szervezetek</Value>
+            <Value disabled="false">Organizations</Value>
+        </Property>
+        <Property>
+            <Name>organizationBrowserColCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Code</Value>
+        </Property>
+        <Property>
+            <Name>organizationBrowserColName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Name</Value>
+            <Value disabled="false">Name</Value>
+            <Value disabled="false">Név</Value>
+            <Value disabled="false">Name</Value>
+        </Property>
+        <Comment>
+            <Value>ORGANIZATION CREATOR</Value>
+        </Comment>
+        <Property>
+            <Name>organizationCreatorTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Create Organization</Value>
+            <Value disabled="false">Create Organization</Value>
+            <Value disabled="false">Szervezet létrehozása</Value>
+            <Value disabled="false">Create Organization</Value>
+        </Property>
+        <Property>
+            <Name>organizationCreatorDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">General Data</Value>
+            <Value disabled="false">General Data</Value>
+            <Value disabled="false">Általános adatok</Value>
+            <Value disabled="false">General Data</Value>
+        </Property>
+        <Comment>
+            <Value>ORGANIZATION CONFIG</Value>
+        </Comment>
+        <Property>
+            <Name>organizationConfigTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Organization data</Value>
+            <Value disabled="false">Organization data</Value>
+            <Value disabled="false">Szervezet adatai</Value>
+            <Value disabled="false">Organization data</Value>
+        </Property>
+        <Property>
+            <Name>organizationConfigDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Organization data ...</Value>
+            <Value disabled="false">Organization data ...</Value>
+            <Value disabled="false">Szervezet adatai ...</Value>
+            <Value disabled="false">Organization data ...</Value>
+        </Property>
+        <Comment>
+            <Value>ORGANIZATION EDITOR</Value>
+        </Comment>
+        <Property>
+            <Name>organizationEditorDisplayTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Organization Profile</Value>
+            <Value disabled="false">Organization Profile</Value>
+            <Value disabled="false">Szervezet profil</Value>
+            <Value disabled="false">Organization Profile</Value>
+        </Property>
+        <Property>
+            <Name>organizationEditorModifyTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Modify Organization Profile</Value>
+            <Value disabled="false">Modify Organization Profile</Value>
+            <Value disabled="false">Szervezet profil módosítás</Value>
+            <Value disabled="false">Modify Organization Profile</Value>
+        </Property>
+        <Property>
+            <Name>organizationEditorDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">General Data</Value>
+            <Value disabled="false">General Data</Value>
+            <Value disabled="false">Általános adatok</Value>
+            <Value disabled="false">General Data</Value>
+        </Property>
+        <Property>
+            <Name>organizationEditorName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Organization name</Value>
+            <Value disabled="false">Organization name</Value>
+            <Value disabled="false">Szervezet neve</Value>
+            <Value disabled="false">Organization name</Value>
+        </Property>
+        <Property>
+            <Name>organizationEditorCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Code</Value>
+        </Property>
+        <Property>
+            <Name>organizationEditorProfileGroup</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Profile Group</Value>
+            <Value disabled="false">Profile Group</Value>
+            <Value disabled="false">Profil csoport</Value>
+            <Value disabled="false">Profile Group</Value>
+        </Property>
+        <Property>
+            <Name>organizationEditorCommunication</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Communication</Value>
+            <Value disabled="false">Communication</Value>
+            <Value disabled="false">Kommunikácó</Value>
+            <Value disabled="false">Communication</Value>
+        </Property>
+        <Property>
+            <Name>organizationEditorAdresses</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Addresses</Value>
+            <Value disabled="false">Addresses</Value>
+            <Value disabled="false">Címek</Value>
+            <Value disabled="false">Addresses</Value>
+        </Property>
+        <Property>
+            <Name>organizationEditorWebPresence</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Web Presence</Value>
+            <Value disabled="false">Web Presence</Value>
+            <Value disabled="false">Online jelenlét</Value>
+            <Value disabled="false">Web Presence</Value>
+        </Property>
+        <Comment>
+            <Value>CONTACT BROWSER</Value>
+        </Comment>
+        <Property>
+            <Name>contactBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Contacts</Value>
+            <Value disabled="false">Contacts</Value>
+            <Value disabled="false">Kapcsolatok</Value>
+            <Value disabled="false">Contacts</Value>
+        </Property>
+        <Property>
+            <Name>contactBrowserColName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Name</Value>
+            <Value disabled="false">Name</Value>
+            <Value disabled="false">Név</Value>
+            <Value disabled="false">Name</Value>
+        </Property>
+        <Comment>
+            <Value>CONTACT CREATOR</Value>
+        </Comment>
+        <Property>
+            <Name>contactCreatorTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Createct Contact</Value>
+            <Value disabled="false">Createct Contact</Value>
+            <Value disabled="false">Kapcsolat létrehozása</Value>
+            <Value disabled="false">Createct Contact</Value>
+        </Property>
+        <Property>
+            <Name>contactCreatorDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">General Data</Value>
+            <Value disabled="false">General Data</Value>
+            <Value disabled="false">Általános adatok</Value>
+            <Value disabled="false">General Data</Value>
+        </Property>
+        <Comment>
+            <Value>CONTACT DISPLAY</Value>
+        </Comment>
+        <Property>
+            <Name>contactDisplayTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Contact Profile View</Value>
+            <Value disabled="false">Contact Profile View</Value>
+            <Value disabled="false">Kapcsolat profil megtekintése</Value>
+            <Value disabled="false">Contact Profile View</Value>
+        </Property>
+        <Property>
+            <Name>contactDisplayDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Contact information ...</Value>
+            <Value disabled="false">Contact information ...</Value>
+            <Value disabled="false">Kapcsoalati adatok ...</Value>
+            <Value disabled="false">Contact information ...</Value>
+        </Property>
+        <Comment>
+            <Value>CONTACT EDITOR</Value>
+        </Comment>
+        <Property>
+            <Name>contactEditorTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Edit Contact Profile</Value>
+            <Value disabled="false">Edit Contact Profile</Value>
+            <Value disabled="false">Kapcsolat profil szerkesztése</Value>
+            <Value disabled="false">Edit Contact Profile</Value>
+        </Property>
+        <Property>
+            <Name>contactEditorDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">General Data</Value>
+            <Value disabled="false">General Data</Value>
+            <Value disabled="false">Általános adatok</Value>
+            <Value disabled="false">General Data</Value>
+        </Property>
+        <Property>
+            <Name>contactEditorName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Contact Name</Value>
+            <Value disabled="false">Contact Name</Value>
+            <Value disabled="false">Kapcsolat neve</Value>
+            <Value disabled="false">Contact Name</Value>
+        </Property>
+        <Property>
+            <Name>contactEditorProfileGroup</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Profil Group</Value>
+            <Value disabled="false">Profil Group</Value>
+            <Value disabled="false">Profil csoport</Value>
+            <Value disabled="false">Profil Group</Value>
+        </Property>
+        <Property>
+            <Name>contactEditorLink</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Links</Value>
+            <Value disabled="false">Links</Value>
+            <Value disabled="false">Kapcsolatok</Value>
+            <Value disabled="false">Links</Value>
+        </Property>
+        <Property>
+            <Name>contactEditorCommunication</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Communication</Value>
+            <Value disabled="false">Communication</Value>
+            <Value disabled="false">Kommunikáció</Value>
+            <Value disabled="false">Communication</Value>
+        </Property>
+        <Property>
+            <Name>contactEditorAdresses</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Adresses</Value>
+            <Value disabled="false">Adresses</Value>
+            <Value disabled="false">Címek</Value>
+            <Value disabled="false">Adresses</Value>
+        </Property>
+        <Property>
+            <Name>contactEditorWebPresence</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Web Presence</Value>
+            <Value disabled="false">Web Presence</Value>
+            <Value disabled="false">Online jelenlét</Value>
+            <Value disabled="false">Web Presence</Value>
+        </Property>
+        <Property>
+            <Name>contactDisplayFAB</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Profile Operations</Value>
+            <Value disabled="false">Profile Operations</Value>
+            <Value disabled="false">Profil műveletek</Value>
+            <Value disabled="false">Profile Operations</Value>
+        </Property>
+        <Property>
+            <Name>contactDisplayDelete</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Delete Profile</Value>
+            <Value disabled="false">Delete Profile</Value>
+            <Value disabled="false">Profil törlése</Value>
+            <Value disabled="false">Delete Profile</Value>
+        </Property>
+        <Comment>
+            <Value>QUOTATION BROWSER</Value>
+        </Comment>
+        <Property>
+            <Name>quotationBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Quotations</Value>
+            <Value disabled="false">Quotations</Value>
+            <Value disabled="false">Árajánlatok</Value>
+            <Value disabled="false">лапки</Value>
+        </Property>
+        <Property>
+            <Name>quotationBrowserCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">код</Value>
+        </Property>
+        <Property>
+            <Name>quotationBrowserDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Leírás</Value>
+            <Value disabled="false">Опис</Value>
+        </Property>
+        <Property>
+            <Name>quotationBrowserOrganization</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Organization</Value>
+            <Value disabled="false">Organization</Value>
+            <Value disabled="false">Szervezet</Value>
+            <Value disabled="false">Організація</Value>
+        </Property>
+        <Property>
+            <Name>quotationBrowserIssuedBy</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Issued By</Value>
+            <Value disabled="false">Issued By</Value>
+            <Value disabled="false">Készítette</Value>
+            <Value disabled="false">Видано</Value>
+        </Property>
+        <Property>
+            <Name>quotationBrowserIssueDate</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Issue Date</Value>
+            <Value disabled="false">Issue Date</Value>
+            <Value disabled="false">Kiadás dátuma</Value>
+            <Value disabled="false">Дата випуску</Value>
+        </Property>
+        <Comment>
+            <Value>QUOTATION EDITOR</Value>
+        </Comment>
+        <Property>
+            <Name>quotationEditorCreateTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Create Quotation</Value>
+            <Value disabled="false">Create Quotation</Value>
+            <Value disabled="false">Árajánlat létrehozása</Value>
+            <Value disabled="false">Створити пропозицію</Value>
+        </Property>
+        <Property>
+            <Name>quotationEditorCreateDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="true"></Value>
+            <Value disabled="true"></Value>
+            <Value disabled="true"></Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>quotationEditorModifyTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Modify Quotation</Value>
+            <Value disabled="false">Modify Quotation</Value>
+            <Value disabled="false">Árajánlat módosítás</Value>
+            <Value disabled="false">Змінити пропозицію</Value>
+        </Property>
+        <Property>
+            <Name>quotationEditorModifyDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="true"></Value>
+            <Value disabled="true"></Value>
+            <Value disabled="true"></Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>quotationEditorCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Код</Value>
+        </Property>
+        <Property>
+            <Name>quotationEditorStatus</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Status</Value>
+            <Value disabled="false">Status</Value>
+            <Value disabled="false">Státusz</Value>
+            <Value disabled="false">Статус</Value>
+        </Property>
+        <Property>
+            <Name>quotationEditorDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Leírás</Value>
+            <Value disabled="false">Опис</Value>
+        </Property>
+        <Property>
+            <Name>quotationEditorOrganization</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Organization</Value>
+            <Value disabled="false">Organization</Value>
+            <Value disabled="false">Szervezet</Value>
+            <Value disabled="false">Організація</Value>
+        </Property>
+        <Property>
+            <Name>quotationEditorIssuedBy</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Issued By</Value>
+            <Value disabled="false">Issued By</Value>
+            <Value disabled="false">Készítette</Value>
+            <Value disabled="false">Видано</Value>
+        </Property>
+        <Property>
+            <Name>quotationEditorIssueDate</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Issue Date</Value>
+            <Value disabled="false">Issue Date</Value>
+            <Value disabled="false">Kiküldés dátuma</Value>
+            <Value disabled="false">Дата випуску</Value>
+        </Property>
+        <Comment>
+            <Value>HOTEL CONFIG</Value>
+        </Comment>
+        <Property>
+            <Name>hotelConfigTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Hotel Configuration</Value>
+            <Value disabled="false">Hotel Configuration</Value>
+            <Value disabled="false">Hotel beállítások</Value>
+            <Value disabled="false">Hotel Configuration</Value>
+        </Property>
+        <Property>
+            <Name>hotelConfigDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Hotel Confiuration ....</Value>
+            <Value disabled="false">Hotel Confiuration ....</Value>
+            <Value disabled="false">Hotel beállítások...</Value>
+            <Value disabled="false">Hotel Confiuration ....</Value>
+        </Property>
+        <Comment>
+            <Value>HOTEL BROWSER</Value>
+        </Comment>
+        <Property>
+            <Name>hotelBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Hotels</Value>
+            <Value disabled="false">Hotels</Value>
+            <Value disabled="false">Hotelek</Value>
+            <Value disabled="false">Hotels</Value>
+        </Property>
+        <Comment>
+            <Value>ROOM TYPE BROWSER</Value>
+        </Comment>
+        <Property>
+            <Name>roomTypeBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Room Types</Value>
+            <Value disabled="false">Room Types</Value>
+            <Value disabled="false">Szobatípusok</Value>
+            <Value disabled="false">Room Types</Value>
+        </Property>
+        <Property>
+            <Name>roomTypesTableHotelsPlaceholder</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Choose a Hotel</Value>
+            <Value disabled="false">Choose a Hotel</Value>
+            <Value disabled="false">Válassz hotelt</Value>
+            <Value disabled="false">Choose a Hotel</Value>
+        </Property>
+        <Property>
+            <Name>roomTypesTableHotelsLabel</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Selected  Hotel</Value>
+            <Value disabled="false">Selected  Hotel</Value>
+            <Value disabled="false">Választott hotel</Value>
+            <Value disabled="false">Selected  Hotel</Value>
+        </Property>
+        <Property>
+            <Name>roomTypesTableOnlyActive</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Only active items</Value>
+            <Value disabled="false">Only active items</Value>
+            <Value disabled="false">Csak aktív elemek</Value>
+            <Value disabled="false">Only active items</Value>
+        </Property>
+        <Property>
+            <Name>roomTypesTableCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Code</Value>
+        </Property>
+        <Property>
+            <Name>roomTypesTableName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Megnevezés</Value>
+            <Value disabled="false">Description</Value>
+        </Property>
+        <Property>
+            <Name>roomTypesTableInventoryType</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Inventory Type</Value>
+            <Value disabled="false">Inventory Type</Value>
+            <Value disabled="false">Készlet típus</Value>
+            <Value disabled="false">Inventory Type</Value>
+        </Property>
+        <Property>
+            <Name>roomTypesTableNumberOfRooms</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Num.of Rooms</Value>
+            <Value disabled="false">Num.of Rooms</Value>
+            <Value disabled="false">Szobák száma</Value>
+            <Value disabled="false">Num.of Rooms</Value>
+        </Property>
+        <Property>
+            <Name>roomTypesTableActive</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Active</Value>
+            <Value disabled="false">Active</Value>
+            <Value disabled="false">Aktív</Value>
+            <Value disabled="false">Active</Value>
+        </Property>
+        <Property>
+            <Name>roomTypesTableInactive</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Inactive</Value>
+            <Value disabled="false">Inactive</Value>
+            <Value disabled="false">Inaktív</Value>
+            <Value disabled="false">Inactive</Value>
+        </Property>
+        <Comment>
+            <Value>ROOM TYPE EDITOR</Value>
+        </Comment>
+        <Property>
+            <Name>roomTypeEditorActive</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Active</Value>
+            <Value disabled="false">Active</Value>
+            <Value disabled="false">Aktív</Value>
+            <Value disabled="false">Active</Value>
+        </Property>
+        <Property>
+            <Name>roomTypeEditorCreateTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Create Room Type</Value>
+            <Value disabled="false">Create Room Type</Value>
+            <Value disabled="false">Szobatípus létrehozása</Value>
+            <Value disabled="false">Create Room Type</Value>
+        </Property>
+        <Property>
+            <Name>roomTypeEditorModifyTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Modify Room Type</Value>
+            <Value disabled="false">Modify Room Type</Value>
+            <Value disabled="false">Szobatípus módosítása</Value>
+            <Value disabled="false">Modify Room Type</Value>
+        </Property>
+        <Property>
+            <Name>roomTypeEditorCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Code</Value>
+        </Property>
+        <Property>
+            <Name>roomTypeEditorName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Name</Value>
+            <Value disabled="false">Name</Value>
+            <Value disabled="false">Megnevezés</Value>
+            <Value disabled="false">Name</Value>
+        </Property>
+        <Property>
+            <Name>roomTypeEditorDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Leírás</Value>
+            <Value disabled="false">Description</Value>
+        </Property>
+        <Property>
+            <Name>roomTypeEditorChmGroup</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Channel Manager/Booking Engine</Value>
+            <Value disabled="false">Channel Manager/Booking Engine</Value>
+            <Value disabled="false">Channel Manager/Foglalómotor</Value>
+            <Value disabled="false">Channel Manager/Booking Engine</Value>
+        </Property>
+        <Property>
+            <Name>roomTypeEditorInventoryType</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Inventory Type</Value>
+            <Value disabled="false">Inventory Type</Value>
+            <Value disabled="false">Készlet típus</Value>
+            <Value disabled="false">Inventory Type</Value>
+        </Property>
+        <Property>
+            <Name>roomTypeEditorPlaceholderInventoryType</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Choose Inventory Type</Value>
+            <Value disabled="false">Choose Inventory Type</Value>
+            <Value disabled="false">Válassz készlet típust</Value>
+            <Value disabled="false">Choose Inventory Type</Value>
+        </Property>
+        <Property>
+            <Name>roomTypeEditorHkGroup</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Housekeeping</Value>
+            <Value disabled="false">Housekeeping</Value>
+            <Value disabled="false">Housekeeping</Value>
+            <Value disabled="false">Housekeeping</Value>
+        </Property>
+        <Property>
+            <Name>roomTypeEditorNumOfBeds</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Number of beds</Value>
+            <Value disabled="false">Number of beds</Value>
+            <Value disabled="false">Ágyak száma</Value>
+            <Value disabled="false">Number of beds</Value>
+        </Property>
+        <Property>
+            <Name>roomTypeEditorNumOfXtrBeds</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Number of extra beds</Value>
+            <Value disabled="false">Number of extra beds</Value>
+            <Value disabled="false">Pótágyak száma</Value>
+            <Value disabled="false">Number of extra beds</Value>
+        </Property>
+        <Property>
+            <Name>roomTypeEditorCleaningFactor</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Cleaning factor</Value>
+            <Value disabled="false">Cleaning factor</Value>
+            <Value disabled="false">Takarítási tényező</Value>
+            <Value disabled="false">Cleaning factor</Value>
+        </Property>
+        <Comment>
+            <Value>ROOM BROWSER</Value>
+        </Comment>
+        <Property>
+            <Name>roomBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Rooms</Value>
+            <Value disabled="false">Rooms</Value>
+            <Value disabled="false">Szobák</Value>
+            <Value disabled="false">Rooms</Value>
+        </Property>
+        <Property>
+            <Name>roomsTableCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Code</Value>
+        </Property>
+        <Property>
+            <Name>roomsTableFloor</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Floor</Value>
+            <Value disabled="false">Floor</Value>
+            <Value disabled="false">Emelet</Value>
+            <Value disabled="false">Floor</Value>
+        </Property>
+        <Property>
+            <Name>roomsTableType</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Room type</Value>
+            <Value disabled="false">Room type</Value>
+            <Value disabled="false">Szobatípus</Value>
+            <Value disabled="false">Room type</Value>
+        </Property>
+        <Comment>
+            <Value>ROOM FILTER</Value>
+        </Comment>
+        <Property>
+            <Name>roomFilterFloorPlaceholder</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Choose Floor</Value>
+            <Value disabled="false">Choose Floor</Value>
+            <Value disabled="false">Válassz emeletet</Value>
+            <Value disabled="false">Choose Floor</Value>
+        </Property>
+        <Property>
+            <Name>roomFilterFloorLabel</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Selected Floor</Value>
+            <Value disabled="false">Selected Floor</Value>
+            <Value disabled="false">Kiválasztott emelet</Value>
+            <Value disabled="false">Selected Floor</Value>
+        </Property>
+        <Property>
+            <Name>roomFilterFloor</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Floor=</Value>
+            <Value disabled="false">Floor=</Value>
+            <Value disabled="false">Emelet=</Value>
+            <Value disabled="false">Floor=</Value>
+        </Property>
+        <Property>
+            <Name>roomFilterRoomTypesLabel</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Selected Room Types</Value>
+            <Value disabled="false">Selected Room Types</Value>
+            <Value disabled="false">Kiválasztott szobatípusok</Value>
+            <Value disabled="false">Selected Room Types</Value>
+        </Property>
+        <Property>
+            <Name>roomFilterRoomTypesPlaceholder</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Choose Room Type</Value>
+            <Value disabled="false">Choose Room Type</Value>
+            <Value disabled="false">Válassz szobatípust</Value>
+            <Value disabled="false">Choose Room Type</Value>
+        </Property>
+        <Comment>
+            <Value>ROOM EDITOR</Value>
+        </Comment>
+        <Property>
+            <Name>roomEditorCreateTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Create Room</Value>
+            <Value disabled="false">Create Room</Value>
+            <Value disabled="false">Szoba létrehozás</Value>
+            <Value disabled="false">Create Room</Value>
+        </Property>
+        <Property>
+            <Name>roomEditorModifyTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Modify Room</Value>
+            <Value disabled="false">Modify Room</Value>
+            <Value disabled="false">Szoba módosítás</Value>
+            <Value disabled="false">Modify Room</Value>
+        </Property>
+        <Property>
+            <Name>roomEditorCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+            <Value disabled="false">Code</Value>
+        </Property>
+        <Property>
+            <Name>roomTypeEditorFloor</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Floor</Value>
+            <Value disabled="false">Floor</Value>
+            <Value disabled="false">Emelet</Value>
+            <Value disabled="false">Floor</Value>
+        </Property>
+        <Property>
+            <Name>roomEditorRoomtype</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Room Type</Value>
+            <Value disabled="false">Room Type</Value>
+            <Value disabled="false">Szobatípus</Value>
+            <Value disabled="false">Room Type</Value>
+        </Property>
+        <Property>
+            <Name>roomEditorChooseRoomtype</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Choose Room Type</Value>
+            <Value disabled="false">Choose Room Type</Value>
+            <Value disabled="false">Válassz szobatípust</Value>
+            <Value disabled="false">Choose Room Type</Value>
+        </Property>
+        <Property>
+            <Name>roomEditorDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Leírás</Value>
+            <Value disabled="false">Description</Value>
+        </Property>
+        <Property>
+            <Name>roomEditorAvailability</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Availability</Value>
+            <Value disabled="false">Availability</Value>
+            <Value disabled="false">Rendelkezésre állás</Value>
+            <Value disabled="false">Availability</Value>
+        </Property>
+        <Property>
+            <Name>roomEditorAvailabilityFromDate</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">From Date</Value>
+            <Value disabled="false">From Date</Value>
+            <Value disabled="false">Dátumtól</Value>
+            <Value disabled="false">From Date</Value>
+        </Property>
+        <Property>
+            <Name>roomEditorAvailabilityAdd</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Add</Value>
+            <Value disabled="false">Add</Value>
+            <Value disabled="false">Hozzáad</Value>
+            <Value disabled="false">Add</Value>
+        </Property>
+        <Property>
+            <Name>roomEditorAvailabilityRemove</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Remove</Value>
+            <Value disabled="false">Remove</Value>
+            <Value disabled="false">Eltávolít</Value>
+            <Value disabled="false">Remove</Value>
+        </Property>
+        <Comment>
+            <Value>MARKET GROUP BROWSER</Value>
+        </Comment>
+        <Property>
+            <Name>marketGroupBrowserTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Market Groups</Value>
+            <Value disabled="false">Market Groups</Value>
+            <Value disabled="false">Piaci szegmens csoportok</Value>
+            <Value disabled="false">Market Groups</Value>
+        </Property>
+    </Records>
+</MultiProperties>

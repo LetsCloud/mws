@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN"
+  "http://gwtproject.org/doctype/2.7.0/gwt-module.dtd">
+<module rename-to="adm_module">
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name='com.google.gwt.inject.Inject' />
+	<inherits name='com.google.gwt.editor.Editor' />
+	<inherits name="com.google.gwt.resources.Resources" />
+
+	<inherits name="com.google.gwt.i18n.CldrLocales" />
+	<inherits name="com.google.gwt.i18n.I18N" />
+
+	<inherits name="org.fusesource.restygwt.RestyGWT" />
+
+	<!--GWTP -->
+	<inherits name="com.gwtplatform.mvp.MvpWithEntryPoint" />
+	<!-- <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint' /> -->
+	<!-- <inherits name="com.gwtplatform.mvp.Mvp" /> -->
+
+	<!-- GWT Material -->
+	<inherits
+		name="gwt.material.design.GwtMaterialBasicWithJQuery" />
+	<inherits name="gwt.material.design.GwtMaterialTableBasic" />
+	<inherits
+		name="gwt.material.design.addins.GwtMaterialAddinsBasic" />
+	<inherits
+		name="gwt.material.design.addext.GwtMaterialAddextBasic" />
+	<inherits name="gwt.material.design.addext.ResourcesBasic" />
+
+	<inherits name="com.google.common.collect.Collect" />
+
+	<source path="client" />
+	<source path="shared" />
+
+	<extend-configuration-property
+		name="gin.ginjector.modules"
+		value="io.crs.mws.client.adm.gin.ClientModule" />
+
+	<set-configuration-property
+		name="gwtp.bootstrapper" value="io.crs.mws.client.adm.Adm" />
+ 
+	<!-- <entry-point class='io.crs.hsys.client.cfg.CfgAppEntryPoint' /> -->
+
+	<public path="client/adm/resources"
+		excludes="**/*.java,**/*.class" />
+	<stylesheet src="css/fonts.css" />
+
+	<add-linker name="xsiframe" />
+</module>

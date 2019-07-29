@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>mws-client-app</artifactId>
+	<packaging>gwt-app</packaging>
+
+	<name>mws-client-app</name>
+	<description>MyWindSpot Client App</description>
+
+	<parent>
+		<groupId>io.crs.mws</groupId>
+		<artifactId>mws</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<!-- *************** -->
+		<!-- crs-hsys-shared -->
+		<!-- *************** -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>mws-shared</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>mws-shared</artifactId>
+			<version>${project.version}</version>
+			<classifier>sources</classifier>
+		</dependency>
+
+		<!-- ******************** -->
+		<!-- crs-hsys-client-core -->
+		<!-- ******************** -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>mws-client-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>mws-client-core</artifactId>
+			<version>${project.version}</version>
+			<classifier>sources</classifier>
+		</dependency>
+
+		<!-- ************ -->
+		<!-- GWT ........ -->
+		<!-- ************ -->
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-dev</artifactId>
+		</dependency>
+
+		<!-- ************ -->
+		<!-- GWT-Platform -->
+		<!-- ************ -->
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-mvp-client</artifactId>
+		</dependency>
+		<!-- *********** -->
+		<!-- GwtMaterial -->
+		<!-- *********** -->
+		<dependency>
+			<groupId>com.github.gwtmaterialdesign</groupId>
+			<artifactId>gwt-material</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.gwtmaterialdesign</groupId>
+			<artifactId>gwt-material-themes</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.gwtmaterialdesign</groupId>
+			<artifactId>gwt-material-addins</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.gwtmaterialdesign</groupId>
+			<artifactId>gwt-material-addext</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.gwtmaterialdesign</groupId>
+			<artifactId>gwt-material-table</artifactId>
+		</dependency>
+
+		<!-- ***************** -->
+		<!-- GWT-UI Gwt Charts -->
+		<!-- ***************** -->
+		<dependency>
+			<groupId>com.googlecode.gwt-charts</groupId>
+			<artifactId>gwt-charts</artifactId>
+		</dependency>
+
+		<!-- ***************** -->
+		<!-- Google Guava -->
+		<!-- ***************** -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava-gwt</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.googlecode.objectify</groupId>
+			<artifactId>objectify</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.objectify</groupId>
+			<artifactId>objectify-gwt</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- **************** -->
+			<!-- gwt-maven-plugin -->
+			<!-- **************** -->
+			<plugin>
+				<groupId>net.ltgt.gwt.maven</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<configuration>
+					<moduleName>io.crs.mws.AppModuleProd</moduleName>
+					<moduleShortName>app_module</moduleShortName>
+					<launcherDir>${server-directory}/target/${server-artifactId}-${project.version}/app</launcherDir>
+					<warDir>${server-directory}/target/${server-artifactId}-${project.version}/app</warDir>
+					<webappDirectory>${server-directory}/target/${server-artifactId}-${project.version}/app</webappDirectory>
+					<systemProperties>
+						<gwt.persistentunitcachedir>${server-directory}/target/gwt-unitCache/</gwt.persistentunitcachedir>
+					</systemProperties>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>prod</id>
+			<build>
+				<plugins>
+					<!-- **************** -->
+					<!-- gwt-maven-plugin -->
+					<!-- **************** -->
+					<plugin>
+						<groupId>net.ltgt.gwt.maven</groupId>
+						<artifactId>gwt-maven-plugin</artifactId>
+						<configuration>
+							<moduleName>io.crs.mws.AppModuleProd</moduleName>
+							<moduleShortName>app_module</moduleShortName>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>dev</id>
+			<build>
+				<plugins>
+					<!-- **************** -->
+					<!-- gwt-maven-plugin -->
+					<!-- **************** -->
+					<plugin>
+						<groupId>net.ltgt.gwt.maven</groupId>
+						<artifactId>gwt-maven-plugin</artifactId>
+						<configuration>
+							<moduleName>io.crs.mws.AppModuleDev</moduleName>
+							<moduleShortName>app_module</moduleShortName>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>HostWare Cloud</title>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" th:href="@{/static/css/materialize.min.css}" />
+
+<style>
+html, body {
+	height: 100%;
+}
+
+html {
+	line-height: 1.5;
+	font-size: 14px;
+	font-family: "Roboto", sans-serif !important;
+	font-weight: normal;
+	color: rgba(0, 0, 0, 0.87);
+}
+
+.margin {
+	margin: 0 !important;
+}
+
+.center, .center-align {
+	text-align: center;
+}
+
+.pt-5 {
+	padding-top: 5% !important;	
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+</style>
+
+</head>
+<body>
+<!-- 
+	<input type="hidden" th:name="${_csrf.parameterName}"
+		th:value="${_csrf.token}" />
+ -->
+ 	<div layout:fragment="content"></div>
+
+	<!-- Compiled and minified JavaScript -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script th:src="@{/static/js/materialize.min.js}"></script>
+
+</body>
+</html>

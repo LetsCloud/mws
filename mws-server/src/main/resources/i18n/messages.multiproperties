@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MultiProperties xmlns="hu.skzs.multiproperties">
+    <Version>1.2</Version>
+    <Name>RoleMessages</Name>
+    <Description></Description>
+    <Handler>Java Properties Handler</Handler>
+    <Columns>
+        <Key>
+            <Width>200</Width>
+        </Key>
+        <Column>
+            <Name>default</Name>
+            <Description></Description>
+            <Width>599</Width>
+            <HandlerConfiguration>/crs-hsys-server/src/main/resources/i18n/messages.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>hu_HU</Name>
+            <Description></Description>
+            <Width>629</Width>
+            <HandlerConfiguration>/crs-hsys-server/src/main/resources/i18n/messages_hu_HU.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+    </Columns>
+    <Records>
+        <Comment>
+            <Value>ACTIVATION EMAIL</Value>
+        </Comment>
+        <Property>
+            <Name>actSubject</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">HostWare Cloud Registration Confirmation</Value>
+            <Value disabled="false">HostWare Cloud regisztráció visszaigazolása</Value>
+        </Property>
+        <Property>
+            <Name>actMessage</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Please activate your account:</Value>
+            <Value disabled="false">Kérem aktiválja előfizetését:</Value>
+        </Property>
+        <Comment>
+            <Value>SZEREPKÖRÖK KÓDJA,NEVE ÉS LEÍRÁSA</Value>
+        </Comment>
+        <Property>
+            <Name>roleHmCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">HM</Value>
+            <Value disabled="false">SZIG</Value>
+        </Property>
+        <Property>
+            <Name>roleHmName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Hotel Manager</Value>
+            <Value disabled="false">Szállodaigazgató</Value>
+        </Property>
+        <Property>
+            <Name>roleHmDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">The Hotel manager is responsible for all aspects of operations at the hotel, to day-to-day staff management and guests. He / She should be an ambassador for the brand and your hotel. Provide leadership and strategic planning to all departments in support of our service culture, maximized operations and guest satisfaction. Work Very closely with the hotel owners and other stake holders.</Value>
+            <Value disabled="false"></Value>
+        </Property>
+        <Property>
+            <Name>roleAhmCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">AHM</Value>
+            <Value disabled="false">SZIGH</Value>
+        </Property>
+        <Property>
+            <Name>roleAhmName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Assistant Hotel Manager</Value>
+            <Value disabled="false">Szállodaigazgató helyettes</Value>
+        </Property>
+        <Property>
+            <Name>roleAhmDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">The Assistant Hotel manager is responsible for all aspects of operations at the hotel and provides support to the Hotel Manager. </Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>roleDsmCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">DSM</Value>
+            <Value disabled="false">DSM</Value>
+        </Property>
+        <Property>
+            <Name>roleDsmName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Director Sales and Marketing</Value>
+            <Value disabled="false">Értékesítési és marketing igazgató</Value>
+        </Property>
+        <Property>
+            <Name>roleDsmDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">To oversee and manage sales staff and reservation to ensure maximum revenue, promotional coverage and marketing opportunities are achieved.</Value>
+            <Value disabled="false"></Value>
+        </Property>
+        <Property>
+            <Name>roleFomCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">FOM</Value>
+            <Value disabled="false">FOM</Value>
+        </Property>
+        <Property>
+            <Name>roleFomName</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Front Office Manager</Value>
+            <Value disabled="false">Front office manager</Value>
+        </Property>
+        <Property>
+            <Name>roleFomDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Directly supervises all front office personnel and ensures proper completion of all front office duties. Directs and coordinates the activities of the front desk, reservations, guest services, and telephone areas. Prepare monthly reports and budget for front office department.</Value>
+            <Value disabled="false"></Value>
+        </Property>
+        <Property>
+            <Name>FO_AFOM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Assistant Front Office Manager</Value>
+            <Value disabled="false">Front office manager helyettes</Value>
+        </Property>
+        <Property>
+            <Name>FO_CON</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Concierge</Value>
+            <Value disabled="false">Vendégszolgáltatás</Value>
+        </Property>
+        <Property>
+            <Name>FO_CON_DESC</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Serves as the guest's liaison for both hotel and non-hotel services. Functions are an extension of front desk agent duties. Assists the guest- regardless of whether inquiries concern in-hotel or off-premises attractions, facilities, services, or activities. Knows how to provide concise and accurate directions. Makes reservations and obtains tickets for flights, the theatre, or special events.</Value>
+            <Value disabled="false"></Value>
+        </Property>
+        <Property>
+            <Name>FO_FOC</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Front Office cashier</Value>
+            <Value disabled="false">Kasszás</Value>
+        </Property>
+        <Property>
+            <Name>FO_FDA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Front Desk Agent</Value>
+            <Value disabled="false">Recepciós/közvetítő</Value>
+        </Property>
+        <Property>
+            <Name>FO_GRE</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Guest Relation Executive</Value>
+            <Value disabled="false">Vendégkapcsolat vezető</Value>
+        </Property>
+        <Property>
+            <Name>FO_GSM</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Guest Service Manager</Value>
+            <Value disabled="false">Vendégszolgálat vezető</Value>
+        </Property>
+        <Property>
+            <Name>FO_GSM_DESC</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Oversees all guest services operations, including front desk, reservations, PBX, bell staff, and transportation services to ensure quality and guest satisfaction. Good through knowledge of property management software (PMS) or hotel reservation software.</Value>
+            <Value disabled="false">Oversees all guest services operations, including front desk, reservations, PBX, bell staff, and transportation services to ensure quality and guest satisfaction. Good through knowledge of property management software (PMS) or hotel reservation software.</Value>
+        </Property>
+        <Property>
+            <Name>FO_NA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Night Auditor</Value>
+            <Value disabled="false">Éjszakai recepciós</Value>
+        </Property>
+        <Property>
+            <Name>FO_NA_DESC</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Checks front office accounting records for accuracy and, on a daily basis, summarizes and compiles information for the hotel's financial records. Tracks room revenue, occupancy percentages, and other front office operating statistics.</Value>
+            <Value disabled="false">Checks front office accounting records for accuracy and, on a daily basis, summarizes and compiles information for the hotel's financial records. Tracks room revenue, occupancy percentages, and other front office operating statistics.</Value>
+        </Property>
+        <Property>
+            <Name>FO_BC</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Bell Captain</Value>
+            <Value disabled="false">Londinerek vezetője</Value>
+        </Property>
+        <Property>
+            <Name>FO_BB</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Bell Boy</Value>
+            <Value disabled="false">Londiner</Value>
+        </Property>
+        <Property>
+            <Name>roleEhkCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">EHK</Value>
+            <Value disabled="false">EHK</Value>
+        </Property>
+        <Property>
+            <Name>roleEhkTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Executive Housekeeper</Value>
+            <Value disabled="false">Vezető szobaasszony</Value>
+        </Property>
+        <Property>
+            <Name>roleEhkDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Supervises all housekeeping employees, has the authority to hire or discharge, plans and assigns work assignments, give training for newly recruited employees, audit and inspects housekeeping personal work assignment and requisition supplies. Take care of the budget and budget controlling for the department.</Value>
+            <Value disabled="false"></Value>
+        </Property>
+        <Property>
+            <Name>roleAehkCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">AEHK</Value>
+            <Value disabled="false">AEHK</Value>
+        </Property>
+        <Property>
+            <Name>roleAehkTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Assistant Executive Housekeeper</Value>
+            <Value disabled="false">Vezető szobaasszony helyettes</Value>
+        </Property>
+        <Property>
+            <Name>roleAehkDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">The Assistant Executive Housekeeper supervises and coordinates activities of room attendant, house attendant, public area cleaners and floor supervisors. He / She assists in the managing and directing of the day–to–day operations of all Housekeeping and laundry functions.</Value>
+            <Value disabled="false">The Assistant Executive Housekeeper supervises and coordinates activities of room attendant, house attendant, public area cleaners and floor supervisors. He / She assists in the managing and directing of the day–to–day operations of all Housekeeping and laundry functions.</Value>
+        </Property>
+        <Property>
+            <Name>HK_FS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Floor Supervisor</Value>
+            <Value disabled="false">Emelet felügyelő</Value>
+        </Property>
+        <Property>
+            <Name>HK_RA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Room Attendant</Value>
+            <Value disabled="false">Szoba takarító</Value>
+        </Property>
+        <Property>
+            <Name>HK_PAS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Public Area Supervisor</Value>
+            <Value disabled="false">Közös tér felügyelő</Value>
+        </Property>
+        <Property>
+            <Name>HK_PAA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Public Area Attendant</Value>
+            <Value disabled="false">Közös tér takarító</Value>
+        </Property>
+        <Property>
+            <Name>HK_CDS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Control Desk Supervisor</Value>
+            <Value disabled="false">Vezérlő pult felügyelő</Value>
+        </Property>
+        <Property>
+            <Name>HK_MBA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Mini Bar Attendant</Value>
+            <Value disabled="false">Minibár kezelő</Value>
+        </Property>
+        <Property>
+            <Name>HK_LS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Linen Supervisor</Value>
+            <Value disabled="false">Ágynemű felügyelő</Value>
+        </Property>
+        <Property>
+            <Name>HK_LA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Linen Attendant</Value>
+            <Value disabled="false">Ágynemű kezelő</Value>
+        </Property>
+    </Records>
+</MultiProperties>

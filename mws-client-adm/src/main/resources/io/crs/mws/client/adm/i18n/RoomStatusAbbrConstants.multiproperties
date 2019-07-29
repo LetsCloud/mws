@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MultiProperties xmlns="hu.skzs.multiproperties">
+    <Version>1.2</Version>
+    <Name>RoomStatusAbbrConstants</Name>
+    <Description></Description>
+    <Handler>Java Properties Handler</Handler>
+    <Columns>
+        <Key>
+            <Width>200</Width>
+        </Key>
+        <Column>
+            <Name>default</Name>
+            <Description></Description>
+            <Width>205</Width>
+            <HandlerConfiguration>/s4h-cpms-module/src/main/resources/cloud/s4h/cpms/client/resources/i18n/RoomStatusAbbrConstants.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>hu_HU</Name>
+            <Description></Description>
+            <Width>222</Width>
+            <HandlerConfiguration>/s4h-cpms-module/src/main/resources/cloud/s4h/cpms/client/resources/i18n/RoomStatusAbbrConstants_hu_HU.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+    </Columns>
+    <Records>
+        <Property>
+            <Name>roomStatusAbbrMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">DIRTY,CLEAN,INSPECTED</Value>
+            <Value disabled="false">DIRTY,CLEAN,INSPECTED</Value>
+        </Property>
+        <Property>
+            <Name>DIRTY</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">D</Value>
+            <Value disabled="false">P</Value>
+        </Property>
+        <Property>
+            <Name>CLEAN</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Cln</Value>
+            <Value disabled="false">T</Value>
+        </Property>
+        <Property>
+            <Name>INSPECTED</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Ok</Value>
+            <Value disabled="false">Ok</Value>
+        </Property>
+    </Records>
+</MultiProperties>

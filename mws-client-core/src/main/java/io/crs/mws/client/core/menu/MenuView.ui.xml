@@ -1,0 +1,145 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.client.ui"
+	xmlns:m.html="urn:import:gwt.material.design.client.ui.html"
+	xmlns:ma="urn:import:gwt.material.design.addins.client">
+
+	<ui:style>
+	.brand {
+		margin-bottom: 10px;
+		font-size: 16px;
+		font-weight: 800;
+		color: #fafafa; /* GREY_LIGHTEN_5 */
+		line-height: normal !important;
+	}
+	
+	.brand span {
+		font-weight: 200;
+	}
+	
+	.userBox {
+		display: flex;
+	}
+	
+	.userImg {
+		margin-top: 10px;
+		margin-right: 10px;
+		margin-bottom: 0px !important;
+	}
+	
+	.userDrop {
+		margin-top: 15px;
+	}
+	
+	.clearBoth {
+		clear: both;
+	}
+	
+	@external .sidebar, .nav-wrapper;
+	.sidebar {
+		padding: 10% !important;
+		font-size: 1em;
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+	
+	.sidebar a {
+		padding: 0 !important;
+	}
+	
+	.sidebar a, .sidebar i {
+		line-height: 1 !important;
+		height: 0 !important;
+	}
+	
+	.sidebar i {
+		line-height: 0.5 !important;
+	}
+	
+	nav {
+		box-shadow: none;
+	}
+	
+	.nav-wrapper {
+		margin: 0;
+	}
+	</ui:style>
+
+	<ui:with field="permissions"
+		type="io.crs.mws.shared.cnst.Permissions" />
+
+	<ui:with field="i18n"
+		type="io.crs.mws.client.core.i18n.CoreMessages" />
+
+	<ui:with field="res"
+		type="io.crs.mws.client.core.resources.CoreResources" />
+
+	<m:MaterialPanel>
+		<m:MaterialHeader ui:field="header" width="100%">
+			<!-- ====== -->
+			<!-- NAVBAR -->
+			<!-- ====== -->
+			<m:MaterialNavBar ui:field="navBar" width="100%"
+				activates="sideBar">
+
+				<g:SimplePanel ui:field="navBarSlot" />
+
+				<m:MaterialNavSection hideOn="NONE"
+					float="RIGHT">
+
+					<m:MaterialLink href="#/chatRoom"
+						iconPosition="NONE" iconType="FORUM" layoutPosition="RELATIVE">
+						<m:MaterialBadge text="2" backgroundColor="PINK"
+							textColor="WHITE" circle="true" />
+					</m:MaterialLink>
+
+					<m:MaterialLink href="#/taskMngr"
+						iconPosition="NONE" iconType="ASSIGNMENT_LATE"
+						layoutPosition="RELATIVE">
+						<m:MaterialBadge text="2" backgroundColor="PINK"
+							textColor="WHITE" circle="true" />
+					</m:MaterialLink>
+				</m:MaterialNavSection>
+			</m:MaterialNavBar>
+		</m:MaterialHeader>
+
+		<!-- ======= -->
+		<!-- SIDENAV -->
+		<!-- ======= -->
+		<m:MaterialSideNavPush ui:field="sideNav"
+			m:id="sideBar" width="280" allowBodyScroll="true" showOnAttach="true">
+
+			<ma:sideprofile.MaterialSideProfile
+				ui:field="sideProfile">
+
+				<g:HTMLPanel ui:field="brandPanel"
+					addStyleNames="{style.brand}" />
+
+				<!-- userBox -->
+				<m.html:Div
+					addStyleNames="{style.userBox} {style.clearBoth}">
+					<!-- userImage -->
+					<m:MaterialImage ui:field="userImage"
+						addStyleNames="{style.userImg}" float="LEFT" />
+					<!-- userLink -->
+					<m:MaterialLink ui:field="userLink"
+						activates="userDropDown" float="RIGHT"
+						addStyleNames="{style.userDrop}" />
+				</m.html:Div>
+			</ma:sideprofile.MaterialSideProfile>
+		</m:MaterialSideNavPush>
+
+		<!-- userDropDown -->
+		<m:MaterialDropDown ui:field="userDropDown"
+			activator="userDropDown" constrainWidth="false">
+			<m:MaterialLink text="{i18n.userMenuItemProfile}"
+				iconType="PORTRAIT" iconPosition="LEFT" waves="DEFAULT" />
+			<m:MaterialLink text="{i18n.userMenuItemSwitch}"
+				iconType="SWAP_HORIZ" iconPosition="LEFT" waves="DEFAULT" />
+			<m:MaterialLink ui:field="logoutLink"
+				text="{i18n.userMenuItemLogout}" iconType="POWER_SETTINGS_NEW"
+				iconPosition="LEFT" waves="DEFAULT" />
+		</m:MaterialDropDown>
+	</m:MaterialPanel>
+</ui:UiBinder>

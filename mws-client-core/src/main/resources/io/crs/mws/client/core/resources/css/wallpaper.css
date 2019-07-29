@@ -1,0 +1,15 @@
+@url orangeWallpaperUrl orangeWallpaperRes;
+.orangeWallpaper {
+	background: orangeWallpaperUrl;
+	background-size: 100%;
+	padding: 0px ! important;
+	/*	padding-top: 15% ! important; */
+}
+
+@url redWallpaperUrl redWallpaperRes;
+.redWallpaper {
+	background: redWallpaperUrl;
+	background-size: 100%;
+	padding: 0px ! important;
+	/*	padding-top: 15% ! important; */
+}

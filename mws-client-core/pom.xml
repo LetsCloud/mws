@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>mws-client-core</artifactId>
+	<!-- <packaging>jar</packaging> -->
+
+	<name>mws-client-core</name>
+	<description>MyWindSpot Client Core</description>
+
+	<parent>
+		<groupId>io.crs.mws</groupId>
+		<artifactId>mws</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>mws-shared</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>mws-shared</artifactId>
+			<version>${project.version}</version>
+			<classifier>sources</classifier>
+		</dependency>
+
+		<!-- ************ -->
+		<!-- GWT ........ -->
+		<!-- ************ -->
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-dev</artifactId>
+		</dependency>
+
+		<!-- ************ -->
+		<!-- GWT-Platform -->
+		<!-- ************ -->
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-mvp-client</artifactId>
+		</dependency>
+
+		<!-- *********** -->
+		<!-- GwtMaterial -->
+		<!-- *********** -->
+		<dependency>
+			<groupId>com.github.gwtmaterialdesign</groupId>
+			<artifactId>gwt-material</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.gwtmaterialdesign</groupId>
+			<artifactId>gwt-material-themes</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.gwtmaterialdesign</groupId>
+			<artifactId>gwt-material-addins</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.gwtmaterialdesign</groupId>
+			<artifactId>gwt-material-addext</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.gwtmaterialdesign</groupId>
+			<artifactId>gwt-material-table</artifactId>
+		</dependency>
+
+		<!-- ***************** -->
+		<!-- GWT-UI Gwt Charts -->
+		<!-- ***************** -->
+		<dependency>
+			<groupId>com.googlecode.gwt-charts</groupId>
+			<artifactId>gwt-charts</artifactId>
+		</dependency>
+
+		<!-- ***************** -->
+		<!-- Google Guava -->
+		<!-- ***************** -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava-gwt</artifactId>
+		</dependency>
+
+		<!-- ***************** -->
+		<!-- gwt-commons-codec -->
+		<!-- ***************** -->
+		<!-- <dependency> <groupId>de.knightsoft-net</groupId> <artifactId>gwt-commons-codec</artifactId> 
+			</dependency> -->
+
+		<dependency>
+			<groupId>com.googlecode.objectify</groupId>
+			<artifactId>objectify</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.objectify</groupId>
+			<artifactId>objectify-gwt</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.fusesource.restygwt</groupId>
+			<artifactId>restygwt</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<!-- <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory> 
+			<outputDirectory>${project.build.directory}/${project.artifactId}-${project.version}/WEB-INF/classes</outputDirectory> 
+			<outputDirectory>${server-directory}/target/${server-artifactId}-${project.version}</outputDirectory> -->
+		<!-- <resources> <resource> <directory>src/main/resources</directory> </resource> 
+			</resources> -->
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<compilerArguments>
+						<Agwtp.debug />
+						<Agwtp.module>io.mws.core.CoreModuleProd</Agwtp.module>
+					</compilerArguments>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>

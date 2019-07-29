@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MultiProperties xmlns="hu.skzs.multiproperties">
+    <Version>1.2</Version>
+    <Name>AppMessages</Name>
+    <Description></Description>
+    <Handler>Java Properties Handler</Handler>
+    <Columns>
+        <Key>
+            <Width>319</Width>
+        </Key>
+        <Column>
+            <Name>default</Name>
+            <Description></Description>
+            <Width>150</Width>
+            <HandlerConfiguration>/crs-hsys-client-cfg/src/main/resources/io/crs/hsys/client/cfg/i18n/CfgMessages.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>hu_HU</Name>
+            <Description></Description>
+            <Width>1306</Width>
+            <HandlerConfiguration>/crs-hsys-client-cfg/src/main/resources/io/crs/hsys/client/cfg/i18n/CfgMessages_hu_HU.properties|false|false|false|false</HandlerConfiguration>
+        </Column>
+    </Columns>
+    <Records>
+        <Comment>
+            <Value>MAIN MENU</Value>
+        </Comment>
+        <Property>
+            <Name>mainMenuItemDashboard</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Dashboard</Value>
+            <Value disabled="false">Vezérlőpult</Value>
+        </Property>
+        <Property>
+            <Name>mainMenuCommonConfig</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Common Config</Value>
+            <Value disabled="false">Általános beállítások</Value>
+        </Property>
+        <Property>
+            <Name>menuItemUserConfig</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Users &amp; permission</Value>
+            <Value disabled="false">Felhasználók és jogosultságok</Value>
+        </Property>
+        <Property>
+            <Name>menuItemProfileConfig</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Profile Config</Value>
+            <Value disabled="false">Profile beállísok</Value>
+        </Property>
+        <Property>
+            <Name>mainMenuFroConfig</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Front Office Config</Value>
+            <Value disabled="false">Front Office beállítások</Value>
+        </Property>
+        <Property>
+            <Name>mainMenuHotelConfig</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Hotel Config</Value>
+            <Value disabled="false">Hotel beállítások</Value>
+        </Property>
+        <Property>
+            <Name>mainMenuKipConfig</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Housekeeping Config</Value>
+            <Value disabled="false">Housekeeping beállítások</Value>
+        </Property>
+        <Property>
+            <Name>mainMenuInfConfig</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Management Info Config</Value>
+            <Value disabled="false">Vezetői info beállítások</Value>
+        </Property>
+        <Comment>
+            <Value>PROFILE GROUP EDITOR</Value>
+        </Comment>
+        <Property>
+            <Name>profileGroupCreateTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Create Profile Group</Value>
+            <Value disabled="false">Profil csoport létrehozása</Value>
+        </Property>
+        <Property>
+            <Name>profileGroupEditTitle</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Edit Profile Group</Value>
+            <Value disabled="false">Profil csoport szerkesztése</Value>
+        </Property>
+        <Property>
+            <Name>profileGroupCode</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Code</Value>
+            <Value disabled="false">Kód</Value>
+        </Property>
+        <Property>
+            <Name>profileGroupDescription</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Description</Value>
+            <Value disabled="false">Megnevezés</Value>
+        </Property>
+        <Property>
+            <Name>profileGroupType</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Type</Value>
+            <Value disabled="false">Típus</Value>
+        </Property>
+        <Property>
+            <Name>profileGroupActive</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Active</Value>
+            <Value disabled="false">Aktív</Value>
+        </Property>
+    </Records>
+</MultiProperties>

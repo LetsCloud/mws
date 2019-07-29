@@ -1,0 +1,11 @@
+@provide 'theme';
+ 
+/**
+ * Colors
+ */
+ 
+@def C_PRIMARY			eval("io.crs.mws.client.core.resources.BlueThemeColors.C_PRIMARY");
+@def C_PRIMARY_LIGHT	eval("io.crs.mws.client.core.resources.BlueThemeColors.C_PRIMARY_LIGHT");
+@def C_SECONDARY		eval("io.crs.mws.client.core.resources.BlueThemeColors.C_SECONDARY");
+@def C_SECONDARY_LIGHT	eval("io.crs.mws.client.core.resources.BlueThemeColors.C_SECONDARY_LIGHT");
+@def C_SECONDARY_DARK	eval("io.crs.mws.client.core.resources.BlueThemeColors.C_SECONDARY_DARK");

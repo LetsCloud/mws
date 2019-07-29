@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN"
+  "http://gwtproject.org/doctype/2.7.0/gwt-module.dtd">
+<module rename-to="app_module">
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name='com.google.gwt.inject.Inject' />
+	<inherits name='com.google.gwt.editor.Editor' />
+	<inherits name="com.google.gwt.resources.Resources" />
+
+	<inherits name="com.google.gwt.i18n.CldrLocales" />
+	<inherits name="com.google.gwt.i18n.I18N" />
+
+	<inherits name="org.fusesource.restygwt.RestyGWT" />
+
+	<!--GWTP -->
+	<inherits name="com.gwtplatform.mvp.MvpWithEntryPoint" />
+	<!-- GWT Material -->
+	<inherits
+		name="gwt.material.design.GwtMaterialBasicWithJQuery" />
+	<inherits name="gwt.material.design.GwtMaterialTableBasic" />
+	<inherits
+		name="gwt.material.design.addins.GwtMaterialAddinsBasic" />
+	<inherits
+		name="gwt.material.design.addext.GwtMaterialAddextBasic" />
+	<!-- Font Awesome Icons import -->
+	<inherits
+		name="gwt.material.design.incubator.FontAwesomeResources" />
+
+	<inherits name="com.google.common.collect.Collect" />
+
+	<source path="client" />
+	<source path="shared" />
+
+	<extend-configuration-property
+		name="gin.ginjector.modules"
+		value="io.crs.mws.client.app.gin.ClientModule" />
+
+	<set-configuration-property
+		name="gwtp.bootstrapper" value="io.crs.mws.client.app.App" />
+	<set-configuration-property
+		name="CssResource.enableGss" value="true" />
+
+	<public path="client/app/resources"
+		excludes="**/*.java,**/*.class" />
+
+	<stylesheet src="css/fonts.css" />
+
+	<add-linker name="xsiframe" />
+</module>

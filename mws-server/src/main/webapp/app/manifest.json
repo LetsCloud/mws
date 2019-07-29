@@ -1,0 +1,32 @@
+{
+  "name": "MyWindSpot",
+  "short_name": "MWS",
+  "icons": [
+    {
+      "src": "launcher1x.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "launcher2x.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "launcher4x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "launcher5x.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/app/start.html",
+  "display": "fullscreen",
+  "background_color": "#b0bec5",
+  "theme_color": "#607d8b",
+  
+  "gcm_sender_id": "103953800507"
+}

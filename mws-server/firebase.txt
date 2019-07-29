@@ -1,0 +1,10 @@
+curl -X POST -H "Authorization: key=AAAAF0SJFQs:APA91bHuujFobqGu2ynQ_hBA8jyNNOibKxITNAyEmr4NAjL1FOOmbxrv7TT2rL1kTsGQAaGI4nIDiEt1qaW9VOekRaaTJ84Q_QRakKyrwSngUljxJqqwWUlcClbddLKXKiX5JnEyQ1JT" -H "Content-Type: application/json" -d '{"notification": {"title": "Háká Kata","body": "45gu66zffg","icon": "https://hw-cloud4.appspot.com/image/e_housekeeper.png","click_action": "https://hw-cloud4.appspot.com/kip.html#/chatRoom?id=agtofmh3LWNsb3VkNHIlCxIHQWNjb3VudBiAgICAgICACgwLEgRDaGF0GICAgIDg2o0KDA"},"to": "eg0xzByl2E4:APA91bHSM-t4u6zHwstFJCz3CLP13RNzao6Vm9nUsYUSNF74cg4SpdOagkdxsDcOxaytyRMvmifhrvHRRAPT4SH9Z9EV7n_nvgUz4D93bP4E0br2FhYxu59RRdIMQsmtxSAD0zDj6E-p"}' "https://fcm.googleapis.com/fcm/send"
+
+
+i.c.h.s.service.impl.FcmServiceImpl - postMessage()->json={"notification":{"title":"Háká Kata","body":"45gu66zffg","icon":"https://hw-cloud4.appspot.com/image/e_housekeeper.png","click_action":"https://hw-cloud4.appspot.com/kip.html#/chatRoom?id=agtofmh3LWNsb3VkNHIlCxIHQWNjb3VudBiAgICAgICACgwLEgRDaGF0GICAgIDg2o0KDA"},"to":"eg0xzByl2E4:APA91bHSM-t4u6zHwstFJCz3CLP13RNzao6Vm9nUsYUSNF74cg4SpdOagkdxsDcOxaytyRMvmifhrvHRRAPT4SH9Z9EV7n_nvgUz4D93bP4E0br2FhYxu59RRdIMQsmtxSAD0zDj6E-p"}
+
+
+
+curl -X POST -H "Authorization: key=AAAARIyh3iM:APA91bGwfrX0_zoMKYRkIwxN0kKpXW8eXzfoRaOqcvHexoa3PV29M8cEFWLpUBLmQcdqi2eoFSkFHnYNmSDyhkfCeQ-DXu-fuJtax1W3wWiRpiSotkzufEBX-IcXuiZ-EQPdk_hgA4pP" -H "Content-Type: application/json" -d '{"notification": {"title": "Háká Kata","body": "45gu66zffg","icon": "https://hw-cloud4.appspot.com/image/e_housekeeper.png","click_action": "https://hw-cloud4.appspot.com/kip.html#/chatRoom?id=agtofmh3LWNsb3VkNHIlCxIHQWNjb3VudBiAgICAgICACgwLEgRDaGF0GICAgIDg2o0KDA"},"to": "c0zcdquPUuw:APA91bHPAAGb2nJPqg-MSNrxBg20T05mOXYjOADtkL5VPXYwhV93akDaTQpbUcSc-TvCrZIv0YQCyfItu-wiN8ZUplKzeUlP-h_iHYMwRpU_OwAOPy3bfj9C2GNz7Ijd7WGDhx58Ba9P"}' "https://fcm.googleapis.com/fcm/send"
+
+

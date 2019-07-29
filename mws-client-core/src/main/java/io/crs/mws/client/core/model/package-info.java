@@ -1,0 +1,1 @@
+package io.crs.mws.client.core.model;
