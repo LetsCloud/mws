@@ -125,6 +125,7 @@ public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements Menu
 
 	@UiHandler("logoutLink")
 	void onLogout(ClickEvent event) {
+		sideNav.close();
 		getUiHandlers().logout();
 	}
 
