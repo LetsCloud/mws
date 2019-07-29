@@ -122,6 +122,11 @@
 					<!-- userImage -->
 					<m:MaterialImage ui:field="userImage"
 						addStyleNames="{style.userImg}" float="LEFT" />
+
+					<ma:avatar.MaterialAvatar
+						ui:field="avatar" backgroundColor="WHITE" width="60" height="60"
+						marginRight="10" />
+
 					<!-- userLink -->
 					<m:MaterialLink ui:field="userLink"
 						activates="userDropDown" float="RIGHT"

@@ -51,7 +51,7 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 
 		void setUserName(String userName);
 
-		void setUserImageUrl(String url);
+		void setUserImageUrl(String url, String fullname);
 
 		void setBusinessDate(Date businessDate);
 
@@ -150,9 +150,10 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 		if (appData.getName() != null) {
 			getView().setAppFullname(appData.getName());
 		}
-		
+
 		if (currentUser.getAccountDto() != null) {
-			getView().setUserImageUrl(currentUser.getAccountDto().getImageUrl());
+			getView().setUserImageUrl(currentUser.getAccountDto().getImageUrl(),
+					currentUser.getAccountDto().getNickname());
 			getView().setUserName(currentUser.getAccountDto().getNickname());
 		}
 	}
