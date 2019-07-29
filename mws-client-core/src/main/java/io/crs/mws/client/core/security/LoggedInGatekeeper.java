@@ -1,4 +1,4 @@
-package io.crs.mws.client.app.auth.login;
+package io.crs.mws.client.core.security;
 
 import java.util.Set;
 import java.util.logging.Logger;
@@ -11,7 +11,6 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
 import io.crs.mws.client.core.NameTokens;
-import io.crs.mws.client.core.security.CurrentUser;
 
 @DefaultGatekeeper
 public class LoggedInGatekeeper implements Gatekeeper {

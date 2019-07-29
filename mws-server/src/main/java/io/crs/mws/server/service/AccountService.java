@@ -6,7 +6,6 @@ package io.crs.mws.server.service;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import io.crs.mws.server.entity.Account;
-import io.crs.mws.server.google.UserConectionService;
 import io.crs.mws.server.model.RegistrationForm;
 import io.crs.mws.shared.exception.EntityValidationException;
 import io.crs.mws.shared.exception.UniqueIndexConflictException;
@@ -15,7 +14,7 @@ import io.crs.mws.shared.exception.UniqueIndexConflictException;
  * @author CR
  *
  */
-public interface AccountService extends CrudService<Account>, UserConectionService {
+public interface AccountService extends CrudService<Account> {
 
 	UserDetails registerAccount(RegistrationForm registrationForm)
 			throws EntityValidationException, UniqueIndexConflictException;

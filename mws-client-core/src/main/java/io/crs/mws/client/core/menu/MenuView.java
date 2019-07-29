@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
+import com.google.common.base.Strings;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.resources.client.ImageResource;
@@ -23,6 +24,7 @@ import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
+import gwt.material.design.addins.client.avatar.MaterialAvatar;
 import gwt.material.design.addins.client.sideprofile.MaterialSideProfile;
 import gwt.material.design.client.constants.IconPosition;
 import gwt.material.design.client.constants.IconType;
@@ -32,6 +34,7 @@ import gwt.material.design.client.ui.MaterialImage;
 import gwt.material.design.client.ui.MaterialLink;
 import gwt.material.design.client.ui.MaterialNavBar;
 import gwt.material.design.client.ui.MaterialSideNavPush;
+
 import io.crs.mws.client.core.event.ContentPushEvent.MenuState;
 import io.crs.mws.shared.cnst.MenuItemType;
 import io.crs.mws.shared.dto.menu.MenuItemDto;
@@ -70,6 +73,9 @@ public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements Menu
 	@UiField
 	MaterialImage userImage;
 
+	@UiField
+	MaterialAvatar avatar;
+	
 	private List<MaterialLink> singleLinks = new ArrayList<MaterialLink>();
 	private List<MaterialCollapsible> collapsibles = new ArrayList<MaterialCollapsible>();
 
@@ -119,6 +125,7 @@ public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements Menu
 
 	@UiHandler("logoutLink")
 	void onLogout(ClickEvent event) {
+		sideNav.close();
 		getUiHandlers().logout();
 	}
 
@@ -189,8 +196,16 @@ public class MenuView extends ViewWithUiHandlers<MenuUiHandlers> implements Menu
 	}
 
 	@Override
-	public void setUserImageUrl(String url) {
-		userImage.setUrl(url);
+	public void setUserImageUrl(String url, String fullname) {
+		avatar.setVisible(false);
+		userImage.setVisible(false);
+		if (Strings.isNullOrEmpty(url)) {
+			avatar.setVisible(true);
+			avatar.setValue(fullname, false, true);
+		} else {
+			userImage.setVisible(true);
+			userImage.setUrl(url);
+		}
 	}
 
 	@Override

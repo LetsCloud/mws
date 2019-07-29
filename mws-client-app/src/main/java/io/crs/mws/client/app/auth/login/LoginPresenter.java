@@ -29,6 +29,7 @@ import io.crs.mws.client.core.firebase.messaging.MessagingManager;
 import io.crs.mws.client.core.i18n.CoreMessages;
 import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.CurrentUser;
+import io.crs.mws.client.core.security.LoggedInGatekeeper;
 import io.crs.mws.client.core.security.UserManager;
 import io.crs.mws.shared.dto.EntityPropertyCode;
 import io.crs.mws.shared.dto.auth.LoginRequest;
@@ -80,6 +81,14 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 	}
 
 	@Override
+	protected void onBind() {
+		super.onBind();
+		logger.info("LoginPresenter().onBind()");
+		if (appData.getAppCode() != null)
+			getView().setAppCode(appData.getAppCode());
+	}
+
+	@Override
 	public void prepareFromRequest(PlaceRequest request) {
 		logger.info("LoginPresenter().prepareFromRequest()->nameToken=" + this.getProxy().getNameToken());
 		String requestToken = request.getParameter(LoggedInGatekeeper.PLACE_TO_GO, null);
@@ -103,14 +112,6 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 	}
 
 	@Override
-	protected void onBind() {
-		super.onBind();
-		logger.info("LoginPresenter().onBind()");
-		if (appData.getAppCode() != null)
-			getView().setAppCode(appData.getAppCode());
-	}
-
-	@Override
 	public boolean useManualReveal() {
 		logger.info("LoginPresenter().useManualReveal()");
 		return true;
@@ -120,7 +121,12 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 	protected void onReveal() {
 		super.onReveal();
 		logger.info("LoginPresenter().onReveal()->placeToGo=" + placeToGo);
-		DOM.getElementById("splashscreen").removeFromParent();
+
+		@SuppressWarnings("deprecation")
+		com.google.gwt.user.client.Element splash = DOM.getElementById("splashscreen");
+		if (splash != null)
+			splash.removeFromParent();
+
 		getView().setPlaceToGo(placeToGo, new LoginRequest());
 	}
 
@@ -135,12 +141,15 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 				getProxy().manualReveal(LoginPresenter.this);
 			}
 		};
-		t2.schedule(500);
+		t2.schedule(100);
 	}
 
 	@Override
 	public void login(LoginRequest loginRequest) {
-		userManager.login(loginRequest, ()->goToPlace(placeToGo));
+		userManager.login(loginRequest, () -> {
+			logger.info("LoginPresenter().login().callback()->placeToGo=" + placeToGo);
+			goToPlace(placeToGo);
+		});
 	}
 
 	/**

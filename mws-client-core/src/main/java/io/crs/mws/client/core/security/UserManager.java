@@ -86,10 +86,12 @@ public class UserManager {
 	}
 
 	public void login(LoginRequest loginRequest, Fn.NoArg callback) {
+		logger.info("UserManager().login()");
 		AUTH_SERVICE.login(loginRequest, new MethodCallback<AuthResponse>() {
 
 			@Override
 			public void onSuccess(Method method, AuthResponse response) {
+				logger.info("UserManager().login().onSuccess()");
 				OauthUtils.storeAccessToken(response.getAccessToken());
 				load(callback);
 			}

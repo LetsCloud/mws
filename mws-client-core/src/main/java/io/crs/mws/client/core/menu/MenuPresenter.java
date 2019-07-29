@@ -26,6 +26,7 @@ import io.crs.mws.client.core.event.SetPageTitleEvent.SetPageTitleHandler;
 import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.CurrentUser;
 import io.crs.mws.client.core.security.HasPermissionsGatekeeper;
+import io.crs.mws.client.core.security.LoggedInGatekeeper;
 import io.crs.mws.client.core.util.OauthUtils;
 import io.crs.mws.shared.cnst.MenuItemType;
 import io.crs.mws.shared.dto.menu.MenuItemDto;
@@ -51,7 +52,7 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 
 		void setUserName(String userName);
 
-		void setUserImageUrl(String url);
+		void setUserImageUrl(String url, String fullname);
 
 		void setBusinessDate(Date businessDate);
 
@@ -142,7 +143,8 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 	@Override
 	public void logout() {
 		OauthUtils.removeAccessToken();
-		placeManager.revealPlace(new PlaceRequest.Builder().nameToken(NameTokens.LOGIN).build());
+		placeManager.revealPlace(new PlaceRequest.Builder().nameToken(NameTokens.LOGIN)
+				.with(LoggedInGatekeeper.PLACE_TO_GO, NameTokens.HOME).build());
 	}
 
 	@Override
@@ -150,9 +152,10 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 		if (appData.getName() != null) {
 			getView().setAppFullname(appData.getName());
 		}
-		
+
 		if (currentUser.getAccountDto() != null) {
-			getView().setUserImageUrl(currentUser.getAccountDto().getImageUrl());
+			getView().setUserImageUrl(currentUser.getAccountDto().getImageUrl(),
+					currentUser.getAccountDto().getNickname());
 			getView().setUserName(currentUser.getAccountDto().getNickname());
 		}
 	}
