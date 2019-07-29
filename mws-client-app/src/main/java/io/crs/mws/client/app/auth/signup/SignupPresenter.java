@@ -67,7 +67,12 @@ public class SignupPresenter extends Presenter<SignupPresenter.MyView, SignupPre
 	@Override
 	protected void onReveal() {
 		super.onReveal();
-		DOM.getElementById("splashscreen").removeFromParent();
+
+		@SuppressWarnings("deprecation")
+		com.google.gwt.user.client.Element splash = DOM.getElementById("splashscreen");
+		if (splash != null)
+			splash.removeFromParent();
+
 		getView().start(new SignUpRequest());
 	}
 

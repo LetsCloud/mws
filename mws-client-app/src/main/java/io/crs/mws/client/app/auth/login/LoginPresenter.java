@@ -120,7 +120,12 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 	protected void onReveal() {
 		super.onReveal();
 		logger.info("LoginPresenter().onReveal()->placeToGo=" + placeToGo);
-		DOM.getElementById("splashscreen").removeFromParent();
+
+		@SuppressWarnings("deprecation")
+		com.google.gwt.user.client.Element splash = DOM.getElementById("splashscreen");
+		if (splash != null)
+			splash.removeFromParent();
+
 		getView().setPlaceToGo(placeToGo, new LoginRequest());
 	}
 

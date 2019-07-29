@@ -5,7 +5,6 @@ package io.crs.mws.server.service.ofy;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +18,6 @@ import com.google.common.base.Strings;
 
 import io.crs.mws.server.entity.Account;
 import io.crs.mws.server.entity.FcmToken;
-import io.crs.mws.server.entity.SocialConnection;
 import io.crs.mws.server.entity.VerificationToken;
 import io.crs.mws.server.login.LoggedInChecker;
 import io.crs.mws.server.model.RegistrationForm;
@@ -126,54 +124,6 @@ public class AccountServiceImpl extends CrudServiceImpl<Account, AccountReposito
 		account.setPassword(passwordEncoder.encode("*"));
 		repository.save(account);
 		return true;
-	}
-
-	@Override
-	public List<String> getLocalIdsByConnection(String providerId, String providerUsrId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Set<String> getLocalIdsByProviderUsrIds(String providerId, Set<String> providerUsrIds) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<SocialConnection> getConnectionDataByLocalId(String localId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<SocialConnection> getConnectionDataByLocalIdAndProviderId(String localId, String providerId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void addConnection(String localId, SocialConnection socialConnection) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void updateConnection(String localId, SocialConnection socialConnection) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void removeConnections(String localId, String providerId) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void removeConnection(String localId, String providerId, String providerUserId) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override

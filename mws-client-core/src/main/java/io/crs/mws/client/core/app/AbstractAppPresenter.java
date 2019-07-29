@@ -83,6 +83,7 @@ public abstract class AbstractAppPresenter<Proxy_ extends Proxy<?>> extends Pres
 		super.onReveal();
 		logger.info("AbstractAppPresenter.onReveal()");
 		menuPresenter.referesh();
+
 		@SuppressWarnings("deprecation")
 		com.google.gwt.user.client.Element splash = DOM.getElementById("splashscreen");
 		if (splash != null)

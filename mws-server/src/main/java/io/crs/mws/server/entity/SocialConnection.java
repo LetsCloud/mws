@@ -3,10 +3,6 @@
  */
 package io.crs.mws.server.entity;
 
-import org.springframework.social.connect.Connection;
-import org.springframework.social.connect.support.OAuth1Connection;
-import org.springframework.social.connect.support.OAuth2Connection;
-
 /**
  * A data transfer object that allows the internal state of a Connection to be
  * persisted and transferred between layers of an application. Some fields may

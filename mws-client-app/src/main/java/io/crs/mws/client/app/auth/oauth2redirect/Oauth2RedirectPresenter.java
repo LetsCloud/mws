@@ -12,7 +12,6 @@ import javax.inject.Inject;
 import org.fusesource.restygwt.client.Method;
 import org.fusesource.restygwt.client.MethodCallback;
 
-import com.google.common.base.Strings;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.i18n.client.LocaleInfo;
 import com.google.gwt.user.client.DOM;
@@ -28,9 +27,6 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
 import io.crs.mws.client.app.NameTokens;
-import io.crs.mws.client.app.auth.login.LoggedInGatekeeper;
-import io.crs.mws.client.app.auth.login.LoginPresenter;
-import io.crs.mws.client.core.app.AppServiceWorkerManager;
 import io.crs.mws.client.core.firebase.messaging.MessagingManager;
 import io.crs.mws.client.core.i18n.CoreMessages;
 import io.crs.mws.client.core.security.AppData;
@@ -130,7 +126,11 @@ public class Oauth2RedirectPresenter extends Presenter<Oauth2RedirectPresenter.M
 	protected void onReveal() {
 		super.onReveal();
 		logger.info("Oauth2RedirectPresenter().onReveal()");
-		DOM.getElementById("splashscreen").removeFromParent();
+
+		@SuppressWarnings("deprecation")
+		com.google.gwt.user.client.Element splash = DOM.getElementById("splashscreen");
+		if (splash != null)
+			splash.removeFromParent();
 
 		AUTH_SERVICE.getCurrentUser(new MethodCallback<AccountDto>() {
 
