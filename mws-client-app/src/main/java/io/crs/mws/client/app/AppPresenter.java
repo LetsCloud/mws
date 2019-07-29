@@ -15,6 +15,7 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.Proxy;
 
 import gwt.material.design.client.constants.IconType;
+
 import io.crs.mws.client.app.i18n.AppMessages;
 import io.crs.mws.client.app.resources.AppResources;
 import io.crs.mws.client.core.app.AbstractAppPresenter;
@@ -51,7 +52,7 @@ public class AppPresenter extends AbstractAppPresenter<AppPresenter.MyProxy> {
 		this.i18n = i18n;
 		this.resources = resources;
 
-		breadcrumbConfigs.add(new BreadcrumbConfig(0, IconType.HOME, "", NameTokens.HOME));
+		breadcrumbConfigs.add(new BreadcrumbConfig(0, IconType.HOME, "", io.crs.mws.client.core.NameTokens.HOME));
 	}
 
 	@Override
@@ -69,7 +70,7 @@ public class AppPresenter extends AbstractAppPresenter<AppPresenter.MyProxy> {
 		wallMenuItem.setType(MenuItemType.MENU_ITEM);
 		wallMenuItem.setIcon(IconType.TEXTSMS.name());
 		wallMenuItem.setText(i18n.mainMenuItemWall());
-		wallMenuItem.setNameToken(NameTokens.HOME);
+		wallMenuItem.setNameToken(io.crs.mws.client.core.NameTokens.HOME);
 		menuItems.add(wallMenuItem);
 
 		// *********************

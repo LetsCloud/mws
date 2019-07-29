@@ -10,7 +10,6 @@ import com.gwtplatform.mvp.client.annotations.ErrorPlace;
 import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
-import io.crs.mws.client.app.NameTokens;
 import io.crs.mws.client.app.AppModule;
 import io.crs.mws.client.app.auth.login.LoginModule;
 import io.crs.mws.client.app.auth.oauth2redirect.Oauth2RedirectModule;
@@ -27,7 +26,7 @@ public class ClientModule extends AbstractPresenterModule {
 
 	@Override
 	protected void configure() {
-		bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.HOME);
+		bindConstant().annotatedWith(DefaultPlace.class).to(io.crs.mws.client.core.NameTokens.HOME);
 		bindConstant().annotatedWith(ErrorPlace.class).to(io.crs.mws.client.core.NameTokens.LOGIN);
 		bindConstant().annotatedWith(UnauthorizedPlace.class).to(io.crs.mws.client.core.NameTokens.LOGIN);
 

@@ -132,6 +132,14 @@ public class MessagingManager implements HasMessagingFeatures {
 
 	public void initFirebase(String webSafeKey, Fn.NoArg callback) {
 		logger.info("MessagingManager.initFirebase()");
+		
+		if (getFirebase() != null) {
+			if (currentUser.isLoggedIn())
+				subscribe(currentUser.getAccountDto().getWebSafeKey());
+			
+			callback.call();
+			return;
+		}
 
 		GLOBALCONFIG_SERVICE.getAll(new MethodCallback<List<GlobalConfigDto>>() {
 

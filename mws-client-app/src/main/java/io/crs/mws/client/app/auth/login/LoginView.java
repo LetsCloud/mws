@@ -90,10 +90,12 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers>
 		Timer t = new Timer() {
 			@Override
 			public void run() {
+				logger.info("LoginView().setPlaceToGo->run()");
 				email.setFocus(true);
+				logger.info("LoginView().setPlaceToGo->run()-2");
 			}
 		};
-		t.schedule(500);
+		t.schedule(100);
 	}
 
 	@UiHandler("submit")
