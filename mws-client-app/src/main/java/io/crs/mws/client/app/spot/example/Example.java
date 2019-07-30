@@ -1,7 +1,7 @@
 /**
  * 
  */
-package io.crs.mws.client.app.spot;
+package io.crs.mws.client.app.spot.example;
 
 /**
  * @author robi

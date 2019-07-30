@@ -1,7 +1,7 @@
 /**
  * 
  */
-package io.crs.mws.client.app.spot;
+package io.crs.mws.client.app.spot.example;
 
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.LinkElement;

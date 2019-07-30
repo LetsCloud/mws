@@ -16,6 +16,8 @@ import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
+import io.crs.mws.client.app.spot.example.OLExampleType;
+
 /**
  * @author robi
  *
@@ -38,7 +40,7 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 	@Override
 	public void start() {
 
-		OLExampleType example = OLExampleType.valueOf("GeolocationExample");
+		OLExampleType example = OLExampleType.valueOf("MarkerExample");
 		
 		panel.setSize("100%", "100%");
 		panel.getElement().setId(example.getExample().toString());

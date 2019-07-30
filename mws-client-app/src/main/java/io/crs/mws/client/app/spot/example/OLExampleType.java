@@ -1,7 +1,7 @@
 /**
  * 
  */
-package io.crs.mws.client.app.spot;
+package io.crs.mws.client.app.spot.example;
 
 /**
  * @author robi
@@ -15,19 +15,19 @@ public enum OLExampleType {
     BingMapsExample(new BingMapsExample()),
     CanvasGradientExample(new CanvasGradientExample()),
     ClusterExample(new ClusterExample()),
-    ConstrainedExample(new ConstrainedViewExample()),
+    ConstrainedExample(new ConstrainedViewExample()),*/
     GeoJSONExample(new GeoJsonExample()),
-    */
-    GeolocationExample(new GeolocationExample())
+    
+    GeolocationExample(new GeolocationExample()),
     /* ,
     GpxExample(new GpxExample()),
     GraticuleExample(new GraticuleExample()),
     ImageExample(new StaticImageExample()),
     MapBoxExample(new MapboxExample()),
     MapEventsExample(new MapEventsExample()),
-    MapGuideExample(new MapGuideExample()),
-    MarkerExample(new MarkerExample()),
-    MeasureExample(new MeasureExample()),
+    MapGuideExample(new MapGuideExample()),*/
+    MarkerExample(new MarkerExample())
+ /*   MeasureExample(new MeasureExample()),
     MvtExample(new MvtExample()),
     OsmExample(new OsmExample()),
     OverlayExample(new OverlayExample()),
