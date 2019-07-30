@@ -32,6 +32,7 @@ public class SpotMapPresenter extends Presenter<SpotMapPresenter.MyView, SpotMap
 	private static Logger logger = Logger.getLogger(SpotMapPresenter.class.getName());
 
 	interface MyView extends View, HasUiHandlers<SpotMapUiHandlers> {
+		void start();
 	}
 
 	@ProxyCodeSplit
@@ -59,6 +60,8 @@ public class SpotMapPresenter extends Presenter<SpotMapPresenter.MyView, SpotMap
 		super.onReveal();
 		logger.log(Level.INFO, "SpotMapPresenter().onReveal()");
 		SetPageTitleEvent.fire("Spots", "", MenuItemType.MENU_ITEM, this);
+		
+		getView().start();
 	}
 
 	@Override

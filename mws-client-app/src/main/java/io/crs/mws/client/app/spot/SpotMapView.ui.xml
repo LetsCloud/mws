@@ -4,10 +4,9 @@
 	<ui:style>
 	/* Add CSS here. See the GWT docs on UI Binder for more details */
 	</ui:style>
-	<g:HTMLPanel>
-		Hello Spots
+	<g:SimplePanel ui:field="panel">
 		<!-- Add GWT widgets here. Enter < and hit Ctrl-Space to auto-complete 
 			widget names. The ui:field attribute binds an element to a field in the owner 
 			class. See the GWT docs on UI Binder for more details. -->
-	</g:HTMLPanel>
+	</g:SimplePanel>
 </ui:UiBinder> 
