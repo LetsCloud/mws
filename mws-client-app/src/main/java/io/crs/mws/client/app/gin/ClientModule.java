@@ -15,6 +15,7 @@ import io.crs.mws.client.app.auth.login.LoginModule;
 import io.crs.mws.client.app.auth.oauth2redirect.Oauth2RedirectModule;
 import io.crs.mws.client.app.auth.signup.SignupModule;
 import io.crs.mws.client.app.dashboard.DashboardModule;
+import io.crs.mws.client.app.spot.SpotMapModule;
 import io.crs.mws.client.core.gin.CoreModule;
 import io.crs.mws.client.core.resources.ThemeParams;
 
@@ -41,5 +42,6 @@ public class ClientModule extends AbstractPresenterModule {
 		install(new Oauth2RedirectModule());
 
 		install(new DashboardModule());
+		install(new SpotMapModule());
 	}
 }

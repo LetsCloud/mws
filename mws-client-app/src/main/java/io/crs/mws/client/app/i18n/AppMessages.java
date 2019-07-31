@@ -18,6 +18,9 @@ public interface AppMessages extends Messages {
 	@DefaultMessage("Wall")
 	String mainMenuItemWall();
 
+	@DefaultMessage("Spots")
+	String mainMenuItemSpots();
+
 	@DefaultMessage("Office")
 	String mainMenuOffice();
 	

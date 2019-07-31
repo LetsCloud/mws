@@ -66,6 +66,7 @@
 			<groupId>com.gwtplatform</groupId>
 			<artifactId>gwtp-mvp-client</artifactId>
 		</dependency>
+
 		<!-- *********** -->
 		<!-- GwtMaterial -->
 		<!-- *********** -->
@@ -88,6 +89,22 @@
 		<dependency>
 			<groupId>com.github.gwtmaterialdesign</groupId>
 			<artifactId>gwt-material-table</artifactId>
+		</dependency>
+
+		<!-- ***************** -->
+		<!-- gwt-ol3 -->
+		<!-- ***************** -->
+		<dependency>
+			<groupId>com.google.elemental2</groupId>
+			<artifactId>elemental2-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.elemental2</groupId>
+			<artifactId>elemental2-dom</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.tdesjardins</groupId>
+			<artifactId>gwt-ol3</artifactId>
 		</dependency>
 
 		<!-- ***************** -->

@@ -65,6 +65,9 @@ public class AppPresenter extends AbstractAppPresenter<AppPresenter.MyProxy> {
 	private List<MenuItemDto> createMenuitems() {
 		List<MenuItemDto> menuItems = new ArrayList<MenuItemDto>();
 
+		// *********************
+		// Wall
+		// *********************
 		MenuItemDto wallMenuItem = new MenuItemDto();
 		wallMenuItem.setIndex(1);
 		wallMenuItem.setType(MenuItemType.MENU_ITEM);
@@ -74,10 +77,21 @@ public class AppPresenter extends AbstractAppPresenter<AppPresenter.MyProxy> {
 		menuItems.add(wallMenuItem);
 
 		// *********************
+		// Wall
+		// *********************
+		MenuItemDto spotsMenuItem = new MenuItemDto();
+		spotsMenuItem.setIndex(2);
+		spotsMenuItem.setType(MenuItemType.MENU_ITEM);
+		spotsMenuItem.setIcon(IconType.LOCATION_ON.name());
+		spotsMenuItem.setText(i18n.mainMenuItemSpots());
+		spotsMenuItem.setNameToken(NameTokens.SPOTS);
+		menuItems.add(spotsMenuItem);
+
+		// *********************
 		// Office functions
 		// *********************
 		MenuItemDto officeSubMenu = new MenuItemDto();
-		officeSubMenu.setIndex(2);
+		officeSubMenu.setIndex(3);
 		officeSubMenu.setType(MenuItemType.SUB_MENU);
 		officeSubMenu.setIcon(IconType.SETTINGS.name());
 		officeSubMenu.setText(i18n.mainMenuOffice());
