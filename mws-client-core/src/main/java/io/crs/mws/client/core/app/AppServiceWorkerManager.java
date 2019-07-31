@@ -37,11 +37,11 @@ public class AppServiceWorkerManager extends ServiceWorkerManager {
 
 	@Override
 	public boolean onRegistered(ServiceEvent event, ServiceWorkerRegistration registration) {
-//		logger.info("onRegistered()");
+		logger.info("onRegistered()");
 		boolean result = super.onRegistered(event, registration);
 
 		if (result) {
-//			logger.info("Sikeres volt a ServiceWorker regisztrácója, ezért átadjuk a MessagingManager-nek.");
+			logger.info("Sikeres volt a ServiceWorker regisztrácója, ezért átadjuk a MessagingManager-nek.");
 			fcmManager.useServiceWorker(registration);
 			registered = true;
 		}

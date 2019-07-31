@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -45,6 +46,7 @@ import static io.crs.mws.shared.api.ApiPaths.APIv1.LOGIN;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.PUBLIC;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.ROOT;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.SIGNUP;
+import static io.crs.mws.shared.api.ApiPaths.AdminV1.GLOBAL_CONFIG;
 import static org.springframework.http.HttpStatus.OK;
 
 import java.net.URI;
@@ -54,7 +56,7 @@ import java.net.URI;
  *
  */
 @RestController
-@RequestMapping(ROOT)
+@RequestMapping(value = ROOT, produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthController {
 	private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 

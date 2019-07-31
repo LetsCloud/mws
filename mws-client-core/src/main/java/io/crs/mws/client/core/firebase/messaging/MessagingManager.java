@@ -46,6 +46,7 @@ public class MessagingManager implements HasMessagingFeatures {
 	private Firebase firebase;
 	private Boolean registered;
 	private boolean firebaseIsReady = false;
+	private ServiceWorkerRegistration registration;
 
 	Fnx.NoArg unsubscribe;
 
@@ -53,8 +54,7 @@ public class MessagingManager implements HasMessagingFeatures {
 	private final CurrentUser currentUser;
 
 	@Inject
-	MessagingManager(EventBus eventBus, AppData appData,
-			CurrentUser currentUser) {
+	MessagingManager(EventBus eventBus, AppData appData, CurrentUser currentUser) {
 		logger.info("MessagingManager()");
 		this.appData = appData;
 		this.currentUser = currentUser;
@@ -62,17 +62,18 @@ public class MessagingManager implements HasMessagingFeatures {
 	}
 
 	public Firebase getFirebase() {
+		logger.info("MessagingManager.getFirebase()");
 		return firebase;
 	}
 
 	public void setFirebase(Firebase firebase) {
-//		logger.info("setFirebase()");
+		logger.info("MessagingManager.setFirebase()");
 		this.firebase = firebase;
 		registered = true;
 	}
 
 	public Boolean isRegistered() {
-//		logger.info("isRegistered()=" + registered);
+		logger.info("MessagingManager.isRegistered()=" + registered);
 		return registered;
 	}
 
@@ -82,6 +83,7 @@ public class MessagingManager implements HasMessagingFeatures {
 
 	@Override
 	public Messaging getFirebaseMessaging() {
+		logger.info("MessagingManager.getFirebaseMessaging()");
 		if (firebase != null) {
 			return firebase.messaging();
 		} else {
@@ -93,6 +95,7 @@ public class MessagingManager implements HasMessagingFeatures {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void getToken(Fn.Arg<String> callback) {
+		logger.info("MessagingManager.getToken()");
 		getFirebaseMessaging().getToken().then(object -> {
 			String token = (String) object;
 			logger.info("getToken()->token=" + token);
@@ -104,13 +107,14 @@ public class MessagingManager implements HasMessagingFeatures {
 
 	@Override
 	public void useServiceWorker(ServiceWorkerRegistration serviceWorker) {
-//		logger.info("useServiceWorker()");
-		firebase.messaging().useServiceWorker(serviceWorker);
+		logger.info("MessagingManager.useServiceWorker()");
+		this.registration = serviceWorker;
+//		getFirebaseMessaging().useServiceWorker(serviceWorker);
 	}
 
 	@Override
 	public void requestPermission(Fn.NoArg callback) {
-		logger.info("requestPermission()");
+		logger.info("MessagingManager.requestPermission()");
 		getFirebaseMessaging().requestPermission().then(() -> {
 			callback.call();
 		});
@@ -118,7 +122,7 @@ public class MessagingManager implements HasMessagingFeatures {
 
 	@Override
 	public void onTokenRefresh(Fn.Arg<String> callback) {
-		logger.info("onTokenRefresh()");
+		logger.info("MessagingManager.onTokenRefresh()");
 		getFirebaseMessaging().onTokenRefresh(() -> {
 			getToken(callback);
 		});
@@ -126,17 +130,17 @@ public class MessagingManager implements HasMessagingFeatures {
 
 	@Override
 	public void onMessage(Fnx.Arg callback) {
-		logger.info("onMessage()");
+		logger.info("MessagingManager.onMessage()");
 		unsubscribe = getFirebaseMessaging().onMessage(callback);
 	}
 
 	public void initFirebase(String webSafeKey, Fn.NoArg callback) {
 		logger.info("MessagingManager.initFirebase()");
-		
+
 		if (getFirebase() != null) {
 			if (currentUser.isLoggedIn())
 				subscribe(currentUser.getAccountDto().getWebSafeKey());
-			
+
 			callback.call();
 			return;
 		}
@@ -155,16 +159,17 @@ public class MessagingManager implements HasMessagingFeatures {
 				config.setStorageBucket(getGlobalSetting(response, GlobalParam.FB5_STORAGE_BUCKET.name()));
 				config.setMessagingSenderId(getGlobalSetting(response, GlobalParam.FB6_MESSAGE_SENDER_ID.name()));
 
-				Firebase firebase = Firebase.initializeApp(config);
+				setFirebase(Firebase.initializeApp(config));
 				logger.info("MessagingManager.initFirebase().onSuccess()->firebase.getName()" + firebase.getName());
 
-				setFirebase(firebase);
+				if (registration != null)
+					getFirebaseMessaging().useServiceWorker(registration);
 
 				configFcmOnMessage();
 
 				if (currentUser.isLoggedIn())
 					subscribe(currentUser.getAccountDto().getWebSafeKey());
-				
+
 				callback.call();
 			}
 
@@ -177,11 +182,12 @@ public class MessagingManager implements HasMessagingFeatures {
 	}
 
 	private String getGlobalSetting(List<GlobalConfigDto> result, String key) {
+		logger.info("MessagingManager.getGlobalSetting()");
 		return result.stream().filter(o -> o.getCode().equals(key)).findFirst().get().getValue();
 	}
 
 	private void configFcmOnMessage() {
-		logger.info("configOnFcmMessage()");
+		logger.info("MessagingManager.configOnFcmMessage()");
 		onMessage(fcmMessage -> {
 			logger.info("configOnFcmMessage()->dataMessage.getData().getClick_action()="
 					+ fcmMessage.getData().getAction());
@@ -214,10 +220,12 @@ public class MessagingManager implements HasMessagingFeatures {
 	}
 
 	private String getManifest() {
+		logger.info("MessagingManager.getGlobalSetting()");
 		return appData.getManifest();
 	}
 
 	public void subscribe(String webSafeKey) {
+		logger.info("MessagingManager.getGlobalSetting()");
 		requestPermission(() -> getToken(token -> {
 			fcmSubscribe(webSafeKey, token);
 		}));
@@ -228,9 +236,9 @@ public class MessagingManager implements HasMessagingFeatures {
 	 * @param iidToken
 	 */
 	private void fcmSubscribe(String webSafeKey, String iidToken) {
-//		logger.info("fcmSubscribe()->iidToken=" + iidToken);
+		logger.info("MessagingManager.fcmSubscribe()->iidToken=" + iidToken);
 		String userAgent = Base64Utils.toBase64(getUserAgent().getBytes());
-//		logger.info("fcmSubscribe()->userAgent=" + userAgent);
+		logger.info("MessagingManager.fcmSubscribe()->userAgent=" + userAgent);
 
 		FCM_SERVICE.subscribe(webSafeKey, iidToken, userAgent, new MethodCallback<Void>() {
 
