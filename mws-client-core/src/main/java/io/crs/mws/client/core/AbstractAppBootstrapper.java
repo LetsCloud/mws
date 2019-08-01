@@ -68,6 +68,7 @@ public abstract class AbstractAppBootstrapper implements Bootstrapper {
 	@Override
 	public void onBootstrap() {
 		Defaults.setServiceRoot(UrlUtils.getBaseUrl());
+		Defaults.setDateFormat(null);
 
 		Timer t = new Timer() {
 			@Override

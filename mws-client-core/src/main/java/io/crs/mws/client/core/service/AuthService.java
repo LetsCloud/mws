@@ -34,7 +34,7 @@ import io.crs.mws.shared.dto.auth.SignUpRequest;
  */
 @Path(ROOT)
 @Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
+// @Consumes(MediaType.APPLICATION_JSON)
 public interface AuthService extends RestService {
 
 	@POST
