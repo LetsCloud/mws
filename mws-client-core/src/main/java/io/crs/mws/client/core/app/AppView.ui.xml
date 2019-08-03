@@ -9,7 +9,7 @@
 	}
 	
 	.panel {
-		width: 100%;
+		height: 100%;
 		/*		padding: 60px 5px 150px 5px; */
 		margin-top: -50px;
 		padding: 10px 50px 0px 50px;
@@ -35,6 +35,7 @@
 	}
 	
 	.mainSheet {
+		height: 100%;
 		/*	padding-top: 30px; */
 		margin-bottom: 0px;
 		background: #fff;
@@ -50,11 +51,11 @@
 	}
 	</ui:style>
 
-	<g:HTMLPanel> <!-- styleName="{style.base}" -->
+	<g:HTMLPanel styleName="{style.base}">
 
 		<g:HTMLPanel ui:field="menu" />
 
-		<m:MaterialContainer>
+		<m:MaterialContainer height="100%">
 			<m:MaterialPanel addStyleNames="titleBar"
 				marginTop="56" padding="56" shadow="1">
 				<m:MaterialPanel ui:field="panel">
@@ -62,7 +63,8 @@
 						truncate="true" />
 					<m:MaterialLabel ui:field="description"
 						truncate="true" />
-					<m:MaterialPanel ui:field="breadcrumbsPanel" marginTop="5" height="30px"/>
+					<m:MaterialPanel ui:field="breadcrumbsPanel"
+						marginTop="5" height="30px" />
 				</m:MaterialPanel>
 			</m:MaterialPanel>
 
