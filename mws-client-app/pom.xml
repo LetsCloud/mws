@@ -192,6 +192,19 @@
 						<configuration>
 							<moduleName>io.crs.mws.AppModuleDev</moduleName>
 							<moduleShortName>app_module</moduleShortName>
+							<compilerArgs>
+<!-- 								<compileArg>-XjsInteropMode</compileArg> -->
+								<compileArg>-generateJsInteropExports</compileArg>
+<!-- 								<compileArg>JS</compileArg> -->
+							</compilerArgs>
+							<codeserverArgs>
+<!--								<arg>-XjsInteropMode</arg> -->
+								<arg>-generateJsInteropExports</arg>
+<!-- 								<arg>JS</arg> -->
+							</codeserverArgs>
+							<generateJsInteropExports>true</generateJsInteropExports>
+							<incremental>true</incremental>
+							<jsInteropMode>JS</jsInteropMode>
 						</configuration>
 					</plugin>
 				</plugins>

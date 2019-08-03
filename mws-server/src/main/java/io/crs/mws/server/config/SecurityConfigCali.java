@@ -197,7 +197,7 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 					.authenticationEntryPoint(new RestAuthenticationEntryPoint())
 					.and()
 				.authorizeRequests()
-					.antMatchers("/", "/app/**", "/font/**", "/_ah/**")
+					.antMatchers("/", "/app/**", "/static/**", "/font/**", "/_ah/**")
 						.permitAll()
 					.antMatchers(ROOT + PUBLIC + "/**", "/oauth2/**")
 						.permitAll()
