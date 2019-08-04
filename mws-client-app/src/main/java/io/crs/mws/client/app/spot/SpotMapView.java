@@ -4,6 +4,7 @@
 package io.crs.mws.client.app.spot;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,6 +19,7 @@ import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
+import io.crs.mws.shared.dto.WindspotDto;
 import ol.Collection;
 import ol.Coordinate;
 import ol.Feature;
@@ -74,13 +76,13 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 	}
 
 	@Override
-	public void start() {
+	public void start(List<WindspotDto> windpots) {
 		panel.setSize("100%", "100%");
 		panel.getElement().setId("spotMap");
 
 		panel.setVisible(true);
 
-		Scheduler.get().scheduleDeferred(() -> showMap("spotMap"));
+		Scheduler.get().scheduleDeferred(() -> showMap("spotMap", windpots));
 		/*
 		 * Timer t = new Timer() {
 		 * 
@@ -90,28 +92,21 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 		 */
 	}
 
-	private void showMap(String mapPanelId) {
-
-		// create a point
-		Coordinate coordinate1 = OLFactory.createCoordinate(4e6, 2e6);
-		Point point1 = new Point(coordinate1);
-
-		// create a point2
-		Coordinate coordinate2 = OLFactory.createCoordinate(2e6, 3e6);
-		Point point2 = new Point(coordinate2);
-
-		// create feature
+	private Feature createFeature(WindspotDto windspot) {
+		Coordinate coordinate = OLFactory.createCoordinate(Double.parseDouble(windspot.getCoordinateX()),
+				Double.parseDouble(windspot.getCoordinateY()));
+		Point point = new Point(coordinate);
 		FeatureOptions featureOptions = OLFactory.createOptions();
-		featureOptions.setGeometry(point1);
-		Feature feature = new Feature(featureOptions);
+		featureOptions.setGeometry(point);
+		return new Feature(featureOptions);
+	}
 
-		FeatureOptions featureOptions2 = OLFactory.createOptions();
-		featureOptions2.setGeometry(point2);
-		Feature feature2 = new Feature(featureOptions2);
+	private void showMap(String mapPanelId, List<WindspotDto> windpots) {
 
 		Collection<Feature> features = new Collection<Feature>();
-		features.push(feature);
-		features.push(feature2);
+		for (WindspotDto windspot : windpots) {
+			features.push(createFeature(windspot));
+		}
 
 		// create source
 		VectorOptions vectorSourceOptions = OLFactory.createOptions();
@@ -121,7 +116,8 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 		// create style
 		StyleOptions styleOptions = new StyleOptions();
 		IconOptions iconOptions = new IconOptions();
-		iconOptions.setSrc("https://openlayers.org/en/v3.20.1/examples/data/icon.png");
+//		iconOptions.setSrc("https://openlayers.org/en/v3.20.1/examples/data/icon.png");
+		iconOptions.setSrc("http://localhost:8080/image/icon-dot_32.png");
 		Icon icon = new Icon(iconOptions);
 		styleOptions.setImage(icon);
 		/*

@@ -3,6 +3,7 @@
  */
 package io.crs.mws.client.app.spot;
 
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -40,7 +41,8 @@ public class SpotMapPresenter extends Presenter<SpotMapPresenter.MyView, SpotMap
 	private static final WindspotService WINDSPOT_SERVICE = GWT.create(WindspotService.class);
 
 	interface MyView extends View, HasUiHandlers<SpotMapUiHandlers> {
-		void start();
+		void start(List<WindspotDto> windpots);
+
 		void renderMap();
 	}
 
@@ -70,7 +72,18 @@ public class SpotMapPresenter extends Presenter<SpotMapPresenter.MyView, SpotMap
 		logger.log(Level.INFO, "SpotMapPresenter().onReveal()");
 		SetPageTitleEvent.fire("Spots", "", MenuItemType.MENU_ITEM, this);
 
-		getView().start();
+		WINDSPOT_SERVICE.getAll(new MethodCallback<List<WindspotDto>>() {
+
+			@Override
+			public void onSuccess(Method method, List<WindspotDto> response) {
+				getView().start(response);
+			}
+
+			@Override
+			public void onFailure(Method method, Throwable exception) {
+			}
+		});
+
 	}
 
 	@Override

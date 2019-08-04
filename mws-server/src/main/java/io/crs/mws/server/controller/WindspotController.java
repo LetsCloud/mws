@@ -7,9 +7,13 @@ import static io.crs.mws.shared.api.ApiParameters.WEBSAFEKEY;
 import static io.crs.mws.shared.api.ApiPaths.PATH_WEBSAFEKEY;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.WINDSPOT;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.ROOT;
+import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +53,16 @@ public class WindspotController extends CrudController<Windspot, WindspotDto> {
 	@RequestMapping(value = PATH_WEBSAFEKEY, method = GET)
 	public ResponseEntity<WindspotDto> get(@PathVariable String webSafeKey) throws RestApiException {
 		return super.get(webSafeKey);
+	}
+
+	@Override
+	@RequestMapping(method = GET)
+	public ResponseEntity<List<WindspotDto>> getAll() {
+		List<WindspotDto> result = new ArrayList<WindspotDto>();
+		for (Windspot windspot : getService().getAll()) {
+			result.add(getModelMapper().map(windspot, WindspotDto.class));
+		}
+		return new ResponseEntity<List<WindspotDto>>(result, OK);
 	}
 
 	@Override

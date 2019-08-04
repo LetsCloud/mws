@@ -145,6 +145,7 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 			return preAuthenticationFilter;
 		}
 
+		
 		@Override
 		public void configure(HttpSecurity http) throws Exception {
 			// @formatter:off
@@ -197,7 +198,7 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 					.authenticationEntryPoint(new RestAuthenticationEntryPoint())
 					.and()
 				.authorizeRequests()
-					.antMatchers("/", "/app/**", "/static/**", "/font/**", "/_ah/**")
+					.antMatchers("/", "/app/**", "/static/**", "/image/**", "/font/**", "/_ah/**")
 						.permitAll()
 					.antMatchers(ROOT + PUBLIC + "/**", "/oauth2/**")
 						.permitAll()

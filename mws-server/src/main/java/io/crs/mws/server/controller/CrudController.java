@@ -50,6 +50,10 @@ public abstract class CrudController<T extends BaseEntity, D extends BaseDto> ex
 		return service;
 	}
 
+	public ModelMapper getModelMapper() {
+		return modelMapper;
+	}
+
 	abstract protected D createDto(T entity);
 
 	public ResponseEntity<List<D>> getAll() {

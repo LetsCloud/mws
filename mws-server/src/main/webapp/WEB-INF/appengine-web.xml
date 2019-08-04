@@ -9,7 +9,7 @@
 <appengine-web-app
 	xmlns="http://appengine.google.com/ns/1.0">
 	<application>hw-cloud4</application>
-	<version>4</version>
+	<version>1</version>
 
 	<!-- Required. When the threadsafe element in appengine-web.xml is false, 
 		App Engine sends requests serially to a given web server. When the value 
