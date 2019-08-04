@@ -3,6 +3,11 @@
  */
 package io.crs.mws.client.app.spot.example;
 
+import com.google.gwt.dom.client.DivElement;
+import com.google.gwt.dom.client.Document;
+
+import gwt.material.design.client.ui.MaterialButton;
+import gwt.material.design.client.ui.MaterialPanel;
 import ol.Collection;
 import ol.Coordinate;
 import ol.Feature;
@@ -10,6 +15,7 @@ import ol.FeatureOptions;
 import ol.Map;
 import ol.MapOptions;
 import ol.OLFactory;
+import ol.Overlay;
 import ol.OverlayOptions;
 import ol.View;
 import ol.control.Rotate;
@@ -130,11 +136,21 @@ public class MarkerExample implements Example {
 //		map.addInteraction(new KeyboardPan());
 //		map.addInteraction(new KeyboardZoom());
 //		map.addControl(new Rotate());
-/*
-		DivElement overlay = Document.get().createDivElement();
-		overlay.setClassName("overlay-font");
-		overlay.setInnerText("Created with GWT SDK " + GWT.getVersion());
 
+		DivElement positionDisplay = Document.get().createDivElement();
+		positionDisplay.setClassName("overlay-font");
+		positionDisplay.setInnerText("A tehelyed");
+		
+		MaterialPanel displayPanel = new MaterialPanel();
+		displayPanel.add(new MaterialButton("Hello"));
+		
+
+		OverlayOptions overlayDisplayOptions = OLFactory.createOptions();
+		overlayDisplayOptions.setElement(displayPanel.getElement());
+		Overlay display = new Overlay(overlayDisplayOptions);
+		map.addOverlay(display);
+
+		/*
 		Coordinate transformedCenterCoordinate = Projection.transform(centerCoordinate, DemoConstants.EPSG_4326,
 				DemoConstants.EPSG_3857);
 */
@@ -165,6 +181,15 @@ public class MarkerExample implements Example {
 			}
 		});
 		map.addControl(geocoder);
+		
+		map.on("singleclick", new EventListener<AddressChosenEvent>() {
+
+			@Override
+			public void onEvent(AddressChosenEvent event) {
+				// TODO Auto-generated method stub
+				display.setPosition(event.getCoordinate());
+			}
+		});
 	}
 
 }

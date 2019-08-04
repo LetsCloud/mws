@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
+import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Timer;
@@ -44,10 +45,10 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 		panel.setSize("100%", "100%");
 		panel.getElement().setId(example.getExample().toString());
 
-//		Scheduler.get().scheduleDeferred(() -> example.getExample().show(example.getExample().toString()));
-
 		panel.setVisible(true);
 
+		Scheduler.get().scheduleDeferred(() -> example.getExample().show(example.getExample().toString()));
+/*
 		Timer t = new Timer() {
 			@Override
 			public void run() {
@@ -57,6 +58,6 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 			}
 		};
 		t.schedule(100);
-
+*/
 	}
 }
