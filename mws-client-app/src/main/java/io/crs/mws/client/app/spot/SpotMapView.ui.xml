@@ -4,9 +4,11 @@
 	<ui:style>
 	/* Add CSS here. See the GWT docs on UI Binder for more details */
 	</ui:style>
-	<g:SimplePanel ui:field="panel">
+	<g:HTMLPanel height="100%">
+		<g:SimplePanel ui:field="panel" />
 		<!-- Add GWT widgets here. Enter < and hit Ctrl-Space to auto-complete 
 			widget names. The ui:field attribute binds an element to a field in the owner 
 			class. See the GWT docs on UI Binder for more details. -->
-	</g:SimplePanel>
+		<g:SimplePanel ui:field="creatorPanel" />
+	</g:HTMLPanel>
 </ui:UiBinder> 

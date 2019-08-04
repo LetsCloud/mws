@@ -3,6 +3,7 @@
  */
 package io.crs.mws.client.app.spot.example;
 
+import io.crs.mws.client.app.spot.OpenLayersUtils;
 import ol.Collection;
 import ol.Coordinate;
 import ol.Feature;
@@ -100,7 +101,7 @@ public class GeoJsonExample implements Example {
 
         // add some controls
         map.addControl(new ScaleLine());
-        DemoUtils.addDefaultControls(map.getControls());
+        OpenLayersUtils.addDefaultControls(map.getControls());
 
         // add some interactions
         map.addInteraction(new KeyboardPan());

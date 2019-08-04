@@ -1,7 +1,7 @@
 /**
  * 
  */
-package io.crs.mws.client.app.spot.example;
+package io.crs.mws.client.app.spot;
 
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.LinkElement;
@@ -31,9 +31,9 @@ import ol.source.XyzOptions;
  * @author robi
  *
  */
-public final class DemoUtils {
+public final class OpenLayersUtils {
 
-    private DemoUtils() {
+    private OpenLayersUtils() {
         throw new AssertionError();
     }
 
@@ -102,7 +102,7 @@ public final class DemoUtils {
 
         Coordinate[][] tranformedCoordinates = new Coordinate[coordinates.length][];
 
-        tranformedCoordinates[0] = OLUtil.transform(coordinates[0], DemoConstants.EPSG_4326, DemoConstants.EPSG_3857);
+        tranformedCoordinates[0] = OLUtil.transform(coordinates[0], OpenLayersConstants.EPSG_4326, OpenLayersConstants.EPSG_3857);
         return OLFactory.createPolygon(tranformedCoordinates);
 
     }

@@ -3,11 +3,17 @@
  */
 package io.crs.mws.client.app.spot.example;
 
+import java.util.logging.Logger;
+
 import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.dom.client.Document;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 
 import gwt.material.design.client.ui.MaterialButton;
 import gwt.material.design.client.ui.MaterialPanel;
+import io.crs.mws.client.app.auth.signup.SignupView;
+import io.crs.mws.client.app.spot.SpotCreator;
 import ol.Collection;
 import ol.Coordinate;
 import ol.Feature;
@@ -48,6 +54,7 @@ import ol.style.Text;
  * @author Tino Desjardins
  */
 public class MarkerExample implements Example {
+	private static Logger logger = Logger.getLogger(MarkerExample.class.getName());
 
 	/*
 	 * (non-Javadoc)
@@ -137,18 +144,19 @@ public class MarkerExample implements Example {
 //		map.addInteraction(new KeyboardZoom());
 //		map.addControl(new Rotate());
 
-		DivElement positionDisplay = Document.get().createDivElement();
-		positionDisplay.setClassName("overlay-font");
-		positionDisplay.setInnerText("A tehelyed");
-		
-		MaterialPanel displayPanel = new MaterialPanel();
-		displayPanel.add(new MaterialButton("Hello"));
-		
+		SpotCreator spotCreator = new SpotCreator();
+		spotCreator.addCloseLinkClickHandler(new ClickHandler() {
 
-		OverlayOptions overlayDisplayOptions = OLFactory.createOptions();
-		overlayDisplayOptions.setElement(displayPanel.getElement());
-		Overlay display = new Overlay(overlayDisplayOptions);
-		map.addOverlay(display);
+			@Override
+			public void onClick(ClickEvent event) {
+				logger.info("MarkerExample.show().onClick()");
+//				spotCreatorOverlay.setPosition(null);
+			}});
+	
+		OverlayOptions spotCreatorOverlayOptions = OLFactory.createOptions();
+		spotCreatorOverlayOptions.setElement(spotCreator.getElement());
+		Overlay spotCreatorOverlay = new Overlay(spotCreatorOverlayOptions);
+		map.addOverlay(spotCreatorOverlay);
 
 		/*
 		Coordinate transformedCenterCoordinate = Projection.transform(centerCoordinate, DemoConstants.EPSG_4326,
@@ -187,7 +195,8 @@ public class MarkerExample implements Example {
 			@Override
 			public void onEvent(AddressChosenEvent event) {
 				// TODO Auto-generated method stub
-				display.setPosition(event.getCoordinate());
+				spotCreator.setCoordinates(event.getCoordinate().toString());
+				spotCreatorOverlay.setPosition(event.getCoordinate());
 			}
 		});
 	}

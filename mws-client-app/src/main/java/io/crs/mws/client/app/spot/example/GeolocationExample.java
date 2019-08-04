@@ -8,6 +8,8 @@ import java.util.logging.Logger;
 
 import com.google.gwt.user.client.Window;
 
+import io.crs.mws.client.app.spot.OpenLayersConstants;
+import io.crs.mws.client.app.spot.OpenLayersUtils;
 import ol.Coordinate;
 import ol.Feature;
 import ol.Geolocation;
@@ -63,7 +65,7 @@ public class GeolocationExample implements Example {
         View view = new View(viewOptions);
 
         Coordinate centerCoordinate = new Coordinate(-0.1275, 51.507222);
-        Coordinate transformedCenterCoordinate = Projection.transform(centerCoordinate, DemoConstants.EPSG_4326, DemoConstants.EPSG_3857);
+        Coordinate transformedCenterCoordinate = Projection.transform(centerCoordinate, OpenLayersConstants.EPSG_4326, OpenLayersConstants.EPSG_3857);
 
         view.setCenter(transformedCenterCoordinate);
         view.setZoom(10);
@@ -80,7 +82,7 @@ public class GeolocationExample implements Example {
 
         // add some controls
         map.addControl(new ScaleLine());
-        DemoUtils.addDefaultControls(map.getControls());
+        OpenLayersUtils.addDefaultControls(map.getControls());
 
         Attribution attribution = new Attribution();
         attribution.setCollapsed(true);
