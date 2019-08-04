@@ -10,6 +10,7 @@ import com.googlecode.objectify.ObjectifyService;
 
 import io.crs.mws.server.entity.Account;
 import io.crs.mws.server.entity.GlobalConfig;
+import io.crs.mws.server.entity.Windspot;
 
 /**
  * @author CR
@@ -22,6 +23,7 @@ public class ObjectifyRegistration {
 		logger.info("ObjectifyService.register");
 		ObjectifyService.register(GlobalConfig.class);
 		ObjectifyService.register(Account.class);
+		ObjectifyService.register(Windspot.class);
 	}
 
 }

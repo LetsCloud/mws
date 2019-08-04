@@ -3,10 +3,10 @@
  */
 package io.crs.mws.client.app.spot;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -32,19 +32,28 @@ public class SpotCreator extends Composite {
 	MaterialTextBox spotNameBox;
 
 	@UiField
+	MaterialLink saveLink;
+
+	@UiField
 	MaterialLink closeLink;
 
 	/**
+	 * t
 	 */
 	public SpotCreator() {
+		logger.log(Level.INFO, "SpotCreator()");
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 
-	public void setCoordinates(String coordinates) {
-//		coordinatesBox.setText(coordinates);
+	public void addSaveLinkClickHandler(ClickHandler handler) {
+		saveLink.addClickHandler(handler);
 	}
 
 	public void addCloseLinkClickHandler(ClickHandler handler) {
 		closeLink.addClickHandler(handler);
+	}
+
+	public String getSpotName() {
+		return spotNameBox.getText();
 	}
 }

@@ -3,6 +3,7 @@
  */
 package io.crs.mws.client.app.spot;
 
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,6 +34,7 @@ import ol.geocoder.Geocoder;
 import ol.geocoder.GeocoderOptions;
 import ol.geom.Point;
 import ol.layer.Base;
+import ol.layer.Layer;
 import ol.layer.LayerOptions;
 import ol.layer.Tile;
 import ol.layer.VectorLayerOptions;
@@ -56,6 +58,9 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 	interface Binder extends UiBinder<Widget, SpotMapView> {
 	}
 
+	private Map map;
+	private Tile osmLayer;
+	private ol.layer.Vector vectorLayer;
 	private SpotCreator spotCreator = new SpotCreator();
 
 	@UiField
@@ -130,7 +135,7 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 		vectorLayerOptions.setSource(vectorSource);
 		vectorLayerOptions.setStyle(style);
 
-		ol.layer.Vector vectorLayer = new ol.layer.Vector(vectorLayerOptions);
+		vectorLayer = new ol.layer.Vector(vectorLayerOptions);
 
 		// create a OSM-layer
 		XyzOptions osmSourceOptions = OLFactory.createOptions();
@@ -156,7 +161,7 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 		lstLayer.push(osmLayer);
 		lstLayer.push(vectorLayer);
 		mapOptions.setLayers(lstLayer);
-		Map map = new Map(mapOptions);
+		map = new Map(mapOptions);
 
 		// add some controls
 //		map.addControl(new ScaleLine());
@@ -170,8 +175,16 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 		OverlayOptions spotCreatorOverlayOptions = OLFactory.createOptions();
 		spotCreatorOverlayOptions.setElement(spotCreator.getElement());
 		Overlay spotCreatorOverlay = new Overlay(spotCreatorOverlayOptions);
+		spotCreator.addSaveLinkClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				logger.info("MarkerExample.show().onClick()");
+				getUiHandlers().createSpot(spotCreator.getSpotName(), spotCreatorOverlay.getPosition().getX(),
+						spotCreatorOverlay.getPosition().getY(), spotCreatorOverlay.getPosition().getZ());
+				spotCreatorOverlay.setPosition(null);
+			}
+		});
 		spotCreator.addCloseLinkClickHandler(new ClickHandler() {
-
 			@Override
 			public void onClick(ClickEvent event) {
 				logger.info("MarkerExample.show().onClick()");
@@ -214,13 +227,15 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 		map.addControl(geocoder);
 
 		map.on("singleclick", new EventListener<AddressChosenEvent>() {
-
 			@Override
 			public void onEvent(AddressChosenEvent event) {
-				// TODO Auto-generated method stub
-				spotCreator.setCoordinates(event.getCoordinate().toString());
 				spotCreatorOverlay.setPosition(event.getCoordinate());
 			}
 		});
+	}
+
+	@Override
+	public void renderMap() {
+		logger.info("SpotMapView.renderMap()-1");
 	}
 }

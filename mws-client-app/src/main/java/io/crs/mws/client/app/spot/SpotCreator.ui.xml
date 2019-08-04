@@ -2,6 +2,7 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
 	xmlns:m="urn:import:gwt.material.design.client.ui">
+
 	<ui:style>
 	.ol-popup {
 		position: absolute;
@@ -39,27 +40,15 @@
 		left: 98px;
 		margin-left: -11px;
 	}
-	
-	.ol-popup-closer {
-		float: righz;
-		/*		text-decoration: none;
-				position: absolute;
-				top: 2px;
-				right: 8px;*/
-	}
-	/*	
-			.ol-popup-closer:after {
-				content: "✖";
-			}*/
 	</ui:style>
+
 	<m:MaterialPanel addStyleNames="{style.ol-popup}">
 		<g:Label text="Create Spot" />
 		<m:MaterialTextBox ui:field="spotNameBox"
-			label="Spot Name" class="input-field"/>
-		<!-- Add GWT widgets here. Enter < and hit Ctrl-Space to auto-complete 
-			widget names. The ui:field attribute binds an element to a field in the owner 
-			class. See the GWT docs on UI Binder for more details. -->
-		<m:MaterialLink text="Save" float="LEFT" />
-		<m:MaterialLink ui:field="closeLink" text="Close" float="RIGHT" />
+			label="Spot Name" class="input-field" />
+		<m:MaterialLink ui:field="saveLink" text="Save"
+			float="LEFT" />
+		<m:MaterialLink ui:field="closeLink" text="Close"
+			float="RIGHT" />
 	</m:MaterialPanel>
 </ui:UiBinder> 
