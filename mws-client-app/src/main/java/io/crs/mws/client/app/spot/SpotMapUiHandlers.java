@@ -11,4 +11,6 @@ import com.gwtplatform.mvp.client.UiHandlers;
  */
 public interface SpotMapUiHandlers extends UiHandlers {
 
+	void createSpot(String name, Double coordinateX, Double coordinateY, Double coordinateZ);
+
 }

@@ -20,7 +20,6 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -54,19 +53,8 @@ public class MvcConfig implements WebMvcConfigurer {
 	// API
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/static/**").addResourceLocations("classpath:static/");
+		registry.addResourceHandler("/**").addResourceLocations("classpath:static/");
 		registry.addResourceHandler("/adm/**").addResourceLocations("/WEB-INF/adm/");
-	}
-
-	@Override
-	public void addViewControllers(final ViewControllerRegistry registry) {
-		registry.addViewController("/anonymous.html");
-
-		registry.addViewController("/login.html");
-		registry.addViewController("/redirect.html").setViewName("redirect");
-		;
-		registry.addViewController("/console.html");
-		registry.addViewController("/csrfHome.html");
 	}
 
 	@Override

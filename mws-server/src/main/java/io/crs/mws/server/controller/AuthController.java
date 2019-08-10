@@ -128,7 +128,7 @@ public class AuthController {
 	}
 
 	@GetMapping(AUTH + CURRENTUSER)
-	@PreAuthorize("hasRole('USER')")
+//	@PreAuthorize("hasRole('USER')")
 	public @ResponseBody ResponseEntity<AccountDto> getCurrentUser(@CurrentUser UserPrincipal userPrincipal) {
 		Account a = accountRepo.findByEmail(userPrincipal.getEmail());
 		if (a == null)

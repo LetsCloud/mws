@@ -21,7 +21,7 @@ public class ApiPaths {
 		public static final String LOGOUT = "/logout";
 
 		public static final String ACCOUNT = "/account";
-		
+		public static final String WINDSPOT = "/windspot";
 		public static final String FILTER = "/filter";
 
 		public static final String IS_LOGGED_IN = "/isLoggedIn";

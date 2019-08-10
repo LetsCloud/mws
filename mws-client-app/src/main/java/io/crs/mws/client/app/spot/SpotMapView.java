@@ -3,20 +3,52 @@
  */
 package io.crs.mws.client.app.spot;
 
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
 import com.google.gwt.core.client.Scheduler;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
-import io.crs.mws.client.app.spot.example.OLExampleType;
+import io.crs.mws.shared.dto.WindspotDto;
+import ol.Collection;
+import ol.Coordinate;
+import ol.Feature;
+import ol.FeatureOptions;
+import ol.Map;
+import ol.MapOptions;
+import ol.OLFactory;
+import ol.Overlay;
+import ol.OverlayOptions;
+import ol.View;
+import ol.event.EventListener;
+import ol.geocoder.AddressChosenEvent;
+import ol.geocoder.Geocoder;
+import ol.geocoder.GeocoderOptions;
+import ol.geom.Point;
+import ol.layer.Base;
+import ol.layer.LayerOptions;
+import ol.layer.Tile;
+import ol.layer.VectorLayerOptions;
+import ol.popup.Popup;
+import ol.source.Osm;
+import ol.source.Vector;
+import ol.source.VectorOptions;
+import ol.source.XyzOptions;
+import ol.style.Icon;
+import ol.style.IconOptions;
+import ol.style.Style;
+import ol.style.StyleOptions;
 
 /**
  * @author robi
@@ -28,25 +60,183 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 	interface Binder extends UiBinder<Widget, SpotMapView> {
 	}
 
+	private Map map;
+	private Tile osmLayer;
+	private ol.layer.Vector vectorLayer;
+	private SpotCreator spotCreator = new SpotCreator();
+
 	@UiField
-	SimplePanel panel;
+	HTMLPanel panel, creatorPanel;
 
 	@Inject
 	SpotMapView(Binder uiBinder) {
 		initWidget(uiBinder.createAndBindUi(this));
 		logger.log(Level.INFO, "SpotMapView");
+		creatorPanel.add(spotCreator);
+		panel.getElement().setId("spotMap");
 	}
 
 	@Override
-	public void start() {
+	public void start(List<WindspotDto> windpots) {
+		panel.getElement().removeAllChildren();
 
-		OLExampleType example = OLExampleType.valueOf("MarkerExample");
-		
-		panel.setSize("100%", "100%");
-		panel.getElement().setId(example.getExample().toString());
+		Scheduler.get().scheduleDeferred(() -> showMap("spotMap", windpots));
+		/*
+		 * Timer t = new Timer() {
+		 * 
+		 * @Override public void run() { logger.info("SpotMapView().run->start");
+		 * example.getExample().show(example.getExample().toString());
+		 * logger.info("SpotMapView().run->end"); } }; t.schedule(100);
+		 */
+	}
 
-		Scheduler.get().scheduleDeferred(() -> example.getExample().show(example.getExample().toString()));
+	@UiHandler("clearButton")
+	public void onClearPanel(ClickEvent event) {
+//		panel.clear();
+		panel.getElement().removeAllChildren();
+		logger.info("SpotMapView.onClearPanel()");
+	}
+	
+	private Feature createFeature(WindspotDto windspot) {
+		Coordinate coordinate = OLFactory.createCoordinate(Double.parseDouble(windspot.getCoordinateX()),
+				Double.parseDouble(windspot.getCoordinateY()));
+		Point point = new Point(coordinate);
+		FeatureOptions featureOptions = OLFactory.createOptions();
+		featureOptions.setGeometry(point);
+		return new Feature(featureOptions);
+	}
+
+	private void showMap(String mapPanelId, List<WindspotDto> windpots) {
+
+		Collection<Feature> features = new Collection<Feature>();
+		for (WindspotDto windspot : windpots) {
+			features.push(createFeature(windspot));
+		}
+
+		// create source
+		VectorOptions vectorSourceOptions = OLFactory.createOptions();
+		vectorSourceOptions.setFeatures(features);
+		Vector vectorSource = new Vector(vectorSourceOptions);
+
+		// create style
+		StyleOptions styleOptions = new StyleOptions();
+		IconOptions iconOptions = new IconOptions();
+//		iconOptions.setSrc("https://openlayers.org/en/v3.20.1/examples/data/icon.png");
+		iconOptions.setSrc("http://localhost:8080/image/icon-dot_32.png");
+		Icon icon = new Icon(iconOptions);
+		styleOptions.setImage(icon);
+		/*
+		 * Text t = new Text();
+		 * t.setFont("bold 20px 'Open Sans', 'Arial Unicode MS', 'sans-serif'");
+		 * styleOptions.setText(t);
+		 */
+		Style style = new Style(styleOptions);
+
+		VectorLayerOptions vectorLayerOptions = OLFactory.createOptions();
+		vectorLayerOptions.setSource(vectorSource);
+		vectorLayerOptions.setStyle(style);
+
+		vectorLayer = new ol.layer.Vector(vectorLayerOptions);
+
+		// create a OSM-layer
+		XyzOptions osmSourceOptions = OLFactory.createOptions();
+		Osm osmSource = new Osm(osmSourceOptions);
+
+		LayerOptions osmLayerOptions = OLFactory.createOptions();
+		osmLayerOptions.setSource(osmSource);
+
+		Tile osmLayer = new Tile(osmLayerOptions);
+
+		// create a view
+		View view = new View();
+		Coordinate centerCoordinate = OLFactory.createCoordinate(0, 0);
+		view.setCenter(centerCoordinate);
+		view.setZoom(2);
+
+		// create the map
+		MapOptions mapOptions = new MapOptions();
+		mapOptions.setTarget(mapPanelId);
+		mapOptions.setView(view);
+
+		Collection<Base> lstLayer = new Collection<Base>();
+		lstLayer.push(osmLayer);
+		lstLayer.push(vectorLayer);
+		mapOptions.setLayers(lstLayer);
+		map = new Map(mapOptions);
 		
-		panel.setVisible(true);
+		// add some controls
+//		map.addControl(new ScaleLine());
+//		DemoUtils.addDefaultControls(map.getControls());
+
+		// add some interactions
+//		map.addInteraction(new KeyboardPan());
+//		map.addInteraction(new KeyboardZoom());
+//		map.addControl(new Rotate());
+
+		OverlayOptions spotCreatorOverlayOptions = OLFactory.createOptions();
+		spotCreatorOverlayOptions.setElement(spotCreator.getElement());
+		Overlay spotCreatorOverlay = new Overlay(spotCreatorOverlayOptions);
+		spotCreator.addSaveLinkClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				logger.info("MarkerExample.show().onClick()");
+				getUiHandlers().createSpot(spotCreator.getSpotName(), spotCreatorOverlay.getPosition().getX(),
+						spotCreatorOverlay.getPosition().getY(), spotCreatorOverlay.getPosition().getZ());
+				spotCreatorOverlay.setPosition(null);
+			}
+		});
+		spotCreator.addCloseLinkClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				logger.info("MarkerExample.show().onClick()");
+				spotCreatorOverlay.setPosition(null);
+			}
+		});
+		map.addOverlay(spotCreatorOverlay);
+
+		/*
+		 * Coordinate transformedCenterCoordinate =
+		 * Projection.transform(centerCoordinate, DemoConstants.EPSG_4326,
+		 * DemoConstants.EPSG_3857);
+		 */
+
+		OverlayOptions overlayOptions = OLFactory.createOptions();
+//		overlayOptions.setElement(Document.get().getElementById("popup"));
+//		overlayOptions.setPosition(transformedCenterCoordinate);
+//		overlayOptions.setOffset(OLFactory.createPixel(-300, 0));
+		Popup popup = new Popup(overlayOptions);
+		map.addOverlay(popup);
+
+		GeocoderOptions geocoderOptions = OLFactory.createOptions();
+		geocoderOptions.setProvider("osm");
+		geocoderOptions.setLang("hu");
+		geocoderOptions.setPlaceholder("Keresés ...");
+		geocoderOptions.setLimit(5);
+		geocoderOptions.setDebug(false);
+		geocoderOptions.setAutoComplete(true);
+		geocoderOptions.setKeepOpen(true);
+
+		Geocoder geocoder = new Geocoder("nominatim", geocoderOptions);
+		geocoder.on("addresschosen", new EventListener<AddressChosenEvent>() {
+
+			@Override
+			public void onEvent(AddressChosenEvent event) {
+				// TODO Auto-generated method stub
+
+			}
+		});
+		map.addControl(geocoder);
+
+		map.on("singleclick", new EventListener<AddressChosenEvent>() {
+			@Override
+			public void onEvent(AddressChosenEvent event) {
+				spotCreatorOverlay.setPosition(event.getCoordinate());
+			}
+		});
+	}
+
+	@Override
+	public void renderMap() {
+		logger.info("SpotMapView.renderMap()-1");
 	}
 }
