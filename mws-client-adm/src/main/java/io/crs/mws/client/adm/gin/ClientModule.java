@@ -27,8 +27,8 @@ public class ClientModule extends AbstractPresenterModule {
 	protected void configure() {
 		logger.info("ClientModule().configure(");
 		bindConstant().annotatedWith(DefaultPlace.class).to(AdmNameTokens.HOME);
-		bindConstant().annotatedWith(ErrorPlace.class).to(io.crs.mws.client.core.NameTokens.LOGIN);
-		bindConstant().annotatedWith(UnauthorizedPlace.class).to(io.crs.mws.client.core.NameTokens.LOGIN);
+		bindConstant().annotatedWith(ErrorPlace.class).to(AdmNameTokens.HOME);
+		bindConstant().annotatedWith(UnauthorizedPlace.class).to(AdmNameTokens.HOME);
 
         install(new CoreModule());
 

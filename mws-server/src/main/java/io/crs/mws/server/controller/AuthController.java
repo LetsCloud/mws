@@ -39,6 +39,7 @@ import io.crs.mws.shared.exception.EntityValidationException;
 import io.crs.mws.shared.exception.UniqueIndexConflictException;
 
 import javax.validation.Valid;
+import static io.crs.mws.shared.api.ApiPaths.AdminV1.ADMIN;
 
 import static io.crs.mws.shared.api.ApiPaths.APIv1.AUTH;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.CURRENTUSER;
@@ -131,6 +132,15 @@ public class AuthController {
 	@GetMapping(AUTH + CURRENTUSER)
 	@PreAuthorize("hasRole('USER')")
 	public @ResponseBody ResponseEntity<AccountDto> getCurrentUser(@CurrentUser UserPrincipal userPrincipal) {
+		Account a = accountRepo.findByEmail(userPrincipal.getEmail());
+		if (a == null)
+			throw new ResourceNotFoundException("User", "id", userPrincipal.getEmail());
+		return new ResponseEntity<AccountDto>(modelMapper.map(a, AccountDto.class), OK);
+	}
+
+	@GetMapping(ADMIN + AUTH + CURRENTUSER)
+	@PreAuthorize("hasRole('USER')")
+	public @ResponseBody ResponseEntity<AccountDto> getAdminUser(@CurrentUser UserPrincipal userPrincipal) {
 		Account a = accountRepo.findByEmail(userPrincipal.getEmail());
 		if (a == null)
 			throw new ResourceNotFoundException("User", "id", userPrincipal.getEmail());

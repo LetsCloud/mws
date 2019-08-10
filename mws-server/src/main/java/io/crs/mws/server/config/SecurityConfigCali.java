@@ -23,12 +23,16 @@ import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
+import org.springframework.security.config.annotation.authentication.configuration.GlobalAuthenticationConfigurerAdapter;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.config.oauth2.client.CommonOAuth2Provider;
+import org.springframework.security.core.token.TokenService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.client.InMemoryOAuth2AuthorizedClientService;
@@ -40,6 +44,8 @@ import org.springframework.security.oauth2.client.web.AuthenticatedPrincipalOAut
 import org.springframework.security.oauth2.client.web.OAuth2AuthorizedClientRepository;
 import org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.preauth.RequestHeaderAuthenticationFilter;
+import org.springframework.web.filter.CommonsRequestLoggingFilter;
 
 import io.crs.mws.server.security2.CustomUserDetailsService;
 import io.crs.mws.server.security2.RestAuthenticationEntryPoint;
@@ -47,6 +53,7 @@ import io.crs.mws.server.security2.TokenAuthenticationFilter;
 import io.crs.mws.server.security2.gae.GaeAuthenticationEntryPoint;
 import io.crs.mws.server.security2.gae.GaeAuthenticationFilter;
 import io.crs.mws.server.security2.gae.GaeAuthenticationProvider;
+import io.crs.mws.server.security2.gae.GaeDatastoreUserRegistry;
 import io.crs.mws.server.security2.oauth2.CustomOAuth2UserService;
 import io.crs.mws.server.security2.oauth2.HttpCookieOAuth2AuthorizationRequestRepository;
 import io.crs.mws.server.security2.oauth2.OAuth2AuthenticationFailureHandler;
@@ -58,7 +65,8 @@ import io.crs.mws.server.security2.oauth2.OAuth2AuthenticationSuccessHandler;
  */
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(securedEnabled = true, jsr250Enabled = true, prePostEnabled = true)
+@EnableGlobalAuthentication
+//@EnableGlobalMethodSecurity(securedEnabled = true, jsr250Enabled = true, prePostEnabled = true)
 @PropertySource("classpath:application.properties")
 public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 	private static final Logger logger = LoggerFactory.getLogger(SecurityConfigCali.class);
@@ -68,7 +76,13 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 	public SecurityConfigCali(Environment environment) {
 		this.environment = environment;
 	}
-
+	
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/_ah/**", ROOT + PUBLIC + "/**", "/oauth2/**");
+ //       web.ignoring().antMatchers("/_ah/login/**");
+    }
+	
 	@Bean(BeanIds.AUTHENTICATION_MANAGER)
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -91,7 +105,7 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 	public TokenAuthenticationFilter tokenAuthenticationFilter() {
 		return new TokenAuthenticationFilter();
 	}
-
+	
 	/*
 	 * By default, Spring OAuth2 uses
 	 * HttpSessionOAuth2AuthorizationRequestRepository to save the authorization
@@ -127,63 +141,16 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 	@Order(1)
 	public class AdminSecurityConfig extends WebSecurityConfigurerAdapter {
 
-		@Bean
-		public GaeAuthenticationEntryPoint googleAuthenticationEntryPoint() {
-			return new GaeAuthenticationEntryPoint();
-		}
-
-		@Bean
-		public GaeAuthenticationFilter gaeAuthenticationFilter() throws Exception {
-			GaeAuthenticationFilter preAuthenticationFilter = new GaeAuthenticationFilter();
-			preAuthenticationFilter.setAuthenticationManager(authenticationManager());
-			ExceptionMappingAuthenticationFailureHandler emaf = new ExceptionMappingAuthenticationFailureHandler();
-			Map<Object, String> failureUrlMap = new HashMap<Object, String>();
-			failureUrlMap.put("org.springframework.security.authentication.DisabledException", "/disabled.htm");
-			emaf.setExceptionMappings(failureUrlMap);
-			preAuthenticationFilter.setFailureHandler(emaf);
-
-			return preAuthenticationFilter;
-		}
-
-		
 		@Override
 		public void configure(HttpSecurity http) throws Exception {
 			// @formatter:off
-			http.antMatcher("/adm/**")
-				.cors()
-					.and()
-				.sessionManagement()
-					.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-					.and()
-				.csrf()
-					.disable()
-				.formLogin()
-					.disable()
-				.httpBasic()
-					.disable()
-				.exceptionHandling()
-					.authenticationEntryPoint(googleAuthenticationEntryPoint())
-					.and()
-				.authorizeRequests()
-					.antMatchers("/adm/**", "/_ah/**")
+			http.authorizeRequests()
+					.antMatchers("/adm/**", "/font/**")
 						.permitAll()
-					.antMatchers("/adm/APIv1/**")
-						.authenticated()
 					.anyRequest()
-						.authenticated();
-			// @formatter:off
-			http.addFilterBefore(gaeAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
-		}
-	}
-
-	@Configuration
-	@Order(2)
-	public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
-
-		@Override
-		public void configure(HttpSecurity http) throws Exception {
-			// @formatter:off
-			http.cors()
+						.authenticated()
+					.and()
+				.cors()
 					.and()
 				.sessionManagement()
 					.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -197,13 +164,55 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 				.exceptionHandling()
 					.authenticationEntryPoint(new RestAuthenticationEntryPoint())
 					.and()
-				.authorizeRequests()
-					.antMatchers("/", "/app/**", "/static/**", "/image/**", "/font/**", "/_ah/**")
-						.permitAll()
-					.antMatchers(ROOT + PUBLIC + "/**", "/oauth2/**")
+				.oauth2Login()
+					.authorizationEndpoint()
+						.baseUri("/oauth2/authorize")
+					.authorizationRequestRepository(cookieAuthorizationRequestRepository())
+						.and()
+//				.redirectionEndpoint()
+//					.baseUri("/oauth2/callback/*")
+//					.and()
+					.userInfoEndpoint()
+//					.oidcUserService(customOidcUserService)
+					.userService(customOAuth2UserService)
+						.and()
+					.successHandler(oAuth2AuthenticationSuccessHandler)
+					.failureHandler(oAuth2AuthenticationFailureHandler)
+					.clientRegistrationRepository(clientRegistrationRepository())
+					.authorizedClientService(authorizedClientService());
+			// @formatter:on
+
+			// Add our custom Token based authentication filter
+			http.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+		}
+	}
+
+	@Configuration
+	@Order(2)
+	public class AhSecurityConfig extends WebSecurityConfigurerAdapter {
+
+		@Override
+		public void configure(HttpSecurity http) throws Exception {
+			// @formatter:off
+			http.authorizeRequests()
+					.antMatchers("/app/**", "/font/**")
 						.permitAll()
 					.anyRequest()
 						.authenticated()
+					.and()
+				.cors()
+					.and()
+				.sessionManagement()
+					.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+					.and()
+				.csrf()
+					.disable()
+				.formLogin()
+					.disable()
+				.httpBasic()
+					.disable()
+				.exceptionHandling()
+					.authenticationEntryPoint(new RestAuthenticationEntryPoint())
 					.and()
 				.oauth2Login()
 					.authorizationEndpoint()

@@ -12,7 +12,9 @@ import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
+import com.gwtplatform.mvp.client.annotations.NoGatekeeper;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
+import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 
 import io.crs.mws.client.adm.AdmNameTokens;
@@ -32,9 +34,9 @@ public class DashboardPresenter extends Presenter<DashboardPresenter.MyView, Das
 	interface MyView extends View, HasUiHandlers<DashboardUiHandlers> {
 	}
 
-	@ProxyCodeSplit
 	@NameToken(AdmNameTokens.HOME)
-	// @UseGatekeeper(LoggedInGatekeeper.class)
+	@ProxyStandard
+	@NoGatekeeper
 	interface MyProxy extends ProxyPlace<DashboardPresenter> {
 	}
 

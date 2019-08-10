@@ -4,6 +4,7 @@
 package io.crs.mws.client.core.service;
 
 import static io.crs.mws.shared.api.ApiPaths.APIv1.AUTH;
+import static io.crs.mws.shared.api.ApiPaths.AdminV1.ADMIN;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.CURRENTUSER;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.LOGIN;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.LOGOUT;
@@ -48,6 +49,10 @@ public interface AuthService extends RestService {
 	@GET
 	@Path(AUTH + CURRENTUSER)
 	public void getCurrentUser(MethodCallback<AccountDto> callback);
+
+	@GET
+	@Path(ADMIN + AUTH + CURRENTUSER)
+	public void getAdminUser(MethodCallback<AccountDto> callback);
 
 	@POST
 	@Path(AUTH + LOGOUT)

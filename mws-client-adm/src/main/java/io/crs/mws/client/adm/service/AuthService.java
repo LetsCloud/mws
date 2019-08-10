@@ -5,7 +5,7 @@ package io.crs.mws.client.adm.service;
 
 import static io.crs.mws.shared.api.ApiPaths.APIv1.AUTH;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.CURRENTUSER;
-import static io.crs.mws.shared.api.ApiPaths.APIv1.LOGOUT;
+import static io.crs.mws.shared.api.ApiPaths.APIv1.IS_LOGGED_IN;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.ROOT;
 import static io.crs.mws.shared.api.ApiPaths.AdminV1.ADMIN;
 
@@ -18,6 +18,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.fusesource.restygwt.client.MethodCallback;
 import org.fusesource.restygwt.client.RestService;
+import org.fusesource.restygwt.client.TextCallback;
 
 import io.crs.mws.shared.dto.AccountDto;
 
@@ -35,6 +36,6 @@ public interface AuthService extends RestService {
 	public void getCurrentUser(MethodCallback<AccountDto> callback);
 
 	@POST
-	@Path(LOGOUT)
-	public void logout(MethodCallback<Void> callback);
+	@Path(IS_LOGGED_IN)
+	public void isLoggedIn(TextCallback callback);
 }

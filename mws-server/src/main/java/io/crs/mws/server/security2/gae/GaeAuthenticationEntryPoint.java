@@ -29,7 +29,7 @@ public class GaeAuthenticationEntryPoint implements AuthenticationEntryPoint {
 		logger.info("commence()");
 
 		UserService userService = UserServiceFactory.getUserService();
-		logger.info("commence()->userService=" + userService);
+		logger.info("commence()->userService=" + userService.createLoginURL(request.getRequestURI()));
 
 		response.sendRedirect(userService.createLoginURL(request.getRequestURI()));
 	}
