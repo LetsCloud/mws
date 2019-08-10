@@ -21,10 +21,10 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
 
 import io.crs.mws.client.adm.meditor.globalconfig.GlobalConfigEditorFactory;
 import io.crs.mws.client.adm.meditor.globalconfig.GlobalConfigEditorPresenter;
-import io.crs.mws.client.adm.service.GlobalConfigService;
 import io.crs.mws.client.core.browser.AbstractBrowserPresenter;
 import io.crs.mws.client.core.event.RefreshTableEvent.TableType;
 import io.crs.mws.client.core.security.CurrentUser;
+import io.crs.mws.client.core.service.GlobalConfigService;
 import io.crs.mws.shared.dto.GlobalConfigDto;
 
 /**

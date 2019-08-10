@@ -11,7 +11,7 @@
         <Column>
             <Name>default</Name>
             <Description></Description>
-            <Width>150</Width>
+            <Width>370</Width>
             <HandlerConfiguration>/mws-client-app/src/main/resources/io/crs/mws/client/app/i18n/AppMessages.properties|false|false|false|false|UTF-8</HandlerConfiguration>
         </Column>
         <Column>
@@ -139,6 +139,44 @@
             <MultiLine>false</MultiLine>
             <Value disabled="false">Active</Value>
             <Value disabled="false">Aktív</Value>
+        </Property>
+        <Comment>
+            <Value>SUCCESS</Value>
+        </Comment>
+        <Property>
+            <Name>line1</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">You have successfully registred for the MyWindSpot application.</Value>
+            <Value disabled="false"></Value>
+        </Property>
+        <Property>
+            <Name>line2</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">You will now need to Activate your account with Email pin.</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>line3</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">An Email has been send on your registred EMail Address with PIN for verification.</Value>
+            <Value disabled="false"></Value>
+        </Property>
+        <Property>
+            <Name>line4</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Furhter instructions on how to activate your account hav benn sent on your Email address.</Value>
+            <Value disabled="true"></Value>
+        </Property>
+        <Property>
+            <Name>line5</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Please follow the link Email for Verification of your Account or Click Here to goto Login Page.</Value>
+            <Value disabled="true"></Value>
         </Property>
     </Records>
 </MultiProperties>

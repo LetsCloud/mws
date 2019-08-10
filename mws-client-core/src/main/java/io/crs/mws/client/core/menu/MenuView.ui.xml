@@ -66,9 +66,6 @@
 	}
 	</ui:style>
 
-	<ui:with field="permissions"
-		type="io.crs.mws.shared.cnst.Permissions" />
-
 	<ui:with field="i18n"
 		type="io.crs.mws.client.core.i18n.CoreMessages" />
 

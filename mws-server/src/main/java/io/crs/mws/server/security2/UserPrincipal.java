@@ -4,14 +4,11 @@
 package io.crs.mws.server.security2;
 
 import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
@@ -25,6 +22,8 @@ import io.crs.mws.server.entity.Account;
 public class UserPrincipal implements OAuth2User, UserDetails {
 	private static final Logger logger = LoggerFactory.getLogger(UserPrincipal.class);
 
+//	private static final String ENCODED_TEST_EMAIL = "dGVzdEBleGFtcGxlLmNvbQ==";
+
 	private String email;
 	private String password;
 
@@ -37,15 +36,14 @@ public class UserPrincipal implements OAuth2User, UserDetails {
 		this.authorities = authorities;
 	}
 
-	public static UserPrincipal create(Account user) {
+	public static UserPrincipal create(Account user, Collection<? extends GrantedAuthority> authorities) {
 		logger.info("create()->user=" + user);
-		List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"));
 
 		return new UserPrincipal(user.getEmail(), user.getPassword(), authorities);
 	}
 
-	public static UserPrincipal create(Account user, Map<String, Object> attributes) {
-		UserPrincipal userPrincipal = UserPrincipal.create(user);
+	public static UserPrincipal create(Account user, Map<String, Object> attributes, Collection<? extends GrantedAuthority> authorities) {
+		UserPrincipal userPrincipal = UserPrincipal.create(user, authorities);
 		userPrincipal.setAttributes(attributes);
 		return userPrincipal;
 	}

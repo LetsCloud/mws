@@ -1,7 +1,7 @@
 /**
  * 
  */
-package io.crs.mws.client.app.auth.oauth2redirect;
+package io.crs.mws.client.core.security.oauth2redirect;
 
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 

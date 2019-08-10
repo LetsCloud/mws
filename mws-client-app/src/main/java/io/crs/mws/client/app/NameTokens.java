@@ -8,9 +8,8 @@ package io.crs.mws.client.app;
  *
  */
 public class NameTokens {
-
 	public static final String SIGNUP = "/signup";
-	public static final String OAUTH2REDIRECT = "/oauth2redirect";
+	public static final String SUCCESS = "/success";
 
 	public static final String SPOTS = "/spots";
 	public static final String SETUP = "/setup";

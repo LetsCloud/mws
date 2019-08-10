@@ -17,10 +17,10 @@ import com.gwtplatform.mvp.client.annotations.UseGatekeeper;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 
 import io.crs.mws.client.app.NameTokens;
+import io.crs.mws.client.app.security.LoggedInGatekeeper;
 import io.crs.mws.client.core.app.AbstractAppPresenter;
 import io.crs.mws.client.core.event.ContentPushEvent;
 import io.crs.mws.client.core.event.SetPageTitleEvent;
-import io.crs.mws.client.core.security.LoggedInGatekeeper;
 import io.crs.mws.shared.cnst.MenuItemType;
 
 /**

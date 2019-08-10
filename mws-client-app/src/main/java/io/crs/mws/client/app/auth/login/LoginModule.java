@@ -5,6 +5,8 @@ package io.crs.mws.client.app.auth.login;
 
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 
+import io.crs.mws.client.core.security.login.LoginPresenter;
+
 /**
  * @author robi
  *

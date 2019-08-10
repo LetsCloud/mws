@@ -1,7 +1,7 @@
 /**
  * 
  */
-package io.crs.mws.client.app.auth.oauth2redirect;
+package io.crs.mws.client.core.security.oauth2redirect;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +26,7 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
-import io.crs.mws.client.app.NameTokens;
+import io.crs.mws.client.core.CoreNameTokens;
 import io.crs.mws.client.core.firebase.messaging.MessagingManager;
 import io.crs.mws.client.core.i18n.CoreMessages;
 import io.crs.mws.client.core.security.AppData;
@@ -49,7 +49,7 @@ public class Oauth2RedirectPresenter extends Presenter<Oauth2RedirectPresenter.M
 		void setEmail(String text);
 	}
 
-	@NameToken(NameTokens.OAUTH2REDIRECT)
+	@NameToken(CoreNameTokens.OAUTH2REDIRECT)
 	@ProxyStandard
 	@NoGatekeeper
 	interface MyProxy extends ProxyPlace<Oauth2RedirectPresenter> {

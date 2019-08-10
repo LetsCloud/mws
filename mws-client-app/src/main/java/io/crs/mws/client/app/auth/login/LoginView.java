@@ -24,6 +24,8 @@ import gwt.material.design.client.ui.MaterialCheckBox;
 import gwt.material.design.client.ui.MaterialPanel;
 import gwt.material.design.client.ui.MaterialTextBox;
 import gwt.material.design.client.ui.MaterialToast;
+import io.crs.mws.client.core.security.login.LoginPresenter;
+import io.crs.mws.client.core.security.login.LoginUiHandlers;
 import io.crs.mws.client.core.util.UrlUtils;
 import io.crs.mws.shared.dto.EntityPropertyCode;
 import io.crs.mws.shared.dto.auth.LoginRequest;

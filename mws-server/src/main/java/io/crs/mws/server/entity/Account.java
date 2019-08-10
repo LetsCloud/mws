@@ -10,6 +10,7 @@ import java.util.List;
 //import org.slf4j.LoggerFactory;
 
 import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Ignore;
 import com.googlecode.objectify.annotation.Index;
 
 import io.crs.mws.server.model.RegistrationForm;
@@ -38,6 +39,12 @@ public class Account extends BaseEntity {
 	 */
 	private String password;
 
+	/**
+	 * Szerepkör
+	 */
+	@Ignore
+	private String role;
+	
 	/**
 	 * Fotó
 	 */
@@ -144,6 +151,14 @@ public class Account extends BaseEntity {
 		return result;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -163,8 +178,8 @@ public class Account extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "Account [nickname=" + nickname + ", email=" + email + ", imageUrl=" + imageUrl + ", enabled=" + enabled
-				+ "]";
+		return "Account [nickname=" + nickname + ", email=" + email + ", password=" + password + ", role=" + role
+				+ ", imageUrl=" + imageUrl + ", enabled=" + enabled + "]";
 	}
 
 }

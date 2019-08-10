@@ -46,7 +46,6 @@ import static io.crs.mws.shared.api.ApiPaths.APIv1.LOGIN;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.PUBLIC;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.ROOT;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.SIGNUP;
-import static io.crs.mws.shared.api.ApiPaths.AdminV1.GLOBAL_CONFIG;
 import static org.springframework.http.HttpStatus.OK;
 
 import java.net.URI;

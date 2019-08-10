@@ -28,6 +28,11 @@ public class AccountDto extends BaseDto {
 	private String password;
 
 	/**
+	 * Szerepkör
+	 */
+	private String role;
+
+	/**
 	 * Fotó
 	 */
 	private String imageUrl;
@@ -90,10 +95,18 @@ public class AccountDto extends BaseDto {
 		this.fcmTokens = fcmTokens;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	@Override
 	public String toString() {
-		return "AccountDto [nickname=" + nickname + ", email=" + email + ", password=" + password + ", imageUrl="
-				+ imageUrl + ", enabled=" + enabled + ", fcmTokens=" + fcmTokens + "]";
+		return "AccountDto [nickname=" + nickname + ", email=" + email + ", password=" + password + ", role=" + role
+				+ ", imageUrl=" + imageUrl + ", enabled=" + enabled + "]";
 	}
 
 }

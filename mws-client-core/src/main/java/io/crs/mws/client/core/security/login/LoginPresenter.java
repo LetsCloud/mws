@@ -1,7 +1,7 @@
 /**
  * 
  */
-package io.crs.mws.client.app.auth.login;
+package io.crs.mws.client.core.security.login;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,12 +24,11 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
-import io.crs.mws.client.core.NameTokens;
+import io.crs.mws.client.core.CoreNameTokens;
 import io.crs.mws.client.core.firebase.messaging.MessagingManager;
 import io.crs.mws.client.core.i18n.CoreMessages;
 import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.CurrentUser;
-import io.crs.mws.client.core.security.LoggedInGatekeeper;
 import io.crs.mws.client.core.security.UserManager;
 import io.crs.mws.shared.dto.EntityPropertyCode;
 import io.crs.mws.shared.dto.auth.LoginRequest;
@@ -42,7 +41,7 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 		implements LoginUiHandlers {
 	private static Logger logger = Logger.getLogger(LoginPresenter.class.getName());
 
-	interface MyView extends View, HasUiHandlers<LoginUiHandlers> {
+	public interface MyView extends View, HasUiHandlers<LoginUiHandlers> {
 		void setPlaceToGo(String placeTogo, LoginRequest loginRequest);
 
 		void setAppCode(String appCode);
@@ -50,9 +49,10 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 		void displayError(EntityPropertyCode code, String message);
 	}
 
-	@NameToken(NameTokens.LOGIN)
+	@NameToken(CoreNameTokens.LOGIN)
 	@ProxyStandard
 	@NoGatekeeper
+	public
 	interface MyProxy extends ProxyPlace<LoginPresenter> {
 	}
 
@@ -91,7 +91,7 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 	@Override
 	public void prepareFromRequest(PlaceRequest request) {
 		logger.info("LoginPresenter().prepareFromRequest()->nameToken=" + this.getProxy().getNameToken());
-		String requestToken = request.getParameter(LoggedInGatekeeper.PLACE_TO_GO, null);
+		String requestToken = request.getParameter(CoreNameTokens.PLACE_TO_GO, null);
 		if (Strings.isNullOrEmpty(requestToken)) {
 			logger.info("LoginPresenter().prepareFromRequest()->isNullOrEmpty(requestToken)");
 			checkCurentUser();

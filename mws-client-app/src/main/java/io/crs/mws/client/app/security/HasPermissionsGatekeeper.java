@@ -1,11 +1,13 @@
 /**
  * 
  */
-package io.crs.mws.client.core.security;
+package io.crs.mws.client.app.security;
 import java.util.logging.Logger;
 
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.proxy.GatekeeperWithParams;
+
+import io.crs.mws.client.core.security.CurrentUser;
 
 /**
  * @author CR

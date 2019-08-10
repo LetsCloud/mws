@@ -12,7 +12,7 @@ import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 
-import io.crs.mws.client.adm.AdmNameTokens;
+import io.crs.mws.client.adm.NameTokens;
 import io.crs.mws.client.adm.browser.globalconfig.GlobalConfigBrowserFactory;
 import io.crs.mws.client.adm.i18n.AdminMessages;
 import io.crs.mws.client.core.app.AbstractAppPresenter;
@@ -33,7 +33,7 @@ public class SystemConfigPresenter
 	}
 
 	@ProxyCodeSplit
-	@NameToken(AdmNameTokens.SYSTEM_CONFIG)
+	@NameToken(NameTokens.SYSTEM_CONFIG)
 	interface MyProxy extends ProxyPlace<SystemConfigPresenter> {
 	}
 
@@ -45,7 +45,7 @@ public class SystemConfigPresenter
 
 		setCaption(i18n.systemConfigTitle());
 		setDescription(i18n.systemConfigDescription());
-		setPlaceToken(AdmNameTokens.SYSTEM_CONFIG);
+		setPlaceToken(NameTokens.SYSTEM_CONFIG);
 
 		addContent(i18n.globalConfigBrowserTitle(), globalConfigBrowserFactory.createFirebaseBrowser(), GLOBAL_CONFIGS);
 

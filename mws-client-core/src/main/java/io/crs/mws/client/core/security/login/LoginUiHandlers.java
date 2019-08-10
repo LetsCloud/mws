@@ -1,7 +1,7 @@
 /**
  * 
  */
-package io.crs.mws.client.app.auth.login;
+package io.crs.mws.client.core.security.login;
 
 import com.gwtplatform.mvp.client.UiHandlers;
 

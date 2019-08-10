@@ -1,4 +1,4 @@
-package io.crs.mws.client.core.security;
+package io.crs.mws.client.app.security;
 
 import java.util.Set;
 import java.util.logging.Logger;
@@ -10,13 +10,13 @@ import com.gwtplatform.mvp.client.proxy.Gatekeeper;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
-import io.crs.mws.client.core.NameTokens;
+import io.crs.mws.client.app.NameTokens;
+import io.crs.mws.client.core.CoreNameTokens;
+import io.crs.mws.client.core.security.CurrentUser;
 
 @DefaultGatekeeper
 public class LoggedInGatekeeper implements Gatekeeper {
 	private static Logger logger = Logger.getLogger(LoggedInGatekeeper.class.getName());
-
-	public static final String PLACE_TO_GO = "placeToGo";
 
 	private final PlaceManager placeManager;
 	private final CurrentUser currentUser;
@@ -49,8 +49,8 @@ public class LoggedInGatekeeper implements Gatekeeper {
 			sb.append(placeManager.getCurrentPlaceRequest().getParameter(param, null));
 		}
 		
-		PlaceRequest placeRequest = new PlaceRequest.Builder().nameToken(NameTokens.LOGIN)
-				.with(PLACE_TO_GO, sb.toString()).build();
+		PlaceRequest placeRequest = new PlaceRequest.Builder().nameToken(CoreNameTokens.LOGIN)
+				.with(CoreNameTokens.PLACE_TO_GO, sb.toString()).build();
 		placeManager.revealPlace(placeRequest);
 	}
 

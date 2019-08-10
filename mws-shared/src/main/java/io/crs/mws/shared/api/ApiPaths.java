@@ -6,22 +6,15 @@ public class ApiPaths {
 	public static final String REDUCED = "/reduced";
 	public static final String UPLOAD = "/upload";
 
-	public class AdminV1 {
-		public static final String ADMIN = "/adm";
-		public static final String LOGIN = "/login";
-		public static final String CURRENTUSER = "/currentuser";
-		public static final String IS_LOGGED_IN = "/isLoggedIn";
-		public static final String LOGOUT = "/logout";
-		public static final String LOGGEDOUT = "/loggedout";
-		public static final String GLOBAL_CONFIG = "/globalConfig";
-	}
-
 	public class APIv1 {
 		public static final String ROOT = "/APIv1";
+		public static final String ADMIN = "/adm";
 		
 		public static final String PUBLIC = "/public";
 		public static final String SIGNUP = "/signup";
 		public static final String LOGIN = "/login";
+
+		public static final String GLOBAL_CONFIG = "/globalConfig";
 		
 		public static final String AUTH = "/auth";
 		public static final String CURRENTUSER = "/currentuser";
