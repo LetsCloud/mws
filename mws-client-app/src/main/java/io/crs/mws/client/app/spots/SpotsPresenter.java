@@ -1,32 +1,31 @@
 /**
  * 
  */
-package io.crs.mws.client.app.spot;
+package io.crs.mws.client.app.spots;
 
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.fusesource.restygwt.client.Method;
-import org.fusesource.restygwt.client.MethodCallback;
-
-import com.google.gwt.core.client.GWT;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
+import com.gwtplatform.mvp.client.PresenterWidget;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.annotations.UseGatekeeper;
+import com.gwtplatform.mvp.client.presenter.slots.SingleSlot;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 
 import io.crs.mws.client.app.NameTokens;
 import io.crs.mws.client.app.security.LoggedInGatekeeper;
+import io.crs.mws.client.app.spots.map.SpotsMapFactory;
+import io.crs.mws.client.app.spots.map.SpotsMapPresenter;
 import io.crs.mws.client.core.app.AbstractAppPresenter;
 import io.crs.mws.client.core.event.ContentPushEvent;
 import io.crs.mws.client.core.event.SetPageTitleEvent;
-import io.crs.mws.client.core.service.WindspotService;
 import io.crs.mws.shared.cnst.MenuItemType;
 import io.crs.mws.shared.dto.WindspotDto;
 
@@ -34,29 +33,34 @@ import io.crs.mws.shared.dto.WindspotDto;
  * @author robi
  *
  */
-public class SpotMapPresenter extends Presenter<SpotMapPresenter.MyView, SpotMapPresenter.MyProxy>
-		implements SpotMapUiHandlers, ContentPushEvent.ContentPushHandler {
-	private static Logger logger = Logger.getLogger(SpotMapPresenter.class.getName());
+public class SpotsPresenter extends Presenter<SpotsPresenter.MyView, SpotsPresenter.MyProxy>
+		implements SpotsUiHandlers, ContentPushEvent.ContentPushHandler {
+	private static Logger logger = Logger.getLogger(SpotsPresenter.class.getName());
 
-	private static final WindspotService WINDSPOT_SERVICE = GWT.create(WindspotService.class);
+	public static final SingleSlot<PresenterWidget<?>> SLOT_MAP = new SingleSlot<>();
+	public static final SingleSlot<PresenterWidget<?>> SLOT_LIST = new SingleSlot<>();
 
-	interface MyView extends View, HasUiHandlers<SpotMapUiHandlers> {
-		void start(List<WindspotDto> windpots);
-
-		void renderMap();
+	interface MyView extends View, HasUiHandlers<SpotsUiHandlers> {
+		void reveal(List<WindspotDto> windpots);
 	}
 
 	@ProxyCodeSplit
 	@NameToken(NameTokens.SPOTS)
 	@UseGatekeeper(LoggedInGatekeeper.class)
-	interface MyProxy extends ProxyPlace<SpotMapPresenter> {
+	interface MyProxy extends ProxyPlace<SpotsPresenter> {
 	}
 
+	private final SpotsMapPresenter spotsMapPresenter;
+
 	@Inject
-	SpotMapPresenter(EventBus eventBus, MyView view, MyProxy proxy) {
+	SpotsPresenter(EventBus eventBus, MyView view, MyProxy proxy, SpotsMapFactory spotsMapFactory) {
 		super(eventBus, view, proxy, AbstractAppPresenter.SLOT_MAIN);
 		logger.log(Level.INFO, "SpotMapPresenter()");
+
+		this.spotsMapPresenter = spotsMapFactory.createSpotsMapPresenter();
+
 		getView().setUiHandlers(this);
+
 		addRegisteredHandler(ContentPushEvent.TYPE, this);
 	}
 
@@ -64,6 +68,8 @@ public class SpotMapPresenter extends Presenter<SpotMapPresenter.MyView, SpotMap
 	protected void onBind() {
 		super.onBind();
 		logger.log(Level.INFO, "SpotMapPresenter().onBind()");
+
+		setInSlot(SLOT_MAP, spotsMapPresenter);
 	}
 
 	@Override
@@ -72,40 +78,12 @@ public class SpotMapPresenter extends Presenter<SpotMapPresenter.MyView, SpotMap
 		logger.log(Level.INFO, "SpotMapPresenter().onReveal()");
 		SetPageTitleEvent.fire("Spots", "", MenuItemType.MENU_ITEM, this);
 
-		WINDSPOT_SERVICE.getAll(new MethodCallback<List<WindspotDto>>() {
-
-			@Override
-			public void onSuccess(Method method, List<WindspotDto> response) {
-				getView().start(response);
-			}
-
-			@Override
-			public void onFailure(Method method, Throwable exception) {
-			}
-		});
-
+		spotsMapPresenter.loadData();
 	}
 
 	@Override
 	public void onContentPush(ContentPushEvent event) {
 		logger.info("SpotMapPresenter.onContentPush()");
-		getView().renderMap();
-	}
-
-	@Override
-	public void createSpot(String name, Double coordinateX, Double coordinateY, Double coordinateZ) {
-		WINDSPOT_SERVICE.createOrSave(
-				new WindspotDto(name, coordinateX.toString(), coordinateY.toString(), coordinateZ.toString()),
-				new MethodCallback<WindspotDto>() {
-
-					@Override
-					public void onSuccess(Method method, WindspotDto response) {
-					}
-
-					@Override
-					public void onFailure(Method method, Throwable exception) {
-					}
-				});
 	}
 
 }

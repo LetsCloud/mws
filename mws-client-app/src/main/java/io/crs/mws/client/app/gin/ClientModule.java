@@ -12,7 +12,7 @@ import io.crs.mws.client.app.auth.login.LoginModule;
 import io.crs.mws.client.app.auth.signup.SignupModule;
 import io.crs.mws.client.app.auth.success.SuccessModule;
 import io.crs.mws.client.app.dashboard.DashboardModule;
-import io.crs.mws.client.app.spot.SpotMapModule;
+import io.crs.mws.client.app.spots.SpotsModule;
 import io.crs.mws.client.core.gin.CoreModule;
 import io.crs.mws.client.core.resources.ThemeParams;
 import io.crs.mws.client.core.security.oauth2redirect.Oauth2RedirectModule;
@@ -37,6 +37,6 @@ public class ClientModule extends AbstractPresenterModule {
 		install(new SuccessModule());
 
 		install(new DashboardModule());
-		install(new SpotMapModule());
+		install(new SpotsModule());
 	}
 }

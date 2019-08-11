@@ -1,0 +1,43 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.client.ui">
+
+	<ui:style gss="true">
+	@def SMALL_SCREEN "max-width: 600px";
+	@def MEDIUM_DOWN_SCREEN "min-width : 601px";
+	@def MEDIUM_UP_SCREEN "max-width: 992px";
+	@def LARGE_DOWN_SCREEN "min-width : 993px";
+	@def LARGE_UP_SCREEN "max-width: 1200px";
+	@def XTRA_LARGE_SCREEN "min-width : 1201px";
+	@media ( SMALL_SCREEN ) {
+		.chat_list_view_col_left {
+			display: block;
+		}
+		.chat_list_view_col_right {
+			display: none;
+		}
+	}
+	
+	@media ( MEDIUM_DOWN_SCREEN ) {
+		.chat_list_view_col_left {
+			display: block;
+		}
+		.chat_list_view_col_right {
+			display: block;
+		}
+	}
+	</ui:style>
+
+	<m:MaterialRow height="100%" marginBottom="0">
+
+		<m:MaterialColumn ui:field="leftColumn" height="100%"
+			grid="s12 m12" addStyleNames="{style.chat_list_view_col_left}">
+		</m:MaterialColumn>
+
+		<m:MaterialColumn ui:field="rightColumn"
+			height="100%" grid="s12 m12"
+			addStyleNames="{style.chat_list_view_col_right}">
+		</m:MaterialColumn>
+	</m:MaterialRow>
+</ui:UiBinder> 

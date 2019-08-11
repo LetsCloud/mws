@@ -1,10 +1,9 @@
 /**
  * 
  */
-package io.crs.mws.client.app.spot;
+package io.crs.mws.client.app.spots.map;
 
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.inject.Inject;
@@ -14,9 +13,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.HTMLPanel;
-import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
@@ -54,48 +51,43 @@ import ol.style.StyleOptions;
  * @author robi
  *
  */
-public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implements SpotMapPresenter.MyView {
-	private static Logger logger = Logger.getLogger(SpotMapView.class.getName());
+public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> implements SpotsMapPresenter.MyView {
+	private static Logger logger = Logger.getLogger(SpotsMapView.class.getName());
 
-	interface Binder extends UiBinder<Widget, SpotMapView> {
+	interface Binder extends UiBinder<Widget, SpotsMapView> {
 	}
 
-	private Map map;
-	private Tile osmLayer;
-	private ol.layer.Vector vectorLayer;
+	private static final String MAP_PANEL = "mapPanel";
+	
 	private SpotCreator spotCreator = new SpotCreator();
 
 	@UiField
-	HTMLPanel panel, creatorPanel;
+	HTMLPanel mapPanel, creatorPanel;
 
+	/**
+	* 
+	*/
 	@Inject
-	SpotMapView(Binder uiBinder) {
+	SpotsMapView(Binder uiBinder) {
+		logger.info("SpotsMapView()");
+
 		initWidget(uiBinder.createAndBindUi(this));
-		logger.log(Level.INFO, "SpotMapView");
+
 		creatorPanel.add(spotCreator);
-		panel.getElement().setId("spotMap");
+		mapPanel.getElement().setId(MAP_PANEL);
 	}
 
 	@Override
-	public void start(List<WindspotDto> windpots) {
-		panel.getElement().removeAllChildren();
+	public void reveal(List<WindspotDto> windpots) {
+		mapPanel.getElement().removeAllChildren();
 
-		Scheduler.get().scheduleDeferred(() -> showMap("spotMap", windpots));
-		/*
-		 * Timer t = new Timer() {
-		 * 
-		 * @Override public void run() { logger.info("SpotMapView().run->start");
-		 * example.getExample().show(example.getExample().toString());
-		 * logger.info("SpotMapView().run->end"); } }; t.schedule(100);
-		 */
+		Scheduler.get().scheduleDeferred(() -> showMap(MAP_PANEL, windpots));
 	}
 
-	@UiHandler("clearButton")
-	public void onClearPanel(ClickEvent event) {
-//		panel.clear();
-		panel.getElement().removeAllChildren();
-		logger.info("SpotMapView.onClearPanel()");
+	@Override
+	public void refresh() {
 	}
+	
 	
 	private Feature createFeature(WindspotDto windspot) {
 		Coordinate coordinate = OLFactory.createCoordinate(Double.parseDouble(windspot.getCoordinateX()),
@@ -106,13 +98,7 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 		return new Feature(featureOptions);
 	}
 
-	private void showMap(String mapPanelId, List<WindspotDto> windpots) {
-
-		Collection<Feature> features = new Collection<Feature>();
-		for (WindspotDto windspot : windpots) {
-			features.push(createFeature(windspot));
-		}
-
+	private ol.layer.Vector createVectorLayer(Collection<Feature> features) {
 		// create source
 		VectorOptions vectorSourceOptions = OLFactory.createOptions();
 		vectorSourceOptions.setFeatures(features);
@@ -136,8 +122,12 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 		vectorLayerOptions.setSource(vectorSource);
 		vectorLayerOptions.setStyle(style);
 
-		vectorLayer = new ol.layer.Vector(vectorLayerOptions);
-
+		ol.layer.Vector vectorLayer = new ol.layer.Vector(vectorLayerOptions);
+		
+		return vectorLayer;
+	}
+	
+	private Tile createOsmLayer() {
 		// create a OSM-layer
 		XyzOptions osmSourceOptions = OLFactory.createOptions();
 		Osm osmSource = new Osm(osmSourceOptions);
@@ -146,23 +136,37 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 		osmLayerOptions.setSource(osmSource);
 
 		Tile osmLayer = new Tile(osmLayerOptions);
-
+		
+		return osmLayer;
+	}
+	
+	private View createView() {
 		// create a view
 		View view = new View();
 		Coordinate centerCoordinate = OLFactory.createCoordinate(0, 0);
 		view.setCenter(centerCoordinate);
 		view.setZoom(2);
 
+		return view;
+	}
+	
+	private void showMap(String mapPanelId, List<WindspotDto> windpots) {
+
+		Collection<Feature> features = new Collection<Feature>();
+		for (WindspotDto windspot : windpots) {
+			features.push(createFeature(windspot));
+		}
+
+		Collection<Base> lstLayer = new Collection<Base>();
+		lstLayer.push(createOsmLayer());
+		lstLayer.push(createVectorLayer(features));
+
 		// create the map
 		MapOptions mapOptions = new MapOptions();
 		mapOptions.setTarget(mapPanelId);
-		mapOptions.setView(view);
-
-		Collection<Base> lstLayer = new Collection<Base>();
-		lstLayer.push(osmLayer);
-		lstLayer.push(vectorLayer);
+		mapOptions.setView(createView());
 		mapOptions.setLayers(lstLayer);
-		map = new Map(mapOptions);
+		Map map = new Map(mapOptions);
 		
 		// add some controls
 //		map.addControl(new ScaleLine());
@@ -235,8 +239,4 @@ public class SpotMapView extends ViewWithUiHandlers<SpotMapUiHandlers> implement
 		});
 	}
 
-	@Override
-	public void renderMap() {
-		logger.info("SpotMapView.renderMap()-1");
-	}
 }

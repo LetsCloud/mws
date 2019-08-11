@@ -1,7 +1,7 @@
 /**
  * 
  */
-package io.crs.mws.client.app.spot;
+package io.crs.mws.client.app.spots.map;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
