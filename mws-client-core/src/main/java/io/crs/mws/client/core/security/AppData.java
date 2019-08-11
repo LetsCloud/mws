@@ -13,7 +13,7 @@ public class AppData {
 	private String name;
 
 	public AppData() {
-		this.name = "MyWindSpot <span>v1.0</span>";
+		this.name = "<span>My</span>WindSpot <span>v1.0</span>";
 	}
 
 	public String getAppCode() {

@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
+import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.editor.client.Editor;
 import com.google.gwt.editor.client.SimpleBeanEditorDriver;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -20,10 +21,14 @@ import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
 import gwt.material.design.client.ui.MaterialAnchorButton;
+import gwt.material.design.client.ui.MaterialButton;
 import gwt.material.design.client.ui.MaterialCheckBox;
 import gwt.material.design.client.ui.MaterialPanel;
+import gwt.material.design.client.ui.MaterialRow;
 import gwt.material.design.client.ui.MaterialTextBox;
 import gwt.material.design.client.ui.MaterialToast;
+import io.crs.mws.client.core.resources.ThemeParams;
+import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.login.LoginPresenter;
 import io.crs.mws.client.core.security.login.LoginUiHandlers;
 import io.crs.mws.client.core.util.UrlUtils;
@@ -48,6 +53,10 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers>
 
 	@Ignore
 	@UiField
+	MaterialRow container;
+
+	@Ignore
+	@UiField
 	MaterialPanel headerPanel;
 
 	@Ignore
@@ -66,14 +75,17 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers>
 
 	@Ignore
 	@UiField
-	MaterialAnchorButton googleLogin;
+	MaterialButton googleLogin;
 
 	@Inject
-	LoginView(Binder uiBinder, Driver driver) {
+	LoginView(Binder uiBinder, Driver driver, ThemeParams themeParams, AppData appData) {
 		logger.info("LoginView()");
 		initWidget(uiBinder.createAndBindUi(this));
 		this.driver = driver;
 		driver.initialize(this);
+		headerPanel.getElement().getStyle().setBackgroundColor(themeParams.getPrimaryColor());
+		container.getElement().getStyle().setBackgroundColor(themeParams.getPrimaryLightColor());
+		brandPanel.add(new HTML(appData.getName()));
 	}
 
 	@Override
@@ -89,6 +101,8 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers>
 
 		driver.edit(loginRequest);
 
+		Scheduler.get().scheduleDeferred(() -> email.setFocus(true));
+/*		
 		Timer t = new Timer() {
 			@Override
 			public void run() {
@@ -98,6 +112,7 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers>
 			}
 		};
 		t.schedule(100);
+*/		
 	}
 
 	@UiHandler("submit")
@@ -108,7 +123,6 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers>
 
 	@Override
 	public void setAppCode(String appCode) {
-		brandPanel.add(new HTML("Windspot <span>Navigator v1.0</span>"));
 	}
 
 	@Override

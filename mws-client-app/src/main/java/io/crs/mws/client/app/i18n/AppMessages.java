@@ -62,25 +62,30 @@ public interface AppMessages extends Messages {
 
 	
 	/*
-	 * PROFILE GROUP EDITOR
+	 * LOGIN
 	 */
 
-	@DefaultMessage("Create Profile Group")
-	String profileGroupCreateTitle();
+	@DefaultMessage("LOGIN")
+	String loginCaption();
 
-	@DefaultMessage("Edit Profile Group")
-	String profileGroupEditTitle();
+	@DefaultMessage("Email")
+	String loginEmail();
 
-	@DefaultMessage("Code")
-	String profileGroupCode();
+	@DefaultMessage("Password")
+	String loginPassword();
 
-	@DefaultMessage("Description")
-	String profileGroupDescription();
+	@DefaultMessage("Sign in")
+	String loginSubmit();
 
-	@DefaultMessage("Profile Type")
-	String profileGroupType();
+	@DefaultMessage("Remember")
+	String loginRememberMe();
 
-	@DefaultMessage("Active")
-	String profileGroupActive();
+	@DefaultMessage("Sign Up")
+	String loginSignUp();
 	
+	@DefaultMessage("OR LOGIN WITH A SOCIAL ACCOUNT") 
+	String loginSocialHeader();
+	
+	@DefaultMessage("Login with Google") 
+	String loginWithGoogle();
 }
