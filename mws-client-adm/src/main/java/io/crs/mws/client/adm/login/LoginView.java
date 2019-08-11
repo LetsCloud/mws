@@ -9,7 +9,6 @@ import javax.inject.Inject;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
@@ -54,11 +53,6 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers>
 	public void setPlaceToGo(String placeTogo, LoginRequest loginRequest) {
 		googleLogin.setHref(UrlUtils.getBaseUrl() + "/oauth2/authorize/google?redirect_uri=" + UrlUtils.getBaseUrl()
 				+ "/adm/start.html#oauth2redirect");
-	}
-
-	@Override
-	public void setAppCode(String appCode) {
-		brandPanel.add(new HTML("Windspot <span>Navigator v1.0</span>"));
 	}
 
 	@Override

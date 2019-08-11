@@ -24,10 +24,8 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
-import gwt.material.design.client.ui.MaterialToast;
 import io.crs.mws.client.core.CoreNameTokens;
 import io.crs.mws.client.core.i18n.CoreMessages;
-import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.UserManager;
 import io.crs.mws.shared.dto.EntityPropertyCode;
 import io.crs.mws.shared.dto.auth.LoginRequest;
@@ -43,8 +41,6 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 	public interface MyView extends View, HasUiHandlers<LoginUiHandlers> {
 		void setPlaceToGo(String placeTogo, LoginRequest loginRequest);
 
-		void setAppCode(String appCode);
-
 		void displayError(EntityPropertyCode code, String message);
 	}
 
@@ -59,29 +55,19 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 
 	private final PlaceManager placeManager;
 	private final UserManager userManager;
-	private final AppData appData;
 	private final CoreMessages i18n;
 
 	@Inject
 	LoginPresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager, UserManager userManager,
-			AppData appData, CoreMessages i18n) {
+			CoreMessages i18n) {
 		super(eventBus, view, proxy, RevealType.Root);
 		logger.info("LoginPresenter()");
 
 		this.placeManager = placeManager;
 		this.userManager = userManager;
-		this.appData = appData;
 		this.i18n = i18n;
 
 		getView().setUiHandlers(this);
-	}
-
-	@Override
-	protected void onBind() {
-		super.onBind();
-		logger.info("LoginPresenter().onBind()");
-		if (appData.getAppCode() != null)
-			getView().setAppCode(appData.getAppCode());
 	}
 
 	@Override
@@ -146,7 +132,7 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 			logger.info("LoginPresenter().login().callback()->placeToGo=" + placeToGo);
 			goToPlace(placeToGo);
 		}, () -> {
-			MaterialToast.fireToast(i18n.loginFaildSignIn(), "toastError");
+			getView().displayError(null, i18n.loginFaildSignIn());
 		});
 	}
 

@@ -120,18 +120,18 @@
 					</g:HTMLPanel>
 
 					<m:MaterialPanel textAlign="CENTER" marginTop="10">
-						<m:MaterialButton ui:field="googleLogin"
+						<m:MaterialAnchorButton ui:field="googleLogin"
 							type="FLOATING" customIconType="fab fa-google"
 							backgroundColor="RED" />
-						<m:MaterialButton ui:field="facebookLogin"
+						<m:MaterialAnchorButton ui:field="facebookLogin"
 							type="FLOATING" customIconType="fab fa-facebook"
-							backgroundColor="BLUE_DARKEN_4" marginLeft="10" />
-						<m:MaterialButton ui:field="twitteLogin"
+							backgroundColor="BLUE_DARKEN_4" marginLeft="15" />
+						<m:MaterialAnchorButton ui:field="twitteLogin"
 							type="FLOATING" customIconType="fab fa-twitter"
-							backgroundColor="LIGHT_BLUE" marginLeft="10" />
-						<m:MaterialButton ui:field="linkedInLogin"
+							backgroundColor="LIGHT_BLUE" marginLeft="15" />
+						<m:MaterialAnchorButton ui:field="linkedInLogin"
 							type="FLOATING" customIconType="fab fa-linkedin"
-							backgroundColor="LIGHT_BLUE_DARKEN_3" marginLeft="10" />
+							backgroundColor="LIGHT_BLUE_DARKEN_3" marginLeft="15" />
 					</m:MaterialPanel>
 					<!-- <m:MaterialRow addStyleNames="{style.rowAction}"> <m:MaterialAnchorButton 
 						ui:field="googleLogin" waves="LIGHT" customIconType="fab fa-google" text="{i18n.loginWithGoogle}" 

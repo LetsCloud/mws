@@ -14,19 +14,19 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
 import gwt.material.design.client.ui.MaterialAnchorButton;
-import gwt.material.design.client.ui.MaterialButton;
 import gwt.material.design.client.ui.MaterialCheckBox;
 import gwt.material.design.client.ui.MaterialPanel;
 import gwt.material.design.client.ui.MaterialRow;
 import gwt.material.design.client.ui.MaterialTextBox;
 import gwt.material.design.client.ui.MaterialToast;
+
+import io.crs.mws.client.core.CoreNameTokens;
 import io.crs.mws.client.core.resources.ThemeParams;
 import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.login.LoginPresenter;
@@ -75,7 +75,7 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers>
 
 	@Ignore
 	@UiField
-	MaterialButton googleLogin;
+	MaterialAnchorButton googleLogin, facebookLogin, twitteLogin, linkedInLogin;
 
 	@Inject
 	LoginView(Binder uiBinder, Driver driver, ThemeParams themeParams, AppData appData) {
@@ -91,28 +91,10 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers>
 	@Override
 	public void setPlaceToGo(String placeTogo, LoginRequest loginRequest) {
 		googleLogin.setHref(UrlUtils.getBaseUrl() + "/oauth2/authorize/google?redirect_uri=" + UrlUtils.getBaseUrl()
-				+ "/app/start.html#oauth2redirect");
-		/*
-		 * if (!Strings.isNullOrEmpty(placeTogo)) {
-		 * googleLogin.setHref(googleLogin.getHref() + "?" +
-		 * LoggedInGatekeeper.PLACE_TO_GO + "=" + placeTogo); }
-		 */
-		logger.info("LoginView().setPlaceToGo->googleLogin.getHref()=" + googleLogin.getHref());
-
+				+ "/app/start.html#" + CoreNameTokens.OAUTH2REDIRECT);
 		driver.edit(loginRequest);
 
 		Scheduler.get().scheduleDeferred(() -> email.setFocus(true));
-/*		
-		Timer t = new Timer() {
-			@Override
-			public void run() {
-				logger.info("LoginView().setPlaceToGo->run()");
-				email.setFocus(true);
-				logger.info("LoginView().setPlaceToGo->run()-2");
-			}
-		};
-		t.schedule(100);
-*/		
 	}
 
 	@UiHandler("submit")
@@ -122,11 +104,7 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers>
 	}
 
 	@Override
-	public void setAppCode(String appCode) {
-	}
-
-	@Override
 	public void displayError(EntityPropertyCode code, String message) {
-		MaterialToast.fireToast(message);
+		MaterialToast.fireToast(message, "toastError");
 	}
 }
