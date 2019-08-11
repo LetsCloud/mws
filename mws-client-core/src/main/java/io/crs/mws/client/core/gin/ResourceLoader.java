@@ -17,7 +17,6 @@ public class ResourceLoader {
 	@Inject
     ResourceLoader(CoreResources resources) {
 		StyleInjector.injectAtStart(resources.materialize().getText());
-		StyleInjector.inject(resources.coreCss().getText());
 		StyleInjector.injectAtEnd(resources.core().getText());
 		
 //		resources.coreCss().ensureInjected();

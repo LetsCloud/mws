@@ -12,7 +12,7 @@ public class CoreNameTokens {
 	public static final String OAUTH2REDIRECT = "/oauth2redirect";
 	public static final String HOME = "/home";
 
-	public static final String PLACE_TO_GO = "placeToGo";
+	public static final String PLACE_TOGO = "placeToGo";
 
 	public static String getLogin() {
 		return LOGIN;

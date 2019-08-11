@@ -131,7 +131,7 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 	public void logout() {
 		OauthUtils.removeAccessToken();
 		placeManager.revealPlace(new PlaceRequest.Builder().nameToken(CoreNameTokens.LOGIN)
-				.with(CoreNameTokens.PLACE_TO_GO, CoreNameTokens.HOME).build());
+				.with(CoreNameTokens.PLACE_TOGO, CoreNameTokens.HOME).build());
 	}
 
 	@Override

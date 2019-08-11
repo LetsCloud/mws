@@ -16,31 +16,7 @@ public interface CoreResources extends ClientBundle {
 	@Source("io/crs/mws/client/core/resources/css/materialize.min.css")
 	TextResource materialize();
 
-//	@Source("io/crs/hsys/client/core/resources/css/gwt-material.css")
-//	TextResource gwtMaterial();
-
-//	@Source("img/profile.jpg")
-//	ImageResource profileImg();
-
-//	@Source("img/orange-wallpaper.jpg")
-//	ImageResource orangeWallpaperImg();
-
-	// Az appCss-ben lévő mainBackground CSS osztály használja fel
-//	@Source("img/orange-wallpaper.jpg")
-//	DataResource orangeWallpaperRes();
-
-//	@Source("img/red-wallpaper.png")
-//	ImageResource redWallpaperImg();
-
-//	@Source("img/red-wallpaper.png")
-//	DataResource redWallpaperRes();
-
 	@Source("io/crs/mws/client/core/resources/css/core.css")
 	TextResource core();
 
-	@Source("io/crs/mws/client/core/resources/css/core2.css")
-	TextResource coreCss();
-
-//	@Source("js/select2-tab-fix.min.js")
-	// TextResource select2TabFix();
 }

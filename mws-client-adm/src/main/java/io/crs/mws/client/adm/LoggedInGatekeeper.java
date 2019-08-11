@@ -56,7 +56,7 @@ public class LoggedInGatekeeper implements Gatekeeper {
 		}
 		
 		PlaceRequest placeRequest = new PlaceRequest.Builder().nameToken(CoreNameTokens.LOGIN)
-				.with(CoreNameTokens.PLACE_TO_GO, sb.toString()).build();
+				.with(CoreNameTokens.PLACE_TOGO, sb.toString()).build();
 		placeManager.revealPlace(placeRequest);
 	}
 

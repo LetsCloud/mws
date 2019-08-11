@@ -18,7 +18,7 @@ public interface RedThemeResources extends ClientBundle {
 		// Your classes here
 	}
 
-	@Source({ "io/crs/mws/client/core/resources/css/theme_hw_red.gss",
+	@Source({ "io/crs/mws/client/core/resources/css/theme_red.gss",
 			"io/crs/mws/client/core/resources/css/override.gss" })
 	Style override();
 }

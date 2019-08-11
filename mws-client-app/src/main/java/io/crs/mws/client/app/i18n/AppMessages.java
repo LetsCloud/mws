@@ -77,7 +77,7 @@ public interface AppMessages extends Messages {
 	@DefaultMessage("Sign in")
 	String loginSubmit();
 
-	@DefaultMessage("Remember")
+	@DefaultMessage("Remember Me")
 	String loginRememberMe();
 
 	@DefaultMessage("Sign Up")

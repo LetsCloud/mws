@@ -85,7 +85,7 @@ public class UserManager {
 		});
 	}
 
-	public void login(LoginRequest loginRequest, Fn.NoArg callback) {
+	public void login(LoginRequest loginRequest, Fn.NoArg callback, Fn.NoArg faildCallback) {
 		logger.info("UserManager().login()");
 		AUTH_SERVICE.login(loginRequest, new MethodCallback<AuthResponse>() {
 
@@ -98,6 +98,7 @@ public class UserManager {
 
 			@Override
 			public void onFailure(Method method, Throwable exception) {
+				faildCallback.call();
 			}
 		});
 	}

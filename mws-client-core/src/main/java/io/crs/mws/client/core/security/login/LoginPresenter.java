@@ -24,11 +24,10 @@ import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
+import gwt.material.design.client.ui.MaterialToast;
 import io.crs.mws.client.core.CoreNameTokens;
-import io.crs.mws.client.core.firebase.messaging.MessagingManager;
 import io.crs.mws.client.core.i18n.CoreMessages;
 import io.crs.mws.client.core.security.AppData;
-import io.crs.mws.client.core.security.CurrentUser;
 import io.crs.mws.client.core.security.UserManager;
 import io.crs.mws.shared.dto.EntityPropertyCode;
 import io.crs.mws.shared.dto.auth.LoginRequest;
@@ -52,8 +51,7 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 	@NameToken(CoreNameTokens.LOGIN)
 	@ProxyStandard
 	@NoGatekeeper
-	public
-	interface MyProxy extends ProxyPlace<LoginPresenter> {
+	public interface MyProxy extends ProxyPlace<LoginPresenter> {
 	}
 
 	private String placeToGo;
@@ -62,19 +60,17 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 	private final PlaceManager placeManager;
 	private final UserManager userManager;
 	private final AppData appData;
-	private final CurrentUser currentUser;
 	private final CoreMessages i18n;
 
 	@Inject
 	LoginPresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager, UserManager userManager,
-			AppData appData, CurrentUser currentUser, CoreMessages i18n, MessagingManager messagingManager) {
+			AppData appData, CoreMessages i18n) {
 		super(eventBus, view, proxy, RevealType.Root);
 		logger.info("LoginPresenter()");
 
 		this.placeManager = placeManager;
 		this.userManager = userManager;
 		this.appData = appData;
-		this.currentUser = currentUser;
 		this.i18n = i18n;
 
 		getView().setUiHandlers(this);
@@ -91,7 +87,7 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 	@Override
 	public void prepareFromRequest(PlaceRequest request) {
 		logger.info("LoginPresenter().prepareFromRequest()->nameToken=" + this.getProxy().getNameToken());
-		String requestToken = request.getParameter(CoreNameTokens.PLACE_TO_GO, null);
+		String requestToken = request.getParameter(CoreNameTokens.PLACE_TOGO, null);
 		if (Strings.isNullOrEmpty(requestToken)) {
 			logger.info("LoginPresenter().prepareFromRequest()->isNullOrEmpty(requestToken)");
 			checkCurentUser();
@@ -149,6 +145,8 @@ public class LoginPresenter extends Presenter<LoginPresenter.MyView, LoginPresen
 		userManager.login(loginRequest, () -> {
 			logger.info("LoginPresenter().login().callback()->placeToGo=" + placeToGo);
 			goToPlace(placeToGo);
+		}, () -> {
+			MaterialToast.fireToast(i18n.loginFaildSignIn(), "toastError");
 		});
 	}
 
