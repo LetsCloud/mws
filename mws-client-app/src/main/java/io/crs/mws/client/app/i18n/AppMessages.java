@@ -88,4 +88,41 @@ public interface AppMessages extends Messages {
 	
 	@DefaultMessage("Login with Google") 
 	String loginWithGoogle();
+	
+	
+
+	
+	/*
+	 * SIGN UP
+	 */
+
+	@DefaultMessage("SIGN UP")
+	String signupCaption();
+
+	@DefaultMessage("Nickname")
+	String signupNickname();
+
+	@DefaultMessage("Email")
+	String signupEmail();
+
+	@DefaultMessage("Password")
+	String signupPassword();
+
+	@DefaultMessage("Confirm password")
+	String signupConfirm();
+
+	@DefaultMessage("Sign Me Up")
+	String signupSubmit();
+
+	@DefaultMessage("By signing up, you agree to the")
+	String signupYouAgree();
+
+	@DefaultMessage("terms and conditions.")
+	String signupConditions();
+
+	@DefaultMessage("Already registred?")
+	String signupAlreadyRegistred();
+
+	@DefaultMessage("Log In")
+	String signupLogin();
 }

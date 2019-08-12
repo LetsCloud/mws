@@ -81,8 +81,10 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers>
 	LoginView(Binder uiBinder, Driver driver, ThemeParams themeParams, AppData appData) {
 		logger.info("LoginView()");
 		initWidget(uiBinder.createAndBindUi(this));
+		
 		this.driver = driver;
 		driver.initialize(this);
+		
 		headerPanel.getElement().getStyle().setBackgroundColor(themeParams.getPrimaryColor());
 		container.getElement().getStyle().setBackgroundColor(themeParams.getPrimaryLightColor());
 		brandPanel.add(new HTML(appData.getName()));
