@@ -14,15 +14,17 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.Timer;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
+import gwt.material.design.client.ui.MaterialLink;
 import gwt.material.design.client.ui.MaterialPanel;
 import gwt.material.design.client.ui.MaterialRow;
 import gwt.material.design.client.ui.MaterialTextBox;
 import io.crs.mws.client.core.resources.ThemeParams;
+import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.shared.dto.auth.SignUpRequest;
 
 /**
@@ -58,13 +60,17 @@ public class SignupView extends ViewWithUiHandlers<SignupUiHandlers>
 	MaterialTextBox confirmpsw;
 
 	@Inject
-	SignupView(Binder uiBinder, Driver driver, ThemeParams themeParams) {
+	SignupView(Binder uiBinder, Driver driver, ThemeParams themeParams, AppData appData) {
 		logger.info("SignupView()");
 		initWidget(uiBinder.createAndBindUi(this));
+		MaterialLink l;
+
 		this.driver = driver;
 		driver.initialize(this);
+
 		headerPanel.getElement().getStyle().setBackgroundColor(themeParams.getPrimaryColor());
 		container.getElement().getStyle().setBackgroundColor(themeParams.getPrimaryLightColor());
+		brandPanel.add(new HTML(appData.getName()));
 	}
 
 	@Override
@@ -72,15 +78,6 @@ public class SignupView extends ViewWithUiHandlers<SignupUiHandlers>
 		driver.edit(signUpRequest);
 
 		Scheduler.get().scheduleDeferred(() -> nickname.setFocus(true));
-/*
-		Timer t = new Timer() {
-			@Override
-			public void run() {
-				nickname.setFocus(true);
-			}
-		};
-		t.schedule(100);
-*/
 	}
 
 	@UiHandler("submit")

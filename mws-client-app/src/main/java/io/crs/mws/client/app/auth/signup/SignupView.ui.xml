@@ -19,7 +19,7 @@
 		padding-top: 5%;
 		padding-bottom: 5%;
 		text-align: center;
-		font-size: 2rem;
+		font-size: 1.5rem;
 		font-weight: 800;
 		color: white;
 		line-height: normal !important;
@@ -31,9 +31,9 @@
 	
 	.caption {
 		color: white;
-		font-size: 1.5rem;
+		font-size: 2rem;
 		text-align: center;
-		padding-top: 5%;
+		/*		padding-top: 5%; */
 		padding-bottom: 5%;
 	}
 	
@@ -52,43 +52,65 @@
 	.rowAction {
 		margin-top: 20px;
 	}
+	
+	.borderTop {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		border-top: 1px solid grey;
+		padding-top: 20px;
+	}
 	</ui:style>
 
 
 	<ui:with field="i18n"
-		type="io.crs.mws.client.core.i18n.CoreMessages" />
+		type="io.crs.mws.client.app.i18n.AppMessages" />
 
-	<ui:with field="tokens" type="io.crs.mws.client.app.NameTokens" />
+	<ui:with field="tokens" type="io.crs.mws.client.core.CoreNameTokens" />
 
 	<m:MaterialRow ui:field="container"
 		addStyleNames="{style.container}">
 
-		<m:MaterialColumn grid="l6 m8 s12" offset="l3 m2">
+		<m:MaterialColumn grid="l4 m8 s12" offset="l4 m2">
 
 			<m:MaterialPanel ui:field="headerPanel" shadow="1">
 
 				<g:HTMLPanel ui:field="brandPanel"
 					addStyleNames="{style.brand}" />
 
-				<m:MaterialLabel text="Signup"
+				<m:MaterialLabel text="{i18n.signupCaption}"
 					addStyleNames="{style.caption}" />
 
 				<m:MaterialPanel addStyleNames="{style.fieldPanel}">
 
 					<m:MaterialTextBox ui:field="nickname"
-						type="EMAIL" label="Name" />
+						iconType="ACCOUNT_BOX" label="{i18n.signupNickname}" />
 
 					<m:MaterialTextBox ui:field="email" type="EMAIL"
-						label="Email" />
+						iconType="MAIL" label="{i18n.signupEmail}" />
 
 					<m:MaterialTextBox ui:field="password"
-						type="PASSWORD" label="Password" />
+						type="PASSWORD" iconType="LOCK" label="{i18n.signupPassword}" />
 
 					<m:MaterialTextBox ui:field="confirmpsw"
-						type="PASSWORD" label="Confirm Password" />
+						type="PASSWORD" iconType="LOCK_OUTLINE"
+						label="{i18n.signupConfirm}" />
 
 					<m:MaterialButton ui:field="submit" waves="LIGHT"
-						text="Sign me up!" width="100%" /> <!-- backgroundColor="ORANGE" -->
+						text="{i18n.signupSubmit}" width="100%" marginTop="20" />
+
+					<m:MaterialPanel textAlign="CENTER" marginTop="10">
+						<m:MaterialLabel text="{i18n.signupYouAgree}"
+							textColor="GREY" />
+						<m:MaterialLink text="{i18n.signupConditions}" />
+					</m:MaterialPanel>
+
+					<m:MaterialPanel addStyleNames="{style.borderTop}">
+						<m:MaterialLabel
+							text="{i18n.signupAlreadyRegistred}" textColor="GREY"
+							float="LEFT" />
+						<m:MaterialLink targetHistoryToken="{tokens.getLogin}" text="{i18n.signupLogin}"
+							float="RIGHT" />
+					</m:MaterialPanel>
 
 				</m:MaterialPanel>
 			</m:MaterialPanel>
