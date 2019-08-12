@@ -17,6 +17,7 @@ import com.gwtplatform.mvp.client.proxy.Proxy;
 import gwt.material.design.client.constants.IconType;
 import io.crs.mws.client.adm.i18n.AdminMessages;
 import io.crs.mws.client.adm.resources.AdminResources;
+import io.crs.mws.client.core.CoreNameTokens;
 import io.crs.mws.client.core.app.AbstractAppPresenter;
 import io.crs.mws.client.core.app.AppServiceWorkerManager;
 import io.crs.mws.client.core.firebase.messaging.MessagingManager;
@@ -66,7 +67,7 @@ public class AdmPresenter extends AbstractAppPresenter<AdmPresenter.MyProxy> {
 		dasboardMenuItem.setType(MenuItemType.MENU_ITEM);
 		dasboardMenuItem.setIcon(IconType.DASHBOARD.name());
 		dasboardMenuItem.setText(i18n.mainMenuItemDashboard());
-		dasboardMenuItem.setNameToken(AdmNameTokens.HOME);
+		dasboardMenuItem.setNameToken(CoreNameTokens.HOME);
 		menuItems.add(dasboardMenuItem);
 
 		// *********************
@@ -84,7 +85,7 @@ public class AdmPresenter extends AbstractAppPresenter<AdmPresenter.MyProxy> {
 		userConfigMenuItem.setIndex(1);
 		userConfigMenuItem.setType(MenuItemType.MENU_ITEM);
 		userConfigMenuItem.setText(i18n.menuItemSystemConfigs());
-		userConfigMenuItem.setNameToken(AdmNameTokens.SYSTEM_CONFIG);
+		userConfigMenuItem.setNameToken(NameTokens.SYSTEM_CONFIG);
 		commonConfigSubMenu.addItem(userConfigMenuItem);
 
 		return menuItems;

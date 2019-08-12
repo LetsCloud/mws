@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
+import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.editor.client.Editor;
 import com.google.gwt.editor.client.SimpleBeanEditorDriver;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -70,6 +71,8 @@ public class SignupView extends ViewWithUiHandlers<SignupUiHandlers>
 	public void start(SignUpRequest signUpRequest) {
 		driver.edit(signUpRequest);
 
+		Scheduler.get().scheduleDeferred(() -> nickname.setFocus(true));
+/*
 		Timer t = new Timer() {
 			@Override
 			public void run() {
@@ -77,7 +80,7 @@ public class SignupView extends ViewWithUiHandlers<SignupUiHandlers>
 			}
 		};
 		t.schedule(100);
-
+*/
 	}
 
 	@UiHandler("submit")

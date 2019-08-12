@@ -5,11 +5,10 @@ package io.crs.mws.server.config;
 
 import static io.crs.mws.shared.api.ApiPaths.APIv1.PUBLIC;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.ROOT;
+import static io.crs.mws.shared.api.ApiPaths.APIv1.ADMIN;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
@@ -18,13 +17,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.annotation.Order;
 import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -38,19 +37,16 @@ import org.springframework.security.oauth2.client.registration.ClientRegistratio
 import org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository;
 import org.springframework.security.oauth2.client.web.AuthenticatedPrincipalOAuth2AuthorizedClientRepository;
 import org.springframework.security.oauth2.client.web.OAuth2AuthorizedClientRepository;
-import org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import io.crs.mws.server.security2.CustomUserDetailsService;
 import io.crs.mws.server.security2.RestAuthenticationEntryPoint;
 import io.crs.mws.server.security2.TokenAuthenticationFilter;
-import io.crs.mws.server.security2.gae.GaeAuthenticationEntryPoint;
-import io.crs.mws.server.security2.gae.GaeAuthenticationFilter;
-import io.crs.mws.server.security2.gae.GaeAuthenticationProvider;
 import io.crs.mws.server.security2.oauth2.CustomOAuth2UserService;
 import io.crs.mws.server.security2.oauth2.HttpCookieOAuth2AuthorizationRequestRepository;
 import io.crs.mws.server.security2.oauth2.OAuth2AuthenticationFailureHandler;
 import io.crs.mws.server.security2.oauth2.OAuth2AuthenticationSuccessHandler;
+import io.crs.mws.shared.cnst.Role;
 
 /**
  * @author robi
@@ -68,21 +64,20 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 	public SecurityConfigCali(Environment environment) {
 		this.environment = environment;
 	}
-
+	
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+	    web.ignoring().antMatchers("/_ah/**");
+	}
+	
 	@Bean(BeanIds.AUTHENTICATION_MANAGER)
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 		return super.authenticationManagerBean();
 	}
 
-	@Bean
-	public GaeAuthenticationProvider gaeAuthenticationProvider() {
-		return new GaeAuthenticationProvider();
-	}
-
 	@Override
 	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-		authenticationManagerBuilder.authenticationProvider(gaeAuthenticationProvider());
 		authenticationManagerBuilder.userDetailsService(customUserDetailsService)
 				.passwordEncoder(passwordEncoder());
 	}
@@ -123,62 +118,6 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private HttpCookieOAuth2AuthorizationRequestRepository httpCookieOAuth2AuthorizationRequestRepository;
 
-	@Configuration
-	@Order(1)
-	public class AdminSecurityConfig extends WebSecurityConfigurerAdapter {
-
-		@Bean
-		public GaeAuthenticationEntryPoint googleAuthenticationEntryPoint() {
-			return new GaeAuthenticationEntryPoint();
-		}
-
-		@Bean
-		public GaeAuthenticationFilter gaeAuthenticationFilter() throws Exception {
-			GaeAuthenticationFilter preAuthenticationFilter = new GaeAuthenticationFilter();
-			preAuthenticationFilter.setAuthenticationManager(authenticationManager());
-			ExceptionMappingAuthenticationFailureHandler emaf = new ExceptionMappingAuthenticationFailureHandler();
-			Map<Object, String> failureUrlMap = new HashMap<Object, String>();
-			failureUrlMap.put("org.springframework.security.authentication.DisabledException", "/disabled.htm");
-			emaf.setExceptionMappings(failureUrlMap);
-			preAuthenticationFilter.setFailureHandler(emaf);
-
-			return preAuthenticationFilter;
-		}
-
-		@Override
-		public void configure(HttpSecurity http) throws Exception {
-			// @formatter:off
-			http.antMatcher("/adm/**")
-				.cors()
-					.and()
-				.sessionManagement()
-					.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-					.and()
-				.csrf()
-					.disable()
-				.formLogin()
-					.disable()
-				.httpBasic()
-					.disable()
-				.exceptionHandling()
-					.authenticationEntryPoint(googleAuthenticationEntryPoint())
-					.and()
-				.authorizeRequests()
-					.antMatchers("/adm/**", "/_ah/**")
-						.permitAll()
-					.antMatchers("/adm/APIv1/**")
-						.authenticated()
-					.anyRequest()
-						.authenticated();
-			// @formatter:off
-			http.addFilterBefore(gaeAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
-		}
-	}
-
-	@Configuration
-	@Order(2)
-	public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
-
 		@Override
 		public void configure(HttpSecurity http) throws Exception {
 			// @formatter:off
@@ -197,9 +136,13 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 					.authenticationEntryPoint(new RestAuthenticationEntryPoint())
 					.and()
 				.authorizeRequests()
-					.antMatchers("/", "/app/**", "/font/**", "/_ah/**")
+					.antMatchers("/app/**", "/adm/**", "/image/**", "/font/**", "/oauth2/**")
 						.permitAll()
-					.antMatchers(ROOT + PUBLIC + "/**", "/oauth2/**")
+					.antMatchers(ROOT + ADMIN)
+						.hasRole(Role.ROLE_ADMIN)
+					.antMatchers(ROOT)
+						.hasAnyRole(Role.ROLE_ADMIN, Role.ROLE_USER)
+					.antMatchers(ROOT + PUBLIC + "/**")
 						.permitAll()
 					.anyRequest()
 						.authenticated()
@@ -225,7 +168,6 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 			// Add our custom Token based authentication filter
 			http.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 		}
-	}
 
 	/**
 	 * 

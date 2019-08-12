@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import io.crs.mws.server.entity.Account;
 import io.crs.mws.server.service.AccountService;
+import io.crs.mws.shared.cnst.Role;
 
 /**
  * @author robi
@@ -37,12 +38,12 @@ public class CustomUserDetailsService implements UserDetailsService {
 		if (user == null) {
 			throw new UsernameNotFoundException("Invalid username or password.");
 		}
-		return UserPrincipal.create(user);
+		return UserPrincipal.create(user, getAuthority());
 //		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),
 //				getAuthority());
 	}
 
 	private List<SimpleGrantedAuthority> getAuthority() {
-		return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
+		return Arrays.asList(new SimpleGrantedAuthority(Role.ROLE_USER));
 	}
 }

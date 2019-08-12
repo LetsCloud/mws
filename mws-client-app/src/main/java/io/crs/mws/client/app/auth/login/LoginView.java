@@ -7,13 +7,13 @@ import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
+import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.editor.client.Editor;
 import com.google.gwt.editor.client.SimpleBeanEditorDriver;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -22,8 +22,15 @@ import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 import gwt.material.design.client.ui.MaterialAnchorButton;
 import gwt.material.design.client.ui.MaterialCheckBox;
 import gwt.material.design.client.ui.MaterialPanel;
+import gwt.material.design.client.ui.MaterialRow;
 import gwt.material.design.client.ui.MaterialTextBox;
 import gwt.material.design.client.ui.MaterialToast;
+
+import io.crs.mws.client.core.CoreNameTokens;
+import io.crs.mws.client.core.resources.ThemeParams;
+import io.crs.mws.client.core.security.AppData;
+import io.crs.mws.client.core.security.login.LoginPresenter;
+import io.crs.mws.client.core.security.login.LoginUiHandlers;
 import io.crs.mws.client.core.util.UrlUtils;
 import io.crs.mws.shared.dto.EntityPropertyCode;
 import io.crs.mws.shared.dto.auth.LoginRequest;
@@ -46,6 +53,10 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers>
 
 	@Ignore
 	@UiField
+	MaterialRow container;
+
+	@Ignore
+	@UiField
 	MaterialPanel headerPanel;
 
 	@Ignore
@@ -64,38 +75,26 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers>
 
 	@Ignore
 	@UiField
-	MaterialAnchorButton googleLogin;
+	MaterialAnchorButton googleLogin, facebookLogin, twitteLogin, linkedInLogin;
 
 	@Inject
-	LoginView(Binder uiBinder, Driver driver) {
+	LoginView(Binder uiBinder, Driver driver, ThemeParams themeParams, AppData appData) {
 		logger.info("LoginView()");
 		initWidget(uiBinder.createAndBindUi(this));
 		this.driver = driver;
 		driver.initialize(this);
+		headerPanel.getElement().getStyle().setBackgroundColor(themeParams.getPrimaryColor());
+		container.getElement().getStyle().setBackgroundColor(themeParams.getPrimaryLightColor());
+		brandPanel.add(new HTML(appData.getName()));
 	}
 
 	@Override
 	public void setPlaceToGo(String placeTogo, LoginRequest loginRequest) {
 		googleLogin.setHref(UrlUtils.getBaseUrl() + "/oauth2/authorize/google?redirect_uri=" + UrlUtils.getBaseUrl()
-				+ "/app/start.html#oauth2redirect");
-		/*
-		 * if (!Strings.isNullOrEmpty(placeTogo)) {
-		 * googleLogin.setHref(googleLogin.getHref() + "?" +
-		 * LoggedInGatekeeper.PLACE_TO_GO + "=" + placeTogo); }
-		 */
-		logger.info("LoginView().setPlaceToGo->googleLogin.getHref()=" + googleLogin.getHref());
-
+				+ "/app/start.html#" + CoreNameTokens.OAUTH2REDIRECT);
 		driver.edit(loginRequest);
 
-		Timer t = new Timer() {
-			@Override
-			public void run() {
-				logger.info("LoginView().setPlaceToGo->run()");
-				email.setFocus(true);
-				logger.info("LoginView().setPlaceToGo->run()-2");
-			}
-		};
-		t.schedule(100);
+		Scheduler.get().scheduleDeferred(() -> email.setFocus(true));
 	}
 
 	@UiHandler("submit")
@@ -105,12 +104,7 @@ public class LoginView extends ViewWithUiHandlers<LoginUiHandlers>
 	}
 
 	@Override
-	public void setAppCode(String appCode) {
-		brandPanel.add(new HTML("Windspot <span>Navigator v1.0</span>"));
-	}
-
-	@Override
 	public void displayError(EntityPropertyCode code, String message) {
-		MaterialToast.fireToast(message);
+		MaterialToast.fireToast(message, "toastError");
 	}
 }

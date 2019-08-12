@@ -18,7 +18,7 @@ public interface OrangeThemeResources extends ClientBundle {
 		// Your classes here
 	}
 
-	@Source({ "io/crs/mws/client/core/resources/css/theme_hw_orange.gss",
+	@Source({ "io/crs/mws/client/core/resources/css/theme_orange.gss",
 			"io/crs/mws/client/core/resources/css/override.gss" })
 	Style override();
 }

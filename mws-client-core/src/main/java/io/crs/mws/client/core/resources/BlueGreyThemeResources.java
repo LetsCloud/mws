@@ -18,7 +18,7 @@ public interface BlueGreyThemeResources extends ClientBundle {
 		// Your classes here
 	}
 
-	@Source({ "io/crs/mws/client/core/resources/css/blue-grey-theme.gss",
+	@Source({ "io/crs/mws/client/core/resources/css/theme_blue-grey.gss",
 			"io/crs/mws/client/core/resources/css/override.gss" })
 	Style override();
 }

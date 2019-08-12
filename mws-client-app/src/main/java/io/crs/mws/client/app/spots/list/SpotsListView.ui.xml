@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.client.ui">
+
+	<ui:style gss="true">
+	.list_view_collection {
+		height: calc(100vh - 290px);
+		overflow-y: scroll;
+		margin: 0;
+	}
+	</ui:style>
+
+	<g:HTMLPanel>
+		<m:MaterialCollection
+			ui:field="materialCollection"
+			addStyleNames="{style.list_view_collection}">
+		</m:MaterialCollection>
+	</g:HTMLPanel>
+</ui:UiBinder> 

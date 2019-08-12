@@ -19,8 +19,8 @@
 		padding-top: 5%;
 		padding-bottom: 5%;
 		text-align: center;
-		font-size: 2rem;
-		font-weight: 800;
+		font-size: 1.5rem;
+		font-weight: 700;
 		color: white;
 		line-height: normal !important;
 	}
@@ -31,9 +31,9 @@
 	
 	.caption {
 		color: white;
-		font-size: 1.5rem;
+		font-size: 2rem;
 		text-align: center;
-		padding-top: 5%;
+		/* padding-top: 5%; */
 		padding-bottom: 5%;
 	}
 	
@@ -52,18 +52,32 @@
 	.rowAction {
 		margin-top: 20px;
 	}
+	
+	.withLine {
+		width: 100%;
+		text-align: center;
+		border-bottom: 1px solid #9e9e9e;
+		line-height: 0.1em;
+		margin: 40px 0 20px;
+		color: #9e9e9e;
+	}
+	
+	.withLine span {
+		background: #fff;
+		padding: 0 10px;
+	}
 	</ui:style>
 
 
 	<ui:with field="i18n"
-		type="io.crs.mws.client.core.i18n.CoreMessages" />
+		type="io.crs.mws.client.app.i18n.AppMessages" />
 
 	<ui:with field="tokens" type="io.crs.mws.client.app.NameTokens" />
 
-	<m:MaterialRow backgroundColor="GREY_DARKEN_2"
+	<m:MaterialRow ui:field="container"
 		addStyleNames="{style.container}">
 
-		<m:MaterialColumn grid="l6 m8 s12" offset="l3 m2">
+		<m:MaterialColumn grid="l4 m8 s12" offset="l4 m2">
 
 			<m:MaterialPanel ui:field="headerPanel" shadow="1">
 
@@ -75,35 +89,53 @@
 
 				<m:MaterialPanel addStyleNames="{style.fieldPanel}">
 
-					<m:MaterialTextBox ui:field="email"
-						type="EMAIL" label="{i18n.loginUsername}" />
+					<m:MaterialTextBox ui:field="email" type="EMAIL"
+						iconType="MAIL" label="{i18n.loginEmail}" />
 
 					<m:MaterialTextBox ui:field="password"
-						type="PASSWORD" label="{i18n.loginPassword}" />
+						type="PASSWORD" iconType="LOCK" label="{i18n.loginPassword}" />
 
 					<m:MaterialButton ui:field="submit" waves="LIGHT"
-						text="{i18n.loginSubmit}" width="100%" /> <!-- backgroundColor="ORANGE" -->
+						text="{i18n.loginSubmit}" width="100%" marginTop="20" /> <!-- backgroundColor="ORANGE" -->
 
 					<m:MaterialRow addStyleNames="{style.rowAction}">
-						<m:MaterialColumn grid="s12 m6 l6">
+						<m:MaterialColumn grid="s6" paddingLeft="0">
 							<m:MaterialCheckBox ui:field="rememberMe"
-								text="{i18n.loginKeepMe}" />
+								text="{i18n.loginRememberMe}" textColor="GREY" />
 						</m:MaterialColumn>
 
-						<m:MaterialColumn grid="s12 m6 l6"
+						<m:MaterialColumn grid="s6" paddingRight="0"
 							textAlign="RIGHT">
 							<m:MaterialLink
 								targetHistoryToken="{tokens.getSignup}"
-								text="{i18n.loginCreate}" textColor="GREY"
+								text="{i18n.loginSignUp}" textColor="GREY"
 								iconType="ADD_CIRCLE_OUTLINE" iconPosition="RIGHT" />
 						</m:MaterialColumn>
 					</m:MaterialRow>
 
-					<m:MaterialRow addStyleNames="{style.rowAction}">
+					<g:HTMLPanel addStyleNames="{style.withLine}">
+						<span>
+							<ui:text from="{i18n.loginSocialHeader}" />
+						</span>
+					</g:HTMLPanel>
+
+					<m:MaterialPanel textAlign="CENTER" marginTop="10">
 						<m:MaterialAnchorButton ui:field="googleLogin"
-							waves="LIGHT" customIconType="fab fa-google"
-							text="Login with Google" width="100%" />
-					</m:MaterialRow>
+							type="FLOATING" customIconType="fab fa-google"
+							backgroundColor="RED" />
+						<m:MaterialAnchorButton ui:field="facebookLogin"
+							type="FLOATING" customIconType="fab fa-facebook"
+							backgroundColor="BLUE_DARKEN_4" marginLeft="15" />
+						<m:MaterialAnchorButton ui:field="twitteLogin"
+							type="FLOATING" customIconType="fab fa-twitter"
+							backgroundColor="LIGHT_BLUE" marginLeft="15" />
+						<m:MaterialAnchorButton ui:field="linkedInLogin"
+							type="FLOATING" customIconType="fab fa-linkedin"
+							backgroundColor="LIGHT_BLUE_DARKEN_3" marginLeft="15" />
+					</m:MaterialPanel>
+					<!-- <m:MaterialRow addStyleNames="{style.rowAction}"> <m:MaterialAnchorButton 
+						ui:field="googleLogin" waves="LIGHT" customIconType="fab fa-google" text="{i18n.loginWithGoogle}" 
+						width="100%" /> </m:MaterialRow> -->
 				</m:MaterialPanel>
 			</m:MaterialPanel>
 		</m:MaterialColumn>

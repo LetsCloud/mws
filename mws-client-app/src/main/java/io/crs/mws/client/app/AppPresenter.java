@@ -18,6 +18,7 @@ import gwt.material.design.client.constants.IconType;
 
 import io.crs.mws.client.app.i18n.AppMessages;
 import io.crs.mws.client.app.resources.AppResources;
+import io.crs.mws.client.core.CoreNameTokens;
 import io.crs.mws.client.core.app.AbstractAppPresenter;
 import io.crs.mws.client.core.app.AppServiceWorkerManager;
 import io.crs.mws.client.core.firebase.messaging.MessagingManager;
@@ -52,7 +53,7 @@ public class AppPresenter extends AbstractAppPresenter<AppPresenter.MyProxy> {
 		this.i18n = i18n;
 		this.resources = resources;
 
-		breadcrumbConfigs.add(new BreadcrumbConfig(0, IconType.HOME, "", io.crs.mws.client.core.NameTokens.HOME));
+		breadcrumbConfigs.add(new BreadcrumbConfig(0, IconType.HOME, "", CoreNameTokens.HOME));
 	}
 
 	@Override
@@ -73,7 +74,7 @@ public class AppPresenter extends AbstractAppPresenter<AppPresenter.MyProxy> {
 		wallMenuItem.setType(MenuItemType.MENU_ITEM);
 		wallMenuItem.setIcon(IconType.TEXTSMS.name());
 		wallMenuItem.setText(i18n.mainMenuItemWall());
-		wallMenuItem.setNameToken(io.crs.mws.client.core.NameTokens.HOME);
+		wallMenuItem.setNameToken(CoreNameTokens.HOME);
 		menuItems.add(wallMenuItem);
 
 		// *********************

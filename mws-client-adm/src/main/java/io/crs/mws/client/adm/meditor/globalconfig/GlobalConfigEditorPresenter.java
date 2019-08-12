@@ -16,13 +16,13 @@ import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
-import io.crs.mws.client.adm.AdmNameTokens;
+import io.crs.mws.client.adm.NameTokens;
 import io.crs.mws.client.adm.config.system.SystemConfigPresenter;
-import io.crs.mws.client.adm.service.GlobalConfigService;
 import io.crs.mws.client.core.config.AbstractConfigPresenter;
 import io.crs.mws.client.core.meditor.AbstractMeditorPresenter;
 import io.crs.mws.client.core.meditor.MeditorView;
 import io.crs.mws.client.core.security.CurrentUser;
+import io.crs.mws.client.core.service.GlobalConfigService;
 import io.crs.mws.shared.dto.EntityPropertyCode;
 import io.crs.mws.shared.dto.GlobalConfigDto;
 
@@ -70,7 +70,7 @@ public class GlobalConfigEditorPresenter
 			public void onSuccess(Method method, GlobalConfigDto response) {
 				logger.info("GlobalConfigBrowserPresenter.loadData().onSuccess()");
 				getView().close();
-				PlaceRequest placeRequest = new PlaceRequest.Builder().nameToken(AdmNameTokens.SYSTEM_CONFIG)
+				PlaceRequest placeRequest = new PlaceRequest.Builder().nameToken(NameTokens.SYSTEM_CONFIG)
 						.with(AbstractConfigPresenter.PLACE_PARAM, SystemConfigPresenter.GLOBAL_CONFIGS).build();
 				placeManager.revealPlace(placeRequest);
 			}

@@ -13,8 +13,6 @@ import io.crs.mws.client.core.event.ContentPushEvent.MenuState;
  */
 public interface MenuUiHandlers extends UiHandlers {
 
-	Boolean canReveal(String permissions);
-
 	void setContentPush(MenuState menuState);
 	
 	void logout();

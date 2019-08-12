@@ -18,15 +18,13 @@ import com.gwtplatform.mvp.client.presenter.slots.SingleSlot;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
-import io.crs.mws.client.core.NameTokens;
+import io.crs.mws.client.core.CoreNameTokens;
 import io.crs.mws.client.core.event.ContentPushEvent;
 import io.crs.mws.client.core.event.SetPageTitleEvent;
 import io.crs.mws.client.core.event.ContentPushEvent.MenuState;
 import io.crs.mws.client.core.event.SetPageTitleEvent.SetPageTitleHandler;
 import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.CurrentUser;
-import io.crs.mws.client.core.security.HasPermissionsGatekeeper;
-import io.crs.mws.client.core.security.LoggedInGatekeeper;
 import io.crs.mws.client.core.util.OauthUtils;
 import io.crs.mws.shared.cnst.MenuItemType;
 import io.crs.mws.shared.dto.menu.MenuItemDto;
@@ -40,8 +38,6 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 	private static Logger logger = Logger.getLogger(MenuPresenter.class.getName());
 
 	public static final SingleSlot<PresenterWidget<?>> SLOT_NAVBAR = new SingleSlot<>();
-
-	private final HasPermissionsGatekeeper menItemGatekeeper;
 
 	interface MyView extends View, HasUiHandlers<MenuUiHandlers> {
 		void checkPermittedWidgets();
@@ -70,15 +66,13 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 	private final AppData appData;
 
 	@Inject
-	MenuPresenter(EventBus eventBus, MyView view, PlaceManager placeManager, CurrentUser currentUser, AppData appData,
-			HasPermissionsGatekeeper menItemGatekeeper) {
+	MenuPresenter(EventBus eventBus, MyView view, PlaceManager placeManager, CurrentUser currentUser, AppData appData) {
 		super(eventBus, view);
 		logger.info("MenuPresenter()");
 
 		this.placeManager = placeManager;
 		this.currentUser = currentUser;
 		this.appData = appData;
-		this.menItemGatekeeper = menItemGatekeeper;
 
 		getView().setUiHandlers(this);
 	}
@@ -110,13 +104,6 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 	}
 
 	@Override
-	public Boolean canReveal(String permission) {
-		String[] permissions = { permission };
-		menItemGatekeeper.withParams(permissions);
-		return menItemGatekeeper.canReveal();
-	}
-
-	@Override
 	public void setContentPush(MenuState menuState) {
 		ContentPushEvent.fire(this, menuState);
 	}
@@ -143,8 +130,8 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 	@Override
 	public void logout() {
 		OauthUtils.removeAccessToken();
-		placeManager.revealPlace(new PlaceRequest.Builder().nameToken(NameTokens.LOGIN)
-				.with(LoggedInGatekeeper.PLACE_TO_GO, NameTokens.HOME).build());
+		placeManager.revealPlace(new PlaceRequest.Builder().nameToken(CoreNameTokens.LOGIN)
+				.with(CoreNameTokens.PLACE_TOGO, CoreNameTokens.HOME).build());
 	}
 
 	@Override
