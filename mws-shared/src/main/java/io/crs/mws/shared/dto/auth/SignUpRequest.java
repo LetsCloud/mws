@@ -16,6 +16,8 @@ public class SignUpRequest implements Dto {
 	private String email;
 
 	private String password;
+	
+	private String reCaptchaResponse;
 
 	public String getNickname() {
 		return nickname;
@@ -40,4 +42,13 @@ public class SignUpRequest implements Dto {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getReCaptchaResponse() {
+		return reCaptchaResponse;
+	}
+
+	public void setReCaptchaResponse(String reCaptchaResponse) {
+		this.reCaptchaResponse = reCaptchaResponse;
+	}
+	
 }

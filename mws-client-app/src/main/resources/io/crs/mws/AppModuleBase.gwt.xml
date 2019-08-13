@@ -14,17 +14,21 @@
 
 	<!--GWTP -->
 	<inherits name="com.gwtplatform.mvp.MvpWithEntryPoint" />
+
+	<!-- Font Awesome Icons import -->
+	<inherits
+		name="gwt.material.design.incubator.FontAwesomeResources" />
+
 	<!-- GWT Material -->
 	<inherits
 		name="gwt.material.design.GwtMaterialBasicWithJQuery" />
 	<inherits name="gwt.material.design.GwtMaterialTableBasic" />
 	<inherits
 		name="gwt.material.design.addins.GwtMaterialAddinsBasic" />
+	<inherits name="gwt.material.design.incubator.AddinsIncubator"/>
+
 	<inherits
 		name="gwt.material.design.addext.GwtMaterialAddextBasic" />
-	<!-- Font Awesome Icons import -->
-	<inherits
-		name="gwt.material.design.incubator.FontAwesomeResources" />
 
 	<inherits name='ol.GwtOL' />
 	

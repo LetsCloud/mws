@@ -37,9 +37,8 @@
 		<restygwt.version>2.2.4</restygwt.version>
 		<javax-ws-rs-api.version>2.1.1</javax-ws-rs-api.version>
 		<!-- <gwt-material.version>2.1.1</gwt-material.version> -->
-		<gwt-material.version>2.2</gwt-material.version>
-		<gmd-addext.version>2.1.1</gmd-addext.version>
-		<!-- <gwt-material-table.version>2.0-SNAPSHOT</gwt-material-table.version> -->
+		<gwt-material.version>2.3-SNAPSHOT</gwt-material.version>
+
 		<gwt-charts.version>0.9.9</gwt-charts.version>
 		<objectify-gwt.version>1.2.1</objectify-gwt.version>
 
