@@ -13,7 +13,7 @@ import org.fusesource.restygwt.client.MethodCallback;
 import org.fusesource.restygwt.client.RestService;
 
 import io.crs.mws.shared.dto.AccountDto;
-import io.crs.mws.shared.dto.auth.ApiResponse;
+import io.crs.mws.shared.dto.auth.SignupResponse;
 import io.crs.mws.shared.dto.auth.AuthResponse;
 import io.crs.mws.shared.dto.auth.LoginRequest;
 import io.crs.mws.shared.dto.auth.SignUpRequest;
@@ -37,7 +37,7 @@ public interface AuthService extends RestService {
 
 	@POST
 	@Path(PUBLIC + SIGNUP)
-	public void signUp(SignUpRequest signUpRequest, MethodCallback<ApiResponse> callback);
+	public void signUp(SignUpRequest signUpRequest, MethodCallback<SignupResponse> callback);
 
 	@POST
 	@Path(PUBLIC + LOGIN)

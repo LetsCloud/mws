@@ -4,7 +4,6 @@
 package io.crs.mws.client.core.i18n;
 
 import com.google.gwt.i18n.client.Messages;
-import com.google.gwt.i18n.client.Messages.DefaultMessage;
 
 /**
  * @author CR

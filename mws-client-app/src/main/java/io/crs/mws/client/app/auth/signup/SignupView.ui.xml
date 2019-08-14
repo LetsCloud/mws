@@ -65,12 +65,14 @@
 	<ui:with field="i18n"
 		type="io.crs.mws.client.app.i18n.AppMessages" />
 
-	<ui:with field="tokens" type="io.crs.mws.client.core.CoreNameTokens" />
+	<ui:with field="tokens"
+		type="io.crs.mws.client.core.CoreNameTokens" />
 
 	<m:MaterialRow ui:field="container"
 		addStyleNames="{style.container}">
 
-		<m:MaterialColumn grid="l4 m8 s12" offset="l4 m2">
+		<m:MaterialColumn grid="xl4 l6 m8 s12"
+			offset="xl4 l3 m2">
 
 			<m:MaterialPanel ui:field="headerPanel" shadow="1">
 
@@ -95,6 +97,9 @@
 						type="PASSWORD" iconType="LOCK_OUTLINE"
 						label="{i18n.signupConfirm}" />
 
+					<m:MaterialPanel ui:field="capthcaPanel"
+						textAlign="CENTER" marginTop="10" />
+
 					<m:MaterialButton ui:field="submit" waves="LIGHT"
 						text="{i18n.signupSubmit}" width="100%" marginTop="20" />
 
@@ -108,7 +113,8 @@
 						<m:MaterialLabel
 							text="{i18n.signupAlreadyRegistred}" textColor="GREY"
 							float="LEFT" />
-						<m:MaterialLink targetHistoryToken="{tokens.getLogin}" text="{i18n.signupLogin}"
+						<m:MaterialLink
+							targetHistoryToken="{tokens.getLogin}" text="{i18n.signupLogin}"
 							float="RIGHT" />
 					</m:MaterialPanel>
 

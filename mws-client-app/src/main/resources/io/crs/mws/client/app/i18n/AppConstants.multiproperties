@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MultiProperties xmlns="hu.skzs.multiproperties">
+    <Version>1.2</Version>
+    <Name>PrivilegeConstants</Name>
+    <Description></Description>
+    <Handler>Java Properties Handler</Handler>
+    <Columns>
+        <Key>
+            <Width>200</Width>
+        </Key>
+        <Column>
+            <Name>default</Name>
+            <Description></Description>
+            <Width>150</Width>
+            <HandlerConfiguration>/mws-client-app/src/main/resources/io/crs/mws/client/app/i18n/AppConstants.properties|false|false|false|false|UTF-8</HandlerConfiguration>
+        </Column>
+        <Column>
+            <Name>hu_HU</Name>
+            <Description></Description>
+            <Width>1020</Width>
+            <HandlerConfiguration>/mws-client-app/src/main/resources/io/crs/mws/client/app/i18n/AppConstants_hu_HU.properties|false|false|false|false|UTF-8</HandlerConfiguration>
+        </Column>
+    </Columns>
+    <Records>
+        <Comment>
+            <Value>SIGNUP ERRORS</Value>
+        </Comment>
+        <Property>
+            <Name>signupErrorMap</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">SUE_SUCCESS,SUE_INVALID_RECAPTCHA,SUE_FAILED_RECAPTCHA,SUE_EXISTING_EMAIL,SUE_INVALID_ENTITY,SUE_INDEX_COLOSSION</Value>
+            <Value disabled="false">SUE_SUCCESS,SUE_INVALID_RECAPTCHA,SUE_FAILED_RECAPTCHA,SUE_EXISTING_EMAIL,SUE_INVALID_ENTITY,SUE_INDEX_COLOSSION</Value>
+        </Property>
+        <Property>
+            <Name>SUE_SUCCESS</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Success!</Value>
+            <Value disabled="false">Siker!</Value>
+        </Property>
+        <Property>
+            <Name>SUE_INVALID_RECAPTCHA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Invalid reCaptcha, try again!</Value>
+            <Value disabled="false">Helytelen reCaptcha, próbáld újra!</Value>
+        </Property>
+        <Property>
+            <Name>SUE_FAILED_RECAPTCHA</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Failed reCaptcha verification, try again!</Value>
+            <Value disabled="false">Recaptcha ellenőrzési probléma, próbáld újra!</Value>
+        </Property>
+        <Property>
+            <Name>SUE_EXISTING_EMAIL</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Existing email address!</Value>
+            <Value disabled="false">A megadott email címmel már korábban feliratkoztak!</Value>
+        </Property>
+        <Property>
+            <Name>SUE_INVALID_ENTITY</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Failed signup1!</Value>
+            <Value disabled="false">Feliratkozási probléma1!</Value>
+        </Property>
+        <Property>
+            <Name>SUE_INDEX_COLOSSION</Name>
+            <Disabled>false</Disabled>
+            <MultiLine>false</MultiLine>
+            <Value disabled="false">Failed signup2!</Value>
+            <Value disabled="false">Feliratkozási probléma2!</Value>
+        </Property>
+    </Records>
+</MultiProperties>
