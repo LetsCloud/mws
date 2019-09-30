@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
+import com.gargoylesoftware.htmlunit.javascript.host.Window;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -20,6 +21,7 @@ import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 import io.crs.mws.shared.dto.WindspotDto;
 import ol.Collection;
 import ol.Coordinate;
+import ol.EventsKey;
 import ol.Feature;
 import ol.FeatureOptions;
 import ol.Map;
@@ -29,10 +31,13 @@ import ol.Overlay;
 import ol.OverlayOptions;
 import ol.View;
 import ol.event.EventListener;
+import ol.events.condition.Condition;
 import ol.geocoder.AddressChosenEvent;
 import ol.geocoder.Geocoder;
 import ol.geocoder.GeocoderOptions;
 import ol.geom.Point;
+import ol.interaction.Select;
+import ol.interaction.SelectOptions;
 import ol.layer.Base;
 import ol.layer.LayerOptions;
 import ol.layer.Tile;
@@ -58,8 +63,10 @@ public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> impleme
 	}
 
 	private static final String MAP_PANEL = "mapPanel";
-	
+
 	private SpotCreator spotCreator = new SpotCreator();
+
+	private EventsKey unByKey;
 
 	@UiField
 	HTMLPanel mapPanel, creatorPanel;
@@ -87,8 +94,7 @@ public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> impleme
 	@Override
 	public void refresh() {
 	}
-	
-	
+
 	private Feature createFeature(WindspotDto windspot) {
 		Coordinate coordinate = OLFactory.createCoordinate(Double.parseDouble(windspot.getCoordinateX()),
 				Double.parseDouble(windspot.getCoordinateY()));
@@ -123,10 +129,10 @@ public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> impleme
 		vectorLayerOptions.setStyle(style);
 
 		ol.layer.Vector vectorLayer = new ol.layer.Vector(vectorLayerOptions);
-		
+
 		return vectorLayer;
 	}
-	
+
 	private Tile createOsmLayer() {
 		// create a OSM-layer
 		XyzOptions osmSourceOptions = OLFactory.createOptions();
@@ -136,10 +142,10 @@ public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> impleme
 		osmLayerOptions.setSource(osmSource);
 
 		Tile osmLayer = new Tile(osmLayerOptions);
-		
+
 		return osmLayer;
 	}
-	
+
 	private View createView() {
 		// create a view
 		View view = new View();
@@ -149,7 +155,7 @@ public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> impleme
 
 		return view;
 	}
-	
+
 	private void showMap(String mapPanelId, List<WindspotDto> windpots) {
 
 		Collection<Feature> features = new Collection<Feature>();
@@ -167,7 +173,7 @@ public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> impleme
 		mapOptions.setView(createView());
 		mapOptions.setLayers(lstLayer);
 		Map map = new Map(mapOptions);
-		
+
 		// add some controls
 //		map.addControl(new ScaleLine());
 //		DemoUtils.addDefaultControls(map.getControls());
@@ -183,7 +189,7 @@ public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> impleme
 		spotCreator.addSaveLinkClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				logger.info("MarkerExample.show().onClick()");
+				logger.info("MarkerExample.save().onClick()");
 				getUiHandlers().createSpot(spotCreator.getSpotName(), spotCreatorOverlay.getPosition().getX(),
 						spotCreatorOverlay.getPosition().getY(), spotCreatorOverlay.getPosition().getZ());
 				spotCreatorOverlay.setPosition(null);
@@ -192,7 +198,7 @@ public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> impleme
 		spotCreator.addCloseLinkClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				logger.info("MarkerExample.show().onClick()");
+				logger.info("MarkerExample.close().onClick()");
 				spotCreatorOverlay.setPosition(null);
 			}
 		});
@@ -207,7 +213,7 @@ public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> impleme
 		OverlayOptions overlayOptions = OLFactory.createOptions();
 //		overlayOptions.setElement(Document.get().getElementById("popup"));
 //		overlayOptions.setPosition(transformedCenterCoordinate);
-//		overlayOptions.setOffset(OLFactory.createPixel(-300, 0));
+//		overlayOptions.setOffnset(OLFactory.createPixel(-300, 0));
 		Popup popup = new Popup(overlayOptions);
 		map.addOverlay(popup);
 
@@ -231,12 +237,63 @@ public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> impleme
 		});
 		map.addControl(geocoder);
 
+		Select interaction = createInteraction();
+		map.addInteraction(interaction);
+
 		map.on("singleclick", new EventListener<AddressChosenEvent>() {
 			@Override
 			public void onEvent(AddressChosenEvent event) {
-				spotCreatorOverlay.setPosition(event.getCoordinate());
+				logger.info("MarkerExample->event.getType()=" + event.getType());
+				Collection<Feature> selectedFeatures = interaction.getFeatures();
+				if (selectedFeatures.isEmpty()) {
+					spotCreatorOverlay.setPosition(event.getCoordinate());
+				}
 			}
 		});
 	}
 
+	private Select createInteraction() {
+		SelectOptions selectOptions = new SelectOptions();
+		selectOptions.setCondition(Condition.getClick());
+
+		// create a select interaction
+		final Select selectFeature = new Select(selectOptions);
+		selectFeature.on("select", (Select.Event event) -> {
+			logger.info("MarkerExample.createInteraction().onSelect()");
+		});
+		return selectFeature;
+	}
+
+	private Select createInteraction2(Overlay spotCreatorOverlay) {
+		SelectOptions selectOptions = new SelectOptions();
+		selectOptions.setCondition(Condition.getClick());
+
+		// create a select interaction
+		final Select selectFeature = new Select(selectOptions);
+// map.addInteraction(selectFeature);
+
+		selectFeature.on("select", (Select.Event event) -> {
+			logger.info("MarkerExample.createInteraction().onSelect()");
+
+			Feature[] selectedFeatures = event.getSelected();
+//			event.preventDefault();
+//			event.stopPropagation();
+//			logger.info("MarkerExample.createInteraction().onSelect()-2");
+
+			if (selectedFeatures.length > 0) {
+				logger.info("MarkerExample.createInteraction().onSelect()->(selectedFeatures.length > 0)");
+				Feature selectedFeature = selectedFeatures[0];
+				String output = "You selected feature with id '" + selectedFeature.getId() + "'" + " and name '"
+						+ selectedFeature.get("name") + "'" + " and geometry name '" + selectedFeature.getGeometryName()
+						+ "'" + ".";
+				logger.info("SpotsMapView().createInteraction()->output=" + output);
+//				Window.alert(output);
+			} else {
+//				logger.info("MarkerExample.createInteraction().onSelect()->(selectedFeatures.length == 0)");
+				spotCreatorOverlay.setPosition(event.getMapBrowserEvent().getCoordinate());
+			}
+
+		});
+		return selectFeature;
+	}
 }
