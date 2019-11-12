@@ -136,7 +136,7 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 					.authenticationEntryPoint(new RestAuthenticationEntryPoint())
 					.and()
 				.authorizeRequests()
-					.antMatchers("/app/**", "/adm/**", "/image/**", "/font/**", "/oauth2/**")
+					.antMatchers("/app/**", "/adm/**", "/image/**", "/font/**", "/oauth2/**", "/login/**")
 						.permitAll()
 					.antMatchers(ROOT + ADMIN)
 						.hasRole(Role.ROLE_ADMIN)
