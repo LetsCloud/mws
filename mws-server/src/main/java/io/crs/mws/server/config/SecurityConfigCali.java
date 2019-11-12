@@ -64,12 +64,12 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 	public SecurityConfigCali(Environment environment) {
 		this.environment = environment;
 	}
-	
+
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-	    web.ignoring().antMatchers("/_ah/**");
+		web.ignoring().antMatchers("/_ah/**");
 	}
-	
+
 	@Bean(BeanIds.AUTHENTICATION_MANAGER)
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -78,8 +78,7 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-		authenticationManagerBuilder.userDetailsService(customUserDetailsService)
-				.passwordEncoder(passwordEncoder());
+		authenticationManagerBuilder.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoder());
 	}
 
 	@Bean
@@ -118,56 +117,31 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private HttpCookieOAuth2AuthorizationRequestRepository httpCookieOAuth2AuthorizationRequestRepository;
 
-		@Override
-		public void configure(HttpSecurity http) throws Exception {
-			// @formatter:off
-			http.cors()
-					.and()
-				.sessionManagement()
-					.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-					.and()
-				.csrf()
-					.disable()
-				.formLogin()
-					.disable()
-				.httpBasic()
-					.disable()
-				.exceptionHandling()
-					.authenticationEntryPoint(new RestAuthenticationEntryPoint())
-					.and()
-				.authorizeRequests()
-					.antMatchers("/app/**", "/adm/**", "/image/**", "/font/**", "/oauth2/**")
-						.permitAll()
-					.antMatchers(ROOT + ADMIN)
-						.hasRole(Role.ROLE_ADMIN)
-					.antMatchers(ROOT)
-						.hasAnyRole(Role.ROLE_ADMIN, Role.ROLE_USER)
-					.antMatchers(ROOT + PUBLIC + "/**")
-						.permitAll()
-					.anyRequest()
-						.authenticated()
-					.and()
-				.oauth2Login()
-					.authorizationEndpoint()
-						.baseUri("/oauth2/authorize")
-					.authorizationRequestRepository(cookieAuthorizationRequestRepository())
-						.and()
+	@Override
+	public void configure(HttpSecurity http) throws Exception {
+		// @formatter:off
+		http.cors().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().csrf()
+				.disable().formLogin().disable().httpBasic().disable().exceptionHandling()
+				.authenticationEntryPoint(new RestAuthenticationEntryPoint()).and().authorizeRequests()
+				.antMatchers("/app/**", "/adm/**", "/image/**", "/font/**", "/oauth2/**", "/login/**").permitAll()
+				.antMatchers(ROOT + ADMIN).hasRole(Role.ROLE_ADMIN).antMatchers(ROOT)
+				.hasAnyRole(Role.ROLE_ADMIN, Role.ROLE_USER).antMatchers(ROOT + PUBLIC + "/**").permitAll().anyRequest()
+				.authenticated().and().oauth2Login().authorizationEndpoint().baseUri("/oauth2/authorize")
+				.authorizationRequestRepository(cookieAuthorizationRequestRepository()).and()
 //				.redirectionEndpoint()
 //					.baseUri("/oauth2/callback/*")
 //					.and()
-					.userInfoEndpoint()
+				.userInfoEndpoint()
 //					.oidcUserService(customOidcUserService)
-					.userService(customOAuth2UserService)
-						.and()
-					.successHandler(oAuth2AuthenticationSuccessHandler)
-					.failureHandler(oAuth2AuthenticationFailureHandler)
-					.clientRegistrationRepository(clientRegistrationRepository())
-					.authorizedClientService(authorizedClientService());
-			// @formatter:on
+				.userService(customOAuth2UserService).and().successHandler(oAuth2AuthenticationSuccessHandler)
+				.failureHandler(oAuth2AuthenticationFailureHandler)
+				.clientRegistrationRepository(clientRegistrationRepository())
+				.authorizedClientService(authorizedClientService());
+		// @formatter:on
 
-			// Add our custom Token based authentication filter
-			http.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
-		}
+		// Add our custom Token based authentication filter
+		http.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+	}
 
 	/**
 	 * 
@@ -205,7 +179,8 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 
 		if (client.equals("google")) {
 			return CommonOAuth2Provider.GOOGLE.getBuilder(client).clientId(clientId).clientSecret(clientSecret)
-					.scope(scope).build(); // .redirectUriTemplate(redirectUriTemplate)
+					.scope(Arrays.asList(environment.getProperty(CLIENT_PROPERTY_KEY + client + ".scope").split(",")))
+					.build(); // .redirectUriTemplate(redirectUriTemplate)
 		}
 		if (client.equals("facebook")) {
 			return CommonOAuth2Provider.FACEBOOK.getBuilder(client).clientId(clientId).clientSecret(clientSecret)

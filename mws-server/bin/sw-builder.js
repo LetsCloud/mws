@@ -18,8 +18,8 @@ var filesToCache = [];
 browseAllFilesInDirectory(rootFolder);
 
 function browseAllFilesInDirectory(folder) {
-    const filesRegExp = /\.(html|css|js|gif|png|jpeg|eot|ttf|woff|woff2)$/i;
-    const exceptions = ["WEB-INF", "META-INF", "image", "inf_module", "fro_module", "kip_module", "cfg_module", "admin"];
+    const filesRegExp = /\.(html|css|ico|js|gif|png|jpeg|eot|ttf|woff|woff2)$/i;
+    const exceptions = ["WEB-INF", "META-INF", "image", "app_module", "adm_module"];
 
     fs.readdirSync(folder).forEach(fileName => {
         const resource = folder + "/" + fileName;
@@ -34,7 +34,7 @@ function browseAllFilesInDirectory(folder) {
 }
 
 var swData = {
-    cacheName: gwtModuleName || "hw_cache_" + new Date().getTime().toString(),
+    cacheName: gwtModuleName || "mws_cache_" + new Date().getTime().toString(),
     filesToCache: filesToCache,
 };
 
