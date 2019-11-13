@@ -189,12 +189,14 @@
 				<version>${gwt-material.version}</version>
 				<scope>provided</scope>
 			</dependency>
+			<!-- 
 			<dependency>
 				<groupId>com.github.gwtmaterialdesign</groupId>
 				<artifactId>gwt-material-addext</artifactId>
 				<version>${gwt-material.version}</version>
 				<scope>provided</scope>
 			</dependency>
+			 -->
 			<dependency>
 				<groupId>com.github.gwtmaterialdesign</groupId>
 				<artifactId>gwt-material-table</artifactId>

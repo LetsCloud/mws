@@ -1,6 +1,30 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/mywindspot/quickstart-image', '.' ]
+  id: A
+
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://github.com/LetsCloud/mws']
+  id: B
+  waitFor: A
+
+- name: 'gcr.io/cloud-builders/mvn'
+  args: ["-D", "skipTests", "clean", "install"]
+  dir: 'mws'
+  id: C
+  waitFor: B
+
+- name: 'gcr.io/cloud-builders/mvn'
+  args: ["package", "-pl", "mws-server"]
+  dir: 'mws'
+  id: D
+  waitFor: C
+
+- name: 'gcr.io/cloud-builders/mvn'
+  args: ["appengine:deploy", "-pl", "mws-server"]
+  dir: 'mws'
+  id: E
+  waitFor: D
 
 images:
 - 'gcr.io/mywindspot/quickstart-image'
