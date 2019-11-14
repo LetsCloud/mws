@@ -22,10 +22,20 @@ steps:
   - name: 'mavenrepo'
     path: '/root/.m2'
   entrypoint: 'mvn'
-  args: ["-P", "prod", "clean", "install"]
+  args: ["clean"]
+  dir: 'mws'
+  id: C
+  waitFor: B
+
+- name: maven:3.6.2-jdk-8-slim
+  volumes:
+  - name: 'mavenrepo'
+    path: '/root/.m2'
+  entrypoint: 'mvn'
+  args: ["-P", "prod", "install"]
   dir: 'mws'
   id: D
-  waitFor: B
+  waitFor: C
 
 - name: maven:3.6.2-jdk-8-slim
   volumes:
@@ -47,7 +57,7 @@ steps:
 #   waitFor: E
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy', 'src/main/webapp/WEB-INF/appengine-web.xml']
+  args: ['app', 'deploy', 'target/mws-server-0.0.1-SNAPSHOT']
   dir: 'mws/mws-server'
   id: G
   waitFor: D
