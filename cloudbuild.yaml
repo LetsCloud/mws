@@ -33,7 +33,7 @@ steps:
     path: '/root/.m2'
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy', 'mws-server-0.0.1-SNAPSHOT/WEB-INF']
-  dir: 'mws/mws-server/target'
+  args: ['app', 'deploy']
+  dir: 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT'
   id: 'G'
   waitFor: ['E']
