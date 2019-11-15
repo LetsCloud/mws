@@ -52,25 +52,15 @@
 		<spring.framework.version>5.2.1.RELEASE</spring.framework.version>
 		<spring.security.version>5.2.1.RELEASE</spring.security.version>
 
-		<spring.social.version>1.1.6.RELEASE</spring.social.version>
-		<spring.social.facebook.version>2.0.3.RELEASE</spring.social.facebook.version>
-		<spring.social.twitter.version>1.1.2.RELEASE</spring.social.twitter.version>
-		<spring.social.linkedin.version>1.0.2.RELEASE</spring.social.linkedin.version>
-		<spring.social.google.version>1.0.0.RELEASE</spring.social.google.version>
-
-		<thymeleaf-spring.version>3.0.11.RELEASE</thymeleaf-spring.version>
-		<thymeleaf-layout-dialect.version>2.4.1</thymeleaf-layout-dialect.version>
-		<thymeleaf-extras-springsecurity.version>3.0.4.RELEASE</thymeleaf-extras-springsecurity.version>
-
 		<logback.version>1.2.3</logback.version>
 		<slf4j.version>1.7.25</slf4j.version> <!-- 1.8.0-beta2 -->
 
-		<fasterxml.jackson.core.version>2.10.0</fasterxml.jackson.core.version>
+		<fasterxml.jackson.core.version>2.10.1</fasterxml.jackson.core.version>
 
-		<itext.version>7.1.5</itext.version>
+		<itext.version>7.1.8</itext.version>
 
 		<modelmapper.version>2.3.5</modelmapper.version>
-		<appengine.version>1.9.76</appengine.version>
+		<appengine.version>1.9.77</appengine.version>
 		<servlet.version>3.1.0</servlet.version>
 		<objectify.version>5.1.21</objectify.version>
 		<validation-api.version>1.1.0.Final</validation-api.version>
