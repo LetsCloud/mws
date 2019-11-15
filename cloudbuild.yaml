@@ -3,14 +3,14 @@ steps:
   args: ['clone', 'https://github.com/LetsCloud/mws']
   id: B
 - name: 'maven:3.6.2-jdk-8-slim'
-  volumes:
-  - name: 'mavenrepo'
-    path: '/root/.m2'
-  entrypoint: 'mvn'
   args: ['clean']
   dir: 'mws'
   id: C
   waitFor: B
+  volumes:
+  - name: 'mavenrepo'
+    path: '/root/.m2'
+  entrypoint: 'mvn'
 
 # - name: 'maven:3.6.2-jdk-8-slim'
 #   volumes:
