@@ -1,66 +1,36 @@
 steps:
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: [ 'build', '-t', 'gcr.io/mywindspot/quickstart-image', '.' ]
-#   id: A
-
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/LetsCloud/mws']
   id: B
-#   waitFor: A
-
-# Copy Maven dependencies to volume mavenrepo
-# - name: gcr.io/cloud-builders/gsutil
-#   volumes:
-#   - name: 'mavenrepo'
-#     path: '/root/.m2'
-#   args: ['cp', '-r', 'gs://mywindspot-mavenrepo', '/root/.m2']
-#   id: C
-#   waitFor: B
-
-- name: maven:3.6.2-jdk-8-slim
+- name: 'maven:3.6.2-jdk-8-slim'
   volumes:
   - name: 'mavenrepo'
     path: '/root/.m2'
   entrypoint: 'mvn'
-  args: ["clean"]
+  args: ['clean']
   dir: 'mws'
   id: C
   waitFor: B
-
-- name: maven:3.6.2-jdk-8-slim
+- name: 'maven:3.6.2-jdk-8-slim'
   volumes:
   - name: 'mavenrepo'
     path: '/root/.m2'
   entrypoint: 'mvn'
-  args: ["-P", "prod", "install"]
+  args: ['-P', 'prod', 'install']
   dir: 'mws'
   id: D
   waitFor: C
-
-- name: maven:3.6.2-jdk-8-slim
+- name: 'maven:3.6.2-jdk-8-slim'
   volumes:
   - name: 'mavenrepo'
     path: '/root/.m2'
   entrypoint: 'mvn'
-  args: ["-pl", "mws-server", "package"]
+  args: ['-pl', 'mws-server', 'package']
   dir: 'mws'
   id: E
   waitFor: D
-
-# Preserve the Maven dependencies into the bucket
-# - name: gcr.io/cloud-builders/gsutil
-#   volumes:
-#   - name: 'mavenrepo'
-#     path: '/root/.m2'
-#   args: ['cp', '-r', '/root/.m2', 'gs://mywindspot-mavenrepo']
-#   id: F
-#   waitFor: E
-
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'deploy', 'target/mws-server-0.0.1-SNAPSHOT']
   dir: 'mws/mws-server'
   id: G
-  waitFor: D
-
-# images:
-# - 'gcr.io/mywindspot/quickstart-image'
+  waitFor: E
