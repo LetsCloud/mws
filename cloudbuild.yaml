@@ -2,7 +2,7 @@ steps:
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/LetsCloud/mws']
   id: B
-- name: 'maven:3.6.2-jdk-8-slim'
+- name: 'gcr.io/cloud-builders/mvn'
   args: ['clean']
   dir: 'mws'
   id: C
