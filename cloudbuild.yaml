@@ -1,4 +1,5 @@
 steps:
+
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/LetsCloud/mws']
   id: B
@@ -37,4 +38,4 @@ steps:
   args: ['app', 'deploy', 'target/mws-server-0.0.1-SNAPSHOT']
   dir: 'mws/mws-server'
   id: G
-  waitFor: D
+  waitFor: E
