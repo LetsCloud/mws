@@ -2,6 +2,7 @@ steps:
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/LetsCloud/mws']
   id: B
+  
 - name: 'gcr.io/cloud-builders/mvn'
   args: ['clean']
   dir: 'mws'
