@@ -32,6 +32,11 @@ steps:
   volumes:
   - name: 'mavenrepo'
     path: '/root/.m2'
+  
+- id: 'LS'
+  waitFor: ['PACKAGE']
+  name: 'ubuntu'
+  args: ['ls', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT/WEB-INF/lib']
 
 # - id: 'MKDIR'
 #   waitFor: ['PACKAGE']
@@ -47,11 +52,6 @@ steps:
 #   waitFor: ['COPY XML']
 #   name: 'ubuntu'
 #   args: ['cp', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT.war', '/workspace/deploy-build/']
-  
-# - id: 'LS'
-#   waitFor: ['COPY WAR']
-#   name: 'ubuntu'
-#   args: ['ls', '/workspace/deploy-build/']
 
 - id: 'DEPLOY'
   waitFor: ['PACKAGE']
