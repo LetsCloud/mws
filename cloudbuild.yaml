@@ -32,8 +32,19 @@ steps:
   - name: 'mavenrepo'
     path: '/root/.m2'
 
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy']
-  dir: 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT'
+# - name: 'gcr.io/cloud-builders/gcloud'
+#   args: ['app', 'deploy']
+#   dir: 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT'
+#   id: 'G'
+#   waitFor: ['E']
+
+- name: 'maven:3.6.2-jdk-8-slim'
+  args: ['-pl', 'mws-server', 'appengine:update']
+  dir: 'mws'
   id: 'G'
   waitFor: ['E']
+  entrypoint: 'mvn'
+  volumes:
+  - name: 'mavenrepo'
+    path: '/root/.m2'
+  
