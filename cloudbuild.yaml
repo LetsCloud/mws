@@ -33,30 +33,30 @@ steps:
   - name: 'mavenrepo'
     path: '/root/.m2'
 
-- id: 'MKDIR'
-  waitFor: ['PACKAGE']
-  name: 'ubuntu'
-  args: ['mkdir', 'deploy-build']
+# - id: 'MKDIR'
+#   waitFor: ['PACKAGE']
+#   name: 'ubuntu'
+#   args: ['mkdir', 'deploy-build']
 
-- id: 'COPY XML'
-  waitFor: ['MKDIR']
-  name: 'ubuntu'
-  args: ['cp', 'mws/mws-server/src/main/webapp/WEB-INF/appengine-web.xml', '/workspace/deploy-build/']
+# - id: 'COPY XML'
+#   waitFor: ['MKDIR']
+#   name: 'ubuntu'
+#   args: ['cp', 'mws/mws-server/src/main/webapp/WEB-INF/appengine-web.xml', '/workspace/deploy-build/']
   
-- id: 'COPY WAR'
-  waitFor: ['COPY XML']
-  name: 'ubuntu'
-  args: ['cp', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT.war', '/workspace/deploy-build/']
+# - id: 'COPY WAR'
+#   waitFor: ['COPY XML']
+#   name: 'ubuntu'
+#   args: ['cp', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT.war', '/workspace/deploy-build/']
   
-- id: 'LS'
-  waitFor: ['COPY WAR']
-  name: 'ubuntu'
-  args: ['ls', '/workspace/deploy-build/']
+# - id: 'LS'
+#   waitFor: ['COPY WAR']
+#   name: 'ubuntu'
+#   args: ['ls', '/workspace/deploy-build/']
 
 - id: 'DEPLOY'
-  waitFor: ['LS']
+  waitFor: ['PACKAGE']
   name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy', 'deploy-build/']
+  args: ['app', 'deploy', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT']
 
 
 # - name: 'gcr.io/cloud-builders/gcloud'
