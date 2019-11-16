@@ -53,10 +53,10 @@ steps:
 #   name: 'ubuntu'
 #   args: ['cp', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT.war', '/workspace/deploy-build/']
 
-- id: 'DEPLOY'
-  waitFor: ['PACKAGE']
-  name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT']
+# - id: 'DEPLOY'
+#   waitFor: ['PACKAGE']
+#   name: 'gcr.io/cloud-builders/gcloud'
+#   args: ['app', 'deploy', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT']
 
 
 # - name: 'gcr.io/cloud-builders/gcloud'
@@ -64,13 +64,13 @@ steps:
 #   id: 'F'
 #   waitFor: ['E']
 
-# - name: 'maven:3.6.2-jdk-8-slim'
-#   args: ['appengine:deploy']
-#   dir: 'mws/mws-server'
-#   id: 'G'
-#   waitFor: ['F']
-#   entrypoint: 'mvn'
-#   volumes:
-#   - name: 'mavenrepo'
-#     path: '/root/.m2'
+- name: 'maven:3.6.2-jdk-8-slim'
+  args: ['com.google.cloud.tools:appengine-maven-plugin:deploy']
+  dir: 'mws/mws-server'
+  id: 'MVN_DEPLOY'
+  waitFor: ['PACKAGE']
+  entrypoint: 'mvn'
+  volumes:
+  - name: 'mavenrepo'
+    path: '/root/.m2'
   
