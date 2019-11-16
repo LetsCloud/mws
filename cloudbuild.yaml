@@ -41,7 +41,7 @@ steps:
 - id: 'SDK'
   waitFor: ['PACKAGE']
   name: 'google/cloud-sdk:latest'
-  args: ['pull']
+  args: ['pull', '/workspace/google-cloud-sdk']
 
 # - id: 'MKDIR'
 #   waitFor: ['PACKAGE']
@@ -70,7 +70,7 @@ steps:
 #   waitFor: ['E']
 
 - name: 'maven:3.6.2-jdk-8-slim'
-  args: ['com.google.cloud.tools:appengine-maven-plugin:deploy']
+  args: ['com.google.cloud.tools:appengine-maven-plugin:deploy', 'DcloudSdkHome=/workspace/google-cloud-sdk']
   dir: 'mws/mws-server'
   id: 'MVN_DEPLOY'
   waitFor: ['SDK']
