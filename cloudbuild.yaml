@@ -2,6 +2,7 @@ steps:
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/LetsCloud/mws']
   id: 'B'
+  
 - name: 'maven:3.6.2-jdk-8-slim'
   args: ['clean']
   dir: 'mws'
@@ -34,13 +35,13 @@ steps:
 
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['components', 'install', 'app-engine-java']
-  id: 'G'
+  id: 'F'
   waitFor: ['E']
 
 - name: 'maven:3.6.2-jdk-8-slim'
   args: ['appengine:deploy']
   dir: 'mws/mws-server'
-  id: 'E'
+  id: 'G'
   waitFor: ['F']
   entrypoint: 'mvn'
   volumes:
