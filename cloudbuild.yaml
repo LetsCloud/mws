@@ -33,18 +33,17 @@ steps:
     path: '/root/.m2'
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy']
-  dir: 'mws/mws-server'
+  args: ['components', 'install', 'app-engine-java']
   id: 'G'
   waitFor: ['E']
 
-# - name: 'maven:3.6.2-jdk-8-slim'
-#   args: ['-pl', 'mws-server', 'appengine:update']
-#   dir: 'mws'
-#   id: 'G'
-#   waitFor: ['E']
-#   entrypoint: 'mvn'
-#   volumes:
-#   - name: 'mavenrepo'
-#     path: '/root/.m2'
+- name: 'maven:3.6.2-jdk-8-slim'
+  args: ['appengine:deploy']
+  dir: 'mws/mws-server'
+  id: 'E'
+  waitFor: ['F']
+  entrypoint: 'mvn'
+  volumes:
+  - name: 'mavenrepo'
+    path: '/root/.m2'
   
