@@ -1,13 +1,13 @@
 steps:
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/LetsCloud/mws']
-  id: 'B'
+  id: 'CLONE'
   
 - name: 'maven:3.6.2-jdk-8-slim'
   args: ['clean']
   dir: 'mws'
-  id: 'C'
-  waitFor: ['B']
+  id: 'CLEAN'
+  waitFor: ['CLONE']
   entrypoint: 'mvn'
   volumes:
   - name: 'mavenrepo'
@@ -16,8 +16,8 @@ steps:
 - name: 'maven:3.6.2-jdk-8-slim'
   args: ['-P', 'prod', 'install']
   dir: 'mws'
-  id: 'D'
-  waitFor: ['C']
+  id: 'INSTALL'
+  waitFor: ['CLEAN']
   entrypoint: 'mvn'
   volumes:
   - name: 'mavenrepo'
@@ -26,25 +26,46 @@ steps:
 - name: 'maven:3.6.2-jdk-8-slim'
   args: ['package']
   dir: 'mws/mws-server'
-  id: 'E'
-  waitFor: ['D']
+  id: 'PACKAGE'
+  waitFor: ['INSTALL']
   entrypoint: 'mvn'
   volumes:
   - name: 'mavenrepo'
     path: '/root/.m2'
 
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['components', 'install', 'app-engine-java']
-  id: 'F'
-  waitFor: ['E']
+- id: 'MKDIR'
+  waitFor: ['PACKAGE']
+  name: 'ubuntu'
+  args: ['mkdir', 'deploy-build']
 
-- name: 'maven:3.6.2-jdk-8-slim'
-  args: ['appengine:deploy']
-  dir: 'mws/mws-server'
-  id: 'G'
-  waitFor: ['F']
-  entrypoint: 'mvn'
-  volumes:
-  - name: 'mavenrepo'
-    path: '/root/.m2'
+- id: 'COPY XML'
+  waitFor: ['MKDIR']
+  name: 'ubuntu'
+  args: ['cp', 'mws/mws-server/src/main/webap/WEB-INF/appengine-web.xml', 'deploy-build/']
+  
+- id: 'COPY WAR'
+  waitFor: ['COPY XML']
+  name: 'ubuntu'
+  args: ['cp', 'mws/mws-server/target/mywindspot-0.0.1-SNAPSHOT.war', 'deploy-build/']
+
+- id: 'DEPLOY'
+  waitFor: ['COPY WAR']
+  name: 'gcr.io/cloud-builders/gcloud'
+  args: ['app', 'deploy', 'deploy-build/']
+
+
+# - name: 'gcr.io/cloud-builders/gcloud'
+#   args: ['components', 'install', 'app-engine-java']
+#   id: 'F'
+#   waitFor: ['E']
+
+# - name: 'maven:3.6.2-jdk-8-slim'
+#   args: ['appengine:deploy']
+#   dir: 'mws/mws-server'
+#   id: 'G'
+#   waitFor: ['F']
+#   entrypoint: 'mvn'
+#   volumes:
+#   - name: 'mavenrepo'
+#     path: '/root/.m2'
   
