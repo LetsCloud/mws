@@ -41,15 +41,20 @@ steps:
 - id: 'COPY XML'
   waitFor: ['MKDIR']
   name: 'ubuntu'
-  args: ['cp', 'mws/mws-server/src/main/webapp/WEB-INF/appengine-web.xml', 'deploy-build/']
+  args: ['cp', 'mws/mws-server/src/main/webapp/WEB-INF/appengine-web.xml', '/workspace/deploy-build/']
   
 - id: 'COPY WAR'
   waitFor: ['COPY XML']
   name: 'ubuntu'
-  args: ['cp', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT.war', 'deploy-build/']
+  args: ['cp', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT.war', '/workspace/deploy-build/']
+  
+- id: 'LS'
+  waitFor: ['COPY WAR']
+  name: 'ubuntu'
+  args: ['ls', '/workspace/deploy-build/']
 
 - id: 'DEPLOY'
-  waitFor: ['COPY WAR']
+  waitFor: ['LS']
   name: 'gcr.io/cloud-builders/gcloud'
   args: ['app', 'deploy', 'deploy-build/']
 
