@@ -41,12 +41,12 @@ steps:
 - id: 'COPY XML'
   waitFor: ['MKDIR']
   name: 'ubuntu'
-  args: ['cp', 'mws/mws-server/src/main/webap/WEB-INF/appengine-web.xml', 'deploy-build/']
+  args: ['cp', 'mws/mws-server/src/main/webapp/WEB-INF/appengine-web.xml', 'deploy-build/']
   
 - id: 'COPY WAR'
   waitFor: ['COPY XML']
   name: 'ubuntu'
-  args: ['cp', 'mws/mws-server/target/mywindspot-0.0.1-SNAPSHOT.war', 'deploy-build/']
+  args: ['cp', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT.war', 'deploy-build/']
 
 - id: 'DEPLOY'
   waitFor: ['COPY WAR']
