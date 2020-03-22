@@ -38,10 +38,10 @@ steps:
   name: 'ubuntu'
   args: ['ls', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT/WEB-INF/lib']
   
-- id: 'SDK'
-  waitFor: ['LS']
-  name: 'google/cloud-sdk:latest'
-  args: ['pull', '/workspace/google-cloud-sdk']
+#- id: 'SDK'
+#  waitFor: ['LS']
+#  name: 'google/cloud-sdk:latest'
+#  args: ['pull', '/workspace/google-cloud-sdk']
 
 # - id: 'MKDIR'
 #   waitFor: ['PACKAGE']
@@ -58,10 +58,10 @@ steps:
 #   name: 'ubuntu'
 #   args: ['cp', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT.war', '/workspace/deploy-build/']
 
-# - id: 'DEPLOY'
-#   waitFor: ['PACKAGE']
-#   name: 'gcr.io/cloud-builders/gcloud'
-#   args: ['app', 'deploy', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT']
+- id: 'DEPLOY'
+  waitFor: ['LS']
+  name: 'gcr.io/cloud-builders/gcloud'
+  args: ['app', 'deploy', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT']
 
 
 # - name: 'gcr.io/cloud-builders/gcloud'
@@ -69,13 +69,15 @@ steps:
 #   id: 'F'
 #   waitFor: ['E']
 
-- name: 'maven:3.6.2-jdk-8-slim'
-  args: ['com.google.cloud.tools:appengine-maven-plugin:deploy', 'DcloudSdkHome=/workspace/google-cloud-sdk']
-  dir: 'mws/mws-server'
-  id: 'MVN_DEPLOY'
-  waitFor: ['SDK']
-  entrypoint: 'mvn'
-  volumes:
-  - name: 'mavenrepo'
-    path: '/root/.m2'
+
+
+#- name: 'maven:3.6.2-jdk-8-slim'
+#  args: ['com.google.cloud.tools:appengine-maven-plugin:deploy', 'DcloudSdkHome=/workspace/google-cloud-sdk']
+#  dir: 'mws/mws-server'
+#  id: 'MVN_DEPLOY'
+#  waitFor: ['SDK']
+#  entrypoint: 'mvn'
+#  volumes:
+#  - name: 'mavenrepo'
+#    path: '/root/.m2'
   
