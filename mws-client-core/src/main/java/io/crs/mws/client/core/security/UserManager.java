@@ -15,7 +15,6 @@ import com.google.gwt.i18n.client.LocaleInfo;
 import com.google.web.bindery.event.shared.EventBus;
 
 import io.crs.mws.client.core.event.CurrentUserEvent;
-import io.crs.mws.client.core.firebase.messaging.MessagingManager;
 import io.crs.mws.client.core.promise.xgwt.Fn;
 import io.crs.mws.client.core.service.AuthService;
 import io.crs.mws.client.core.util.OauthUtils;
@@ -34,13 +33,11 @@ public class UserManager {
 	private static final AuthService AUTH_SERVICE = GWT.create(AuthService.class);
 
 	private final EventBus eventBus;
-	private final MessagingManager messagingManager;
-	private final CurrentUser currentUser;
+	protected final CurrentUser currentUser;
 
 	@Inject
-	UserManager(EventBus eventBus, MessagingManager messagingManager, CurrentUser currentUser) {
+	UserManager(EventBus eventBus, CurrentUser currentUser) {
 		this.eventBus = eventBus;
-		this.messagingManager = messagingManager;
 		this.currentUser = currentUser;
 	}
 
@@ -71,8 +68,8 @@ public class UserManager {
 
 				currentUser.setAccountDto(response);
 				currentUser.setLoggedIn(true);
-
-				messagingManager.initFirebase(currentUser.getAccountDto().getWebSafeKey(), callback);
+				
+				initFireBase(callback);
 			}
 
 			@Override
@@ -85,6 +82,10 @@ public class UserManager {
 		});
 	}
 
+	protected void initFireBase(Fn.NoArg callback) {
+		callback.call();
+	}
+	
 	public void login(LoginRequest loginRequest, Fn.NoArg callback, Fn.NoArg faildCallback) {
 		logger.info("UserManager().login()");
 		AUTH_SERVICE.login(loginRequest, new MethodCallback<AuthResponse>() {

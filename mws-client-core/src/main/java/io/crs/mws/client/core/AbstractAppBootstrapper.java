@@ -18,8 +18,7 @@ import com.gwtplatform.mvp.client.PreBootstrapper;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 
 import gwt.material.design.client.pwa.PwaManager;
-import io.crs.mws.client.core.app.AppServiceWorkerManager;
-import io.crs.mws.client.core.firebase.messaging.MessagingManager;
+import io.crs.mws.client.core.app.AdmServiceWorkerManager;
 import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.UserManager;
 import io.crs.mws.client.core.util.OauthUtils;
@@ -38,17 +37,15 @@ public abstract class AbstractAppBootstrapper implements Bootstrapper {
 	private final EventBus eventBus;
 	private final PlaceManager placeManager;
 	private final UserManager userManager;
-	private final AppServiceWorkerManager serviceWorkerManager;
-	private final MessagingManager messagingManager;
+	private final AdmServiceWorkerManager serviceWorkerManager;
 	private final AppData appData;
 
 	public AbstractAppBootstrapper(EventBus eventBus, PlaceManager placeManager, UserManager userManager,
-			AppServiceWorkerManager serviceWorkerManager, MessagingManager messagingManager, AppData appData) {
+			AdmServiceWorkerManager serviceWorkerManager, AppData appData) {
 		this.eventBus = eventBus;
 		this.placeManager = placeManager;
 		this.userManager = userManager;
 		this.serviceWorkerManager = serviceWorkerManager;
-		this.messagingManager = messagingManager;
 		this.appData = appData;
 	}
 

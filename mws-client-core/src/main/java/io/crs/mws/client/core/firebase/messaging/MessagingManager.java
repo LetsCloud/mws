@@ -134,9 +134,9 @@ public class MessagingManager implements HasMessagingFeatures {
 		unsubscribe = getFirebaseMessaging().onMessage(callback);
 	}
 
+
 	public void initFirebase(String webSafeKey, Fn.NoArg callback) {
 		logger.info("MessagingManager.initFirebase()");
-
 		if (getFirebase() != null) {
 			if (currentUser.isLoggedIn())
 				subscribe(currentUser.getAccountDto().getWebSafeKey());
@@ -177,14 +177,17 @@ public class MessagingManager implements HasMessagingFeatures {
 			@Override
 			public void onFailure(Method method, Throwable exception) {
 				logger.info("MessagingManager.initFirebase().onFailure()");
-//				checkCurrentUser();
+//			checkCurrentUser();
 			}
 		});
 	}
 
 	private String getGlobalSetting(List<GlobalConfigDto> result, String key) {
 		logger.info("MessagingManager.getGlobalSetting()");
-		return result.stream().filter(o -> o.getCode().equals(key)).findFirst().get().getValue();
+		GlobalConfigDto c = result.stream().filter(o -> o.getCode().equals(key)).findFirst().orElse(null);
+		if (c==null)
+			return "";
+		return c.getValue();
 	}
 
 	private void configFcmOnMessage() {
