@@ -47,4 +47,10 @@ public class Config {
 
 	@JsProperty
 	public native String getMessagingSenderId();
+
+	@JsProperty
+	public native void setAppId(String appId);
+
+	@JsProperty
+	public native String getAppId();
 }

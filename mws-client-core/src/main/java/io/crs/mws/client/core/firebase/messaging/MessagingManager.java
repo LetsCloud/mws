@@ -158,6 +158,7 @@ public class MessagingManager implements HasMessagingFeatures {
 				config.setProjectId(getGlobalSetting(response, GlobalParam.FB4_PROJECT_ID.name()));
 				config.setStorageBucket(getGlobalSetting(response, GlobalParam.FB5_STORAGE_BUCKET.name()));
 				config.setMessagingSenderId(getGlobalSetting(response, GlobalParam.FB6_MESSAGE_SENDER_ID.name()));
+				config.setAppId(getGlobalSetting(response, GlobalParam.FB7_APP_ID.name()));
 
 				setFirebase(Firebase.initializeApp(config));
 				logger.info("MessagingManager.initFirebase().onSuccess()->firebase.getName()" + firebase.getName());
