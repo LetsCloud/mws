@@ -39,7 +39,12 @@ public enum GlobalParam implements Serializable {
 	/**
 	 * 
 	 */
-	FB6_MESSAGE_SENDER_ID("Firebase - Message Sender Id");
+	FB6_MESSAGE_SENDER_ID("Firebase - Message Sender Id"),
+
+	/**
+	 * 
+	 */
+	FB7_APP_ID("Firebase - App Id");
 
 	private String paramName = null;
 

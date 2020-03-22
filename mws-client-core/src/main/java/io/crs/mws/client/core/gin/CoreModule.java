@@ -46,7 +46,7 @@ public class CoreModule extends AbstractPresenterModule {
 		bind(UserManager.class).asEagerSingleton();
 		bind(MessagingManager.class).asEagerSingleton();
 		bind(AppServiceWorkerManager.class).asEagerSingleton();
-
+		
 		bind(ResourceLoader.class).asEagerSingleton();
 
 		install(new MenuModule());

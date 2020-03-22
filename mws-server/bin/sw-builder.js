@@ -34,7 +34,7 @@ function browseAllFilesInDirectory(folder) {
 }
 
 var swData = {
-    cacheName: gwtModuleName || "mws_cache_" + new Date().getTime().toString(),
+    cacheName: gwtModuleName || "wsn_cache_" + new Date().getTime().toString(),
     filesToCache: filesToCache,
 };
 
