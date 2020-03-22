@@ -39,7 +39,7 @@ steps:
   args: ['ls', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT/WEB-INF/lib']
   
 - id: 'SDK'
-  waitFor: ['PACKAGE']
+  waitFor: ['LS']
   name: 'google/cloud-sdk:latest'
   args: ['pull', '/workspace/google-cloud-sdk']
 
