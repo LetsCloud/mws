@@ -29,7 +29,6 @@ import io.crs.mws.client.core.event.SetBreadcrumbsEvent;
 import io.crs.mws.client.core.event.SetPageTitleEvent;
 import io.crs.mws.client.core.event.SetBreadcrumbsEvent.SetBreadcrumbsHandler;
 import io.crs.mws.client.core.event.SetPageTitleEvent.SetPageTitleHandler;
-import io.crs.mws.client.core.firebase.messaging.MessagingManager;
 import io.crs.mws.client.core.menu.MenuPresenter;
 import io.crs.mws.client.core.model.BreadcrumbConfig;
 import io.crs.mws.client.core.security.CurrentUser;
@@ -59,8 +58,7 @@ public abstract class AbstractAppPresenter<Proxy_ extends Proxy<?>> extends Pres
 	protected List<BreadcrumbConfig> breadcrumbConfigs = new ArrayList<BreadcrumbConfig>();
 
 	protected AbstractAppPresenter(EventBus eventBus, MyView view, Proxy_ proxy, PlaceManager placeManager,
-			MenuPresenter menuPresenter, CurrentUser currentUser, String appCode, AppServiceWorkerManager swManager,
-			MessagingManager messagingManager) {
+			MenuPresenter menuPresenter, CurrentUser currentUser, String appCode, AppServiceWorkerManager swManager) {
 		super(eventBus, view, proxy, RevealType.Root);
 		logger.info("AbstractAppPresenter()");
 

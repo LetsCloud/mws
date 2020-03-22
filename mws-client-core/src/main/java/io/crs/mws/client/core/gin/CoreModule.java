@@ -14,13 +14,10 @@ import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 import com.gwtplatform.mvp.shared.proxy.RouteTokenFormatter;
 
 import io.crs.mws.client.core.CoreNameTokens;
-import io.crs.mws.client.core.app.AppServiceWorkerManager;
 import io.crs.mws.client.core.filter.FilterModule;
-import io.crs.mws.client.core.firebase.messaging.MessagingManager;
 import io.crs.mws.client.core.menu.MenuModule;
 import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.CurrentUser;
-import io.crs.mws.client.core.security.UserManager;
 
 /**
  * @author CR
@@ -41,11 +38,8 @@ public class CoreModule extends AbstractPresenterModule {
 
 
 		bind(AppData.class).asEagerSingleton();
-		bind(CurrentUser.class).asEagerSingleton();
 
-		bind(UserManager.class).asEagerSingleton();
-		bind(MessagingManager.class).asEagerSingleton();
-		bind(AppServiceWorkerManager.class).asEagerSingleton();
+		bind(CurrentUser.class).asEagerSingleton();
 		
 		bind(ResourceLoader.class).asEagerSingleton();
 

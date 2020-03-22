@@ -20,7 +20,6 @@ import io.crs.mws.client.adm.resources.AdminResources;
 import io.crs.mws.client.core.CoreNameTokens;
 import io.crs.mws.client.core.app.AbstractAppPresenter;
 import io.crs.mws.client.core.app.AppServiceWorkerManager;
-import io.crs.mws.client.core.firebase.messaging.MessagingManager;
 import io.crs.mws.client.core.menu.MenuPresenter;
 import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.CurrentUser;
@@ -44,9 +43,8 @@ public class AdmPresenter extends AbstractAppPresenter<AdmPresenter.MyProxy> {
 	@Inject
 	AdmPresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager, AdminMessages i18n,
 			CurrentUser currentUser, MenuPresenter menuPresenter, AppData appData, AppServiceWorkerManager swManager,
-			AdminResources resources, MessagingManager messagingManager) {
-		super(eventBus, view, proxy, placeManager, menuPresenter, currentUser, SubSystem.ADM, swManager,
-				messagingManager);
+			AdminResources resources) {
+		super(eventBus, view, proxy, placeManager, menuPresenter, currentUser, SubSystem.ADM, swManager);
 
 		this.i18n = i18n;
 		this.resources = resources;

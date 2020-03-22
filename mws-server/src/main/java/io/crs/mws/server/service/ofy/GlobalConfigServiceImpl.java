@@ -29,7 +29,7 @@ public class GlobalConfigServiceImpl extends CrudServiceImpl<GlobalConfig, Globa
 
 	private static EnumSet<GlobalParam> allParams = EnumSet.of(GlobalParam.FB1_API_KEY, GlobalParam.FB2_AUTH_DOMAIN,
 			GlobalParam.FB3_DATABASE_URL, GlobalParam.FB4_PROJECT_ID, GlobalParam.FB5_STORAGE_BUCKET,
-			GlobalParam.FB6_MESSAGE_SENDER_ID);
+			GlobalParam.FB6_MESSAGE_SENDER_ID, GlobalParam.FB7_APP_ID);
 
 	private final GlobalConfigRepository repository;
 
