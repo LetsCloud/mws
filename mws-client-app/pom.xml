@@ -24,12 +24,14 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>mws-shared</artifactId>
 			<version>${project.version}</version>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>mws-shared</artifactId>
 			<version>${project.version}</version>
 			<classifier>sources</classifier>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- ******************** -->
