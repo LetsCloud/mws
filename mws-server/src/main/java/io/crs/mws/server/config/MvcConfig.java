@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -40,6 +41,7 @@ import io.crs.mws.server.security2.CustomUserDetailsService;
 //@Import({ SecurityConfigCali.class })
 @ComponentScan({ "io.crs.mws.server.repository", "io.crs.mws.server.service", "io.crs.mws.server.controller",
 		"io.crs.mws.server.security2", "io.crs.mws.server.security2.oauth2", "io.crs.mws.server.login" })
+@PropertySource("classpath:application.properties")
 public class MvcConfig implements WebMvcConfigurer {
 	private static final Logger logger = LoggerFactory.getLogger(MvcConfig.class);
 
