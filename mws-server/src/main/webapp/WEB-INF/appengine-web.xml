@@ -24,6 +24,10 @@
 			value="com.sun.el.ExpressionFactoryImpl" />
 	</system-properties>
 
+<env-variables>
+        <env-var name="javax.el.ExpressionFactory" value="com.sun.el.ExpressionFactoryImpl" />
+    </env-variables>
+    
 	<!-- Optional. App Engine includes an implementation of sessions, using 
 		the servlet session interface. The implementation stores session data in 
 		Datastore for persistence, and also uses memcache for speed. As with most 
