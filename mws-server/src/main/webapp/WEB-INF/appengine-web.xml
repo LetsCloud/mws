@@ -20,6 +20,8 @@
 	<system-properties>
 		<property name="java.util.logging.config.file"
 			value="WEB-INF/classes/logging.properties" />
+		<property name="javax.el.ExpressionFactory"
+			value="com.sun.el.ExpressionFactoryImpl" />
 	</system-properties>
 
 	<!-- Optional. App Engine includes an implementation of sessions, using 
