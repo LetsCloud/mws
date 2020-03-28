@@ -22,6 +22,14 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>mws-shared</artifactId>
 			<version>${project.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>mws-shared</artifactId>
+			<version>${project.version}</version>
+			<classifier>sources</classifier>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -133,14 +141,15 @@
 			<groupId>com.googlecode.objectify</groupId>
 			<artifactId>objectify</artifactId>
 		</dependency>
-<dependency>
-        <groupId>org.glassfish</groupId>
-        <artifactId>javax.el</artifactId>
-        <version>3.0.1-b08</version>
-    </dependency>
-    
+		
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.el</artifactId>
+			<version>3.0.1-b08</version>
+		</dependency>
+
 	</dependencies>
-	
+
 	<build>
 		<outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
 
