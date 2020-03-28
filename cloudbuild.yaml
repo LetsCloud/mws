@@ -49,3 +49,7 @@ steps:
   entrypoint: 'mvn'
   args: ["-D", "skipTests", "package", "appengine:deploy"]
   dir: 'mws/mws-server'  
+  volumes:
+  - name: 'mavenrepo'
+    path: '/root/.m2'
+  
