@@ -30,10 +30,6 @@ public class CustomUserDetailsService implements UserDetailsService {
 	@Autowired
 	AccountService accountRepository;
 
-	@Autowired
-	CustomUserDetailsService() {
-	}
-
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		logger.info("loadUserByUsername()->email=" + email);
