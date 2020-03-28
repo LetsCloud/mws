@@ -35,14 +35,16 @@ import io.crs.mws.shared.cnst.SocialProvider;
  * @author robi
  *
  */
-@Service
 public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 	private static final Logger logger = LoggerFactory.getLogger(CustomOAuth2UserService.class);
 	private static final String ENCODED_EMAIL = "Y3Nlcm5pa3JAZ21haWwuY29t";
 
-	@Autowired
-	private AccountService userRepository;
+	private final AccountService accountService;
 
+	public CustomOAuth2UserService(AccountService accountService) {
+		this.accountService = accountService;
+	}
+	
 	@Override
 	public OAuth2User loadUser(OAuth2UserRequest oAuth2UserRequest) throws OAuth2AuthenticationException {
 		logger.info("loadUser()");
@@ -91,7 +93,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 			authorities = Collections.singletonList(new SimpleGrantedAuthority(Role.ROLE_ADMIN));
 		} else {
 			logger.info("processOAuth2User()-8");
-			user = userRepository.findByEmail(oAuth2UserInfo.getEmail());
+			user = accountService.findByEmail(oAuth2UserInfo.getEmail());
 			logger.info("processOAuth2User()-9");
 
 			if (user == null) {
@@ -127,7 +129,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 		user.setEmail(oAuth2UserInfo.getEmail());
 		user.setImageUrl(oAuth2UserInfo.getImageUrl());
 		try {
-			return userRepository.create(user);
+			return accountService.create(user);
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -140,7 +142,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 		existingUser.setNickname(oAuth2UserInfo.getName());
 		existingUser.setImageUrl(oAuth2UserInfo.getImageUrl());
 		try {
-			return userRepository.update(existingUser);
+			return accountService.update(existingUser);
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
