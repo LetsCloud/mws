@@ -4,8 +4,11 @@
 package io.crs.mws.server.config;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -26,6 +29,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.crs.mws.server.repository.ofy.ObjectifyRegistration;
 import io.crs.mws.server.security2.AppProperties;
+import io.crs.mws.server.security2.CustomUserDetailsService;
 
 /**
  * @author robi
@@ -37,6 +41,7 @@ import io.crs.mws.server.security2.AppProperties;
 @ComponentScan({ "io.crs.mws.server.repository", "io.crs.mws.server.service", "io.crs.mws.server.controller",
 		"io.crs.mws.server.security2", "io.crs.mws.server.security2.oauth2", "io.crs.mws.server.login" })
 public class MvcConfig implements WebMvcConfigurer {
+	private static final Logger logger = LoggerFactory.getLogger(MvcConfig.class);
 
 	@Autowired
 	Environment env;
@@ -96,12 +101,24 @@ public class MvcConfig implements WebMvcConfigurer {
 
 	@Bean
 	public AppProperties appProperties() {
+		logger.info("appProperties()");
 		AppProperties appProperties = new AppProperties();
-		appProperties.getAuth().setTokenSecret(env.getProperty("app.auth.tokenSecret"));
+		String tokenSecret = env.getProperty("app.auth.tokenSecret");
+		logger.info("appProperties() -> tokenSecret = " + tokenSecret);
+		appProperties.getAuth().setTokenSecret(tokenSecret);
 //		appProperties.getAuth().setTokenExpirationMsec(new Long(env.getProperty("app.auth.tokenExpirationMsec")));
 		appProperties.getAuth().setTokenExpirationMsec(864000000);
-		appProperties.getOauth2().setAuthorizedRedirectUris(
-				Arrays.asList(env.getProperty("app.oauth2.authorizedRedirectUris").split(",")));
+		List<String> authorizedRedirectUris = Arrays
+				.asList(env.getProperty("app.oauth2.authorizedRedirectUris").split(","));
+
+		if (authorizedRedirectUris == null || authorizedRedirectUris.isEmpty()) {
+			logger.info("appProperties() -> (authorizedRedirectUris != null || !authorizedRedirectUris.isEmpty())");
+		} else {
+			for (String uri : authorizedRedirectUris) {
+				logger.info("appProperties() -> authorizedRedirectUri = " + uri);
+			}
+			appProperties.getOauth2().setAuthorizedRedirectUris(authorizedRedirectUris);
+		}
 		return appProperties;
 	}
 
