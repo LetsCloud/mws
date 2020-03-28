@@ -33,8 +33,9 @@ import io.crs.mws.server.security2.AppProperties;
  */
 @EnableWebMvc
 @Configuration
-@Import({ SecurityConfigCali.class })
-@ComponentScan({ "io.crs.mws.server.repository", "io.crs.mws.server.service", "io.crs.mws.server.controller" })
+//@Import({ SecurityConfigCali.class })
+@ComponentScan({ "io.crs.mws.server.repository", "io.crs.mws.server.service", "io.crs.mws.server.controller",
+		"io.crs.mws.server.security2", "io.crs.mws.server.security2.oauth2", "io.crs.mws.server.login" })
 public class MvcConfig implements WebMvcConfigurer {
 
 	@Autowired

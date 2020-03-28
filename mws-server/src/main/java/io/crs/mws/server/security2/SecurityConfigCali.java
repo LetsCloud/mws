@@ -1,7 +1,7 @@
 /**
  * 
  */
-package io.crs.mws.server.config;
+package io.crs.mws.server.security2;
 
 import static io.crs.mws.shared.api.ApiPaths.APIv1.PUBLIC;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.ROOT;
@@ -41,9 +41,6 @@ import org.springframework.security.oauth2.client.web.OAuth2AuthorizedClientRepo
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import io.crs.mws.server.repository.AccountRepository;
-import io.crs.mws.server.security2.CustomUserDetailsService;
-import io.crs.mws.server.security2.RestAuthenticationEntryPoint;
-import io.crs.mws.server.security2.TokenAuthenticationFilter;
 import io.crs.mws.server.security2.oauth2.CustomOAuth2UserService;
 import io.crs.mws.server.security2.oauth2.HttpCookieOAuth2AuthorizationRequestRepository;
 import io.crs.mws.server.security2.oauth2.OAuth2AuthenticationFailureHandler;
@@ -59,7 +56,6 @@ import io.crs.mws.shared.cnst.Role;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true, jsr250Enabled = true, prePostEnabled = true)
 @PropertySource("classpath:application.properties")
-@ComponentScan({ "io.crs.mws.server.security2", "io.crs.mws.server.login" })
 public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 	private static final Logger logger = LoggerFactory.getLogger(SecurityConfigCali.class);
 
