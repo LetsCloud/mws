@@ -23,12 +23,14 @@ import io.crs.mws.shared.cnst.Role;
  * @author robi
  *
  */
-@Service
 public class CustomUserDetailsService implements UserDetailsService {
 	private static final Logger logger = LoggerFactory.getLogger(CustomUserDetailsService.class);
 
-	@Autowired
-	AccountService accountRepository;
+	private final AccountService accountRepository;
+
+	public CustomUserDetailsService(AccountService accountRepository) {
+		this.accountRepository = accountRepository;
+	}
 
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

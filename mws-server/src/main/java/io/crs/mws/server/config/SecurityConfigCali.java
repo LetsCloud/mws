@@ -40,6 +40,7 @@ import org.springframework.security.oauth2.client.web.AuthenticatedPrincipalOAut
 import org.springframework.security.oauth2.client.web.OAuth2AuthorizedClientRepository;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import io.crs.mws.server.repository.AccountRepository;
 import io.crs.mws.server.security2.CustomUserDetailsService;
 import io.crs.mws.server.security2.RestAuthenticationEntryPoint;
 import io.crs.mws.server.security2.TokenAuthenticationFilter;
@@ -47,6 +48,7 @@ import io.crs.mws.server.security2.oauth2.CustomOAuth2UserService;
 import io.crs.mws.server.security2.oauth2.HttpCookieOAuth2AuthorizationRequestRepository;
 import io.crs.mws.server.security2.oauth2.OAuth2AuthenticationFailureHandler;
 import io.crs.mws.server.security2.oauth2.OAuth2AuthenticationSuccessHandler;
+import io.crs.mws.server.service.AccountService;
 import io.crs.mws.shared.cnst.Role;
 
 /**
@@ -80,7 +82,7 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-		authenticationManagerBuilder.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoder());
+		authenticationManagerBuilder.userDetailsService(customUserDetailsService()).passwordEncoder(passwordEncoder());
 	}
 
 	@Bean
@@ -104,8 +106,8 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 		return new BCryptPasswordEncoder();
 	}
 
-	@Autowired
-	private CustomUserDetailsService customUserDetailsService;
+//	@Autowired
+//	private CustomUserDetailsService customUserDetailsService;
 
 	@Autowired
 	private CustomOAuth2UserService customOAuth2UserService;
@@ -118,6 +120,9 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private HttpCookieOAuth2AuthorizationRequestRepository httpCookieOAuth2AuthorizationRequestRepository;
+
+	@Autowired
+	private AccountService accountService;
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
@@ -157,6 +162,11 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 				.filter(registration -> registration != null).collect(Collectors.toList());
 
 		return new InMemoryClientRegistrationRepository(registrations);
+	}
+
+	@Bean
+	public CustomUserDetailsService customUserDetailsService() {
+		return new CustomUserDetailsService(accountService);
 	}
 
 	private static String CLIENT_PROPERTY_KEY = "spring.security.oauth2.client.registration.";
