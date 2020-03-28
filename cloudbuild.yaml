@@ -22,62 +22,30 @@ steps:
   volumes:
   - name: 'mavenrepo'
     path: '/root/.m2'
-
-- id: 'PACKAGE'
-  waitFor: ['INSTALL']
-  name: 'maven:3.6.3-jdk-8'
-  entrypoint: 'mvn'
-  args: ['package']
-  dir: 'mws/mws-server'  
-  volumes:
-  - name: 'mavenrepo'
-    path: '/root/.m2'
   
 - id: 'LS'
-  waitFor: ['PACKAGE']
+  waitFor: ['INSTALL']
   name: 'ubuntu'
   args: ['ls', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT/WEB-INF/lib']
-  
-#- id: 'SDK'
-#  waitFor: ['LS']
-#  name: 'google/cloud-sdk:latest'
-#  args: ['pull', '/workspace/google-cloud-sdk']
 
-# - id: 'MKDIR'
+# - id: 'PACKAGE'
+#   waitFor: ['LS']
+#   name: 'maven:3.6.3-jdk-8'
+#   entrypoint: 'mvn'
+#   args: ['package']
+#   dir: 'mws/mws-server'  
+#   volumes:
+#   - name: 'mavenrepo'
+#     path: '/root/.m2'
+
+# - id: 'DEPLOY'
 #   waitFor: ['PACKAGE']
-#   name: 'ubuntu'
-#   args: ['mkdir', 'deploy-build']
+#   name: 'gcr.io/cloud-builders/gcloud'
+#   args: ['app', 'deploy', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT']
 
-# - id: 'COPY XML'
-#   waitFor: ['MKDIR']
-#   name: 'ubuntu'
-#   args: ['cp', 'mws/mws-server/src/main/webapp/WEB-INF/appengine-web.xml', '/workspace/deploy-build/']
-  
-# - id: 'COPY WAR'
-#   waitFor: ['COPY XML']
-#   name: 'ubuntu'
-#   args: ['cp', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT.war', '/workspace/deploy-build/']
-
-- id: 'DEPLOY'
+- id: 'PACKAGEDEPLOY'
   waitFor: ['LS']
-  name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy', 'mws/mws-server/target/mws-server-0.0.1-SNAPSHOT']
-
-
-# - name: 'gcr.io/cloud-builders/gcloud'
-#   args: ['components', 'install', 'app-engine-java']
-#   id: 'F'
-#   waitFor: ['E']
-
-
-
-#- name: 'maven:3.6.2-jdk-8-slim'
-#  args: ['com.google.cloud.tools:appengine-maven-plugin:deploy', 'DcloudSdkHome=/workspace/google-cloud-sdk']
-#  dir: 'mws/mws-server'
-#  id: 'MVN_DEPLOY'
-#  waitFor: ['SDK']
-#  entrypoint: 'mvn'
-#  volumes:
-#  - name: 'mavenrepo'
-#    path: '/root/.m2'
-  
+  name: 'maven:3.6.3-jdk-8'
+  entrypoint: 'mvn'
+  args: ["-D", "skipTests", "package", "appengine:deploy"]
+  dir: 'mws/mws-server'  
