@@ -16,7 +16,9 @@
 		is true, App Engine can send multiple requests in parallel: -->
 	<threadsafe>true</threadsafe>
 
-	<enable-jar-classes>false</enable-jar-classes>
+	<staging>
+		<enable-jar-classes>false</enable-jar-classes>
+	</staging>
 
 	<runtime>java8</runtime>
 
