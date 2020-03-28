@@ -98,7 +98,8 @@ public class MvcConfig implements WebMvcConfigurer {
 	public AppProperties appProperties() {
 		AppProperties appProperties = new AppProperties();
 		appProperties.getAuth().setTokenSecret(env.getProperty("app.auth.tokenSecret"));
-		appProperties.getAuth().setTokenExpirationMsec(new Long(env.getProperty("app.auth.tokenExpirationMsec")));
+//		appProperties.getAuth().setTokenExpirationMsec(new Long(env.getProperty("app.auth.tokenExpirationMsec")));
+		appProperties.getAuth().setTokenExpirationMsec(864000000);
 		appProperties.getOauth2().setAuthorizedRedirectUris(
 				Arrays.asList(env.getProperty("app.oauth2.authorizedRedirectUris").split(",")));
 		return appProperties;
