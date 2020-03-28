@@ -110,9 +110,6 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 //	private CustomUserDetailsService customUserDetailsService;
 
 	@Autowired
-	private CustomOAuth2UserService customOAuth2UserService;
-
-	@Autowired
 	private OAuth2AuthenticationSuccessHandler oAuth2AuthenticationSuccessHandler;
 
 	@Autowired
@@ -140,7 +137,7 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 //					.and()
 				.userInfoEndpoint()
 //					.oidcUserService(customOidcUserService)
-				.userService(customOAuth2UserService).and().successHandler(oAuth2AuthenticationSuccessHandler)
+				.userService(customOAuth2UserService()).and().successHandler(oAuth2AuthenticationSuccessHandler)
 				.failureHandler(oAuth2AuthenticationFailureHandler)
 				.clientRegistrationRepository(clientRegistrationRepository())
 				.authorizedClientService(authorizedClientService());
@@ -168,6 +165,11 @@ public class SecurityConfigCali extends WebSecurityConfigurerAdapter {
 	public CustomUserDetailsService customUserDetailsService() {
 		return new CustomUserDetailsService(accountService);
 	}
+
+	@Bean
+	public CustomOAuth2UserService customOAuth2UserService() {
+		return new CustomOAuth2UserService(accountService);
+	};
 
 	private static String CLIENT_PROPERTY_KEY = "spring.security.oauth2.client.registration.";
 
