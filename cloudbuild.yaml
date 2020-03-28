@@ -61,3 +61,7 @@ steps:
   name: "gcr.io/cloud-builders/mvn"
   args: ["-D", "skipTests", "package", "appengine:deploy"]
   dir: 'mws/mws-server'  
+  volumes:
+  - name: 'mavenrepo'
+    path: '/root/.m2'
+  
