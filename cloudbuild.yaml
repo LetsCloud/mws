@@ -1,34 +1,34 @@
 steps:
-- name: 'gcr.io/cloud-builders/git'
+- id: 'CLONE'
+  name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/LetsCloud/mws']
-  id: 'CLONE'
   
-- name: 'maven:3.6.2-jdk-8-slim'
-  args: ['clean']
-  dir: 'mws'
-  id: 'CLEAN'
+- id: 'CLEAN'
   waitFor: ['CLONE']
+  name: 'maven:3.6.3-jdk-8'
   entrypoint: 'mvn'
+  args: ['clean']
+  dir: 'mws'  
   volumes:
   - name: 'mavenrepo'
     path: '/root/.m2'
 
-- name: 'maven:3.6.2-jdk-8-slim'
-  args: ['-P', 'prod', 'install']
-  dir: 'mws'
-  id: 'INSTALL'
+- id: 'INSTALL'
   waitFor: ['CLEAN']
+  name: 'maven:3.6.3-jdk-8'
   entrypoint: 'mvn'
+  args: ['-P', 'prod', 'install']
+  dir: 'mws'  
   volumes:
   - name: 'mavenrepo'
     path: '/root/.m2'
 
-- name: 'maven:3.6.2-jdk-8-slim'
-  args: ['package']
-  dir: 'mws/mws-server'
-  id: 'PACKAGE'
+- id: 'PACKAGE'
   waitFor: ['INSTALL']
+  name: 'maven:3.6.3-jdk-8'
   entrypoint: 'mvn'
+  args: ['package']
+  dir: 'mws/mws-server'  
   volumes:
   - name: 'mavenrepo'
     path: '/root/.m2'
