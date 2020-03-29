@@ -11,6 +11,8 @@
 	<application>mywindspot</application>
 	<version>2</version>
 
+	<runtime>java8</runtime>
+
 	<!-- Required. When the threadsafe element in appengine-web.xml is false, 
 		App Engine sends requests serially to a given web server. When the value 
 		is true, App Engine can send multiple requests in parallel: -->
@@ -20,16 +22,17 @@
 		<enable-jar-classes>false</enable-jar-classes>
 	</staging>
 
-	<runtime>java8</runtime>
-
 	<system-properties>
 		<property name="java.util.logging.config.file"
 			value="WEB-INF/classes/logging.properties" />
-		<property name="javax.el.ExpressionFactory"
+<!--			
+ 		<property name="javax.el.ExpressionFactory"
 			value="com.sun.el.ExpressionFactoryImpl" />
+ -->			
 	</system-properties>
 	<!-- <env-variables> <env-var name="javax.el.ExpressionFactory" value="com.sun.el.ExpressionFactoryImpl" 
 		/> </env-variables> -->
+
 	<!-- Optional. App Engine includes an implementation of sessions, using 
 		the servlet session interface. The implementation stores session data in 
 		Datastore for persistence, and also uses memcache for speed. As with most 
