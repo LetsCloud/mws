@@ -26,10 +26,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.crs.mws.server.entity.Account;
 import io.crs.mws.server.repository.AccountRepository;
-import io.crs.mws.server.security2.TokenProvider;
-import io.crs.mws.server.security2.UserPrincipal;
-import io.crs.mws.server.security2.oauth2.exception.ResourceNotFoundException;
-import io.crs.mws.server.security2.oauth2.user.CurrentUser;
+import io.crs.mws.server.security.TokenProvider;
+import io.crs.mws.server.security.UserPrincipal;
+import io.crs.mws.server.security.oauth2.exception.ResourceNotFoundException;
+import io.crs.mws.server.security.oauth2.user.CurrentUser;
 import io.crs.mws.shared.cnst.SignupError;
 import io.crs.mws.shared.dto.AccountDto;
 import io.crs.mws.shared.dto.auth.SignupResponse;
