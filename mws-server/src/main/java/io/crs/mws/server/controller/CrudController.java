@@ -31,7 +31,7 @@ public abstract class CrudController<T extends BaseEntity, D extends BaseDto> ex
 	private static final Logger logger = LoggerFactory.getLogger(CrudController.class);
 
 	@Autowired
-	protected AccountService userService;
+	protected AccountService accountService;
 
 	protected final CrudService<T> service;
 
@@ -56,10 +56,10 @@ public abstract class CrudController<T extends BaseEntity, D extends BaseDto> ex
 
 	abstract protected D createDto(T entity);
 
-	public ResponseEntity<List<D>> getAll() {
+	public ResponseEntity<List<D>> getAll(String email) {
 		List<D> dtos = new ArrayList<D>();
 
-		Account currentAccount = getCurrentAccount();
+		Account currentAccount = getCurrentAccount(email);
 		if (currentAccount == null)
 			return new ResponseEntity<List<D>>(dtos, OK);
 
@@ -73,13 +73,13 @@ public abstract class CrudController<T extends BaseEntity, D extends BaseDto> ex
 		return new ResponseEntity<List<D>>(dtos, OK);
 	}
 
-	public List<T> getAll2() {
+	public List<T> getAll2(String email) {
 		List<T> dtos = new ArrayList<T>();
 
-		Account appUser = userService.getCurrentAccount();
+		Account appUser = getCurrentAccount(email);
 		if (appUser == null)
 			return dtos;
-
+		
 		String accountWebSafeKey = appUser.getWebSafeKey();
 		if (accountWebSafeKey == null)
 			return dtos;
@@ -106,19 +106,18 @@ public abstract class CrudController<T extends BaseEntity, D extends BaseDto> ex
 	}
 
 	public ResponseEntity<D> saveOrCreate(D dto) throws RestApiException {
-		logger.info("saveOrCreate->source=" + dto);
 		beforeSaveOrCreate(dto);
 		try {
 			T entity = modelMapper.map(dto, clazz);
-			logger.info("saveOrCreate->mapped=" + entity);
+			
 			if (dto.getId() == null) {
 				entity = service.create(entity);
 			} else {
 				entity = service.update(entity);
 			}
-			logger.info("saveOrCreate->saved=" + entity);
+
 			D dto2 = createDto(entity);
-			logger.info("saveOrCreate->saved2=" + dto);
+
 			afterSaveOrCreate(dto, entity);
 			return new ResponseEntity<D>(dto2, HttpStatus.OK);
 		} catch (Throwable e) {
@@ -134,9 +133,7 @@ public abstract class CrudController<T extends BaseEntity, D extends BaseDto> ex
 	}
 
 	public void delete(String webSafeKey) throws RestApiException {
-		logger.info("CrudController().delete()->webSafeKey=" + webSafeKey);
 		try {
-			logger.info("CrudController().delete()2->webSafeKey=" + webSafeKey);
 			service.delete(webSafeKey);
 		} catch (Throwable e) {
 			throw new RestApiException(e);
@@ -165,9 +162,11 @@ public abstract class CrudController<T extends BaseEntity, D extends BaseDto> ex
 		return new ResponseEntity<List<D>>(dtos, HttpStatus.OK);
 	}
 
-	public Account getCurrentAccount() {
-		if (userService.getCurrentAccount() == null)
+	public Account getCurrentAccount(String email) {
+		Account account = accountService.findByEmail(email);
+		if (account == null)
 			return null;
-		return userService.getCurrentAccount();
+		return account;
 	}
+	
 }

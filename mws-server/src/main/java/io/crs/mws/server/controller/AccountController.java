@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.crs.mws.server.entity.Account;
+import io.crs.mws.server.security.UserPrincipal;
+import io.crs.mws.server.security.oauth2.user.CurrentUser;
 import io.crs.mws.server.service.AccountService;
 import io.crs.mws.shared.dto.AccountDto;
 import io.crs.mws.shared.exception.RestApiException;
@@ -45,22 +47,22 @@ public class AccountController extends CrudController<Account, AccountDto> {
 		return modelMapper.map(entity, AccountDto.class);
 	}
 
-	@Override
 	@RequestMapping(value = PATH_WEBSAFEKEY, method = GET)
-	public ResponseEntity<AccountDto> get(@PathVariable String webSafeKey) throws RestApiException {
+	public ResponseEntity<AccountDto> get(@CurrentUser UserPrincipal userPrincipal, @PathVariable String webSafeKey)
+			throws RestApiException {
 		return super.get(webSafeKey);
 	}
 
-	@Override
 	@RequestMapping(method = POST)
-	public ResponseEntity<AccountDto> saveOrCreate(@RequestBody AccountDto dto) throws RestApiException {
+	public ResponseEntity<AccountDto> saveOrCreate(@CurrentUser UserPrincipal userPrincipal,
+			@RequestBody AccountDto dto) throws RestApiException {
 		return super.saveOrCreate(dto);
 	}
 
-	@Override
 	@RequestMapping(value = PATH_WEBSAFEKEY, method = DELETE)
 	@ResponseStatus(HttpStatus.OK)
-	public void delete(@PathVariable(WEBSAFEKEY) String webSafeKey) throws RestApiException {
+	public void delete(@CurrentUser UserPrincipal userPrincipal, @PathVariable(WEBSAFEKEY) String webSafeKey)
+			throws RestApiException {
 		super.delete(webSafeKey);
 	}
 }

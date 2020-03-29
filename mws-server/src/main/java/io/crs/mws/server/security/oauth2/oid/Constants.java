@@ -1,7 +1,7 @@
 /**
  * 
  */
-package io.crs.mws.server.security;
+package io.crs.mws.server.security.oauth2.oid;
 
 /**
  * @author robi

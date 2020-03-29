@@ -59,7 +59,6 @@ public class GlobalConfigController extends CrudController<GlobalConfig, GlobalC
 		return dto;
 	}
 
-	@Override
 	@RequestMapping(value = GLOBAL_CONFIG, method = GET)
 	public @ResponseBody ResponseEntity<List<GlobalConfigDto>> getAll() {
 		logger.info("getAll()");

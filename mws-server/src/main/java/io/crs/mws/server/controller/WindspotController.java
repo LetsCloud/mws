@@ -55,7 +55,6 @@ public class WindspotController extends CrudController<Windspot, WindspotDto> {
 		return super.get(webSafeKey);
 	}
 
-	@Override
 	@RequestMapping(method = GET)
 	public ResponseEntity<List<WindspotDto>> getAll() {
 		List<WindspotDto> result = new ArrayList<WindspotDto>();
