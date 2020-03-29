@@ -9,8 +9,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -19,10 +17,7 @@ import com.google.common.base.Strings;
 import io.crs.mws.server.entity.Account;
 import io.crs.mws.server.entity.FcmToken;
 import io.crs.mws.server.entity.VerificationToken;
-import io.crs.mws.server.login.LoggedInChecker;
-import io.crs.mws.server.model.RegistrationForm;
 import io.crs.mws.server.repository.AccountRepository;
-import io.crs.mws.server.security.local.LocalUser;
 import io.crs.mws.server.service.AccountService;
 import io.crs.mws.shared.exception.EntityValidationException;
 import io.crs.mws.shared.exception.EntityVersionConflictException;
@@ -35,9 +30,6 @@ import io.crs.mws.shared.exception.UniqueIndexConflictException;
 @Service
 public class AccountServiceImpl extends CrudServiceImpl<Account, AccountRepository> implements AccountService {
 	private static final Logger logger = LoggerFactory.getLogger(AccountServiceImpl.class);
-
-	@Autowired
-	private LoggedInChecker loggedInChecker;
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
@@ -64,16 +56,6 @@ public class AccountServiceImpl extends CrudServiceImpl<Account, AccountReposito
 	}
 
 	@Override
-	public UserDetails registerAccount(RegistrationForm registrationForm)
-			throws EntityValidationException, UniqueIndexConflictException {
-		Account account = new Account(registrationForm);
-		account = repository.save(account);
-		List<SimpleGrantedAuthority> simpleGrantedAuthorities = new ArrayList<>();
-		return new LocalUser(account.getEmail(), account.getNickname(), account.getPassword(), account.getEnabled(),
-				true, true, true, simpleGrantedAuthorities);
-	}
-
-	@Override
 	public Account createVerificationToken(String accountKey, String token) throws Throwable {
 		Account account = repository.findByPrimaryKey(accountKey);
 		VerificationToken myToken = new VerificationToken(token);
@@ -89,16 +71,6 @@ public class AccountServiceImpl extends CrudServiceImpl<Account, AccountReposito
 		account.setEnabled(true);
 		repository.save(account);
 		return true;
-	}
-
-	@Override
-	public Boolean isCurrentUserLoggedIn() {
-		return loggedInChecker.getLoggedInUser() != null;
-	}
-
-	@Override
-	public Account getCurrentAccount() {
-		return loggedInChecker.getLoggedInUser();
 	}
 
 	@Override

@@ -41,7 +41,10 @@ public abstract class AccountChildServiceImpl<T extends AccountChild, R extends 
 	}
 
 	@Override
-	public Account getCurrentAccount() {
-		return accountService.getCurrentAccount();
+	public Account getCurrentAccount(String email) {
+		Account account = accountService.findByEmail(email);
+		if (account == null)
+			return null;
+		return account;
 	}
 }

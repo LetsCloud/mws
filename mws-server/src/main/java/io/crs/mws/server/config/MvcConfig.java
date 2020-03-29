@@ -36,7 +36,7 @@ import io.crs.mws.server.repository.ofy.ObjectifyRegistration;
 @EnableWebMvc
 @Configuration
 @ComponentScan({ "io.crs.mws.server.repository", "io.crs.mws.server.service", "io.crs.mws.server.controller",
-		"io.crs.mws.server.security", "io.crs.mws.server.login" })
+		"io.crs.mws.server.security" })
 @PropertySource("classpath:application.properties")
 public class MvcConfig implements WebMvcConfigurer {
 	private static final Logger logger = LoggerFactory.getLogger(MvcConfig.class);
