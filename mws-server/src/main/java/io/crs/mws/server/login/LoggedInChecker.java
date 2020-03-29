@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 
 import io.crs.mws.server.entity.Account;
 import io.crs.mws.server.security.AccountDetails;
-import io.crs.mws.server.security2.gae.GaeUser;
 import io.crs.mws.shared.dto.AccountDto;
 
 /**
@@ -56,15 +55,6 @@ public class LoggedInChecker {
 				} catch (Throwable e) {
 					e.printStackTrace();
 				}
-			}
-
-			// GaeUser esetén
-			if (principal instanceof GaeUser) {
-				GaeUser gaeUser = (GaeUser) principal;
-				account = new Account();
-				account.setEmail(gaeUser.getEmail());
-				account.setNickname(gaeUser.getNickname());
-				return account;
 			}
 		}
 		return account;

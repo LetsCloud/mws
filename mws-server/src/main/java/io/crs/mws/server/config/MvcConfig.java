@@ -14,7 +14,6 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
@@ -29,8 +28,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.crs.mws.server.repository.ofy.ObjectifyRegistration;
-import io.crs.mws.server.security2.AppProperties;
-import io.crs.mws.server.security2.CustomUserDetailsService;
+import io.crs.mws.server.security.AppProperties;
 
 /**
  * @author robi
@@ -38,9 +36,8 @@ import io.crs.mws.server.security2.CustomUserDetailsService;
  */
 @EnableWebMvc
 @Configuration
-//@Import({ SecurityConfigCali.class })
 @ComponentScan({ "io.crs.mws.server.repository", "io.crs.mws.server.service", "io.crs.mws.server.controller",
-		"io.crs.mws.server.security2", "io.crs.mws.server.security2.oauth2", "io.crs.mws.server.login" })
+		"io.crs.mws.server.security", "io.crs.mws.server.login" })
 @PropertySource("classpath:application.properties")
 public class MvcConfig implements WebMvcConfigurer {
 	private static final Logger logger = LoggerFactory.getLogger(MvcConfig.class);
@@ -50,6 +47,11 @@ public class MvcConfig implements WebMvcConfigurer {
 
 	private final long MAX_AGE_SECS = 3600;
 
+	/**
+	 * Let’s enable CORS so that our frontend client can access the APIs from a
+	 * different origin. I’ve enabled all origins in the following configuration.
+	 * But you should make it more strict in a production application
+	 */
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/**").allowedOrigins("*")
