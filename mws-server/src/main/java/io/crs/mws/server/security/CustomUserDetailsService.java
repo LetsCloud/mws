@@ -13,7 +13,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import io.crs.mws.server.entity.Account;
 import io.crs.mws.server.service.AccountService;
@@ -23,19 +23,17 @@ import io.crs.mws.shared.cnst.Role;
  * @author robi
  *
  */
+@Component
 public class CustomUserDetailsService implements UserDetailsService {
 	private static final Logger logger = LoggerFactory.getLogger(CustomUserDetailsService.class);
 
-	private final AccountService accountRepository;
-
-	public CustomUserDetailsService(AccountService accountRepository) {
-		this.accountRepository = accountRepository;
-	}
+	@Autowired
+	private AccountService accountService;
 
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		logger.info("loadUserByUsername()->email=" + email);
-		Account user = accountRepository.findByEmail(email);
+		Account user = accountService.findByEmail(email);
 
 		if (user == null) {
 			throw new UsernameNotFoundException("Invalid username or password.");

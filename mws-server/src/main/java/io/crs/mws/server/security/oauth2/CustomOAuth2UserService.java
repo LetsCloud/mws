@@ -19,7 +19,7 @@ import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserServ
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 import io.crs.mws.server.entity.Account;
@@ -41,15 +41,13 @@ import io.crs.mws.shared.cnst.SocialProvider;
  * his details, otherwise, we register a new user.
  *
  */
+@Component
 public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 	private static final Logger logger = LoggerFactory.getLogger(CustomOAuth2UserService.class);
 	private static final String ENCODED_EMAIL = "Y3Nlcm5pa3JAZ21haWwuY29t";
 
-	private final AccountService accountService;
-
-	public CustomOAuth2UserService(AccountService accountService) {
-		this.accountService = accountService;
-	}
+	@Autowired
+	private  AccountService accountService;
 
 	@Override
 	public OAuth2User loadUser(OAuth2UserRequest oAuth2UserRequest) throws OAuth2AuthenticationException {

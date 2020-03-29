@@ -9,7 +9,6 @@ import com.googlecode.objectify.Key;
 
 import io.crs.mws.server.entity.Account;
 import io.crs.mws.server.repository.AccountRepository;
-import io.crs.mws.shared.exception.cnst.ErrorMessageCode;
 
 /**
  * @author robi
@@ -19,7 +18,6 @@ import io.crs.mws.shared.exception.cnst.ErrorMessageCode;
 public class AccountRepositoryImpl extends CrudRepositoryImpl<Account> implements AccountRepository {
 
 	private static final String PROPERTY_PRIMARYKEY = "primaryKey";
-	private static final String PROPERTY_NAME = "name";
 	private static final String PROPERTY_EMAIL = "email";
 
 	public AccountRepositoryImpl() {
