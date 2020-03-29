@@ -22,8 +22,6 @@ import io.crs.mws.server.entity.Account;
 public class UserPrincipal implements OAuth2User, UserDetails {
 	private static final Logger logger = LoggerFactory.getLogger(UserPrincipal.class);
 
-//	private static final String ENCODED_TEST_EMAIL = "dGVzdEBleGFtcGxlLmNvbQ==";
-
 	private String email;
 	private String password;
 

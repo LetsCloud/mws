@@ -16,7 +16,7 @@ import com.google.gwt.user.client.Cookies;
  * @author robi
  *
  */
-public class OauthUtils {
+public class OAuth2Utils {
 	public static final String ACCESS_TOKEN = "accessToken";
 
 	public static String loadAccessToken() {

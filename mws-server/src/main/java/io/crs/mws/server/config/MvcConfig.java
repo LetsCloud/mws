@@ -28,7 +28,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.crs.mws.server.repository.ofy.ObjectifyRegistration;
-import io.crs.mws.server.security.AppProperties;
 
 /**
  * @author robi
