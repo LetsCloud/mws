@@ -140,11 +140,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.authorizeRequests()
 				.antMatchers("/app/**", "/adm/**", "/image/**", "/font/**", "/oauth2/**", "/login/**")
 					.permitAll()
-				.antMatchers(ROOT + ADMIN)
-					.hasRole(Role.ROLE_ADMIN)
-				.antMatchers(ROOT)
-					.hasAnyRole(Role.ROLE_ADMIN, Role.ROLE_USER)
-				.antMatchers(ROOT + PUBLIC + "/**")
+				.antMatchers(ROOT + ADMIN).hasRole(Role.ROLE_ADMIN)
+					.antMatchers(ROOT)
+				.hasAnyRole(Role.ROLE_ADMIN, Role.ROLE_USER).antMatchers(ROOT + PUBLIC + "/**")
 					.permitAll()
 				.anyRequest()
 					.authenticated()
@@ -154,8 +152,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 					.baseUri("/oauth2/authorize")
 					.authorizationRequestRepository(cookieAuthorizationRequestRepository())
 					.and()
+//				Az alapértelmezett redirectUri-t használjuk
 //				.redirectionEndpoint()
-//					.baseUri("/oauth2/callback/*")
+//					.baseUri("/oauth2/callback")
 //					.and()
 				.userInfoEndpoint()
 //					.oidcUserService(customOidcUserService)
@@ -163,8 +162,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 					.and()
 				.successHandler(oAuth2AuthenticationSuccessHandler)
 				.failureHandler(oAuth2AuthenticationFailureHandler)
-			.clientRegistrationRepository(clientRegistrationRepository())
-			.authorizedClientService(authorizedClientService());
+				.clientRegistrationRepository(clientRegistrationRepository())
+				.authorizedClientService(authorizedClientService());
 		// @formatter:on
 
 		// Add our custom Token based authentication filter
@@ -179,7 +178,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Bean
 	public ClientRegistrationRepository clientRegistrationRepository() {
-		List<ClientRegistration> registrations = clients.stream().map(c -> getRegistration(c))
+		List<ClientRegistration> registrations = clients.stream().map(c -> getClientRegistration(c))
 				.filter(registration -> registration != null).collect(Collectors.toList());
 
 		return new InMemoryClientRegistrationRepository(registrations);
@@ -197,11 +196,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	private static String CLIENT_PROPERTY_KEY = "spring.security.oauth2.client.registration.";
 
-	private ClientRegistration getRegistration(String client) {
-		logger.info("getRegistration()->environment=" + environment);
+	private ClientRegistration getClientRegistration(String client) {
+		logger.info("getClientRegistration()->environment=" + environment);
 
 		String propKey = CLIENT_PROPERTY_KEY + client + ".clientId";
-		logger.info("getRegistration()->propKey=" + propKey);
+		logger.info("getClientRegistration()->propKey=" + propKey);
 		String clientId = environment.getProperty(propKey);
 
 		if (clientId == null) {
@@ -211,9 +210,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		String clientSecret = environment.getProperty(CLIENT_PROPERTY_KEY + client + ".clientSecret");
 
 		String redirectUriTemplate = environment.getProperty(CLIENT_PROPERTY_KEY + client + ".redirectUriTemplate");
-		logger.info("getRegistration()->redirectUriTemplate=" + redirectUriTemplate);
+		logger.info("getOAuth2ClientRegistration()->redirectUriTemplate=" + redirectUriTemplate);
 
-		String scope = environment.getProperty(CLIENT_PROPERTY_KEY + client + ".scope");
+//		String scope = environment.getProperty(CLIENT_PROPERTY_KEY + client + ".scope");
 
 		if (client.equals("google")) {
 			return CommonOAuth2Provider.GOOGLE.getBuilder(client).clientId(clientId).clientSecret(clientSecret)
