@@ -21,7 +21,7 @@ import gwt.material.design.client.pwa.PwaManager;
 import io.crs.mws.client.core.app.AdmServiceWorkerManager;
 import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.UserManager;
-import io.crs.mws.client.core.util.OauthUtils;
+import io.crs.mws.client.core.util.OAuth2Utils;
 import io.crs.mws.client.core.util.UrlUtils;
 
 /**
@@ -76,7 +76,7 @@ public abstract class AbstractAppBootstrapper implements Bootstrapper {
 		};
 		t.schedule(500);
 
-		if (!Strings.isNullOrEmpty(OauthUtils.loadAccessToken())) {
+		if (!Strings.isNullOrEmpty(OAuth2Utils.loadAccessToken())) {
 			userManager.load(() -> placeManager.revealCurrentPlace());
 		} else {
 			placeManager.revealCurrentPlace();

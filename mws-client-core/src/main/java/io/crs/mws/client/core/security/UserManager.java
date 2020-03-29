@@ -17,7 +17,7 @@ import com.google.web.bindery.event.shared.EventBus;
 import io.crs.mws.client.core.event.CurrentUserEvent;
 import io.crs.mws.client.core.promise.xgwt.Fn;
 import io.crs.mws.client.core.service.AuthService;
-import io.crs.mws.client.core.util.OauthUtils;
+import io.crs.mws.client.core.util.OAuth2Utils;
 import io.crs.mws.shared.cnst.Language;
 import io.crs.mws.shared.dto.AccountDto;
 import io.crs.mws.shared.dto.auth.AuthResponse;
@@ -93,7 +93,7 @@ public class UserManager {
 			@Override
 			public void onSuccess(Method method, AuthResponse response) {
 				logger.info("UserManager().login().onSuccess()");
-				OauthUtils.storeAccessToken(response.getAccessToken());
+				OAuth2Utils.storeAccessToken(response.getAccessToken());
 				load(callback);
 			}
 

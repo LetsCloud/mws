@@ -25,7 +25,7 @@ import io.crs.mws.client.core.event.ContentPushEvent.MenuState;
 import io.crs.mws.client.core.event.SetPageTitleEvent.SetPageTitleHandler;
 import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.CurrentUser;
-import io.crs.mws.client.core.util.OauthUtils;
+import io.crs.mws.client.core.util.OAuth2Utils;
 import io.crs.mws.shared.cnst.MenuItemType;
 import io.crs.mws.shared.dto.menu.MenuItemDto;
 
@@ -129,7 +129,7 @@ public class MenuPresenter extends PresenterWidget<MenuPresenter.MyView>
 
 	@Override
 	public void logout() {
-		OauthUtils.removeAccessToken();
+		OAuth2Utils.removeAccessToken();
 		placeManager.revealPlace(new PlaceRequest.Builder().nameToken(CoreNameTokens.LOGIN)
 				.with(CoreNameTokens.PLACE_TOGO, CoreNameTokens.HOME).build());
 	}

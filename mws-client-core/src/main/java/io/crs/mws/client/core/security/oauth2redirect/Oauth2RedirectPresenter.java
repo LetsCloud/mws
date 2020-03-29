@@ -3,8 +3,6 @@
  */
 package io.crs.mws.client.core.security.oauth2redirect;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Logger;
 
 import javax.inject.Inject;
@@ -27,13 +25,12 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
 import io.crs.mws.client.core.CoreNameTokens;
-import io.crs.mws.client.core.firebase.messaging.MessagingManager;
-import io.crs.mws.client.core.i18n.CoreMessages;
 import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.CurrentUser;
 import io.crs.mws.client.core.security.UserManager;
 import io.crs.mws.client.core.service.AuthService;
-import io.crs.mws.client.core.util.OauthUtils;
+import io.crs.mws.client.core.util.OAuth2Utils;
+import io.crs.mws.shared.cnst.Constants;
 import io.crs.mws.shared.cnst.Language;
 import io.crs.mws.shared.dto.AccountDto;
 
@@ -57,56 +54,37 @@ public class Oauth2RedirectPresenter extends Presenter<Oauth2RedirectPresenter.M
 
 	private static final AuthService AUTH_SERVICE = GWT.create(AuthService.class);
 
-	private String placeToGo;
-	private Map<String, String> placeParams = new HashMap<String, String>();
-
 	private final PlaceManager placeManager;
 	private final UserManager userManager;
-	private final MessagingManager messagingManager;
-	private final AppData appData;
 	private final CurrentUser currentUser;
-	private final CoreMessages i18n;
 
 	@Inject
 	Oauth2RedirectPresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager, AppData appData,
-			CurrentUser currentUser, CoreMessages i18n, MessagingManager messagingManager, UserManager userManager) {
+			CurrentUser currentUser, UserManager userManager) {
 		super(eventBus, view, proxy, RevealType.Root);
 		logger.info("Oauth2RedirectPresenter()");
 
 		this.placeManager = placeManager;
 		this.userManager = userManager;
-		this.messagingManager = messagingManager;
-		this.appData = appData;
 		this.currentUser = currentUser;
-		this.i18n = i18n;
 
 		getView().setUiHandlers(this);
 	}
 
 	@Override
 	public void prepareFromRequest(PlaceRequest request) {
-		logger.info("Oauth2RedirectPresenter().prepareFromRequest()");
-//		String requestToken = request.getParameter(LoggedInGatekeeper.PLACE_TO_GO, null);
-		String requestToken = request.getParameter("token", null);
-		logger.info("Oauth2RedirectPresenter().prepareFromRequest()->requestToken=" + requestToken);
+		// A kérésből kinyerjük az OAuth2 tokent
+		String requestToken = request.getParameter(Constants.OAUTH2_TOKEN, null);
 
-		OauthUtils.storeAccessToken(requestToken);
+		// A tokent süti formájában elmentjük, hogy a REST kérések alkalmával
+		// felhasználható legyen.
+		OAuth2Utils.storeAccessToken(requestToken);
 
+		// Végül mejelenítjük az oldalt
 		userManager.load(() -> {
-			logger.info("Oauth2RedirectPresenter().prepareFromRequest()-2");
 			placeManager.revealDefaultPlace();
-			logger.info("Oauth2RedirectPresenter().prepareFromRequest()-3");
-			});
-		/*
-		 * if (Strings.isNullOrEmpty(requestToken)) { return; }
-		 * 
-		 * Integer paramStart = requestToken.indexOf("?"); if (paramStart == -1) {
-		 * placeToGo = requestToken; } else { placeToGo = requestToken.substring(0,
-		 * paramStart); String requestParams = requestToken.substring(paramStart + 1);
-		 * Integer equalSign = requestParams.indexOf("=");
-		 * placeParams.put(requestParams.substring(0, equalSign),
-		 * requestParams.substring(equalSign + 1)); }
-		 */
+		});
+		
 		getProxy().manualReveal(Oauth2RedirectPresenter.this);
 	}
 

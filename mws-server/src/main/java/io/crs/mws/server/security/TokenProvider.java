@@ -1,5 +1,6 @@
 package io.crs.mws.server.security;
 
+import io.crs.mws.server.config.AppProperties;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
