@@ -80,7 +80,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-		authenticationManagerBuilder.userDetailsService(customUserDetailsService()).passwordEncoder(passwordEncoder());
+		authenticationManagerBuilder.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoder());
 	}
 
 	@Bean
@@ -104,8 +104,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		return new BCryptPasswordEncoder();
 	}
 
-//	@Autowired
-//	private CustomUserDetailsService customUserDetailsService;
+	@Autowired
+	private CustomUserDetailsService customUserDetailsService;
+
+	@Autowired
+	private CustomOAuth2UserService customOAuth2UserService;
 
 	@Autowired
 	private OAuth2AuthenticationSuccessHandler oAuth2AuthenticationSuccessHandler;
@@ -115,9 +118,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private HttpCookieOAuth2AuthorizationRequestRepository httpCookieOAuth2AuthorizationRequestRepository;
-
-	@Autowired
-	private AccountService accountService;
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
@@ -158,7 +158,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //					.and()
 				.userInfoEndpoint()
 //					.oidcUserService(customOidcUserService)
-					.userService(customOAuth2UserService())
+					.userService(customOAuth2UserService)
 					.and()
 				.successHandler(oAuth2AuthenticationSuccessHandler)
 				.failureHandler(oAuth2AuthenticationFailureHandler)
@@ -183,16 +183,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 		return new InMemoryClientRegistrationRepository(registrations);
 	}
-
-	@Bean
-	public CustomUserDetailsService customUserDetailsService() {
-		return new CustomUserDetailsService(accountService);
-	}
-
-	@Bean
-	public CustomOAuth2UserService customOAuth2UserService() {
-		return new CustomOAuth2UserService(accountService);
-	};
 
 	private static String CLIENT_PROPERTY_KEY = "spring.security.oauth2.client.registration.";
 

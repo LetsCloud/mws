@@ -9,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -32,13 +31,10 @@ public class AppController {
 
 	private final AccountService accountService;
 
-	private final ApplicationEventPublisher eventPublisher;
-
 	@Autowired
-	AppController(AccountService accountService, ApplicationEventPublisher eventPublisher) {
+	AppController(AccountService accountService) {
 		logger.info("AppController()");
 		this.accountService = accountService;
-		this.eventPublisher = eventPublisher;
 	}
 
 	@ModelAttribute(value = "globalConfig")
