@@ -57,7 +57,8 @@ public class AccountServiceImpl extends CrudServiceImpl<Account, AccountReposito
 
 	@Override
 	public Account createVerificationToken(String accountKey, String token) throws Throwable {
-		Account account = repository.findByPrimaryKey(accountKey);
+//		Account account = repository.findByPrimaryKey(accountKey);
+		Account account = repository.findByWebSafeKey(accountKey);
 		VerificationToken myToken = new VerificationToken(token);
 		List<VerificationToken> tokens = new ArrayList<VerificationToken>();
 		tokens.add(myToken);
