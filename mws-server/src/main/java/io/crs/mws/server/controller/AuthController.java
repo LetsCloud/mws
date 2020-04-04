@@ -41,6 +41,13 @@ import io.crs.mws.shared.exception.UniqueIndexConflictException;
 
 import javax.validation.Valid;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+
 import static io.crs.mws.shared.api.ApiPaths.APIv1.AUTH;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.CURRENTUSER;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.LOGIN;
@@ -48,13 +55,6 @@ import static io.crs.mws.shared.api.ApiPaths.APIv1.PUBLIC;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.ROOT;
 import static io.crs.mws.shared.api.ApiPaths.APIv1.SIGNUP;
 import static org.springframework.http.HttpStatus.OK;
-
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 
 /**
  * @author robi
