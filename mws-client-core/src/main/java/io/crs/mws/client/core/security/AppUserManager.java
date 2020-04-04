@@ -22,10 +22,10 @@ public class AppUserManager extends UserManager {
 		super(eventBus, currentUser);
 		this.messagingManager = messagingManager;
 	}
-
+/*
 	@Override
-	protected void initFireBase(Fn.NoArg callback) {
-			messagingManager.initFirebase(currentUser.getAccountDto().getWebSafeKey(), callback);
+	protected void onSuccessAccountLoad(Fn.NoArg callback) {
+			messagingManager.initFirebase(callback);
 	}
-
+*/
 }
