@@ -47,7 +47,6 @@ public class MessagingManager implements HasMessagingFeatures, CurrentUserEvent.
 	private Firebase firebase;
 	private Boolean registered;
 	private boolean firebaseIsReady = false;
-	private ServiceWorkerRegistration registration;
 
 	Fnx.NoArg unsubscribe;
 
@@ -110,9 +109,8 @@ public class MessagingManager implements HasMessagingFeatures, CurrentUserEvent.
 	@Override
 	public void useServiceWorker(ServiceWorkerRegistration serviceWorker) {
 		logger.info("MessagingManager.useServiceWorker()");
-		this.registration = serviceWorker;
 		currentUser.setRegistredServiceWorker(true);
-//		getFirebaseMessaging().useServiceWorker(serviceWorker);
+		initFirebase(serviceWorker);
 	}
 
 	@Override
@@ -138,7 +136,7 @@ public class MessagingManager implements HasMessagingFeatures, CurrentUserEvent.
 	}
 
 
-	public void initFirebase(String webSafeKey, Fn.NoArg callback) {
+	private void initFirebase(ServiceWorkerRegistration serviceWorkerRegistration) {
 		logger.info("MessagingManager.initFirebase()");
 /*		
 		if (getFirebase() != null) {
@@ -167,14 +165,11 @@ public class MessagingManager implements HasMessagingFeatures, CurrentUserEvent.
 				setFirebase(Firebase.initializeApp(config));
 				logger.info("MessagingManager.initFirebase().onSuccess()->firebase.getName()" + firebase.getName());
 
-				if (registration != null)
-					getFirebaseMessaging().useServiceWorker(registration);
+				getFirebaseMessaging().useServiceWorker(serviceWorkerRegistration);
 
 				configFcmOnMessage();
 
 				subscribe();
-
-				callback.call();
 			}
 
 			@Override
@@ -186,7 +181,6 @@ public class MessagingManager implements HasMessagingFeatures, CurrentUserEvent.
 	}
 
 	private String getGlobalSetting(List<GlobalConfigDto> result, String key) {
-		logger.info("MessagingManager.getGlobalSetting()");
 		GlobalConfigDto c = result.stream().filter(o -> o.getCode().equals(key)).findFirst().orElse(null);
 		if (c==null)
 			return "";

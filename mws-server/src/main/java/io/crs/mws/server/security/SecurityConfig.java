@@ -43,7 +43,6 @@ import io.crs.mws.server.security.oauth2.CustomOAuth2UserService;
 import io.crs.mws.server.security.oauth2.HttpCookieOAuth2AuthorizationRequestRepository;
 import io.crs.mws.server.security.oauth2.OAuth2AuthenticationFailureHandler;
 import io.crs.mws.server.security.oauth2.OAuth2AuthenticationSuccessHandler;
-import io.crs.mws.server.service.AccountService;
 import io.crs.mws.shared.cnst.Role;
 
 /**

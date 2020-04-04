@@ -22,13 +22,13 @@ public class AppServiceWorkerManager extends BaseServiceWorkerManager {
 	private static Logger logger = Logger.getLogger(AppServiceWorkerManager.class.getName());
 
 	private final EventBus eventBus;
-	private final MessagingManager fcmManager;
+	private final MessagingManager messagingManager;
 
 	@Inject
-	AppServiceWorkerManager(EventBus eventBus, MessagingManager fcmManager) {
+	AppServiceWorkerManager(EventBus eventBus, MessagingManager messagingManager) {
 		super();
 		logger.info("AppServiceWorkerManager()");
-		this.fcmManager = fcmManager;
+		this.messagingManager = messagingManager;
 		this.eventBus = eventBus;
 		// Polling Interval should be every 1 minute
 		/* setPollingInterval(1000); */
@@ -42,7 +42,7 @@ public class AppServiceWorkerManager extends BaseServiceWorkerManager {
 		if (result) {
 			logger.info("Sikeres ServiceWorker regisztrácó, átadás MessagingManager-nek.");
 			registered = true;
-			fcmManager.useServiceWorker(registration);
+			messagingManager.useServiceWorker(registration);
 			eventBus.fireEvent(new CurrentUserEvent(true));
 		}
 

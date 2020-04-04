@@ -81,7 +81,7 @@ public class Oauth2RedirectPresenter extends Presenter<Oauth2RedirectPresenter.M
 		OAuth2Utils.storeAccessToken(requestToken);
 
 		// Végül mejelenítjük az oldalt
-		userManager.load(() -> {
+		userManager.loadCurrentAccount(() -> {
 			placeManager.revealDefaultPlace();
 		});
 		
@@ -114,9 +114,9 @@ public class Oauth2RedirectPresenter extends Presenter<Oauth2RedirectPresenter.M
 
 			@Override
 			public void onSuccess(Method method, AccountDto response) {
-				logger.info("checkCurrentUser().onSuccess()");
+				logger.info("Oauth2RedirectPresenter().onReveal()->getCurrentUser().onSuccess()");
 				if (response == null) {
-					logger.info("checkCurrentUser().onSuccess()->(result == null)");
+					logger.info("Oauth2RedirectPresenter().onReveal()->getCurrentUser().onSuccess()->(result == null)");
 					currentUser.setLoggedIn(false);
 					return;
 				}
@@ -136,7 +136,7 @@ public class Oauth2RedirectPresenter extends Presenter<Oauth2RedirectPresenter.M
 
 			@Override
 			public void onFailure(Method method, Throwable exception) {
-				logger.info("AbstractAppPresenter().checkCurrentUser().onFailure()->caught.getMessage()="
+				logger.info("Oauth2RedirectPresenter().onReveal()->getCurrentUser().onFailure()->caught.getMessage()="
 						+ exception.getMessage());
 
 				currentUser.setLoggedIn(false);

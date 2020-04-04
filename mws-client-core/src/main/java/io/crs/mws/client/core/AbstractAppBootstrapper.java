@@ -10,7 +10,7 @@ import org.fusesource.restygwt.client.Defaults;
 
 import com.google.common.base.Strings;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.Timer;
+import com.google.gwt.core.client.Scheduler;
 import com.google.web.bindery.event.shared.EventBus;
 
 import com.gwtplatform.mvp.client.Bootstrapper;
@@ -64,23 +64,24 @@ public abstract class AbstractAppBootstrapper implements Bootstrapper {
 
 	@Override
 	public void onBootstrap() {
+		logger.info("AbstractAppBootstrapper().onBootstrap()");
 		Defaults.setServiceRoot(UrlUtils.getBaseUrl());
 		Defaults.setDateFormat(null);
 
-		Timer t = new Timer() {
-			@Override
-			public void run() {
-				PwaManager.getInstance().setServiceWorker(serviceWorkerManager).setWebManifest(appData.getManifest())
-						.load();
-			}
-		};
-		t.schedule(500);
+		// PwaManager késleltetett létrehozása, a ServiceWorker betöltés bevárása miatt. 
+		Scheduler.get().scheduleDeferred(() -> PwaManager.getInstance().setServiceWorker(serviceWorkerManager)
+				.setWebManifest(appData.getManifest()).load());
 
-		if (!Strings.isNullOrEmpty(OAuth2Utils.loadAccessToken())) {
-			userManager.load(() -> placeManager.revealCurrentPlace());
-		} else {
-			placeManager.revealCurrentPlace();
+		// Kiolvassuk a sütiben tárolt AccessToken-t
+		String accessToken = OAuth2Utils.loadAccessToken();
+
+		if (!Strings.isNullOrEmpty(accessToken)) {
+			// Ha van  AccessToken, akkor beolvassuk a bejelentkezett előfizető adatait
+			userManager.loadCurrentAccount(() -> placeManager.revealCurrentPlace());
+			return;
 		}
+
+		placeManager.revealCurrentPlace();
 	}
 
 	protected void setAppCode(String code) {

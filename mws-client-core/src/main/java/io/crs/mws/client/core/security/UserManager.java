@@ -46,15 +46,15 @@ public class UserManager {
 	 * 
 	 * @param isLogin
 	 */
-	public void load(Fn.NoArg callback) {
-		logger.info("UserManager().load()");
+	public void loadCurrentAccount(Fn.NoArg callback) {
+		logger.info("UserManager().loadCurrentAccount()");
 		AUTH_SERVICE.getCurrentUser(new MethodCallback<AccountDto>() {
 
 			@Override
 			public void onSuccess(Method method, AccountDto response) {
-				logger.info("UserManager().load().onSuccess()");
+				logger.info("UserManager().loadCurrentAccount().onSuccess()");
 				if (response == null) {
-					logger.info("UserManager().load().onSuccess()->(result == null)");
+					logger.info("UserManager().loadCurrentAccount().onSuccess()->(result == null)");
 					currentUser.setLoggedIn(false);
 					return;
 				}
@@ -70,22 +70,27 @@ public class UserManager {
 				currentUser.setAccountDto(response);
 				currentUser.setLoggedIn(true);
 				
-				initFireBase(callback);
+				onSuccessAccountLoad(callback);
 
 				eventBus.fireEvent(new CurrentUserEvent(true));
 			}
 
 			@Override
 			public void onFailure(Method method, Throwable exception) {
-				logger.info("AbstractAppPresenter().checkCurrentUser().onFailure()->caught.getMessage()="
+				logger.info("UserManager().loadCurrentAccount().onFailure()->caught.getMessage()="
 						+ exception.getMessage());
 				currentUser.setLoggedIn(false);
+				onFailedAccountLoad(callback);
 				eventBus.fireEvent(new CurrentUserEvent(false));
 			}
 		});
 	}
 
-	protected void initFireBase(Fn.NoArg callback) {
+	protected void onSuccessAccountLoad(Fn.NoArg callback) {
+		callback.call();
+	}
+
+	protected void onFailedAccountLoad(Fn.NoArg callback) {
 		callback.call();
 	}
 	
@@ -97,7 +102,7 @@ public class UserManager {
 			public void onSuccess(Method method, AuthResponse response) {
 				logger.info("UserManager().login().onSuccess()");
 				OAuth2Utils.storeAccessToken(response.getAccessToken());
-				load(callback);
+				loadCurrentAccount(callback);
 			}
 
 			@Override
