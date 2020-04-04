@@ -243,7 +243,20 @@ importScripts('https://www.gstatic.com/firebasejs/7.13.2/firebase-messaging.js')
 
 //Initialize the Firebase app in the service worker by passing in the
 //messagingSenderId.
-firebase.initializeApp({'messagingSenderId': '99934082315'});
+// firebase.initializeApp({'messagingSenderId': '99934082315'});
+
+// Initialize the Firebase app in the service worker by passing in
+// your app's Firebase config object.
+// https://firebase.google.com/docs/web/setup#config-object
+firebase.initializeApp({
+    apiKey: "AIzaSyD7afX4U-1Mg6J5qHNPZIIH-5E_0DLv0cs",
+    authDomain: "mywindspot.firebaseapp.com",
+    databaseURL: "https://mywindspot.firebaseio.com",
+    projectId: "mywindspot",
+    storageBucket: "mywindspot.appspot.com",
+    messagingSenderId: "819092286463",
+    appId: "1:819092286463:web:04a0ab36ccf09b70"  
+});
 	  
 // Retrieve an instance of Firebase Messaging so that it can handle background
 // messages.
