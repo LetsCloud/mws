@@ -16,4 +16,7 @@ public interface AppResources extends ClientBundle {
 
 	@Source("img/grey-blue-wallpaper-3.jpg")
 	ImageResource profileBackgroundImg();
+
+	@Source("img/icon-dot_32.png")
+	ImageResource spotImg();
 }
