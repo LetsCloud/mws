@@ -8,7 +8,6 @@ import java.util.logging.Logger;
 
 import javax.inject.Inject;
 
-import com.gargoylesoftware.htmlunit.javascript.host.Window;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -68,8 +67,6 @@ public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> impleme
 	private final AppResources res;
 	
 	private SpotCreator spotCreator = new SpotCreator();
-
-	private EventsKey unByKey;
 
 	@UiField
 	HTMLPanel mapPanel, creatorPanel;

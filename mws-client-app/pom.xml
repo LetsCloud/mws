@@ -112,14 +112,6 @@
 		</dependency>
 
 		<!-- ***************** -->
-		<!-- GWT-UI Gwt Charts -->
-		<!-- ***************** -->
-		<dependency>
-			<groupId>com.googlecode.gwt-charts</groupId>
-			<artifactId>gwt-charts</artifactId>
-		</dependency>
-
-		<!-- ***************** -->
 		<!-- Google Guava -->
 		<!-- ***************** -->
 		<dependency>

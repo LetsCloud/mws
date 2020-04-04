@@ -43,18 +43,13 @@
 		<!-- <gwt-material.version>2.1.1</gwt-material.version> -->
 		<gwt-material.version>2.3.0</gwt-material.version>
 
-		<gwt-charts.version>0.9.9</gwt-charts.version>
 		<objectify-gwt.version>1.2.1</objectify-gwt.version>
-
-		<gwt-dnd.version>3.3.4</gwt-dnd.version>
-		<!-- https://firebase.google.com/support/releases -->
-		<firebase-sdk.version>5.7.1</firebase-sdk.version>
 
 		<!-- ********************** -->
 		<!-- Server side properties -->
 		<!-- ********************** -->
 		<spring.framework.version>5.2.5.RELEASE</spring.framework.version>
-		<spring.security.version>5.3.0.RELEASE</spring.security.version>
+		<spring.security.version>5.3.1.RELEASE</spring.security.version>
 
 		<logback.version>1.2.3</logback.version>
 		<slf4j.version>1.7.25</slf4j.version> <!-- 1.8.0-beta2 -->
@@ -209,21 +204,6 @@
 				<groupId>com.github.tdesjardins</groupId>
 				<artifactId>gwt-ol3</artifactId>
 				<version>${gwt-ol3.version}</version>
-			</dependency>
-
-			<!-- ***************** -->
-			<!-- GWT-UI Gwt Charts -->
-			<!-- ***************** -->
-			<dependency>
-				<groupId>com.googlecode.gwt-charts</groupId>
-				<artifactId>gwt-charts</artifactId>
-				<version>${gwt-charts.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>com.allen-sauer.gwt.dnd</groupId>
-				<artifactId>gwt-dnd</artifactId>
-				<version>${gwt-dnd.version}</version>
 			</dependency>
 
 			<!-- ***************** -->
@@ -417,7 +397,7 @@
 			<dependency>
 				<groupId>org.json</groupId>
 				<artifactId>json</artifactId>
-				<version>20180813</version>
+				<version>20190722</version>
 			</dependency>
 
 			<!-- ************************************************************************************* -->
