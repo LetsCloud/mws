@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.WebRequest;
 
 import io.crs.mws.server.entity.Account;
 import io.crs.mws.server.repository.AccountRepository;
@@ -30,6 +32,7 @@ import io.crs.mws.server.security.TokenProvider;
 import io.crs.mws.server.security.UserPrincipal;
 import io.crs.mws.server.security.oauth2.exception.ResourceNotFoundException;
 import io.crs.mws.server.security.oauth2.user.CurrentUser;
+import io.crs.mws.server.security.signup.OnRegistrationCompleteEvent;
 import io.crs.mws.shared.cnst.SignupError;
 import io.crs.mws.shared.dto.AccountDto;
 import io.crs.mws.shared.dto.auth.SignupResponse;
@@ -85,12 +88,15 @@ public class AuthController {
 	@Autowired
 	private ModelMapper modelMapper;
 
+	@Autowired
+	private ApplicationEventPublisher eventPublisher;
+	
 	AuthController() {
 		logger.info("AuthController()");
 	}
 
 	@PostMapping(PUBLIC + SIGNUP)
-	public ResponseEntity<SignupResponse> registerUser(@RequestBody SignUpRequest signUpRequest) {
+	public ResponseEntity<SignupResponse> registerUser(@RequestBody SignUpRequest signUpRequest, WebRequest request) {
 		logger.info("AuthController().registerUser()");
 		JSONObject jsonObject;
 		try {
@@ -120,7 +126,11 @@ public class AuthController {
 		account.setPassword(passwordEncoder.encode(account.getPassword()));
 
 		try {
-			accountRepo.save(account);
+			account = accountRepo.save(account);
+			
+			String appUrl = request.getContextPath();
+			eventPublisher.publishEvent(new OnRegistrationCompleteEvent(account, request.getLocale(), appUrl));
+			
 			return new ResponseEntity<SignupResponse>(new SignupResponse(true, SignupError.successful), HttpStatus.OK);
 		} catch (EntityValidationException e) {
 			e.printStackTrace();
