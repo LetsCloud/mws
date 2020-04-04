@@ -37,6 +37,7 @@ public class UserManager {
 
 	@Inject
 	UserManager(EventBus eventBus, CurrentUser currentUser) {
+		logger.info("UserManager()");
 		this.eventBus = eventBus;
 		this.currentUser = currentUser;
 	}
@@ -70,6 +71,8 @@ public class UserManager {
 				currentUser.setLoggedIn(true);
 				
 				initFireBase(callback);
+
+				eventBus.fireEvent(new CurrentUserEvent(true));
 			}
 
 			@Override

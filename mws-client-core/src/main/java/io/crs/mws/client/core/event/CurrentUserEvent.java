@@ -17,7 +17,7 @@ public class CurrentUserEvent extends GwtEvent<CurrentUserEvent.CurrentUserHandl
 	private static final Logger LOGGER = Logger.getLogger(CurrentUserEvent.class.getName());
 
 	public interface CurrentUserHandler extends EventHandler {
-		void onLogedIn(CurrentUserEvent event);
+		void onCurrentUserLogedIn(CurrentUserEvent event);
 	}
 
 	public static final Type<CurrentUserHandler> TYPE = new Type<>();
@@ -52,6 +52,6 @@ public class CurrentUserEvent extends GwtEvent<CurrentUserEvent.CurrentUserHandl
 
 	@Override
 	protected void dispatch(CurrentUserHandler handler) {
-		handler.onLogedIn(this);
+		handler.onCurrentUserLogedIn(this);
 	}
 }

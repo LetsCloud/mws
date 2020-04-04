@@ -2,13 +2,8 @@ package io.crs.mws.client.core.security;
 
 import java.util.logging.Logger;
 
-import org.fusesource.restygwt.client.Method;
-import org.fusesource.restygwt.client.MethodCallback;
+import javax.inject.Inject;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.i18n.client.LocaleInfo;
-
-import io.crs.mws.client.core.service.AuthService;
 import io.crs.mws.shared.cnst.Language;
 import io.crs.mws.shared.dto.AccountDto;
 
@@ -22,6 +17,15 @@ public class CurrentUser {
 	private Language language;
 
 	private boolean loggedIn;
+
+	private boolean registredServiceWorker;
+
+	@Inject
+	CurrentUser() {
+		logger.info("CurrentUser()");
+		loggedIn = false;
+		registredServiceWorker = false;
+	}
 
 	public AccountDto getAccountDto() {
 		return accountDto;
@@ -53,6 +57,14 @@ public class CurrentUser {
 
 	public void setLanguage(Language language) {
 		this.language = language;
+	}
+
+	public boolean isRegistredServiceWorker() {
+		return registredServiceWorker;
+	}
+
+	public void setRegistredServiceWorker(boolean registredServiceWorker) {
+		this.registredServiceWorker = registredServiceWorker;
 	}
 
 	@Override

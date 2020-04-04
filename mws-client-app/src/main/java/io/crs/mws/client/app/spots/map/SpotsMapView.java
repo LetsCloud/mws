@@ -18,6 +18,7 @@ import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
+import io.crs.mws.client.app.resources.AppResources;
 import io.crs.mws.shared.dto.WindspotDto;
 import ol.Collection;
 import ol.Coordinate;
@@ -64,6 +65,8 @@ public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> impleme
 
 	private static final String MAP_PANEL = "mapPanel";
 
+	private final AppResources res;
+	
 	private SpotCreator spotCreator = new SpotCreator();
 
 	private EventsKey unByKey;
@@ -75,9 +78,9 @@ public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> impleme
 	* 
 	*/
 	@Inject
-	SpotsMapView(Binder uiBinder) {
+	SpotsMapView(Binder uiBinder, AppResources res) {
 		logger.info("SpotsMapView()");
-
+		this.res = res;
 		initWidget(uiBinder.createAndBindUi(this));
 
 		creatorPanel.add(spotCreator);
@@ -114,7 +117,8 @@ public class SpotsMapView extends ViewWithUiHandlers<SpotsMapUiHandlers> impleme
 		StyleOptions styleOptions = new StyleOptions();
 		IconOptions iconOptions = new IconOptions();
 //		iconOptions.setSrc("https://openlayers.org/en/v3.20.1/examples/data/icon.png");
-		iconOptions.setSrc("http://localhost:8080/image/icon-dot_32.png");
+//		iconOptions.setSrc("http://localhost:8080/image/icon-dot_32.png");
+		iconOptions.setSrc(res.spotImg().getSafeUri().asString());
 		Icon icon = new Icon(iconOptions);
 		styleOptions.setImage(icon);
 		/*

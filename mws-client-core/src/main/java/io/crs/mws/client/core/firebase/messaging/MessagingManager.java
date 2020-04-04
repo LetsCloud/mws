@@ -20,6 +20,7 @@ import com.google.web.bindery.event.shared.EventBus;
 import gwt.material.design.client.pwa.serviceworker.js.ServiceWorkerRegistration;
 import gwt.material.design.client.ui.MaterialLink;
 import gwt.material.design.client.ui.MaterialToast;
+import io.crs.mws.client.core.event.CurrentUserEvent;
 import io.crs.mws.client.core.firebase.Config;
 import io.crs.mws.client.core.firebase.Firebase;
 import io.crs.mws.client.core.firebase.messaging.js.Fnx;
@@ -37,7 +38,7 @@ import io.crs.mws.shared.dto.GlobalConfigDto;
  * @author robi
  *
  */
-public class MessagingManager implements HasMessagingFeatures {
+public class MessagingManager implements HasMessagingFeatures, CurrentUserEvent.CurrentUserHandler {
 	private static Logger logger = Logger.getLogger(MessagingManager.class.getName());
 
 	private static final GlobalConfigService GLOBALCONFIG_SERVICE = GWT.create(GlobalConfigService.class);
@@ -52,7 +53,7 @@ public class MessagingManager implements HasMessagingFeatures {
 
 	private final AppData appData;
 	private final CurrentUser currentUser;
-
+	
 	@Inject
 	MessagingManager(EventBus eventBus, AppData appData, CurrentUser currentUser) {
 		logger.info("MessagingManager()");
@@ -85,6 +86,7 @@ public class MessagingManager implements HasMessagingFeatures {
 	public Messaging getFirebaseMessaging() {
 		logger.info("MessagingManager.getFirebaseMessaging()");
 		if (firebase != null) {
+			logger.info("MessagingManager.getFirebaseMessaging()->(firebase != null)");
 			return firebase.messaging();
 		} else {
 			GWT.log("Firebase is not yet registered", new IllegalStateException());
@@ -98,10 +100,10 @@ public class MessagingManager implements HasMessagingFeatures {
 		logger.info("MessagingManager.getToken()");
 		getFirebaseMessaging().getToken().then(object -> {
 			String token = (String) object;
-			logger.info("getToken()->token=" + token);
+			logger.info("MessagingManager.getToken()->token=" + token);
 			callback.call(token);
 		}).katch(error -> {
-			logger.info("getToken().katch()->" + error.toString());
+			logger.info("MessagingManager.getToken().katch()->" + error.toString());
 		});
 	}
 
@@ -109,6 +111,7 @@ public class MessagingManager implements HasMessagingFeatures {
 	public void useServiceWorker(ServiceWorkerRegistration serviceWorker) {
 		logger.info("MessagingManager.useServiceWorker()");
 		this.registration = serviceWorker;
+		currentUser.setRegistredServiceWorker(true);
 //		getFirebaseMessaging().useServiceWorker(serviceWorker);
 	}
 
@@ -137,6 +140,7 @@ public class MessagingManager implements HasMessagingFeatures {
 
 	public void initFirebase(String webSafeKey, Fn.NoArg callback) {
 		logger.info("MessagingManager.initFirebase()");
+/*		
 		if (getFirebase() != null) {
 			if (currentUser.isLoggedIn())
 				subscribe(currentUser.getAccountDto().getWebSafeKey());
@@ -144,7 +148,7 @@ public class MessagingManager implements HasMessagingFeatures {
 			callback.call();
 			return;
 		}
-
+*/
 		GLOBALCONFIG_SERVICE.getAll(new MethodCallback<List<GlobalConfigDto>>() {
 
 			@Override
@@ -168,8 +172,7 @@ public class MessagingManager implements HasMessagingFeatures {
 
 				configFcmOnMessage();
 
-				if (currentUser.isLoggedIn())
-					subscribe(currentUser.getAccountDto().getWebSafeKey());
+				subscribe();
 
 				callback.call();
 			}
@@ -228,10 +231,23 @@ public class MessagingManager implements HasMessagingFeatures {
 		return appData.getManifest();
 	}
 
-	public void subscribe(String webSafeKey) {
-		logger.info("MessagingManager.getGlobalSetting()");
+	private void subscribe() {
+		logger.info("MessagingManager.subscribe()");
+		if (!currentUser.isLoggedIn()) {
+			logger.info("MessagingManager.subscribe()-> User is not logged in");
+			return;
+		} 
+		if (!currentUser.isRegistredServiceWorker()) {
+			logger.info("MessagingManager.subscribe()-> ServiceWorker is not registered");			
+			return;
+		}
+		if (!isRegistered()) {
+			logger.info("MessagingManager.subscribe()-> Firebase is not registered");			
+			return;
+		}
+		
 		requestPermission(() -> getToken(token -> {
-			fcmSubscribe(webSafeKey, token);
+			fcmSubscribe(currentUser.getAccountDto().getWebSafeKey(), token);
 		}));
 	}
 
@@ -265,4 +281,10 @@ public class MessagingManager implements HasMessagingFeatures {
 	public static native String getUserAgent() /*-{
 												return $wnd.navigator.userAgent.toLowerCase();
 												}-*/;
+
+	@Override
+	public void onCurrentUserLogedIn(CurrentUserEvent event) {
+		logger.info("MessagingManager.onCurrentUserLogedIn()");
+		subscribe();		
+	}
 }

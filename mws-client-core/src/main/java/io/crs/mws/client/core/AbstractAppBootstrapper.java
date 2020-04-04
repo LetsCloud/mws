@@ -18,7 +18,7 @@ import com.gwtplatform.mvp.client.PreBootstrapper;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 
 import gwt.material.design.client.pwa.PwaManager;
-import io.crs.mws.client.core.app.AdmServiceWorkerManager;
+import io.crs.mws.client.core.app.BaseServiceWorkerManager;
 import io.crs.mws.client.core.security.AppData;
 import io.crs.mws.client.core.security.UserManager;
 import io.crs.mws.client.core.util.OAuth2Utils;
@@ -37,11 +37,11 @@ public abstract class AbstractAppBootstrapper implements Bootstrapper {
 	private final EventBus eventBus;
 	private final PlaceManager placeManager;
 	private final UserManager userManager;
-	private final AdmServiceWorkerManager serviceWorkerManager;
+	private final BaseServiceWorkerManager serviceWorkerManager;
 	private final AppData appData;
 
 	public AbstractAppBootstrapper(EventBus eventBus, PlaceManager placeManager, UserManager userManager,
-			AdmServiceWorkerManager serviceWorkerManager, AppData appData) {
+			BaseServiceWorkerManager serviceWorkerManager, AppData appData) {
 		this.eventBus = eventBus;
 		this.placeManager = placeManager;
 		this.userManager = userManager;
