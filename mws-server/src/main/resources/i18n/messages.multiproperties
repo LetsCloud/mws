@@ -12,13 +12,13 @@
             <Name>default</Name>
             <Description></Description>
             <Width>599</Width>
-            <HandlerConfiguration>/crs-hsys-server/src/main/resources/i18n/messages.properties|false|false|false|false</HandlerConfiguration>
+            <HandlerConfiguration>/mws-server/src/main/resources/i18n/messages.properties|false|false|false|false|ISO-8859-1</HandlerConfiguration>
         </Column>
         <Column>
             <Name>hu_HU</Name>
             <Description></Description>
             <Width>629</Width>
-            <HandlerConfiguration>/crs-hsys-server/src/main/resources/i18n/messages_hu_HU.properties|false|false|false|false</HandlerConfiguration>
+            <HandlerConfiguration>/mws-server/src/main/resources/i18n/messages_hu_HU.properties|false|false|false|false|ISO-8859-1</HandlerConfiguration>
         </Column>
     </Columns>
     <Records>
@@ -29,8 +29,8 @@
             <Name>actSubject</Name>
             <Disabled>false</Disabled>
             <MultiLine>false</MultiLine>
-            <Value disabled="false">HostWare Cloud Registration Confirmation</Value>
-            <Value disabled="false">HostWare Cloud regisztráció visszaigazolása</Value>
+            <Value disabled="false">MyWinspot Registration Confirmation</Value>
+            <Value disabled="false">MyWinspot regisztráció visszaigazolása</Value>
         </Property>
         <Property>
             <Name>actMessage</Name>
