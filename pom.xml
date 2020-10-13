@@ -72,7 +72,7 @@
 		<!-- ************* -->
 		<!-- Test versions -->
 		<!-- ************* -->
-		<junit.test.version>4.12</junit.test.version>
+		<junit.test.version>4.13.1</junit.test.version>
 
 		<!-- *************** -->
 		<!-- Plugin versions -->
