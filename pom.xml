@@ -48,7 +48,7 @@
 		<!-- ********************** -->
 		<!-- Server side properties -->
 		<!-- ********************** -->
-		<spring.framework.version>5.2.5.RELEASE</spring.framework.version>
+		<spring.framework.version>5.2.22.RELEASE</spring.framework.version>
 		<spring.security.version>5.3.1.RELEASE</spring.security.version>
 
 		<logback.version>1.2.3</logback.version>
